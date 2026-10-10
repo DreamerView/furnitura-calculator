@@ -2,7 +2,7 @@
 (()=>{
  'use strict';
  function layout(dialog){
-  if(dialog.dataset.modalLayout||dialog.matches('#globalUploadPreloader,.preview-image-viewer'))return;
+  if(dialog.dataset.modalLayout||dialog.matches('#globalUploadPreloader,.preview-image-viewer,.dornmass-confirm'))return;
   dialog.dataset.modalLayout='true';dialog.classList.add('modal-frame');
   let head=dialog.querySelector(':scope>.dialoghead,:scope>.settings-dialog-head,:scope>.destructive-confirm-head');
   const body=document.createElement('div');body.className='modal-scroll-body';

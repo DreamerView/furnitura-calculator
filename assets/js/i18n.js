@@ -1,6 +1,7 @@
 (function(){
 'use strict';
 const dict={
+"Поворотно-фрамужная FPR":["Turn/fanlight FPR hinge", "Açılır/vasistas FPR menteşe"],
 "Обычно используется дорнмасс 15 мм. Подтвердите выбранный размер:":["The usual backset is 15 mm. Confirm the selected size:", "Genellikle 15 mm kullanılır. Seçilen ölçüyü onaylayın:"],
 "Дополнительные прижимы со стороны петель":["Additional hinge-side clamps", "Menteşe tarafındaki ek baskılar"],
 "Без дополнительных прижимов":["No additional clamps", "Ek baskı yok"],

@@ -17,3 +17,9 @@ for(const id of ['catalog-pvc-7-53','catalog-pvc-7-54'])assert(!C.calculatorVisi
 for(const mode of ['motor','mgn']){const k=C.calculatorKit(db.kits,db.kits[0],15,{specialMode:mode});assert(k.catalogDraft);assert(M.calculate(db,k,{specialMode:mode}).errors.length);}
 assert.equal(M.pressureSummary([{art:'PS1.S',qty:2}]).points,2);
 console.log('Turn clamps:',checks,'calculations; counts per sash, colours, profiles, hidden hinges, no duplicates, door options and draft guards passed.');
+
+for(const series of ['9','13'])for(const [color,suffix] of Object.entries({white:'B',brown:'K',anthracite:'A',black:'BLACK'}))for(const type of ['exposed','fanlight']){
+ const errors=[],r=M.applyRearClamps(db,turn,{rearClampType:type,rearClampQty:2,optionSeries:series,coverColor:color},[{art:'RV',qty:1},{art:'RN',qty:1}],errors);
+ assert.deepEqual(errors,[]);assert(r.some(i=>i.art===(type==='fanlight'?'N.SV.':'N1.PN.S.')+suffix&&i.qty===2));
+ if(type==='fanlight'){assert(r.some(i=>i.art==='FPR.'+series&&i.qty===2));assert.equal(r.filter(i=>i.art==='RV').reduce((n,i)=>n+i.qty,0),3);assert.equal(M.pressureSummary(r).points,2);const again=M.applyRearClamps(db,turn,{rearClampType:type,rearClampQty:3,optionSeries:series,coverColor:color},r,[]);assert.equal(again.filter(i=>i.art==='RV').reduce((n,i)=>n+i.qty,0),4);}
+}

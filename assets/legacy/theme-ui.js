@@ -83,3 +83,12 @@ if(host&&!host.querySelector('.useful-options-grid')){const grid=document.create
  function polish(){host.querySelectorAll('input[id^="add-art-search-"]').forEach(input=>{input.placeholder='Артикул или название детали';input.setAttribute('aria-label','Найти деталь по артикулу или названию');});}
  new MutationObserver(polish).observe(host,{childList:true});polish();
 })();
+
+// A single sticky action bar spans both the summary and positional invoices.
+(function(){
+ const card=document.getElementById('combined-card'),column=card?.closest('.invoice-column'),row=card?.querySelector('.document-action-toolbar'),options=card?.querySelector('.print-options');
+ if(!column||!row||!options)return;
+ const bar=document.createElement('div');bar.className='invoice-sticky-actions';bar.append(row,options);column.prepend(bar);
+ const sync=()=>{bar.hidden=card.style.display==='none';};sync();
+ new MutationObserver(sync).observe(card,{attributes:true,attributeFilter:['style']});
+})();

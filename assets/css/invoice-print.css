@@ -68,3 +68,14 @@
  html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) :is(tfoot,.price-default),html:root body.workdesk-app.price-hidden #combined-card>table{display:none!important}
  html:root body.workdesk-app.pricing-invoice-invalid :is(#combined-card,#results){display:none!important}
 }
+
+@media screen {
+ html:root body.workdesk-app .invoice-sticky-actions{position:sticky;top:58px;z-index:30;background:var(--surface,#fff);padding:7px 10px;border:1px solid var(--border,#ddd);border-radius:12px;margin-bottom:8px;box-shadow:0 2px 5px #00000009}
+ html:root body.workdesk-app .invoice-sticky-actions[hidden]{display:none!important}
+ html:root body.workdesk-app .invoice-sticky-actions .document-action-toolbar{display:flex!important;flex-wrap:wrap;gap:5px!important;margin:0!important;padding:0!important}
+ html:root body.workdesk-app .invoice-sticky-actions .document-action-toolbar button{flex:0 1 auto!important;width:auto!important;min-width:0!important;min-height:30px!important;height:auto!important;font-size:12px!important;line-height:1.2!important;margin:0!important;padding:7px 10px!important;border-radius:8px!important}
+ html:root body.workdesk-app .invoice-sticky-actions .print-options{margin:5px 0 0!important;font-size:11px!important;line-height:1.3!important}
+ html:root body.workdesk-app .invoice-sticky-actions input[type=checkbox]{width:14px!important;height:14px!important;min-height:0!important;margin:0!important}
+ html:root body.workdesk-app #results{border-top:3px solid var(--accent,#087cff);padding-top:12px;margin-top:16px}
+}
+@media print{.invoice-sticky-actions{display:none!important}}

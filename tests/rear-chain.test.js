@@ -5,7 +5,7 @@ const run=(k,p)=>M.calculate(db,k,p,M.candidates(k,p.width,p.height)[0]);
 for(const variant of ['roller11','roller8','mushroom'])for(const mode of ['short','long'])for(const row of M.chainRules[mode])for(const height of [row[0],row[1]])for(const side of ['R','L'])for(const profile of Object.keys(M.strikeDefaults.profiles)){
  const k=db.kits.find(k=>k.id===variant),p={width:900,height,count:2,side,dornmass:15,rearChain:mode,rearCam:'same',lowerNode:'security',strikeProfile:profile,optionSeries:profile==='KBE 09'?'9':'13'};
  const plan=M.chainPlan(db,k,p);assert.deepEqual(plan.errors.filter(e=>!e.startsWith('Подтвердите')),[],variant+mode+height);
- if(plan.reviewReasons.length){assert(run(k,p).errors.length);p.chainReviewed=plan.reviewKey;}
+ if(plan.reviewReasons.length)assert(run(k,p).warnings.length);
  const r=run(k,p);assert.deepEqual(r.errors,[],variant+mode+height);assert.equal(r.total,r.items.reduce((n,i)=>n+i.qty*i.price,0));
  const strikeRole=variant==='mushroom'?'security':'perimeter',expected=plan.items.filter(i=>i.role==='chain'&&i.camCount).reduce((n,i)=>n+i.camCount,0)*2;
  const base=r.items.filter(i=>/^(?:X?PO(?:M|K|Z)?|X?NO)\./.test(i.art)).reduce((n,i)=>n+Number(i.art.match(/-(\d)/)?.[1]||0)*i.qty,0)+(variant==='roller11'||variant==='mushroom'?2:0);
@@ -17,8 +17,8 @@ const k=db.kits.find(k=>k.id==='roller11'),p={width:900,height:1500,count:1,side
 let r=run(k,p);assert.deepEqual(r.errors,[]);assert(r.items.some(i=>i.art==='XUSP'));assert(r.items.some(i=>i.art==='XZSP.13.R'));assert(!r.items.some(i=>i.art==='XU.2'));
 for(const height of [2001,2050,2100])assert(M.chainPlan(db,k,{...p,rearChain:'short',height}).errors.some(e=>e.includes('диапазона')));
 for(const height of [599,2401])assert(M.chainPlan(db,k,{...p,height}).errors.length);
-const mixed={...p,rearCam:'mushroom',lowerNode:'security'};let plan=M.chainPlan(db,k,mixed);assert(plan.reviewReasons.length);assert(run(k,mixed).errors.length);mixed.chainReviewed=plan.reviewKey;r=run(k,mixed);assert.deepEqual(r.errors,[]);assert(r.items.some(i=>i.art==='ZUP.K/40'));assert(r.items.some(i=>i.art==='ZK.40'));
-assert(run(k,{...mixed,height:1501}).errors.length,'review cannot leak to another dimension');assert(run(k,{...mixed,chainReviewed:''}).errors.length,'unchecked confirmation stays unchecked');
+const mixed={...p,rearCam:'mushroom',lowerNode:'security'};let plan=M.chainPlan(db,k,mixed);assert(plan.reviewReasons.length);assert(run(k,mixed).warnings.length);r=run(k,mixed);assert.deepEqual(r.errors,[]);assert(r.items.some(i=>i.art==='ZUP.K/40'));assert(r.items.some(i=>i.art==='ZK.40'));
+assert.deepEqual(run(k,{...mixed,height:1501}).errors,[]);assert.deepEqual(run(k,{...mixed,chainReviewed:''}).errors,[]);assert.equal(M.chainPlan(db,k,mixed).reviewed,false,'No automatic claim of manual verification');
 assert(M.chainPlan(db,k,{...p,hingeType:'hidden'}).errors.length);
 const copy=structuredClone(db),custom=copy.kits.find(x=>x.id===k.id);custom.common.push({art:'XUF.400-1',qty:1});assert(M.calculate(copy,custom,p,M.candidates(custom,p.width,p.height)[0]).errors.some(e=>e.includes('привязки')));
 copy.articles['XPNB.400-1'].available=false;assert(M.chainPlan(copy,custom,p).errors.some(e=>e.includes('недоступна')));

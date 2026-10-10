@@ -77,7 +77,7 @@
     el('offsetHandle').disabled=!kit;el('offsetHandle').checked=kit?.handle==='offset';
     for(const id of ['offsetHandle','microvent','lifter','plsEnabled','bprEnabled']){const control=el(id),wrapper=control?.closest?.('label')||control?.parentElement;if(wrapper)wrapper.hidden=!kit||alu||generic;if(control){control.disabled=!kit||alu||generic;if((alu||generic)&&control.type==='checkbox')control.checked=false;}}
     el('handlePos').value=el('offsetHandle').checked?'offset':'center';
-    el('dornmass').disabled=!kit||generic;FuturussCamSelector.configureDornmass(el('dornmass'),imported?.kits.find(k=>PREFIX+k.id===el('scheme').value)||kit);el('coverColor').disabled=!kit||alu||generic;el('coverColor').value=alu?'white':kit?.coverColor||'white';el('handleColor').value=kit?.handleColor||'white';paintCoverSelect();paintHandleColors();renderHandleChoices(generic?null:kit);chooseGroove(kit);toggleHingeChoice();
+    el('dornmass').disabled=!kit||generic;FuturussCamSelector.configureDornmass(el('dornmass'),imported?.kits.find(k=>PREFIX+k.id===el('scheme').value)||kit);el('coverColor').disabled=!kit||alu||generic;el('coverColor').value=alu?'white':el('coverColor').dataset.chosenColor||kit?.coverColor||'white';el('handleColor').value=kit?.handleColor||'white';paintCoverSelect();paintHandleColors();renderHandleChoices(generic?null:kit);chooseGroove(kit);toggleHingeChoice();
     const summary=el('matrixImportedSummary');
     if(kit&&summary){summary.textContent=generic?kit.name+' · расчёт по данным выбранного бренда через новый движок MatrixCore.':kit.name+' · '+(MatrixCore.variants[kit.variant]||kit.variant)+' · '+(kit.side==='L'?'левая':'правая')+' · '+((kit.sizeRecipeMode?el('grooveType').value:kit.profile)||'профиль не указан')+'. Правое и левое открывание подбираются по парным артикулам из файла. Дополнительные позиции — по флажкам ниже.';}
     const simple=kit&&kitFamily(kit)==='pvc'&&['turn','fanlight','door','stulp-bolts','stulp-drive'].includes(kit.openingType);
@@ -175,7 +175,7 @@
   for(const [color,id] of Object.entries(handleColorButtons))el(id).addEventListener('click',()=>{el('handleColor').value=color;paintHandleColors();});
   el('offsetHandle').addEventListener('change',()=>{el('handlePos').value=el('offsetHandle').checked?'offset':'center';});
   el('matrixDriveChoice').addEventListener('change',previewPrepared);
-  el('coverColor').addEventListener('change',paintCoverSelect);el('dornmass').addEventListener('change',refreshChoices);el('aluminumProfile').addEventListener('change',refreshChoices);el('grooveType').addEventListener('change',()=>{grooveTouched=true;});
+  el('coverColor').addEventListener('change',()=>{el('coverColor').dataset.chosenColor=el('coverColor').value;paintCoverSelect();});el('dornmass').addEventListener('change',refreshChoices);el('aluminumProfile').addEventListener('change',refreshChoices);el('grooveType').addEventListener('change',()=>{grooveTouched=true;});
   el('width').addEventListener('input',()=>{refreshChoices();toggleHingeChoice();});el('height').addEventListener('input',refreshChoices);
   function applyCentralCatalog(seed){
     try{
