@@ -1,0 +1,6 @@
+<?php
+require __DIR__.'/../api/src/MushroomTurn.php';
+function check($v){if(!$v)throw new RuntimeException('Migration assertion');}
+$root=dirname(__DIR__);$seed=json_decode(file_get_contents($root.'/storage/default-catalog.json'),true);$cat=$seed;$cat['kits']=array_values(array_filter($cat['kits'],fn($k)=>$k['id']!=='pvc-turn-mushroom'));unset($cat['articles']['PP.250-2.V']);$cat['articles']['PP.400-2.V']['price']=123;
+$tmp=$root.'/storage/test-mushroom-'.bin2hex(random_bytes(4));mkdir($tmp);copy($root.'/storage/default-catalog.json',$tmp.'/default-catalog.json');
+try{$s=['catalog'=>$cat,'users'=>[['id'=>42]],'quotes'=>[['sum'=>456]]];$before=$s;check(MushroomTurn::upgrade($s,$tmp));check(count($s['catalog']['kits'])===count($seed['kits']));foreach($cat['kits'] as $i=>$k)check($s['catalog']['kits'][$i]===$k);foreach($cat['articles'] as $a=>$v)check($s['catalog']['articles'][$a]===$v);check($s['users']===$before['users']&&$s['quotes']===$before['quotes']);check($s['catalog']['articles']['PP.250-2.V']['price']===null);$once=$s;check(!MushroomTurn::upgrade($s,$tmp)&&$s===$once);echo "Mushroom migration: preservation, null prices, idempotence passed.\n";}finally{unlink($tmp.'/default-catalog.json');rmdir($tmp);}

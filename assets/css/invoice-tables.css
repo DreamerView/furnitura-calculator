@@ -1,0 +1,91 @@
+/* One readable, compact table system for both invoice views. */
+@media screen{
+html:root body.workdesk-app #combined-card,html:root body.workdesk-app #invoice-card{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;background:var(--surface)!important;padding:16px!important;border:0!important;border-radius:var(--radius)!important;box-shadow:none!important;min-height:0!important}
+html:root body.workdesk-app #combined-card h2,html:root body.workdesk-app #invoice-card h2{font:600 16px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;margin:0 0 10px!important}
+html:root body.workdesk-app #invoice-card h2>.num{display:none!important}
+html:root body.workdesk-app #positions-container .pos-block{background:transparent!important;border:0!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;box-shadow:none!important;padding:8px 0!important;margin:0!important}
+html:root body.workdesk-app #positions-container .pos-title-row{font-size:13px!important}
+html:root body.workdesk-app #positions-container .pill{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;margin:0 8px 0 0!important}
+html:root body.workdesk-app #combined-card table,html:root body.workdesk-app #positions-container table{display:table!important;width:100%!important;border-collapse:collapse!important;table-layout:auto!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;font-size:13px!important;font-variant-numeric:tabular-nums;letter-spacing:0!important}
+html:root body.workdesk-app #combined-card table thead,html:root body.workdesk-app #positions-container table thead{display:table-header-group!important}
+html:root body.workdesk-app #combined-card table tbody,html:root body.workdesk-app #positions-container table tbody{display:table-row-group!important}
+html:root body.workdesk-app #combined-card table tfoot,html:root body.workdesk-app #positions-container table tfoot{display:table-footer-group!important}
+html:root body.workdesk-app #combined-card table tr,html:root body.workdesk-app #positions-container table tr{display:table-row!important;background:transparent!important;border-radius:0!important;box-shadow:none!important}
+html:root body.workdesk-app #combined-card table th,html:root body.workdesk-app #combined-card table td,html:root body.workdesk-app #positions-container table th,html:root body.workdesk-app #positions-container table td{display:table-cell!important;font:400 13px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;padding:3px 5px!important;border:0!important;border-bottom:1px solid var(--border)!important;vertical-align:middle!important;border-radius:0!important;width:auto!important;white-space:normal!important}
+html:root body.workdesk-app #combined-card table th,html:root body.workdesk-app #positions-container table th{background:var(--surface-alt)!important;font-weight:600!important;color:var(--text)!important}
+html:root body.workdesk-app #combined-card table td::before{display:none!important}
+html:root body.workdesk-app #combined-card table td.article,html:root body.workdesk-app #positions-container table td.article{white-space:nowrap!important;color:var(--accent)!important}
+html:root body.workdesk-app #combined-card table .num,html:root body.workdesk-app #positions-container table .num{text-align:right!important;white-space:nowrap!important}
+html:root body.workdesk-app #combined-card table .total td,html:root body.workdesk-app #positions-container table .total td{font-weight:600!important;border-bottom:0!important;background:transparent!important}
+html:root body.workdesk-app #combined-card #inv-grand-total{font-size:18px!important}
+html:root body.workdesk-app .invoice-row-actions{white-space:nowrap!important;text-align:right!important}
+html:root body.workdesk-app table .invoice-row-button{display:inline-grid!important;place-items:center;width:24px!important;min-width:24px!important;height:24px!important;min-height:24px!important;padding:2px!important;border-radius:4px!important;background:transparent!important;color:var(--accent)!important;margin:0 1px!important;border:0!important}
+html:root body.workdesk-app table .invoice-row-button:disabled{opacity:.25!important}
+html:root body.workdesk-app table .invoice-row-button .ui-icon{width:16px;height:16px}
+html:root body.workdesk-app table .invoice-row-actions-head{width:38px!important;white-space:nowrap!important;font-size:11px!important}
+html:root body.workdesk-app #positions-container table input.qty-input{font:400 13px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;min-height:24px!important;height:24px!important;max-width:64px!important;border-radius:4px!important}
+html:root body.workdesk-app #combined-card .table-wrap,html:root body.workdesk-app #positions-container .table-wrap{overflow-x:auto!important}
+@media(max-width:767px){html:root body.workdesk-app #combined-card,html:root body.workdesk-app #invoice-card{padding:8px!important}html:root body.workdesk-app #combined-card table,html:root body.workdesk-app #positions-container table{min-width:620px!important}html:root body.workdesk-app table .invoice-row-button{width:28px!important;height:28px!important;min-height:28px!important}}
+.preview-viewer-head{gap:12px;min-height:40px}
+.preview-viewer-title{flex:1;min-width:0;font-size:14px;font-weight:600;color:var(--text);overflow-wrap:anywhere;line-height:1.25}
+.preview-viewer-counter{flex:none;white-space:nowrap;font-size:12px;color:var(--secondary)}
+@media(max-width:767px){.preview-viewer-title{font-size:13px}}
+}
+@media print{.invoice-row-actions,.invoice-row-actions-head{display:none!important}}
+@media screen{html:root body.workdesk-app #combined-card table td.invoice-row-actions,html:root body.workdesk-app #positions-container table td.invoice-row-actions{white-space:nowrap!important}}
+@media screen{html:root body.workdesk-app #positions-container .pos-block table tbody tr.row-item>td{font:400 13px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;padding:3px 5px!important}}
+@media screen{html:root body.workdesk-app #combined-card table:has(#inv-grand-total) .total td:first-child{width:85%!important;white-space:nowrap!important}}
+
+@media screen {
+html:root body.workdesk-app #combined-card h2,html:root body.workdesk-app #invoice-card h2{font-size:17px!important;font-weight:650!important}
+html:root body.workdesk-app #combined-card table th,html:root body.workdesk-app #positions-container table th{font-size:12px!important;color:var(--secondary)!important;font-weight:600!important;background:var(--surface-alt)!important}
+html:root body.workdesk-app #combined-card table tr.design-selected,html:root body.workdesk-app #combined-card table tr.invoice-keyboard-selected,html:root body.workdesk-app #positions-container table tr.invoice-keyboard-selected{background:var(--accent-soft)!important}
+html:root body.workdesk-app #combined-card table tbody tr:hover,html:root body.workdesk-app #positions-container table tbody tr:hover{background:var(--hover-surface)!important}
+html:root body.workdesk-app #combined-card table tr:focus-visible,html:root body.workdesk-app #positions-container table tr:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+html:root body.workdesk-app tr.row-item{scroll-margin-top:68px;scroll-margin-bottom:12px}
+html:root body.workdesk-app #positions-container .pos-block{background:var(--surface-alt)!important;padding:10px!important;border:0!important;border-radius:14px!important;margin:0 0 8px!important}
+html:root body.workdesk-app #positions-container .pos-title-row>b{font-size:14px!important;font-weight:600!important}
+html:root body.workdesk-app #combined-card table .article,html:root body.workdesk-app #positions-container table .article{font-weight:500!important}
+html:root body.workdesk-app #positions-container table input.qty-input{border-radius:7px!important;border:1px solid var(--border)!important;background:var(--surface)!important}
+html:root body.workdesk-app #positions-container .pos-title-row button{min-height:28px!important;padding:4px 8px!important;font-size:11px!important;border-radius:8px!important;background:transparent!important}
+@media(max-width:767px){html:root body.workdesk-app #combined-card,html:root body.workdesk-app #invoice-card{padding:12px!important;border-radius:var(--radius)!important}}
+}
+
+/* Center quantities, prices, amounts and photo actions in both invoice tables. */
+html:root body.workdesk-app #combined-card table th.num,
+html:root body.workdesk-app #combined-card table td.num,
+html:root body.workdesk-app #positions-container table th.num,
+html:root body.workdesk-app #positions-container table td.num,
+html:root body.workdesk-app #combined-card table th.invoice-row-actions-head,
+html:root body.workdesk-app #combined-card table td.invoice-row-actions,
+html:root body.workdesk-app #positions-container table th.invoice-row-actions-head,
+html:root body.workdesk-app #positions-container table td.invoice-row-actions,
+html:root body.workdesk-app #positions-container table input.qty-input{text-align:center!important}
+
+/* Hide native number steppers while retaining numeric input behavior. */
+html:root body.workdesk-app input[type="number"]{appearance:textfield!important;-moz-appearance:textfield!important}
+html:root body.workdesk-app input[type="number"]::-webkit-inner-spin-button,
+html:root body.workdesk-app input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none!important;margin:0!important}
+/* Keep both row actions on the same baseline with centered icons. */
+@media screen{
+html:root body.workdesk-app #positions-container table td.invoice-row-actions>button{display:inline-grid!important;place-items:center!important;vertical-align:middle!important;float:none!important;width:24px!important;min-width:24px!important;height:24px!important;min-height:24px!important;padding:2px!important;margin:0 1px!important;line-height:1!important}
+html:root body.workdesk-app #positions-container table td.invoice-row-actions>button .ui-icon{display:block!important;width:16px!important;height:16px!important;margin:0!important}
+@media(max-width:767px){html:root body.workdesk-app #positions-container table td.invoice-row-actions>button{width:28px!important;min-width:28px!important;height:28px!important;min-height:28px!important}}
+}
+
+/* Manual part entry uses the same compact controls as the calculator. */
+@media screen {
+html:root body.workdesk-app #positions-container .add-row{display:grid!important;grid-template-columns:minmax(0,1fr) 64px auto!important;align-items:center!important;gap:8px!important;margin-top:10px!important;overflow:visible!important}
+html:root body.workdesk-app #positions-container .add-row .art-autocomplete{min-width:0!important;width:100%!important}
+html:root body.workdesk-app #positions-container .add-row input{box-sizing:border-box!important;height:40px!important;min-height:40px!important;width:100%!important;min-width:0!important;margin:0!important;padding:8px 12px!important;border:1px solid var(--border)!important;border-radius:10px!important;background:var(--surface)!important;color:var(--text)!important;box-shadow:none!important;font:400 13px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important}
+html:root body.workdesk-app #positions-container .add-row input[type=number]{text-align:center!important;padding-inline:4px!important;font-variant-numeric:tabular-nums}
+html:root body.workdesk-app #positions-container .add-row input::placeholder{color:var(--secondary)!important;opacity:1!important}
+html:root body.workdesk-app #positions-container .add-row input:focus{outline:0!important;border-color:var(--accent)!important;box-shadow:0 0 0 3px var(--accent-soft)!important}
+html:root body.workdesk-app #positions-container .add-row>button{display:flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap!important;box-sizing:border-box!important;height:40px!important;min-height:40px!important;min-width:0!important;width:auto!important;margin:0!important;padding:8px 14px!important;border:0!important;border-radius:10px!important;background:var(--accent)!important;color:#fff!important;box-shadow:none!important;font:600 13px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important}
+html:root body.workdesk-app #positions-container .add-row>button:hover{filter:brightness(.94)}
+html:root body.workdesk-app #positions-container .add-row>button:focus-visible{outline:2px solid var(--accent)!important;outline-offset:3px!important}
+html:root body.workdesk-app #positions-container .add-row .art-dd{background:var(--surface)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:12px!important;box-shadow:0 8px 24px #0002!important;padding:4px!important}
+html:root body.workdesk-app #positions-container .add-row .art-dd-item{border-radius:8px!important;font:400 13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important}
+html:root body.workdesk-app #positions-container .add-row .art-dd-item:hover{background:var(--accent-soft)!important;color:var(--accent)!important}
+@media(max-width:575px){html:root body.workdesk-app #positions-container .add-row{grid-template-columns:64px minmax(0,1fr)!important}html:root body.workdesk-app #positions-container .add-row .art-autocomplete{grid-column:1/-1!important}html:root body.workdesk-app #positions-container .add-row>button{width:100%!important}}
+}

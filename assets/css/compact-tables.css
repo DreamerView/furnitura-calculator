@@ -1,0 +1,97 @@
+/* Dense tables across invoice, article catalog, matrix editor and dealer prices. */
+html:root body table{border-collapse:collapse!important;border-spacing:0!important;margin-top:0!important;margin-bottom:0!important}
+html:root body table th,html:root body table td{padding:4px 6px!important;line-height:1.2!important;height:auto!important}
+html:root body table th{padding-top:6px!important;padding-bottom:6px!important}
+html:root body table tr{min-height:0!important}
+html:root body table td p,html:root body table td .partname,html:root body table td .partcode{margin:0!important;padding:0!important;line-height:1.2!important}
+html:root body table td .pricing-name,html:root body table td small{margin-top:2px!important;line-height:1.2!important}
+html:root body table input:not([type=checkbox]):not([type=radio]),html:root body table select{min-height:28px!important;height:28px!important;padding:3px 6px!important;margin:0!important}
+html:root body table button{min-height:26px!important;height:auto!important;padding:3px 6px!important;margin:0!important}
+html:root body table input[type=checkbox],html:root body table input[type=radio]{margin:0!important}
+html:root body .pricing-table tr{gap:6px!important;padding-top:8px!important;padding-bottom:8px!important}
+html:root body .pricing-table td:before{margin-bottom:3px!important}
+html:root body .bomwrap,html:root body .pickscroll,html:root body .table-wrap{padding-top:0!important;padding-bottom:0!important}
+html:root body .input-card .config-title-with-system{justify-content:flex-start!important}
+html:root body .input-card .config-system-switcher{margin-left:0!important}
+@media print{html:root body table th,html:root body table td{padding:3px 5px!important}}
+/* Override the older fixed invoice and matrix row sizes, including card rows. */
+html:root body #combined-card table th,html:root body #combined-card table td,
+html:root body.workdesk-app #positions-container .pos-block table th,
+html:root body.workdesk-app #positions-container .pos-block table td{padding:2px 4px!important;line-height:1.2!important;height:auto!important}
+html:root body #combined-card .total td{padding:4px!important}
+html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item{height:auto!important;min-height:0!important}
+html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item>td{padding:2px 4px!important;line-height:1.2!important}
+html:root body #combined-tbody tr.row-item{padding:4px 0!important;gap:2px 6px!important}
+html:root body #combined-tbody tr.row-item td{padding:0!important;line-height:1.2!important}
+html:root body #combined-tbody tr.row-item td:before{margin-bottom:1px!important}
+html:root body.workdesk-configurator .matrix thead th,
+html:root body.workdesk-configurator .matrix td{height:auto!important;padding:2px 4px!important}
+html:root body.workdesk-configurator .cellbutton{min-height:28px!important;padding:3px 5px!important}
+html:root body.workdesk-configurator .cellbutton small{margin-top:1px!important}
+html:root body .pricing-table td{padding:2px 4px!important}
+html:root body #positions-container table input.qty-input,
+html:root body #combined-card table input,
+html:root body.workdesk-configurator table input,
+html:root body .pricing-table input[type=number]{min-height:28px!important;height:28px!important;padding:3px 6px!important;margin:0!important}
+@media(max-width:640px){html:root body .pricing-table td{padding:0!important}}
+/* Dense position tables and smaller surrounding position cards. */
+html:root body.workdesk-app #positions-container{gap:10px!important}
+html:root body.workdesk-app #positions-container .pos-block{padding:10px!important}
+html:root body.workdesk-app #positions-container .pos-title-row{margin:0 0 5px!important;gap:6px!important}
+html:root body.workdesk-app #positions-container .swatch-row{gap:4px!important;margin:5px 0!important}
+html:root body.workdesk-app #positions-container .pill{padding:2px 4px!important;font-size:10px!important}
+html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item>td{padding:1px 3px!important;line-height:1.15!important;font-size:12px!important}
+html:root body.workdesk-app #positions-container table input.qty-input{height:24px!important;min-height:24px!important;padding:1px 4px!important}
+html:root body.workdesk-app #positions-container table button.small{height:22px!important;min-height:22px!important;padding:1px 4px!important}
+html:root body.workdesk-app #positions-container .add-row{gap:5px!important;margin-top:7px!important}
+/* Compact the complete standalone configurator, including all editor dialogs. */
+html:root body.workdesk-configurator .wrap{padding:14px 16px!important}
+html:root body.workdesk-configurator header{padding:0!important;margin-bottom:10px!important;gap:10px!important}
+html:root body.workdesk-configurator .brand h1{font-size:23px!important}
+html:root body.workdesk-configurator button:not(.cellbutton){min-height:30px!important;padding:5px 9px!important;font-size:12px!important}
+html:root body.workdesk-configurator input:not([type=checkbox]):not([type=radio]):not([type=file]),html:root body.workdesk-configurator select{min-height:30px!important;height:30px!important;padding:4px 7px!important;font-size:13px!important}
+html:root body.workdesk-configurator textarea{min-height:65px!important;padding:6px 8px!important;font-size:13px!important}
+html:root body.workdesk-configurator label{gap:4px!important;font-size:12px!important}
+html:root body.workdesk-configurator .brand{gap:8px!important}
+html:root body.workdesk-configurator .toolbar,html:root body.workdesk-configurator .toolbar>div{gap:6px!important}
+html:root body.workdesk-configurator .familytabs{gap:6px!important;margin:10px 0!important}
+html:root body.workdesk-configurator .tabs{padding:4px!important;margin:8px 0!important;gap:4px!important}
+html:root body.workdesk-configurator .topline{padding:10px!important;margin:8px 0!important;gap:8px!important}
+html:root body.workdesk-configurator .sheettitle{margin:12px 2px 8px!important;gap:10px!important}
+html:root body.workdesk-configurator .sheettitle h1{font-size:19px!important}
+html:root body.workdesk-configurator .legend{padding:6px 2px!important;gap:10px!important}
+html:root body.workdesk-configurator .calculation{padding:12px!important;margin:8px 0 10px!important;gap:8px!important}
+html:root body.workdesk-configurator .calculation h2{font-size:18px!important;margin:0 0 4px!important}
+html:root body.workdesk-configurator .calculation p{margin:0!important;font-size:12px!important}
+html:root body.workdesk-configurator .calculated,html:root body.workdesk-configurator .order{padding:12px!important;margin:8px 0!important}
+html:root body.workdesk-configurator .options{padding:10px 12px!important;gap:8px!important;margin:8px 0!important}
+html:root body.workdesk-configurator footer{padding:10px 2px!important;gap:12px!important;font-size:11px!important}
+html:root body.workdesk-configurator .dialoghead{padding:12px 14px!important;gap:8px!important}
+html:root body.workdesk-configurator .dialoghead h2{font-size:18px!important;margin:0!important}
+html:root body.workdesk-configurator .dialoghead small{margin:0 0 3px!important}
+html:root body.workdesk-configurator .bomwrap,html:root body.workdesk-configurator .pickscroll{padding:0 12px!important}
+html:root body.workdesk-configurator .editTools,html:root body.workdesk-configurator .editbottom,html:root body.workdesk-configurator .searchbar{padding:10px 12px!important;gap:6px!important}
+html:root body.workdesk-configurator .rangegrid{padding:8px 12px 12px!important;gap:12px!important}
+html:root body.workdesk-configurator .range-dialog>p{padding:10px 12px!important;margin:0!important}
+html:root body.workdesk-configurator .small-dialog{padding:14px!important}
+html:root body.workdesk-configurator .small-dialog label{margin:8px 0!important}
+html:root body.workdesk-configurator .small-dialog h2{font-size:19px!important;margin-bottom:10px!important}
+html:root body.workdesk-configurator .matrix tbody th{font-size:12px!important;line-height:1.15!important}
+html:root body.workdesk-configurator .matrix td .cellbutton{font-size:12px!important;line-height:1.15!important;min-height:24px!important;padding:2px 3px!important}
+/* Keep explicit ordering controls beside each image or video. */
+html:root body .advertising-media-select{min-width:0;flex:1}
+html:root body .advertising-media-item .advertising-move{width:34px!important;min-width:34px!important;height:34px!important;padding:6px!important;flex:0 0 auto}
+html:root body .advertising-media-item{gap:5px!important}
+html:root body .advertising-media-item .advertising-move:disabled{opacity:.35!important}
+@media(max-width:640px){html:root body.workdesk-configurator .wrap{padding:8px!important}html:root body .advertising-media-item .advertising-move{width:30px!important;min-width:30px!important;height:32px!important;padding:5px!important}}
+html:root body.workdesk-configurator>header{padding:12px 16px!important;margin:0!important}
+html:root body.workdesk-configurator main{padding:12px 16px 18px!important}
+html:root body.workdesk-configurator .families{padding:4px 16px 8px!important;gap:6px!important}
+html:root body.workdesk-configurator .variants{margin:0 16px!important;padding:4px!important;gap:5px!important}
+html:root body.workdesk-configurator .kit-tabs{gap:4px!important}
+html:root body.workdesk-configurator .kit-tabs .variant{width:180px!important;max-width:180px!important;flex-basis:180px!important;min-height:30px!important;padding:5px 9px!important;font-size:12px!important}
+html:root body.workdesk-configurator .sheetbar{padding:10px 12px!important;gap:8px!important;border-radius:14px!important}
+html:root body.workdesk-configurator .brandmark{width:32px!important;height:32px!important;font-size:20px!important}
+html:root body.workdesk-configurator .brand b{font-size:19px!important}
+html:root body.workdesk-configurator .brand small{font-size:11px!important;margin-top:2px!important}
+@media(max-width:640px){html:root body.workdesk-configurator>header,html:root body.workdesk-configurator main{padding:8px!important}html:root body.workdesk-configurator .families{padding:4px 8px!important}html:root body.workdesk-configurator .variants{margin:0 8px!important}}

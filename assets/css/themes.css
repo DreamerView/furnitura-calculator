@@ -1,0 +1,1202 @@
+/* FUTURUSS 2026.10.06.37 — WorkDesk grouped visual system.
+   Server theme IDs, routes and all application behavior stay unchanged.
+   Only appearance and responsive presentation are defined here. */
+:root {
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+ color-scheme:light;
+ --bg:#f2f2f7;--surface:#fff;--surface-alt:#f5f5f7;--card:#fff;
+ --text:#1c1c1e;--ink:#1c1c1e;--secondary:#73737b;--muted:#8e8e93;
+ --accent:#087aff;--accent-dark:#0066dc;--accent-strong:#0066dc;
+ --accent-soft:#eaf3ff;--hover-surface:#eaf3ff;--action:#0070ed;--action-hover:#0064d6;
+ --border:#e5e5ea;--separator:rgba(60,60,67,.16);--search-bg:#e5e5eb;
+ --glass:#f2f2f7ef;--shadow:none;--radius:22px;
+ --ok:#248a3d;--warn:#ad6b0d;--err:#d92d20;
+ --modal-bg:#f2f2f7;--modal-card:#fff;--modal-raised:#f5f5f7;
+ --ui-accent:var(--accent);--ui-radius:13px;--ui-bg:var(--bg);--ui-font:14px;--ui-pad:10px;--ui-field:46px;
+}
+/* Keep all five persisted theme identifiers within the WorkDesk visual family. */
+html[data-interface-theme=default]{--radius:22px}
+html[data-interface-theme=soft]{--radius:26px}
+html[data-interface-theme=easy]{--ui-font:16px;--ui-field:50px;--ui-pad:12px}
+html[data-interface-theme=glossy]{--radius:24px}
+html[data-interface-theme=material]{--radius:20px}
+@media(prefers-color-scheme:dark){
+ :root {
+  color-scheme:dark;
+  --bg:#000;--surface:#1c1c1e;--surface-alt:#28282a;--card:#1c1c1e;
+  --text:#f5f5f7;--ink:#f5f5f7;--secondary:#a1a1a6;--muted:#8e8e93;
+  --accent:#409cff;--accent-dark:#409cff;--accent-strong:#2388f5;
+  --accent-soft:#132a43;--hover-surface:#263b55;--action:#087aff;--action-hover:#2388f5;
+  --border:#38383a;--separator:#38383a;--search-bg:#242426;--glass:#000000ef;
+  --modal-bg:#111113;--modal-card:#232326;--modal-raised:#2d2d31;
+  --ok:#50c878;--warn:#e9ad45;--err:#ff6961;
+ }
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+html:root body{margin:0;background:var(--bg)!important;color:var(--text)!important;font:var(--ui-font)/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;letter-spacing:-.015em}
+body,button,input,select,textarea{font-family:inherit}
+button,input,select,textarea{font-size:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}
+a{color:var(--accent);text-decoration:none}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.2}
+h1{font-size:32px;font-weight:730}
+h2{font-size:22px;font-weight:680}
+h3{font-size:18px;font-weight:650}
+p{line-height:1.5}
+::selection{background:var(--accent-soft);color:var(--text)}
+input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}
+:focus-visible{outline:3px solid var(--accent)!important;outline-offset:3px}
+[hidden],[v-cloak]{display:none!important}
+@media screen {
+ html:root body button:where(:not(.handle-color):not(.cellbutton):not(.spa-password-toggle):not(.photo-dot):not(.ad-dot)),
+ html:root body .spa-btn,html:root body .session-pill {
+  min-height:44px;padding:10px 14px;border:0!important;border-radius:13px!important;
+  background:var(--surface-alt)!important;color:var(--accent)!important;
+  font-size:14px!important;font-weight:600;letter-spacing:-.01em;
+  box-shadow:none!important;text-shadow:none;transition:background .15s ease,color .15s ease;transform:none!important;
+ }
+ html:root body button:hover:where(:not(:disabled):not(.handle-color):not(.cellbutton):not(.spa-password-toggle)),html:root body a.spa-btn:hover,html:root body .session-pill:hover{background:var(--hover-surface)!important;color:var(--accent)!important;filter:none!important;transform:none!important}
+ html:root body button.primary,html:root body .spa-btn.primary,html:root body .session-pill.primary,
+ html:root body button.calc,html:root body button.accent,html:root body .estimate-primary,
+ html:root body #matrixImportButton,html:root body #erpTransferButton,
+ html:root body .estimate-dialog-close,html:root body #saveNow,
+ html:root body .interface-design-dialog footer button{
+  background:var(--action)!important;color:#fff!important;border:0!important
+ }
+ html:root body button.primary:hover,html:root body .spa-btn.primary:hover,html:root body button.calc:hover,html:root body button.accent:hover,html:root body .estimate-primary:hover,html:root body #saveNow:hover{background:var(--action-hover)!important;color:#fff!important}
+ html:root body button.danger,html:root body .spa-btn.danger,html:root body .estimate-danger,html:root body .more-item.danger{color:var(--err)!important;background:var(--surface-alt)!important}
+ html:root body button.danger-solid,html:root body .spa-btn.danger-solid{color:#fff!important;background:#d92d20!important}
+ html:root body input:where(:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=file]):not([type=color])),
+ html:root body select,html:root body textarea {
+  min-height:var(--ui-field);height:auto!important;padding:11px 13px!important;
+  border:1px solid var(--border)!important;border-radius:12px!important;
+  background:var(--surface-alt)!important;color:var(--text)!important;
+  font-size:var(--ui-font)!important;font-weight:400;line-height:1.35;box-shadow:none!important;
+ }
+ html:root body input:focus,html:root body select:focus,html:root body textarea:focus{border-color:var(--accent)!important;outline:3px solid var(--accent-soft)!important;outline-offset:0!important;box-shadow:none!important}
+ html:root body input[type=checkbox],html:root body input[type=radio]{width:18px!important;height:18px!important;min-height:18px!important;flex:none;accent-color:var(--accent);padding:0!important}
+ html:root body label{font-size:13px!important;color:var(--secondary);font-weight:500;line-height:1.4}
+ html:root body .hint,html:root body .meta,html:root body .spa-helper,html:root body .standalone-hint,html:root body .design-caption,html:root body .sheetnote{color:var(--secondary)!important;font-size:12px!important;line-height:1.5!important}
+ html:root body .ui-icon{color:inherit;vertical-align:middle;flex:none}
+ html:root body .spa-btn .ui-icon,html:root body button .ui-icon{width:19px;height:19px}
+ html:root body .card,html:root body .design-section,html:root body .design-upload,html:root body .design-preview,
+ html:root body .management-card,html:root body .standalone-card,
+ html:root body .calculated,html:root body .order,html:root body .check-card {
+  background:var(--surface)!important;color:var(--text)!important;border:0!important;border-radius:var(--radius)!important;box-shadow:none!important;
+ }
+ html:root body .pill,html:root body .tag,html:root body .management-tag,html:root body .soon-badge{background:var(--surface-alt)!important;color:var(--secondary)!important;border:0!important;border-radius:8px;font-size:12px;font-weight:500;padding:4px 8px}
+ html:root body .tag.client{background:var(--accent-soft)!important;color:var(--accent)!important}
+ html:root body .state{background:var(--surface-alt)!important;color:var(--ok)!important;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:550}
+ html:root body .state.blocked{color:var(--err)!important}
+ html:root body .management-notice,html:root body .msg,html:root body .warn,html:root body .error{
+  border:0!important;border-radius:13px!important;padding:14px 16px!important;font-size:13px!important;background:var(--accent-soft)!important;color:var(--accent)!important;
+ }
+ html:root body .management-notice.danger,html:root body .msg.err,html:root body .error{color:var(--err)!important;background:var(--surface-alt)!important}
+ html:root body .msg.warn,html:root body .warn{background:var(--surface-alt)!important;color:var(--warn)!important}
+ html:root body .msg.ok,html:root body .good,html:root body .login-availability.available{color:var(--ok)!important}
+ html:root body .spa-error,html:root body .login-availability.taken{color:var(--err)!important;font-size:13px}
+ html:root body .price-default,html:root body .manual-approval{color:var(--warn)!important}
+ /* Boot screen and authentication use the same palette before SPA mounts. */
+ html.app-booting:root,html.app-booting:root body,html:root #appPreloader{background:var(--bg)!important;color:var(--text)!important}
+ html:root #appPreloader{font-family:inherit}
+ html:root .preloader-card{width:min(390px,calc(100vw - 40px));padding:32px;border:0;border-radius:26px;background:var(--surface);box-shadow:none}
+ html:root .preloader-mark{width:58px;height:58px;border-radius:16px;background:var(--action);color:#fff;font-size:21px;font-weight:750}
+ html:root .preloader-spinner{border:2px solid var(--border);border-top-color:var(--accent)}
+ html:root .preloader-title{font-size:19px;font-weight:650;color:var(--text)}
+ html:root .preloader-text{font-size:13px;color:var(--secondary)}
+ html:root .standalone-view{background:var(--bg)!important;min-height:100dvh;display:grid;place-items:center;padding:32px 20px}
+ html:root .standalone-card{width:min(480px,100%);padding:30px}
+ html:root .standalone-card h1{font-size:30px;margin:26px 0 20px;line-height:1.2}
+ html:root .standalone-brand,html:root .management-brand{background:transparent!important;color:var(--text)!important;font-size:20px;font-weight:730;letter-spacing:-.04em;padding:0;border:0;border-radius:0}
+ html:root .standalone-brand::before,html:root .management-brand::before{content:'F';display:inline-grid;place-items:center;width:36px;height:36px;margin-right:10px;background:var(--action);color:#fff;border-radius:11px;font-size:21px;font-weight:750;vertical-align:middle}
+ html:root .standalone-brand-row{gap:12px;flex-wrap:wrap}
+ html:root .language-control select{max-width:140px;min-width:100px;min-height:40px;padding:8px 10px!important;font-size:13px!important}
+ html:root .field,html:root .spa-field{margin-bottom:18px}
+ html:root .field>label,html:root .spa-field>label{display:block;margin-bottom:7px}
+ html:root .field input,html:root .field select,html:root .field textarea{width:100%}
+ html:root .spa-password-wrap,html:root .spa-password{position:relative;width:100%}
+ html:root body .spa-password-wrap input,html:root body .spa-password input{display:block;width:100%;padding-right:52px!important}
+ html:root body .spa-password-toggle{position:absolute;top:50%;right:5px;transform:translateY(-50%)!important;width:38px;height:38px;min-height:38px;padding:0;border:0;border-radius:10px;background:transparent!important;color:var(--secondary)!important;display:grid;place-items:center}
+ html:root body .spa-password-toggle:hover{background:var(--hover-surface)!important}
+ html:root body .auth-tabs,html:root body .spa-auth-tabs,html:root body .type-picker{display:grid;grid-template-columns:1fr 1fr;background:var(--surface-alt);padding:4px;gap:4px;border-radius:13px;margin-bottom:20px;border:0}
+ html:root body .auth-tabs button,html:root body .spa-auth-tabs button,html:root body .type-picker button{background:transparent!important;color:var(--secondary)!important;border-radius:10px!important;font-size:13px!important}
+ html:root body .auth-tabs button.active,html:root body .spa-auth-tabs button.active,html:root body .type-btn.active{background:var(--surface)!important;color:var(--accent)!important;box-shadow:0 1px 4px #00000008!important}
+ html:root .standalone-actions{gap:10px;margin-top:18px}
+ /* Management: WorkDesk desktop sidebar, grouped lists, mobile dock. */
+ html:root .management-view{background:var(--bg)!important;color:var(--text)!important;font:inherit!important;min-height:100dvh}
+ html:root .management-wrap{max-width:1440px;padding:30px 36px 36px 280px;margin:auto}
+ html:root .management-topbar{min-height:62px;margin-bottom:24px;gap:18px}
+ html:root .management-role{font-size:12px;color:var(--secondary);background:var(--surface);border-radius:8px;padding:5px 9px}
+ html:root .management-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+ html:root .management-nav{position:fixed;top:0;bottom:0;left:0;width:240px;z-index:30;display:flex;flex-direction:column;gap:8px;padding:116px 16px 24px;margin:0;border:0;border-right:1px solid var(--border);background:var(--bg)}
+ html:root .management-nav::before{content:'FUTURUSS';position:absolute;top:36px;left:28px;color:var(--text);font-size:21px;font-weight:750;letter-spacing:-.035em}
+ html:root body .management-nav-btn,html:root body .management-nav-link{display:flex;align-items:center;gap:12px;min-height:52px;padding:12px 14px!important;margin:0;width:100%;border:0;border-radius:13px!important;background:transparent!important;color:var(--secondary)!important;text-align:left;font-size:15px!important;font-weight:550;line-height:1.35;text-decoration:none}
+ html:root body .management-nav-btn.router-link-active,html:root body .management-nav-link.router-link-active{background:var(--surface)!important;color:var(--accent)!important;font-weight:650}
+ html:root .management-nav-btn.router-link-active::after,html:root .management-nav-link.router-link-active::after{content:none}
+ html:root .management-nav-btn.soon{opacity:.5;cursor:default}
+ html:root .management-section-head{padding:26px 26px 20px;gap:18px;border:0}
+ html:root .management-section-head h1{font-size:28px;margin:0 0 8px;font-weight:700}
+ html:root .management-section-head p{font-size:14px;color:var(--secondary);margin:0;max-width:580px}
+ html:root .management-content{padding:0 26px 26px}
+ html:root .management-empty{padding:52px 20px;text-align:center;font-size:14px;color:var(--secondary)}
+ html:root .management-empty strong{display:block;font-size:18px;color:var(--text);margin-bottom:8px}
+ html:root .tree,html:root .management-tree{display:grid;gap:0}
+ html:root .node,html:root .management-node{background:var(--surface)!important;border:0!important;border-radius:0!important;box-shadow:none;margin:0!important;overflow:visible}
+ html:root .node+.node,html:root .management-node+.management-node{border-top:1px solid var(--separator)!important}
+ html:root .node-row,html:root .management-node-row{display:flex;align-items:center;gap:18px;padding:20px 0!important;flex-wrap:wrap}
+ html:root .node-main{flex:1;min-width:180px}
+ html:root .node-title,html:root .management-node-title{color:var(--text)!important;font-size:16px;font-weight:600}
+ html:root .node-title-line{gap:8px}
+ html:root .meta{margin-top:6px;overflow-wrap:anywhere}
+ html:root .node-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+ html:root .switch-label{display:inline-flex;gap:6px;align-items:center;font-size:12px!important;color:var(--secondary);margin:0}
+ html:root .children{margin:0 0 0 18px!important;padding:0 0 0 18px!important;border-left:1px solid var(--separator)!important}
+ html:root .more-button{display:grid;place-items:center;width:40px;height:40px;min-height:40px;background:var(--surface-alt);color:var(--secondary);border-radius:50%;border:0;list-style:none}
+ html:root .more-button::-webkit-details-marker{display:none}
+ html:root .more-pop{background:var(--modal-card)!important;border:1px solid var(--border)!important;border-radius:16px!important;padding:6px;box-shadow:0 10px 36px #00000018!important;z-index:50}
+ html:root .more-item{border-radius:10px!important;min-height:44px;padding:12px!important;text-align:left;gap:9px}
+ html:root .advertising-manager{gap:26px;grid-template-columns:minmax(240px,520px) minmax(200px,1fr)}
+ html:root .advertising-preview{background:var(--surface-alt)!important;color:var(--secondary)!important;border:0!important;border-radius:18px!important;min-height:260px}
+ html:root .advertising-tools p,html:root .advertising-tools small{color:var(--secondary);font-size:14px;line-height:1.5}
+ /* Modal sheets retain original dialogs, handlers, form submission and tab order. */
+ html:root .spa-modal-backdrop,html:root .modal{background:rgba(0,0,0,.34)!important;backdrop-filter:blur(8px);padding:24px}
+ html:root .spa-modal,html:root body dialog,html:root .modal-box{background:var(--modal-bg)!important;color:var(--text)!important;border:0!important;border-radius:26px!important;box-shadow:0 24px 70px #00000024!important;max-height:calc(100dvh - 48px)}
+ html:root .spa-modal{width:min(540px,100%);overflow:auto}
+ html:root body dialog{padding:24px}
+ html:root dialog::backdrop{background:rgba(0,0,0,.34);backdrop-filter:blur(8px)}
+ html:root .spa-modal-head,html:root .dialoghead{position:sticky;top:0;z-index:15;align-items:center;gap:14px;min-height:76px;padding:18px 22px;border:0;border-bottom:1px solid var(--separator);background:var(--modal-bg)!important}
+ html:root .spa-modal-head h2,html:root .dialoghead h2{font-size:19px;font-weight:650;text-align:center;margin:0}
+ html:root .spa-modal-head p,html:root .dialoghead small{font-size:12px;line-height:1.45;color:var(--secondary);margin-top:5px;letter-spacing:0}
+ html:root body .spa-icon-btn,html:root body .dialoghead .icon{width:44px;height:44px;min-height:44px;border-radius:50%!important;padding:0!important;background:var(--modal-card)!important;display:grid;place-items:center;color:var(--accent)!important;flex:none}
+ html:root .spa-modal-body{padding:22px}
+ html:root .spa-modal-body .field input,html:root .spa-modal-body .field select,html:root .spa-modal-body .field textarea{background:var(--modal-card)!important}
+ html:root .spa-modal-foot,html:root .editbottom{position:sticky;bottom:0;z-index:14;padding:16px 22px calc(16px + env(safe-area-inset-bottom));gap:10px;background:var(--modal-bg)!important;border:0;border-top:1px solid var(--separator)}
+ html:root .checks{gap:12px}
+ html:root .check-card{padding:15px;gap:10px}
+ html:root .secret{background:var(--modal-card)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:13px;padding:14px;font-size:15px;overflow-wrap:anywhere}
+ html:root .theme-admin-modal{width:min(680px,100%)}
+ html:root .admin-theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ html:root body .admin-theme-card{background:var(--modal-card)!important;border:2px solid transparent!important;border-radius:18px!important;padding:14px!important;gap:10px;min-height:132px;font-size:14px!important;color:var(--text)!important}
+ html:root body .admin-theme-card.active{border-color:var(--accent)!important;background:var(--accent-soft)!important;box-shadow:none!important}
+ html:root .theme-swatch,html:root .theme-mini{height:64px;width:100%;border:1px solid var(--border)!important;border-radius:12px!important;background:linear-gradient(180deg,var(--bg) 0 22%,var(--surface) 22% 80%,var(--accent-soft) 80%)!important;box-shadow:none!important}
+ html:root .swatch-soft{border-radius:17px!important}
+ html:root .swatch-easy{border-width:2px!important}
+ html:root .swatch-glossy{opacity:.8}
+ html:root .swatch-material{border-radius:9px!important}
+ html:root .management-toast,html:root .toast{background:var(--text)!important;color:var(--bg)!important;border:0;border-radius:14px!important;box-shadow:0 6px 24px #00000018!important;font-size:14px;max-width:calc(100vw - 40px);padding:14px 20px;z-index:9000}
+ /* Calculator shell: original IDs, forms, tabs and calculation DOM. */
+ html:root body.workdesk-app .wrap{max-width:1600px!important;margin:0 auto;padding:24px 30px 40px!important}
+ html:root .hero-left{display:flex;align-items:center;gap:24px;min-height:70px;padding:0 0 22px!important;border:0!important;background:var(--bg)!important}
+ html:root .hero-left header{margin:0;flex:none}
+ html:root .hero-left .badge{display:inline-flex;align-items:center;background:transparent!important;color:var(--text)!important;font-size:21px;font-weight:730;border:0;border-radius:0;padding:0;letter-spacing:-.04em}
+ html:root .hero-left .badge::before{content:'F';width:38px;height:38px;display:grid;place-items:center;background:var(--action);color:#fff;border-radius:11px;margin-right:10px;font-size:22px;letter-spacing:0}
+ html:root .tabs{display:flex;align-items:center;gap:6px;flex:1;margin:0!important;padding:4px;border:0;border-radius:15px;background:var(--surface-alt)!important}
+ html:root body .tabs .tab-btn{min-height:46px;padding:11px 18px!important;border:0!important;border-radius:12px!important;background:transparent!important;color:var(--secondary)!important;font-size:15px!important;font-weight:550;margin:0}
+ html:root body .tabs .tab-btn.active{background:var(--surface)!important;color:var(--accent)!important;font-weight:650;border:0!important}
+ html:root .header-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto}
+ html:root body .header-icon-button,html:root body .header-catalog{height:44px!important;min-height:44px;width:auto;border:0!important;border-radius:13px!important;background:var(--surface)!important;color:var(--accent)!important;padding:10px 13px!important;box-shadow:none!important}
+ html:root body .header-icon-button{width:44px!important;min-width:44px}
+ html:root .header-catalog span,html:root .catalog-tab-btn span{font-size:14px}
+ html:root .header-catalog span::before,html:root .catalog-tab-btn span::before{content:none!important}
+ html:root #futurussSessionMount{gap:8px}
+ html:root .session-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+ html:root body .session-pill{background:var(--surface)!important;font-size:13px!important}
+ html:root .profile-bar{background:var(--surface)!important;border:0!important;border-radius:18px;padding:14px 16px!important;gap:10px;margin:0 0 20px!important}
+ html:root .design-summary{gap:12px;padding:0 0 20px}
+ html:root .design-chip{background:var(--surface)!important;color:var(--secondary)!important;border:0;border-radius:13px;padding:10px 14px;font-size:14px}
+ html:root body .layout-grid{display:grid!important;grid-template-columns:310px minmax(0,1fr) 290px!important;gap:22px!important;align-items:start}
+ html:root body .input-card{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;position:static!important;overflow:visible!important;max-height:none!important}
+ html:root body .design-section{padding:22px!important;margin-bottom:18px!important}
+ html:root body .design-section h3{font-size:18px!important;font-weight:650;color:var(--text)!important;margin:0 0 16px!important}
+ html:root body .design-section label{margin:12px 0 7px!important;font-size:13px!important}
+ html:root body .design-section .row2{gap:12px}
+ html:root body .design-section .hint{font-size:12px!important;line-height:1.5!important;margin:10px 0 0!important}
+ html:root .design-upload{padding:18px!important;margin-bottom:18px!important}
+ html:root .design-upload>div{background:transparent!important;border:0!important}
+ html:root .design-actions{display:grid;gap:10px;margin:18px 0}
+ html:root body .design-actions button{min-height:48px!important;margin:0!important;padding:13px!important;font-size:15px!important}
+ html:root .config-system-switcher{background:var(--surface-alt)!important;border:0!important;border-radius:10px;padding:3px!important}
+ html:root body .config-system-switcher .matrix-family{min-height:32px!important;padding:6px 9px!important;background:transparent!important;color:var(--secondary)!important;font-size:12px!important;border-radius:8px!important}
+ html:root body .config-system-switcher .matrix-family.active{background:var(--surface)!important;color:var(--accent)!important}
+ html:root .matrix-family-separator{color:var(--muted)}
+ html:root body .input-card #futuruss-extra-options .useful-options-grid,html:root body #aluminumOptions{gap:8px!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option,html:root body .alu-option-tile{background:var(--surface-alt)!important;border:0!important;border-radius:12px!important;min-height:48px!important;padding:12px!important;margin:0!important;gap:8px!important;font-size:12px!important;line-height:1.4!important;color:var(--text)!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option:has(input:checked),html:root body .alu-option-tile:has(input:checked){background:var(--accent-soft)!important;color:var(--accent)!important}
+ html:root body .estimate-position-name{padding-top:10px!important;margin-top:10px!important;border:0!important}
+ html:root body #combined-card{padding:26px!important;min-height:560px;margin:0!important;background:var(--surface)!important;border:0!important;border-radius:var(--radius)!important}
+ html:root body #combined-card h2{font-size:22px!important;font-weight:680;margin:0 0 20px!important;color:var(--text)!important}
+ html:root body #combined-card .invoice-head{font-size:13px;color:var(--secondary);gap:10px;margin-bottom:18px}
+ html:root body table{font-size:13px;color:var(--text);border-color:var(--border)}
+ html:root body th{background:var(--surface-alt)!important;color:var(--secondary)!important;font-size:12px!important;font-weight:550;letter-spacing:0;text-transform:none}
+ html:root body th,html:root body td{padding:12px 10px;border-bottom:1px solid var(--separator);line-height:1.5}
+ html:root body #combined-card th{padding:12px 8px!important;background:var(--surface-alt)!important;color:var(--secondary)!important;font-size:12px!important}
+ html:root body #combined-card td{padding:14px 8px!important;font-size:13px!important;color:var(--text)!important;border-bottom:1px solid var(--separator)!important;line-height:1.5!important}
+ html:root body #combined-card td.article{color:var(--accent)!important;font-size:13px!important;font-family:inherit;font-weight:550}
+ html:root body .row-item:hover,html:root body .row-item.hinge-kit:hover,html:root body #combined-card .design-selected{background:var(--accent-soft)!important}
+ html:root body .row-item.hinge-kit{background:var(--surface-alt)!important}
+ html:root body #combined-card .total td{border-bottom:0!important;border-top:1px solid var(--separator)!important;font-size:16px!important;font-weight:650;padding-top:20px!important}
+ html:root body #combined-card #inv-grand-total{font-size:30px!important;color:var(--accent)!important;font-weight:730}
+ html:root body #combined-card .qty-input{min-height:36px!important;max-width:76px;padding:6px!important;font-size:13px!important}
+ html:root body #combined-card .document-action-toolbar{display:flex!important;flex-wrap:wrap!important;gap:8px!important;padding:12px 0 0!important;background:transparent!important;border:0!important;border-radius:0;margin:16px 0 0!important;overflow:visible}
+ html:root body #combined-card .document-action-toolbar button,
+ html:root body #combined-card .document-action-toolbar #exportInvoice1C,
+ html:root body #combined-card .document-action-toolbar #erpTransferButton{
+  height:auto!important;min-height:44px!important;padding:10px 12px!important;font-size:13px!important;border-radius:12px!important;border:0!important;flex:1 1 100px!important;background:var(--surface-alt)!important;color:var(--accent)!important;
+ }
+ html:root body #combined-card #erpTransferPanel{color:var(--secondary)!important;background:transparent!important;border:0!important;font-size:12px!important;line-height:1.5!important;margin-top:12px!important}
+ html:root body .design-preview{position:sticky;top:24px;min-height:0!important;padding:22px!important;margin:0!important;overflow:hidden}
+ html:root body .design-preview h2{font-size:20px!important;color:var(--text)!important;margin-bottom:16px}
+ html:root body .design-photo{height:220px!important;padding:16px!important;border-radius:16px!important;background:var(--surface-alt)!important;border:0;color:var(--secondary)!important;font-size:13px!important}
+ html:root .design-photo-thumbs{background:var(--glass)!important;padding:6px;gap:6px;border-radius:10px}
+ html:root body .design-photo-thumb{min-height:36px!important;width:44px!important;padding:3px!important;border-radius:8px!important;background:var(--surface)!important}
+ html:root body .design-photo-thumb.active{outline:2px solid var(--accent);outline-offset:0}
+ html:root .design-part-name{font-size:14px;color:var(--text);line-height:1.5;margin:14px 0}
+ html:root body .design-window{height:250px!important;background:transparent!important}
+ html:root body .design-preview #constructorAdPreview{position:static!important;width:100%!important;height:auto!important;padding:18px 0 0!important;margin-top:18px!important;border:0!important;border-top:1px solid var(--separator)!important;background:transparent!important}
+ html:root body #constructorAdPreview .glass-preview-photo{height:180px!important;min-height:120px!important;padding:14px!important;font-size:12px!important;background:var(--surface-alt)!important;border:0!important;border-radius:16px!important;color:var(--secondary)!important}
+ html:root body .glass-preview-panel h3{font-size:16px;color:var(--text)}
+ html:root body .glass-preview-actions button{min-height:44px!important;font-size:13px!important}
+ html:root .glass-preview-status{color:var(--secondary)!important;font-size:12px!important;line-height:1.5}
+ html:root .design-empty{font-size:14px!important;color:var(--secondary)!important;padding:64px 24px!important;line-height:1.5}
+ html:root .section-title{font-size:13px!important;font-weight:500;color:var(--secondary);letter-spacing:0;text-transform:none;margin:20px 16px 8px}
+ html:root .subtabs{gap:8px;padding:4px;background:var(--surface-alt);border-radius:14px}
+ html:root body .subtab-btn,html:root body .range-chip{min-height:42px;border:0!important;border-radius:11px!important;background:transparent!important;color:var(--secondary)!important;padding:10px 13px!important;font-size:13px!important}
+ html:root body .subtab-btn.active,html:root body .range-chip.active{background:var(--surface)!important;color:var(--accent)!important}
+ html:root .group-details{background:var(--surface)!important;border:0!important;border-radius:18px!important;margin-bottom:14px}
+ html:root .group-details summary,html:root .article-subgroup summary{background:var(--surface-alt)!important;color:var(--text)!important;padding:15px 16px;font-size:15px;font-weight:550}
+ html:root .group-row{padding:13px 16px;border-top:1px solid var(--separator);font-size:13px}
+ html:root .group-row .g-art{color:var(--accent);font-size:13px}
+ html:root .group-row .g-name{font-size:13px;color:var(--text)}
+ html:root .group-row .g-price{color:var(--secondary)}
+ html:root .g-thumb,html:root .g-thumb-empty{width:38px;height:38px;border-radius:10px;background:var(--surface-alt);border:1px solid var(--border)}
+ html:root .g-thumb-count{background:var(--accent);color:#fff;border-radius:7px;font-size:10px}
+ html:root .art-dd{background:var(--modal-card)!important;border:1px solid var(--border);border-radius:14px;box-shadow:0 10px 30px #00000018}
+ html:root .art-dd-item{padding:12px 14px;border-bottom:1px solid var(--separator);font-size:14px;color:var(--text)}
+ html:root .art-dd-item:hover{background:var(--hover-surface)}
+ html:root .art-dd-empty{color:var(--secondary);font-size:13px;padding:14px}
+ html:root .edit-cell{background:var(--surface-alt)!important;border:1px solid var(--border);border-radius:14px;padding:15px}
+ html:root .estimate-save-dialog{width:600px;max-width:calc(100vw - 48px);padding:26px}
+ html:root .estimate-save-dialog h2{font-size:22px;margin-bottom:22px}
+ html:root .estimate-save-panel{background:transparent!important;border:0!important;padding:0!important}
+ html:root body .estimate-save-row{gap:10px!important;margin:14px 0!important;flex-wrap:wrap}
+ html:root body .estimate-save-row input,html:root body .estimate-save-row select,html:root body .estimate-save-row button{height:auto!important;min-height:44px!important;font-size:14px!important;padding:10px 12px!important}
+ html:root .estimate-list-row{background:var(--modal-card)!important;border:0!important;border-radius:12px;padding:14px;gap:10px}
+ html:root .estimate-autosave,html:root .estimate-dialog-status{color:var(--secondary);font-size:13px;line-height:1.5}
+ html:root .estimate-dialog-close{margin-top:20px;width:100%}
+ html:root .photo-strip,html:root .photo-zoom-wrap{background:var(--surface-alt)!important;border-radius:16px}
+ html:root .modal-box{padding:22px}
+ html:root .photo-zoom-icon,html:root .photo-close,html:root .photo-nav{background:var(--modal-card)!important;color:var(--accent)!important;border:0;border-radius:50%!important}
+ html:root body .handle-color{border:2px solid var(--border)!important;border-radius:50%!important;box-shadow:inset 0 0 0 2px var(--surface);width:28px!important;height:28px!important;min-height:28px!important;min-width:28px;padding:0!important}
+ html:root body .handle-color.active{border-color:var(--accent)!important;box-shadow:0 0 0 3px var(--accent-soft),inset 0 0 0 2px var(--surface)!important}
+ /* Standalone kit configurator — same groups, typography and modal sheets. */
+ html:root body.workdesk-configurator>header{display:flex;align-items:center;gap:24px;flex-wrap:wrap;min-height:96px;padding:22px 30px;background:var(--bg)!important;color:var(--text);border:0;margin:0}
+ html:root .workdesk-configurator .brand{min-width:220px;gap:12px}
+ html:root .workdesk-configurator .brandmark{width:42px;height:42px;border:0;border-radius:12px;background:var(--action);color:#fff;font-size:24px;font-weight:750}
+ html:root .workdesk-configurator .brand b{font-size:21px;font-weight:730;letter-spacing:-.04em;color:var(--text)}
+ html:root .workdesk-configurator .brand small{color:var(--secondary);font-size:12px;margin-top:4px}
+ html:root .workdesk-configurator .toolbar{gap:8px;flex:1}
+ html:root .workdesk-configurator .toolbar button{background:var(--surface)!important;font-size:13px!important}
+ html:root .workdesk-configurator .toolbar #saveNow{background:var(--action)!important;color:white!important}
+ html:root .workdesk-configurator .saved{color:var(--secondary);font-size:12px;margin-left:0}
+ html:root .workdesk-configurator .families{background:var(--bg)!important;padding:0 30px 16px;gap:8px}
+ html:root body .family{background:var(--surface)!important;color:var(--secondary)!important;border-radius:13px!important;font-size:15px!important;font-weight:550;min-height:46px}
+ html:root body .family.active{background:var(--accent-soft)!important;color:var(--accent)!important}
+ html:root .workdesk-configurator .variants{margin:0 30px;padding:6px;background:var(--surface)!important;border:0;border-radius:18px;gap:10px;align-items:center}
+ html:root .workdesk-configurator .kit-tabs{gap:6px;align-items:center}
+ html:root body .kit-tabs .variant{padding:12px 16px!important;min-height:46px;width:240px;flex-basis:240px;max-width:240px;border:0;background:transparent!important;color:var(--secondary)!important;font-size:14px!important;font-weight:550;border-radius:12px!important}
+ html:root body .kit-tabs .variant.active{color:var(--accent)!important;background:var(--accent-soft)!important}
+ html:root body .copy-tab{background:var(--surface-alt)!important;box-shadow:none!important;right:6px}
+ html:root .workdesk-configurator main{padding:26px 30px 40px;max-width:1800px;margin:auto}
+ html:root .workdesk-configurator .sheetbar{padding:20px 24px;background:var(--surface);border-radius:22px;gap:16px}
+ html:root .workdesk-configurator .kitlabel{min-width:220px}
+ html:root .workdesk-configurator .kitlabel select{max-width:480px}
+ html:root .workdesk-configurator .sheettitle{margin:26px 4px 16px;gap:18px}
+ html:root .workdesk-configurator .sheettitle h1{font-size:24px;color:var(--text);font-weight:680}
+ html:root .workdesk-configurator .sheettitle span{color:var(--secondary);font-size:13px}
+ html:root .workdesk-configurator .sheet{border:0!important;border-radius:22px;background:var(--surface);max-height:62vh}
+ html:root .matrix{border-collapse:separate;border-spacing:0}
+ html:root .matrix th,html:root .matrix td{border-right:1px solid var(--separator);border-bottom:1px solid var(--separator)}
+ html:root .matrix thead th{height:56px;background:var(--surface-alt)!important;color:var(--secondary)!important;font-size:13px!important;font-weight:600}
+ html:root .matrix tbody th,html:root .matrix .axis{background:var(--surface-alt)!important;color:var(--text)!important;font-size:14px!important}
+ html:root .matrix tbody th small{font-size:12px;color:var(--secondary)}
+ html:root .matrix td{height:64px;background:var(--surface)!important}
+ html:root body .cellbutton{border:0;border-radius:0;min-height:64px;background:transparent!important;color:var(--text)!important;font-size:15px;font-weight:550;padding:12px;box-shadow:none}
+ html:root body .cellbutton:hover{background:var(--hover-surface)!important}
+ html:root .cellbutton small{font-size:11px;color:var(--secondary);margin-top:5px}
+ html:root .cellbutton .statusdot,html:root .dot{background:var(--muted)}
+ html:root .cellbutton.modified .statusdot,html:root .dot.edited{background:var(--warn)}
+ html:root .cellbutton.reviewed .statusdot,html:root .dot.checked{background:var(--ok)}
+ html:root .matrix td.match{background:var(--accent-soft)!important;box-shadow:inset 0 0 0 2px var(--accent)!important}
+ html:root .workdesk-configurator .legend{padding:16px 4px;color:var(--secondary);font-size:12px;gap:20px;flex-wrap:wrap}
+ html:root .workdesk-configurator .calculation{margin:12px 0 20px;padding:24px;background:var(--surface);border:0;border-radius:22px;gap:14px;align-items:flex-end}
+ html:root .workdesk-configurator .calculation h2{font-size:22px}
+ html:root .workdesk-configurator .calculation p{font-size:13px;color:var(--secondary)}
+ html:root .workdesk-configurator .calculated,html:root .workdesk-configurator .order{padding:26px}
+ html:root .workdesk-configurator .choicebuttons{gap:10px}
+ html:root .workdesk-configurator .resulttotal{font-size:26px;color:var(--accent);font-weight:700}
+ html:root .workdesk-configurator footer{padding:24px 4px;color:var(--secondary);font-size:12px;gap:24px}
+ html:root .workdesk-configurator .catalog-links{gap:14px}
+ html:root .workdesk-configurator dialog{padding:0}
+ html:root .workdesk-configurator .editor-dialog{width:1100px;max-width:calc(100vw - 48px)}
+ html:root .workdesk-configurator .picker-dialog{width:1000px;max-width:calc(100vw - 48px)}
+ html:root .workdesk-configurator .range-dialog{width:1080px;max-width:calc(100vw - 48px)}
+ html:root .workdesk-configurator .small-dialog{width:520px;max-width:calc(100vw - 48px);padding:26px}
+ html:root .workdesk-configurator .small-dialog h2{font-size:24px}
+ html:root .workdesk-configurator .bomwrap,html:root .workdesk-configurator .pickscroll{padding:0 24px;max-height:58vh}
+ html:root .workdesk-configurator .bom th,html:root .workdesk-configurator .picktable th{padding:14px 10px;background:var(--modal-bg)!important;color:var(--secondary)!important;font-size:12px!important}
+ html:root .workdesk-configurator .bom td,html:root .workdesk-configurator .picktable td{font-size:14px!important;border-bottom:1px solid var(--separator);padding:10px}
+ html:root body .bom .partname,html:root body .bom .partcode{background:transparent!important;min-height:38px;font-size:14px!important;color:var(--text)!important;padding:6px 0!important}
+ html:root body .bom .partcode{color:var(--accent)!important}
+ html:root .bom small{color:var(--secondary);font-size:12px}
+ html:root .workdesk-configurator .editTools{gap:10px;padding:16px 24px;border-top:1px solid var(--separator);background:var(--modal-bg)}
+ html:root .workdesk-configurator .editTools span{color:var(--secondary);font-size:13px}
+ html:root .workdesk-configurator .searchbar{padding:18px 24px;gap:12px;position:sticky;top:76px;background:var(--modal-bg);z-index:10}
+ html:root .workdesk-configurator .searchbar input{background:var(--modal-card)!important}
+ html:root .workdesk-configurator .rangegrid{padding:20px 24px;gap:24px}
+ html:root .workdesk-configurator .article-grid{gap:16px;padding:22px 24px}
+ html:root .workdesk-configurator .article-variants{background:var(--modal-card)!important;border:0;border-radius:16px;padding:16px;margin:0 24px 18px}
+ html:root .workdesk-configurator .article-variants legend,html:root .workdesk-configurator #priceNotice{color:var(--secondary);font-size:13px}
+ html:root .workdesk-configurator .article-variants span{color:var(--secondary);font-size:12px}
+ html:root .workdesk-configurator .legacytip{color:var(--warn);font-size:13px}
+}
+@media screen and (min-width:1440px){
+ html:root .management-wrap{padding-left:280px}
+}
+@media screen and (max-width:1279px){
+ html:root body .layout-grid{grid-template-columns:300px minmax(0,1fr)!important}
+ html:root body .design-preview{grid-column:1/-1;position:static!important;display:grid!important;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+ html:root .design-preview h2,html:root .design-part-name,html:root .design-preview .design-caption{grid-column:1/-1}
+ html:root body .design-preview #constructorAdPreview{grid-column:1/-1}
+ html:root .management-topbar{flex-wrap:wrap}
+ html:root .management-actions{justify-content:flex-start}
+ html:root .hero-left{gap:14px;flex-wrap:wrap}
+ html:root .hero-left .tabs{flex-basis:60%}
+}
+@media screen and (max-width:767px){
+ html:root body.workdesk-app .wrap{padding:calc(12px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))!important}
+ html:root .hero-left{position:relative;gap:12px;padding-bottom:18px!important;align-items:center}
+ html:root .hero-left .badge{font-size:20px}
+ html:root .hero-left .badge::before{width:34px;height:34px;font-size:20px}
+ html:root .hero-left .tabs{order:3;flex:1 0 100%;margin-top:4px!important;gap:4px;padding:4px;background:var(--surface-alt)!important}
+ html:root body .tabs .tab-btn{flex:1;min-height:44px;padding:10px!important;font-size:14px!important}
+ html:root .header-actions{gap:6px;max-width:100%;margin:0}
+ html:root #futurussSessionMount{max-width:100%}
+ html:root body .session-pill{min-height:40px;padding:9px 10px!important;font-size:12px!important;white-space:normal;text-align:center}
+ html:root .session-controls{gap:6px}
+ html:root .profile-bar{padding:12px!important;border-radius:16px;margin-bottom:16px!important}
+ html:root body .layout-grid{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+ html:root body .input-card{width:100%!important;padding:0!important}
+ html:root body .design-section{padding:20px!important;margin-bottom:16px!important}
+ html:root body .design-section h3{font-size:18px!important}
+ html:root body #combined-card{padding:20px!important;min-height:360px}
+ html:root body #combined-card h2{font-size:22px!important}
+ html:root body #combined-card .table-wrap{max-width:100%;overflow-x:auto;border-radius:12px}
+ html:root body #combined-card table{min-width:520px}
+ html:root body .design-preview{display:block!important;grid-column:auto!important;padding:20px!important;position:static!important}
+ html:root .design-summary{padding-bottom:16px}
+ html:root .design-chip{font-size:13px}
+ html:root .card{padding:20px}
+ html:root .management-wrap{padding:calc(20px + env(safe-area-inset-top)) 16px calc(106px + env(safe-area-inset-bottom));max-width:100%}
+ html:root .management-topbar{gap:16px;margin-bottom:22px;align-items:flex-start}
+ html:root .management-identity{gap:8px;flex-wrap:wrap}
+ html:root .management-brand{font-size:18px}
+ html:root .management-brand::before{width:32px;height:32px;font-size:19px;margin-right:8px}
+ html:root .management-actions{gap:6px;max-width:100%}
+ html:root body .management-actions .spa-btn{min-height:40px;padding:10px!important;font-size:12px!important;white-space:normal}
+ html:root .management-nav{top:auto;bottom:0;left:0;right:0;width:auto;height:auto;min-height:76px;display:flex;flex-direction:row;align-items:stretch;justify-content:space-around;gap:0;padding:8px 4px calc(8px + env(safe-area-inset-bottom));border:0;border-top:1px solid var(--border);background:var(--glass);backdrop-filter:blur(16px)}
+ html:root .management-nav::before{content:none}
+ html:root body .management-nav-btn,html:root body .management-nav-link{flex:1;min-width:0;max-width:30%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:4px!important;margin:0;border-radius:0!important;min-height:56px;background:transparent!important;font-size:10px!important;line-height:1.25;text-align:center;font-weight:550;overflow-wrap:anywhere}
+ html:root body .management-nav-btn.router-link-active{background:transparent!important;color:var(--accent)!important}
+ html:root .management-nav-btn .ui-icon{width:22px;height:22px}
+ html:root .management-nav-btn.soon{max-width:19%}
+ html:root .soon-badge{font-size:9px!important;padding:2px 4px!important}
+ html:root .management-section-head{padding:22px 20px 18px;flex-wrap:wrap;gap:16px}
+ html:root .management-section-head h1{font-size:28px}
+ html:root .management-content{padding:0 20px 22px}
+ html:root .node-row{gap:12px;padding:18px 0!important}
+ html:root .node-main{flex-basis:100%;min-width:0}
+ html:root .node-actions{gap:8px}
+ html:root .children{margin-left:8px!important;padding-left:12px!important}
+ html:root .advertising-manager{grid-template-columns:minmax(0,1fr);gap:20px}
+ html:root .advertising-preview{min-height:220px}
+ html:root .standalone-view{padding:calc(22px + env(safe-area-inset-top)) 16px calc(22px + env(safe-area-inset-bottom));place-items:start center;align-content:center}
+ html:root .standalone-card{padding:26px 22px;border-radius:26px}
+ html:root .standalone-card h1{font-size:28px}
+ html:root .spa-modal-backdrop,html:root .modal{padding:0!important;align-items:stretch;justify-content:stretch}
+ html:root .spa-modal,html:root body dialog:not(.interface-design-dialog),html:root .modal-box{
+  width:100%!important;max-width:100%!important;height:100dvh!important;max-height:100dvh!important;min-height:100dvh;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+ }
+ html:root .spa-modal{display:flex;flex-direction:column}
+ html:root .spa-modal-head,html:root .dialoghead{flex:none;padding:calc(14px + env(safe-area-inset-top)) 18px 14px;min-height:76px}
+ html:root .spa-modal-head>div{flex:1}
+ html:root .spa-modal-head h2{text-align:left;font-size:19px}
+ html:root .spa-modal-body{padding:20px 18px;overflow:auto;flex:1;min-height:0}
+ html:root .spa-modal-foot{flex:none;padding:14px 18px calc(14px + env(safe-area-inset-bottom));margin-top:auto}
+ html:root body dialog{padding:calc(22px + env(safe-area-inset-top)) 20px calc(22px + env(safe-area-inset-bottom));overflow:auto}
+ html:root .admin-theme-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ html:root .workdesk-configurator>header{padding:calc(18px + env(safe-area-inset-top)) 16px 18px;gap:18px}
+ html:root .workdesk-configurator .brand{min-width:0}
+ html:root .workdesk-configurator .toolbar{flex-basis:100%;gap:8px}
+ html:root .workdesk-configurator .toolbar button{flex:1 1 140px;white-space:normal;min-height:44px}
+ html:root .workdesk-configurator .families{padding:0 16px 14px;overflow-x:auto}
+ html:root body .family{white-space:normal;font-size:13px!important;padding:11px 12px!important}
+ html:root .workdesk-configurator .variants{margin:0 16px;border-radius:16px}
+ html:root body .kit-tabs .variant{width:210px;flex-basis:210px;max-width:210px;font-size:13px!important}
+ html:root .workdesk-configurator main{padding:20px 16px 30px}
+ html:root .workdesk-configurator .sheetbar{padding:20px;gap:12px}
+ html:root .workdesk-configurator .kitlabel{width:100%;min-width:0}
+ html:root .workdesk-configurator .sheettitle{gap:10px;flex-wrap:wrap}
+ html:root .workdesk-configurator .sheettitle h1{font-size:22px}
+ html:root .workdesk-configurator .sheet{border-radius:18px}
+ html:root .workdesk-configurator .calculation{padding:20px;flex-wrap:wrap;gap:14px}
+ html:root .workdesk-configurator .calculation>div{flex-basis:100%}
+ html:root .workdesk-configurator .calculation input{width:100px}
+ html:root .workdesk-configurator footer{flex-direction:column;gap:14px}
+ html:root .workdesk-configurator dialog{padding:0!important}
+ html:root .workdesk-configurator .small-dialog{padding:calc(24px + env(safe-area-inset-top)) 20px 24px!important}
+ html:root .workdesk-configurator .article-grid{grid-template-columns:minmax(0,1fr);padding:20px}
+ html:root .workdesk-configurator .rangegrid{grid-template-columns:minmax(0,1fr);padding:20px;max-height:none}
+ html:root .workdesk-configurator .searchbar{padding:16px 20px;top:calc(76px + env(safe-area-inset-top));flex-wrap:wrap}
+ html:root .workdesk-configurator .bomwrap,html:root .workdesk-configurator .pickscroll{padding:0 16px;max-height:calc(100dvh - 230px)}
+ html:root .workdesk-configurator .bom,html:root .workdesk-configurator .picktable{min-width:660px}
+ html:root .workdesk-configurator .editTools{padding:16px 20px;flex-wrap:wrap}
+ html:root .workdesk-configurator .editbottom{padding:16px 20px calc(16px + env(safe-area-inset-bottom));flex-wrap:wrap}
+ html:root .workdesk-configurator .article-variants{margin:0 20px 18px}
+ html:root .management-toast,html:root .toast{bottom:calc(96px + env(safe-area-inset-bottom))}
+}
+@media screen and (max-width:359px){
+ html:root body.workdesk-app .wrap,html:root .management-wrap{padding-left:12px!important;padding-right:12px!important}
+ html:root .standalone-card{padding:22px 18px}
+ html:root .standalone-brand{font-size:17px}
+ html:root .management-content{padding-left:16px;padding-right:16px}
+ html:root body .design-section,html:root body #combined-card{padding:18px!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* Documents keep original printable content and visibility rules. */
+@media print{html:root body{background:#fff!important;color:#111!important;font:12px/1.4 Arial,sans-serif!important}html:root body table{color:#111}html:root body th,html:root body td{border-color:#ddd}html:root body .card,html:root body .order{background:#fff!important;box-shadow:none!important}.management-nav{display:none!important}}
+/* Remove compact legacy geometry where it clips the larger WorkDesk controls. */
+@media screen{
+ html:root body .system-profile-slot{min-height:0;height:auto;margin-top:16px}
+ html:root body .system-profile-slot>#groove-block,html:root body .system-profile-slot>#aluminumControls{height:auto!important;min-height:0!important;gap:7px}
+ html:root body .system-profile-slot label{height:auto!important;min-height:0!important;line-height:1.4!important;margin:0!important}
+ html:root body .system-profile-slot select{height:auto!important;min-height:var(--ui-field)!important}
+ html:root body .config-title-with-system{flex-wrap:wrap;gap:10px;margin-bottom:16px!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option span,html:root body .alu-option-tile span{min-width:0;white-space:normal;overflow-wrap:anywhere}
+ html:root body .input-card #futuruss-extra-options label.useful-option{align-items:flex-start!important}
+ html:root body #designPreview{height:auto!important;min-height:0!important;display:block!important;grid-template-rows:none!important;padding:22px!important;overflow:hidden!important;position:sticky!important;top:24px}
+ html:root body #designPreview>.design-photo{height:220px!important;min-height:220px!important;padding:16px!important}
+ html:root body #designPreview>.design-part-name{max-height:none!important;margin:14px 0!important;overflow:visible}
+ html:root body #designPreview>div:last-child{height:auto!important;min-height:0!important;padding-top:18px!important;margin-top:18px!important;border-top:1px solid var(--separator)}
+ html:root body #designPreview .design-window{height:250px!important;max-height:250px!important;width:100%!important}
+ html:root body #combined-card{min-height:560px!important}
+ html:root body .settings-dialog{padding:0!important;background:var(--modal-bg)!important;overflow:hidden}
+ html:root body .settings-dialog-head{height:auto;min-height:76px;padding:18px 22px;background:var(--modal-bg);border-bottom:1px solid var(--separator)}
+ html:root body .settings-dialog-head h2{font-size:20px;color:var(--text)}
+ html:root body .settings-dialog-body{padding:22px;max-height:calc(88dvh - 76px)}
+ html:root body .settings-dialog-content .card{padding:20px!important}
+ html:root body .settings-dialog .profile-bar{padding:14px!important;margin-bottom:18px!important}
+ html:root body #invoice-card{padding:26px!important;border-radius:22px!important}
+ html:root body #positions-container .pos-block{padding:20px!important;background:var(--surface-alt);border:0;border-radius:18px}
+ html:root body #positions-container .pos-title-row>b{font-size:16px;font-weight:600;color:var(--text)}
+ html:root body #positions-container .qty-input{height:auto!important;min-height:36px!important;padding:6px!important}
+ html:root body .handle-color[aria-pressed=true]{outline:2px solid var(--accent)!important;outline-offset:2px!important}
+ html:root body .dot,html:root body .statusdot{border-radius:50%}
+}
+@media screen and (max-width:1279px){html:root body #designPreview{position:static!important;grid-column:1/-1!important}}
+@media screen and (max-width:767px){
+ html:root body #designPreview{padding:20px!important;grid-column:auto!important}
+ html:root body #combined-card{min-height:360px!important}
+ html:root body .settings-dialog-head{padding-top:calc(18px + env(safe-area-inset-top))}
+ html:root body .settings-dialog-body{padding:18px;max-height:calc(100dvh - 76px - env(safe-area-inset-top));padding-bottom:calc(22px + env(safe-area-inset-bottom))}
+ html:root body #positions-container{grid-template-columns:minmax(0,1fr)!important}
+ html:root body #invoice-card{padding:20px!important}
+}
+@media screen{
+ html:root .tree,html:root .management-tree{grid-template-columns:minmax(0,1fr);min-width:0}
+ html:root .node,html:root .node-row,html:root .node-main,html:root .children{min-width:0;max-width:100%}
+ html:root .node-title-line{flex-wrap:wrap;min-width:0}
+ html:root .node-title{min-width:0;white-space:normal;overflow-wrap:anywhere}
+ html:root .node-actions{min-width:0;max-width:100%}
+ html:root body .input-card #futuruss-extra-options .useful-options-grid{grid-template-columns:minmax(0,1fr)!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option{font-size:13px!important;align-items:center!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option span{overflow-wrap:normal}
+}
+@media screen and (max-width:767px){
+ html:root .tabs{flex-wrap:wrap!important;padding:4px!important;gap:10px!important;background:transparent!important}
+ html:root .tabs>.tab-btn{flex:1 0 100%;background:var(--surface)!important}
+ html:root .tabs .header-actions{width:100%;gap:8px;justify-content:flex-start;align-items:center}
+ html:root body .tabs .header-actions .header-icon-button{flex:0 0 44px!important;width:44px!important;min-width:44px;padding:0!important;background:var(--surface)!important}
+ html:root body .tabs .header-actions .header-catalog{flex:0 0 auto!important;margin:0!important;min-height:44px}
+ html:root .tabs #futurussSessionMount{flex:1 0 100%}
+ html:root .tabs .session-controls{flex-wrap:wrap;width:100%;gap:8px}
+ html:root .tabs .session-controls .session-pill{flex:0 1 auto;min-height:40px}
+ html:root .node-main{width:100%;min-width:0}
+ html:root .node-title-line .state{max-width:100%;white-space:normal}
+}
+
+/* Final component rules. Geometry follows WorkDesk's grouped.css. */
+@media screen{
+ html:root body{font-size:16px!important}
+ html:root body .management-wrap{max-width:1080px;padding:30px 36px 36px 276px;margin:0}
+ html:root body .management-topbar{margin-bottom:22px;gap:18px}
+ html:root body .management-nav{top:84px;bottom:auto;left:20px;width:208px;margin:0;padding:8px;gap:4px;border:1px solid color-mix(in srgb,var(--border) 70%,transparent);border-radius:28px;background:color-mix(in srgb,var(--surface) 88%,transparent);box-shadow:0 8px 26px #00000012;backdrop-filter:blur(22px) saturate(140%)}
+ html:root body .management-nav::before{top:-58px;left:12px;font-size:21px;font-weight:650}
+ html:root body .management-nav-btn,html:root body .management-nav-link{min-height:52px;height:auto;gap:14px;padding:12px 14px!important;border-radius:999px!important;font-size:15px!important;font-weight:550!important;color:var(--text)!important;overflow-wrap:normal}
+ html:root body .management-nav-btn.router-link-active{background:var(--surface-alt)!important;color:var(--accent)!important;font-weight:650!important}
+ html:root body .management-nav-btn.soon{font-size:13px!important}
+ html:root body .workdesk-page-title,html:root body .workdesk-calculator-title{position:sticky;top:0;z-index:12;display:flex;justify-content:center;align-items:center;min-height:58px;margin:0 -6px 18px;padding:12px 6px;background:var(--glass);backdrop-filter:blur(16px)}
+ html:root body .workdesk-page-title h1,html:root body .workdesk-calculator-title h1{margin:0;font-size:19px;font-weight:650;letter-spacing:-.02em;line-height:1.3;text-align:center}
+ html:root body .management-card{background:transparent!important;border-radius:0!important;overflow:visible}
+ html:root body .management-section-head{display:flex;flex-direction:column;align-items:stretch;padding:25px 24px 24px;margin:0 0 24px;border-radius:26px;background:var(--surface)!important;border:0;gap:0}
+ html:root body .workdesk-intro-icon{display:grid;place-items:center;width:58px;height:58px;margin-bottom:17px;background:#8d8d93;color:#fff;border-radius:16px}
+ html:root body .workdesk-intro-icon .ui-icon{width:32px;height:32px;color:#fff}
+ html:root body .management-section-head h1{font-size:28px;font-weight:700;line-height:1.2;margin:0 0 8px;letter-spacing:-.035em}
+ html:root body .management-section-head p{font-size:15px;line-height:1.5;margin:0;color:var(--secondary)}
+ html:root body .management-toolbar{margin-top:20px;align-self:stretch}
+ html:root body .management-toolbar .primary{width:100%;min-height:48px;font-size:15px!important;border-radius:13px!important}
+ html:root body .management-content{background:var(--surface);border-radius:22px;padding:0 18px;overflow:visible}
+ html:root body .node-row{min-height:82px;padding:16px 0!important;gap:14px}
+ html:root body .node-title{font-size:16px;font-weight:550!important}
+ html:root body .node-main .meta{font-size:12px!important;margin-top:4px}
+ html:root body .node-actions{gap:8px}
+ html:root body .node-title-line .tag{font-size:11px;padding:4px 7px}
+ html:root body .children{padding-left:14px!important;margin-left:8px!important}
+ html:root body .spa-modal:not(.delete-modal){display:flex;flex-direction:column;position:relative;overflow:hidden;max-height:calc(100dvh - 48px)}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head{position:relative;display:grid;grid-template-columns:46px minmax(0,1fr) 46px;gap:0 12px;align-items:center;flex:none;padding:16px 22px;border:0;background:var(--modal-bg)!important}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head>div{grid-column:2;grid-row:1;text-align:center;min-width:0}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head h2{font-size:18px;text-align:center;font-weight:680;line-height:1.15}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head p{font-size:12px;text-align:center;line-height:1.3;margin:4px 0 0}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head .spa-icon-btn{grid-column:1;grid-row:1;width:46px;height:46px;min-height:46px;border-radius:50%!important;background:var(--surface)!important;color:var(--text)!important;box-shadow:0 9px 22px #0000000a!important}
+ html:root body .spa-modal .spa-modal-head>.workdesk-confirm{position:static!important;grid-column:3;grid-row:1;display:grid;place-items:center;width:46px!important;height:46px!important;min-height:46px;padding:0!important;border-radius:50%!important;background:var(--accent)!important;color:#fff!important;box-shadow:0 9px 22px #0000000a!important}
+ html:root body .workdesk-confirm .ui-icon{width:24px;height:24px}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-foot{display:none}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-body{padding:13px 22px 24px;overflow:auto;min-height:0;flex:1;scrollbar-width:thin}
+ html:root body .spa-modal .field{padding:0;margin:0 0 18px;background:transparent;border-radius:0}
+ html:root body .spa-modal .field>label{font-size:13px!important;font-weight:550;display:block;margin:0 0 8px}
+ html:root body .spa-modal .field input:not([type=checkbox]),html:root body .spa-modal .field select,html:root body .spa-modal .field textarea{height:auto!important;min-height:50px!important;background:var(--surface)!important;border:1px solid var(--border)!important;border-radius:12px!important;padding:11px 13px!important;font-size:16px!important;font-weight:400}
+ html:root body .spa-modal .field .spa-password-wrap input{padding-right:52px!important}
+ html:root body .spa-modal .checks{gap:12px;margin-top:22px}
+ html:root body .spa-modal .check-card{padding:18px;border-radius:20px!important;background:var(--surface)!important;font-size:14px}
+ html:root body .spa-modal:has(form:invalid) .workdesk-confirm,html:root body form.spa-modal:invalid .workdesk-confirm{background:#c9c9ce!important;box-shadow:none!important}
+ html:root body .workdesk-calculator-title{margin-bottom:18px;max-width:720px}
+ html:root body.workdesk-app .wrap{max-width:1360px!important;margin:0 auto 0 240px!important;padding:30px 32px 40px!important}
+ html:root body.workdesk-app .hero-left{min-height:0;padding:0!important;display:block!important}
+ html:root body.workdesk-app .hero-left header{position:fixed;left:24px;top:28px;width:198px;z-index:31}
+ html:root body.workdesk-app .hero-left .badge{font-size:18px;font-weight:650;white-space:normal;line-height:1.3}
+ html:root body.workdesk-app .tabs{position:fixed;top:100px;left:20px;width:208px;z-index:30;display:flex!important;flex-direction:column;align-items:stretch;padding:8px!important;gap:4px!important;border:1px solid color-mix(in srgb,var(--border) 70%,transparent);border-radius:28px;background:color-mix(in srgb,var(--surface) 88%,transparent)!important;box-shadow:0 8px 26px #00000012;backdrop-filter:blur(22px) saturate(140%)}
+ html:root body.workdesk-app .tabs>.tab-btn{min-height:52px;padding:12px 14px!important;border-radius:999px!important;text-align:left;font-size:15px!important;font-weight:550!important;display:flex;justify-content:flex-start;gap:14px;align-items:center}
+ html:root body.workdesk-app .tabs>.tab-btn.active{background:var(--surface-alt)!important}
+ html:root body.workdesk-app .header-actions,html:root body.workdesk-app #futurussSessionMount,html:root body.workdesk-app .session-controls{display:contents!important}
+ html:root body.workdesk-app .header-actions .header-icon-button,html:root body.workdesk-app .header-actions .header-catalog,html:root body.workdesk-app .session-pill{display:flex!important;justify-content:flex-start;gap:14px;width:100%!important;height:auto!important;min-height:52px!important;padding:12px 14px!important;border-radius:999px!important;color:var(--text)!important;background:transparent!important;font-size:14px!important;font-weight:550!important;white-space:normal;overflow-wrap:anywhere;text-align:left}
+ html:root body.workdesk-app .header-icon-button .sr-only{position:static!important;width:auto!important;height:auto!important;clip:auto!important;overflow:visible!important;white-space:normal!important;font-size:14px}
+ html:root body.workdesk-app .language-control{width:100%;padding:4px}
+ html:root body.workdesk-app .language-control select{width:100%;max-width:none!important;border:0!important;border-radius:999px!important;background:var(--surface-alt)!important;font-size:13px!important}
+ html:root body.workdesk-app .layout-grid{grid-template-columns:minmax(0,720px) 278px!important;gap:26px!important;justify-content:start;align-items:start}
+ html:root body .input-card{grid-column:1;display:block!important}
+ html:root body .input-card .design-section{padding:20px!important;margin:0 0 18px!important}
+ html:root body .input-card .design-section h3{font-size:16px!important;font-weight:650!important;margin:0 0 14px!important}
+ html:root body .input-card .design-section label{font-size:13px!important;font-weight:550!important;margin:0 0 8px!important;line-height:1.4}
+ html:root body .input-card .design-section .row2{gap:14px!important;margin:0 0 16px!important}
+ html:root body .input-card .design-section input:not([type=checkbox]),html:root body .input-card .design-section select{height:auto!important;min-height:50px!important;background:var(--surface)!important;border:1px solid var(--border)!important;border-radius:12px!important;padding:11px 13px!important;font-size:16px!important;font-weight:400!important}
+ html:root body .input-card .design-section .hint{font-size:12px!important;font-weight:400!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option,html:root body .alu-option-tile{font-size:14px!important;font-weight:400!important;min-height:52px!important;padding:14px!important;margin:0!important}
+ html:root body .input-card #futuruss-extra-options .useful-options-grid{gap:8px!important}
+ html:root body #combined-card{grid-column:1;grid-row:auto;min-height:0!important;padding:24px!important}
+ html:root body #designPreview{grid-column:2!important;grid-row:1 / span 2;position:sticky!important;align-self:start;top:28px;padding:20px!important;border-radius:23px!important}
+ html:root body #combined-card h2{font-size:19px!important;margin-bottom:18px!important}
+ html:root body .advertising-manager{padding:20px;grid-template-columns:minmax(0,1fr);gap:24px}
+ html:root body .advertising-preview{min-width:0;width:100%;border:0!important;background:var(--surface-alt)!important;border-radius:18px!important}
+ html:root body .settings-dialog-head,html:root body .dialoghead{display:grid;grid-template-columns:46px minmax(0,1fr) 46px;align-items:center;gap:12px;min-height:78px;height:auto!important;padding:16px 22px!important;border:0;background:var(--bg)!important}
+ html:root body .settings-dialog-head h2,html:root body .dialoghead>div{grid-column:2;grid-row:1;text-align:center;min-width:0}
+ html:root body .settings-dialog-head h2,html:root body .dialoghead h2{font-size:18px!important;font-weight:680!important;line-height:1.15;text-align:center}
+ html:root body .dialoghead small{display:none}
+ html:root body .settings-dialog-close,html:root body .dialoghead>.icon{grid-column:1;grid-row:1;width:46px!important;height:46px!important;min-height:46px!important;padding:0!important;display:grid;place-items:center;border-radius:50%!important;background:var(--surface)!important;color:var(--text)!important;font-size:26px!important}
+ html:root body .dialoghead>.workdesk-confirm{grid-column:3;grid-row:1;width:46px;height:46px;min-height:46px;padding:0!important;border-radius:50%!important;background:var(--accent)!important;color:#fff!important}
+ html:root body.workdesk-configurator .editbottom{display:flex;align-items:center;flex-wrap:wrap;gap:14px;padding:18px 22px!important;background:var(--bg)!important;border:0}
+ html:root body.workdesk-configurator .editbottom input:not([type=checkbox]){flex:1;min-width:140px}
+ html:root body.workdesk-configurator .small-dialog{padding:22px!important}
+ html:root body.workdesk-configurator .small-dialog h2{font-size:19px!important;text-align:center;margin-bottom:24px}
+ html:root body.workdesk-configurator .small-dialog label{font-size:13px;font-weight:550;gap:8px;margin-bottom:16px}
+ html:root body.workdesk-configurator .small-dialog input:not([type=checkbox]),html:root body.workdesk-configurator .small-dialog select,html:root body.workdesk-configurator .small-dialog textarea{font-size:16px!important;min-height:50px;border:1px solid var(--border)!important;background:var(--surface)!important;border-radius:12px!important}
+ html:root body .standalone-card{background:transparent!important;border-radius:0!important;padding:24px;width:min(460px,100%)}
+ html:root body .standalone-card h1{font-size:28px;font-weight:700;margin:28px 0 24px}
+ html:root body .standalone-card .field{margin-bottom:18px}
+ html:root body .standalone-card .field>label{font-size:13px;font-weight:550}
+ html:root body .standalone-card .field input{min-height:50px;font-size:16px!important;background:var(--surface)!important;border:1px solid var(--border)!important}
+ html:root body .standalone-card .standalone-actions{display:flex;gap:12px}
+ html:root body .standalone-card .standalone-actions>*{flex:1;min-height:48px}
+}
+@media screen and (max-width:1279px){
+ html:root body.workdesk-app .layout-grid{grid-template-columns:minmax(0,720px)!important}
+ html:root body #designPreview{grid-column:1!important;grid-row:auto;position:static!important}
+ html:root body .management-wrap{padding-left:266px;padding-right:26px}
+}
+@media screen and (max-width:767px){
+ html:root body .management-wrap{max-width:none;margin:0;padding:78px 18px calc(112px + env(safe-area-inset-bottom))}
+ html:root body .management-topbar{position:fixed;inset:0 0 auto;z-index:32;display:flex;flex-direction:row;align-items:center;flex-wrap:nowrap;gap:8px;height:calc(60px + env(safe-area-inset-top));min-height:60px;margin:0;padding:calc(8px + env(safe-area-inset-top)) 18px 8px;background:var(--glass);backdrop-filter:blur(16px)}
+ html:root body .management-identity{display:grid;gap:0;flex:1;min-width:0;position:relative;padding-left:42px}
+ html:root body .management-brand{font-size:15px!important;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;letter-spacing:-.035em}
+ html:root body .management-brand::before{position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:10px;font-size:20px;margin:0}
+ html:root body .management-role{padding:0;background:none;font-size:11px;margin:2px 0 0;line-height:1.3}
+ html:root body .management-actions{width:auto;flex:none;flex-wrap:nowrap;gap:6px}
+ html:root body .management-actions .language-control{width:34px;flex:none}
+ html:root body .management-actions .language-control select{width:34px;min-width:34px;max-width:34px;min-height:34px!important;padding:5px 2px!important;font-size:9px!important;background:var(--surface)!important;border:0!important;border-radius:50%!important}
+ html:root body .management-actions .spa-btn{width:34px;height:34px;min-height:34px;flex:none!important;border-radius:50%!important;background:var(--surface)!important;font-size:0!important;padding:0!important;display:grid;place-items:center}
+ html:root body .management-actions .spa-btn .ui-icon{width:18px;height:18px;color:var(--text)}
+ html:root body .workdesk-page-title{top:calc(60px + env(safe-area-inset-top));min-height:48px;padding:10px 6px;margin:0 -6px 15px}
+ html:root body .workdesk-page-title h1{font-size:17px}
+ html:root body .management-section-head{padding:25px 20px;margin-bottom:22px;border-radius:25px}
+ html:root body .management-section-head h1{font-size:27px}
+ html:root body .management-section-head p{font-size:14px}
+ html:root body .management-content{padding:0 16px;border-radius:22px}
+ html:root body .management-nav{left:12px;right:12px;top:auto;bottom:calc(10px + env(safe-area-inset-bottom));width:auto;height:76px;min-height:76px;padding:5px;display:flex;flex-direction:row;align-items:stretch;gap:0;border-radius:999px;box-shadow:0 10px 32px #00000024}
+ html:root body .management-nav::before{content:none}
+ html:root body .management-nav-btn,html:root body .management-nav-link{max-width:none!important;flex:1;min-width:0;height:100%;min-height:0;padding:6px!important;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;font-size:11px!important;line-height:1.15;font-weight:500!important;text-align:center;border-radius:999px!important;overflow-wrap:normal}
+ html:root body .management-nav-btn .ui-icon{width:24px;height:24px}
+ html:root body .management-nav-btn.soon{font-size:9px!important}
+ html:root body .management-nav-btn.soon .soon-badge{font-size:8px!important}
+ html:root body .spa-modal-backdrop{align-items:flex-end;padding:max(17px,env(safe-area-inset-top)) 0 0!important;background:rgba(24,24,29,.27)!important;backdrop-filter:blur(8px)}
+ html:root body .spa-modal:not(.delete-modal){height:100%!important;max-height:none!important;min-height:0;width:100%!important;border-radius:36px 36px 0 0!important;background:var(--bg)!important;box-shadow:0 -12px 40px #00000018!important}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head{grid-template-columns:48px minmax(0,1fr) 48px;gap:0 10px;padding:15px 20px 13px;min-height:76px;background:var(--bg)!important}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head h2{font-size:17px}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head .spa-icon-btn,html:root body .spa-modal .spa-modal-head>.workdesk-confirm{width:48px!important;height:48px!important;min-height:48px!important}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-body{padding:13px 20px calc(24px + env(safe-area-inset-bottom))}
+ html:root body.workdesk-app .wrap{margin:0!important;padding:78px 18px calc(112px + env(safe-area-inset-bottom))!important;max-width:none!important}
+ html:root body .workdesk-calculator-title{display:none}
+ html:root body.workdesk-app .hero-left{position:static;display:block;padding:0!important}
+ html:root body.workdesk-app .hero-left header{position:fixed;left:0;right:0;top:0;width:auto;z-index:32;height:calc(60px + env(safe-area-inset-top));padding:calc(12px + env(safe-area-inset-top)) 18px 12px;background:var(--glass);backdrop-filter:blur(16px)}
+ html:root body.workdesk-app .hero-left .badge{font-size:15px;font-weight:650;white-space:nowrap}
+ html:root body.workdesk-app .tabs{display:contents!important;position:static!important}
+ html:root body.workdesk-app .tabs>.tab-btn{position:sticky;top:60px;display:flex;justify-content:center;align-items:center;min-height:48px;width:100%;margin:0 -6px 15px!important;padding:10px 6px!important;font-size:17px!important;font-weight:650!important;border-radius:0!important;background:var(--glass)!important;color:var(--text)!important;z-index:12}
+ html:root body.workdesk-app .header-actions{position:fixed!important;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:flex!important;flex-wrap:nowrap;justify-content:space-around;align-items:stretch;gap:0;width:auto!important;height:76px;padding:5px;border:1px solid color-mix(in srgb,var(--border) 70%,transparent);border-radius:999px;background:color-mix(in srgb,var(--surface) 88%,transparent);box-shadow:0 10px 32px #00000024;backdrop-filter:blur(22px) saturate(140%)}
+ html:root body.workdesk-app #futurussSessionMount,html:root body.workdesk-app .session-controls{display:contents!important}
+ html:root body.workdesk-app .header-actions .header-icon-button,html:root body.workdesk-app .header-actions .header-catalog,html:root body.workdesk-app .session-pill{flex:1!important;min-width:0!important;width:auto!important;height:100%!important;min-height:0!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;padding:6px 3px!important;gap:5px;border-radius:999px!important;background:transparent!important;font-size:10px!important;font-weight:500!important;line-height:1.2;text-align:center;overflow-wrap:normal}
+ html:root body.workdesk-app .header-actions .ui-icon{width:24px;height:24px}
+ html:root body.workdesk-app .header-icon-button .sr-only{font-size:10px!important;line-height:1.2}
+ html:root body.workdesk-app .header-catalog span{font-size:10px!important}
+ html:root body.workdesk-app .header-actions .language-control{flex:.65;display:grid;place-items:center;min-width:0;padding:2px}
+ html:root body.workdesk-app .header-actions .language-control select{width:100%;min-width:0;max-width:60px!important;min-height:38px!important;padding:2px!important;font-size:9px!important;border:0!important;background:transparent!important}
+ html:root body.workdesk-app .layout-grid{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+ html:root body .input-card .design-section{padding:20px!important;margin:0 0 16px!important}
+ html:root body #combined-card{grid-column:1;grid-row:auto;padding:20px!important}
+ html:root body #designPreview{grid-column:1!important;grid-row:auto;position:static!important;padding:20px!important}
+ html:root body dialog:not(.interface-design-dialog){height:calc(100dvh - max(17px,env(safe-area-inset-top)))!important;min-height:0!important;max-height:calc(100dvh - 17px)!important;top:max(17px,env(safe-area-inset-top));border-radius:36px 36px 0 0!important;box-shadow:0 -12px 40px #00000018!important}
+ html:root body .settings-dialog-head,html:root body .dialoghead{grid-template-columns:48px minmax(0,1fr) 48px;gap:10px;padding:15px 20px 13px!important}
+ html:root body .settings-dialog-head h2,html:root body .dialoghead h2{font-size:17px!important}
+ html:root body .settings-dialog-close,html:root body .dialoghead>.icon,html:root body .dialoghead>.workdesk-confirm{width:48px!important;height:48px!important;min-height:48px!important}
+ html:root body.workdesk-configurator .searchbar{top:76px;grid-template-columns:minmax(0,1fr);padding:14px 20px;gap:10px}
+ html:root body.workdesk-configurator .bomwrap,html:root body.workdesk-configurator .pickscroll{padding:0 20px;max-height:calc(100dvh - 270px);overflow:auto}
+ html:root body .standalone-view{padding:60px 18px 28px;align-items:start}
+ html:root body .standalone-card{padding:0}
+ html:root body .standalone-card h1{font-size:27px}
+}
+@media screen and (max-width:359px){
+ html:root body .management-topbar{padding-inline:12px;gap:5px}
+ html:root body .management-actions{gap:4px}
+ html:root body .management-actions .spa-btn{width:30px;height:30px;min-height:30px}
+ html:root body .management-wrap,html:root body.workdesk-app .wrap{padding-left:14px!important;padding-right:14px!important}
+ html:root body .management-brand{font-size:13px!important}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head{padding-inline:16px;gap:6px}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head h2{font-size:15px}
+ html:root body.workdesk-app .session-pill{font-size:9px!important}
+}
+
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+@media screen{html:root body.workdesk-configurator .small-dialog{padding:0!important}html:root body.workdesk-configurator .small-dialog>.dialoghead h2{margin:0}html:root body.workdesk-configurator .small-dialog>label{margin:0 22px 18px}html:root body.workdesk-configurator .small-dialog .article-grid{padding:13px 22px 22px}html:root body .spa-modal-backdrop:has(.delete-modal){align-items:center;padding:18px!important}html:root body .spa-modal.delete-modal{width:min(440px,100%)!important;height:auto!important;min-height:0!important;border-radius:26px!important;max-height:calc(100dvh - 36px)!important}html:root body .spa-modal.delete-modal .spa-modal-body{padding:22px}html:root body .spa-modal.delete-modal .spa-modal-foot{position:static;padding:18px 22px;display:flex;gap:10px}}
+@media screen{
+ html:root body dialog{position:fixed}
+ html:root body.workdesk-configurator .editTools{flex-wrap:wrap;align-items:center;min-width:0;max-width:100%}
+ html:root body.workdesk-configurator .editTools>*,html:root body.workdesk-configurator .calculation>*{max-width:100%;min-width:0}
+ html:root body.workdesk-configurator .editTools label{font-size:13px;font-weight:400}
+ html:root body.workdesk-configurator .editTools .push{margin-left:0}
+ html:root body .dialoghead>.icon{font-size:0!important}
+ html:root body .dialoghead>.icon::after{content:'';width:24px;height:24px;background:currentColor;mask:url('../icons/xmark.svg') center/contain no-repeat}
+ html:root body .estimate-save-dialog{padding:100px 22px 22px!important;overflow:auto}
+ html:root body .estimate-save-dialog h2{position:absolute;top:32px;left:80px;right:80px;margin:0!important;font-size:18px;text-align:center;line-height:1.2}
+ html:root body .estimate-save-dialog .estimate-dialog-close{position:absolute;left:22px;top:16px;margin:0;width:46px;height:46px;min-height:46px!important;padding:0!important;border-radius:50%!important;font-size:0!important;background:var(--surface)!important;color:var(--text)!important}
+ html:root body .estimate-save-dialog .estimate-dialog-close::after{content:'';width:24px;height:24px;display:inline-block;background:currentColor;mask:url('../icons/xmark.svg') center/contain no-repeat}
+}
+@media screen and (max-width:767px){html:root body .estimate-save-dialog h2{font-size:17px;top:31px}html:root body .estimate-save-dialog .estimate-dialog-close{width:48px;height:48px;min-height:48px!important;left:20px;top:15px}html:root body .estimate-save-dialog{padding:92px 20px 24px!important}}
+:root{--ui-font:16px;--ui-field:50px}
+@media screen{
+ html:root body .spa-modal .field>label,html:root body .standalone-card .field>label,html:root body .input-card .design-section label,html:root body.workdesk-configurator .small-dialog label{color:var(--text)}
+ html:root body.workdesk-configurator .small-dialog .article-grid label{margin:0;gap:8px}
+ html:root body.workdesk-configurator .small-dialog .article-grid{gap:18px 16px}
+ html:root body .estimate-save-dialog input,html:root body .estimate-save-dialog select{font-size:16px!important;min-height:50px!important;background:var(--surface)!important}
+ html:root body .spa-modal .check-card{color:var(--text);font-weight:400}
+}
+@media screen and (min-width:768px){
+ html:root body .management-wrap{width:calc(100% - 240px);max-width:none;margin:0 0 0 240px;padding:30px clamp(24px,4vw,52px) 36px}
+ html:root body .management-card,html:root body .workdesk-page-title,html:root body .management-wrap>.management-notice{max-width:720px;margin-inline:auto}
+ html:root body .management-topbar{height:0;min-height:0;padding:0;margin:0}
+ html:root body .management-identity{position:fixed;left:24px;top:28px;width:198px;z-index:31;display:grid;gap:2px;padding-left:42px}
+ html:root body .management-brand{position:relative;font-size:15px!important;line-height:1.3;white-space:nowrap;overflow:visible;letter-spacing:-.035em}
+ html:root body .management-brand::before{position:absolute;left:-42px;top:0;width:32px;height:32px;border-radius:10px;font-size:20px;margin:0}
+ html:root body .management-role{font-size:11px;background:none;padding:0}
+ html:root body .management-nav{top:100px;left:12px;width:216px}
+ html:root body .management-nav::before{content:none}
+ html:root body .management-actions{position:fixed;left:12px;top:385px;width:216px;z-index:28;display:grid;gap:0;padding:8px;background:var(--surface);border-radius:22px}
+ html:root body .management-actions .spa-btn{width:100%;justify-content:flex-start;background:transparent!important;min-height:48px;font-size:13px!important;padding:10px 12px!important;border-radius:15px!important}
+ html:root body .management-actions .spa-btn+.spa-btn{border-top:1px solid var(--separator)!important}
+ html:root body .management-actions .language-control{width:100%;padding:6px}
+ html:root body .management-actions .language-control select{max-width:none;min-width:0;width:100%;border:0!important;background:var(--surface-alt)!important}
+ html:root body.workdesk-app .wrap{padding-top:30px!important}
+}
+@media screen and (min-width:1440px){
+ html:root body .management-wrap{width:720px;margin-left:calc((100vw - 1440px)/2 + 337px);padding:30px 0 36px}
+ html:root body .management-actions{left:auto;right:20px;top:28px;width:278px;padding:8px}
+ html:root body.workdesk-app .wrap{margin-left:240px!important;padding-left:42px!important;padding-right:20px!important;max-width:none!important}
+ html:root body.workdesk-app .layout-grid{grid-template-columns:minmax(0,1fr) 278px!important;gap:30px!important}
+ html:root body.workdesk-app .input-card,html:root body.workdesk-app #combined-card{width:100%;max-width:720px;justify-self:center}
+ html:root body.workdesk-app .workdesk-calculator-title{max-width:720px;margin-left:calc((100vw - 1330px)/2 - 55px)}
+}
+@media print{.workdesk-calculator-title,.workdesk-page-title,.workdesk-intro-icon{display:none!important}}
+@media screen and (min-width:768px){html:root body .management-actions .spa-btn{color:var(--text)!important}html:root body .management-actions .spa-btn .ui-icon{color:var(--accent)}}
+@media screen and (min-width:768px) and (max-width:1439px){html:root body.workdesk-app .layout-grid{grid-template-columns:minmax(0,720px)!important;justify-content:center}html:root body #designPreview{grid-column:1!important;grid-row:auto;position:static!important}html:root body.workdesk-app .workdesk-calculator-title{margin-inline:auto}}
+@media screen and (min-width:1440px){html:root body.workdesk-app .workdesk-calculator-title{margin-left:calc((100vw - 1330px)/2)}}
+@media screen and (min-width:768px){html:root body .management-actions{grid-template-columns:minmax(0,1fr);justify-content:stretch;justify-items:stretch}html:root body .management-actions .spa-btn{display:flex;gap:11px!important;text-align:left}}
+@media screen and (min-width:768px) and (max-width:1024px){html:root body .node-row{flex-direction:column;align-items:stretch;gap:10px}html:root body .node-main{width:100%}html:root body .node-actions{justify-content:flex-start}}
+
+@media screen{html:root body .spa-modal-head .workdesk-confirm .ui-icon,html:root body .dialoghead>.workdesk-confirm .ui-icon{width:27px;height:27px}html:root body .spa-modal-head .spa-icon-btn .ui-icon{width:27px;height:27px}html:root body .dialoghead>.icon::after,html:root body .estimate-save-dialog .estimate-dialog-close::after{width:27px;height:27px}}
+/* Compact phone composition, 2026.10.06.37. Desktop rules stay above. */
+@media screen and (max-width:767px){
+ html:root body{--ui-field:42px}
+ html:root body .management-wrap{padding:68px 12px 92px!important}
+ html:root body .management-topbar{height:56px;min-height:56px;padding:8px 12px;gap:6px}
+ html:root body .management-brand{font-size:13px!important}
+ html:root body .management-identity{padding-left:36px}
+ html:root body .management-brand::before{width:28px;height:28px;font-size:18px}
+ html:root body .management-actions{gap:4px}
+ html:root body .management-actions .spa-btn{width:30px;height:30px;min-height:30px}
+ html:root body .management-actions .language-control,html:root body .management-actions .language-control select{width:32px;min-width:32px;max-width:32px}
+ html:root body .workdesk-page-title{display:none}
+ html:root body .management-section-head{display:grid;grid-template-columns:36px minmax(0,1fr);align-items:start;gap:10px;padding:16px;margin-bottom:12px;border-radius:18px}
+ html:root body .workdesk-intro-icon{width:36px;height:36px;margin:0;border-radius:11px}
+ html:root body .workdesk-intro-icon .ui-icon{width:23px;height:23px}
+ html:root body .management-section-head h1{font-size:20px;line-height:1.2;margin:0 0 5px}
+ html:root body .management-section-head p{font-size:12px;line-height:1.45}
+ html:root body .management-toolbar{grid-column:1/-1;margin:3px 0 0}
+ html:root body .management-toolbar .primary{min-height:42px;font-size:14px!important;border-radius:11px!important}
+ html:root body .management-content{padding:0 14px;border-radius:18px}
+ html:root body .node-row{min-height:0;padding:12px 0!important;gap:8px}
+ html:root body .node-title{font-size:14px!important}
+ html:root body .node-main .meta{font-size:11px!important;margin-top:3px}
+ html:root body .node-title-line{gap:6px}
+ html:root body .node-title-line .tag{font-size:10px;padding:3px 5px}
+ html:root body .node-actions{gap:8px}
+ html:root body .node-actions .switch-label{font-size:11px!important}
+ html:root body .node-actions .state{font-size:11px;padding:4px 6px}
+ html:root body .more-button{width:34px;height:34px;min-height:34px}
+ html:root body .children{padding-left:10px!important;margin-left:4px!important}
+ html:root body .management-nav{left:10px;right:10px;bottom:8px;height:62px;min-height:62px;padding:4px;border-radius:20px;box-shadow:0 6px 22px #0000001a;backdrop-filter:none;background:var(--surface)}
+ html:root body .management-nav-btn,html:root body .management-nav-link{font-size:11px!important;gap:4px;border-radius:15px!important}
+ html:root body .management-nav-btn .ui-icon{width:22px;height:22px}
+ html:root body .management-nav-btn.soon{display:none}
+ html:root body .management-nav:not(:has(button)):not(:has(a:nth-child(3))){max-width:180px;margin-inline:auto}
+ html:root body.workdesk-app .wrap{padding:66px 12px 92px!important}
+ html:root body.workdesk-app .hero-left header{height:56px;padding:10px 12px}
+ html:root body.workdesk-app .hero-left .badge{font-size:14px!important;max-width:calc(100% - 112px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center}
+ html:root body.workdesk-app .hero-left .badge::before{width:28px;height:28px;min-width:28px;margin-right:7px}
+ html:root body.workdesk-app .tabs>.tab-btn{min-height:32px;top:56px;margin:0 0 10px!important;padding:4px 0!important;font-size:15px!important}
+ html:root body.workdesk-app .header-actions{left:10px;right:10px;bottom:8px;height:62px;padding:4px;border-radius:20px;box-shadow:0 6px 22px #0000001a;backdrop-filter:none;background:var(--surface)}
+ html:root body.workdesk-app .header-actions .header-icon-button,html:root body.workdesk-app .header-actions .header-catalog,html:root body.workdesk-app .session-pill{font-size:11px!important;border-radius:15px!important;gap:4px;padding:6px!important}
+ html:root body.workdesk-app .header-actions .header-icon-button.active{background:var(--accent-soft)!important;color:var(--accent)!important}
+ html:root body.workdesk-app .header-actions .header-icon-button .sr-only,html:root body.workdesk-app .header-actions .header-catalog span{font-size:11px!important}
+ html:root body.workdesk-app .header-actions .ui-icon{width:22px;height:22px}
+ html:root body.workdesk-app .session-controls>.language-control{position:fixed!important;right:12px;top:12px;width:64px!important;height:32px;z-index:45;flex:none;padding:0!important}
+ html:root body.workdesk-app .session-controls>.language-control select{width:64px!important;max-width:64px!important;min-height:32px!important;padding:4px!important;border-radius:10px!important;background:var(--surface)!important;font-size:10px!important}
+ html:root body.workdesk-app .session-controls>button.session-pill:has(.i-logout){position:fixed!important;right:82px;top:12px;z-index:45;width:32px!important;height:32px!important;min-height:32px!important;max-width:32px;flex:none!important;padding:0!important;font-size:0!important;border-radius:10px!important;background:var(--surface)!important}
+ html:root body.workdesk-app .session-controls>button.session-pill:has(.i-logout) .ui-icon{width:18px;height:18px}
+ html:root body.workdesk-app .layout-grid{gap:12px!important}
+ html:root body .input-card .design-section{padding:14px!important;margin-bottom:10px!important;border-radius:18px!important}
+ html:root body .input-card .design-section h3{font-size:15px!important;margin-bottom:10px!important}
+ html:root body .input-card .design-section label{font-size:12px!important;margin:0 0 5px!important}
+ html:root body .input-card .design-section input:not([type=checkbox]),html:root body .input-card .design-section select{min-height:42px!important;padding:9px 10px!important;font-size:16px!important;border-radius:10px!important}
+ html:root body .input-card .design-section .row2{gap:10px!important;margin-bottom:10px!important}
+ html:root body .input-card #futuruss-extra-options .useful-options-grid,html:root body #aluminumOptions{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:6px!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option,html:root body .alu-option-tile{min-height:44px!important;padding:9px!important;font-size:12px!important;line-height:1.3!important;border-radius:10px!important;gap:6px!important;margin:0!important}
+ html:root body .useful-option.option-wide{grid-column:auto!important}
+ html:root body .input-card #futuruss-extra-options label.useful-option span{white-space:normal;overflow-wrap:normal}
+ html:root body .input-card .design-section .hint{font-size:11px!important;margin-top:6px!important}
+ html:root body .design-actions{gap:6px;margin:8px 0 0}
+ html:root body .design-actions button{min-height:42px!important;padding:10px!important;font-size:14px!important}
+ html:root body #combined-card{padding:16px!important;border-radius:18px!important}
+ html:root body #combined-card h2{font-size:17px!important;margin-bottom:12px!important}
+ html:root body #combined-card .invoice-head{font-size:11px;gap:8px;margin-bottom:12px}
+ html:root body #combined-card .table-wrap{overflow:visible}
+ html:root body #combined-card .table-wrap table{display:block;width:100%!important;table-layout:auto}
+ html:root body #combined-card .table-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+ html:root body #combined-tbody{display:block;width:100%}
+ html:root body #combined-tbody tr.row-item{display:grid;grid-template-columns:minmax(0,1fr) 48px 74px;grid-template-rows:auto auto;gap:4px 8px;padding:12px 0;border-bottom:1px solid var(--separator);background:transparent!important}
+ html:root body #combined-tbody tr.row-item td{padding:0!important;border:0!important;min-width:0;width:auto!important;font-size:13px!important;line-height:1.35!important;white-space:normal}
+ html:root body #combined-tbody tr.row-item td:nth-child(2){grid-column:1;grid-row:1;font-size:12px!important;color:var(--accent)!important}
+ html:root body #combined-tbody tr.row-item td:nth-child(3){grid-column:1;grid-row:2;font-size:14px!important;font-weight:500}
+ html:root body #combined-tbody tr.row-item td:nth-child(4){grid-column:2;grid-row:1;text-align:center}
+ html:root body #combined-tbody tr.row-item td:nth-child(5){grid-column:2;grid-row:2;text-align:center;font-size:11px!important;color:var(--secondary)!important}
+ html:root body #combined-tbody tr.row-item td:nth-child(6){grid-column:3;grid-row:1 / span 2;text-align:right;font-size:15px!important;font-weight:650;align-self:center}
+ html:root body #combined-tbody tr.row-item td:nth-child(4)::before{content:'Шт.';display:block;font-size:10px;color:var(--secondary);margin-bottom:3px}
+ html:root body #combined-tbody tr.row-item td:nth-child(5)::before{content:'Цена';display:block;font-size:10px;color:var(--secondary);margin-bottom:2px}
+ html:root body #combined-tbody tr.row-item td:nth-child(6)::before{content:'Сумма';display:block;font-size:10px;font-weight:400;color:var(--secondary);margin-bottom:3px}
+ html:root body #combined-card #inv-grand-total{font-size:26px!important}
+ html:root body #combined-card .document-action-toolbar{display:grid!important;grid-template-columns:1fr 1fr;gap:6px!important;margin-top:10px!important}
+ html:root body #combined-card .document-action-toolbar button{min-height:40px!important;padding:8px!important;font-size:12px!important}
+ html:root body #designPreview{padding:14px!important;border-radius:18px!important}
+ html:root body #designPreview>.design-photo{height:140px!important;min-height:140px!important;padding:10px!important}
+ html:root body #designPreview .design-window{height:160px!important;max-height:160px!important}
+ html:root body #designPreview>.design-part-name{font-size:12px;margin:10px 0!important}
+ html:root body #designPreview h2,html:root body #designPreview h3{font-size:15px!important;margin-bottom:10px!important}
+ html:root body .glass-preview-photo{height:120px!important;min-height:120px!important}
+ html:root body #positions-container .pos-block{padding:14px!important;border-radius:18px}
+ html:root body #positions-container .pos-title-row{gap:10px;align-items:center}
+ html:root body #positions-container .pos-title-row>b{font-size:14px!important}
+ html:root body #positions-container .table-wrap{overflow:auto}
+ html:root body #positions-container table{min-width:600px}
+ html:root body .spa-modal-backdrop{padding:8px 0 0!important}
+ html:root body .spa-modal:not(.delete-modal){border-radius:24px 24px 0 0!important}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head{grid-template-columns:40px minmax(0,1fr) 40px;min-height:64px;padding:12px 16px 10px;gap:8px}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head h2{font-size:16px}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head p{font-size:11px}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-head .spa-icon-btn,html:root body .spa-modal .spa-modal-head>.workdesk-confirm{width:40px!important;height:40px!important;min-height:40px!important}
+ html:root body .spa-modal-head .workdesk-confirm .ui-icon,html:root body .spa-modal-head .spa-icon-btn .ui-icon{width:23px;height:23px}
+ html:root body .spa-modal:not(.delete-modal) .spa-modal-body{padding:12px 16px 20px}
+ html:root body .spa-modal .field{margin-bottom:14px}
+ html:root body .spa-modal .field input:not([type=checkbox]),html:root body .spa-modal .field select,html:root body .spa-modal .field textarea{min-height:42px!important;padding:9px 10px!important}
+ html:root body .spa-modal .checks{grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+ html:root body .spa-modal .check-card{padding:12px;font-size:12px;border-radius:12px!important;gap:7px}
+ html:root body .spa-modal .field .spa-password-wrap input{padding-right:48px!important}
+ html:root body .advertising-manager{padding:14px;gap:14px}
+ html:root body .advertising-preview{height:180px;min-height:180px}
+ html:root body .standalone-view{padding:32px 16px 24px}
+ html:root body .standalone-card h1{font-size:24px;margin:24px 0 18px}
+ html:root body .standalone-card .field input{min-height:42px}
+ html:root body dialog:not(.interface-design-dialog){top:8px;height:calc(100dvh - 8px)!important;max-height:calc(100dvh - 8px)!important;border-radius:24px 24px 0 0!important}
+ html:root body .settings-dialog-head,html:root body .dialoghead{grid-template-columns:40px minmax(0,1fr) 40px;padding:12px 16px 10px!important;min-height:64px!important;gap:8px}
+ html:root body .settings-dialog-head h2,html:root body .dialoghead h2{font-size:16px!important}
+ html:root body .settings-dialog-close,html:root body .dialoghead>.icon,html:root body .dialoghead>.workdesk-confirm{width:40px!important;height:40px!important;min-height:40px!important}
+ html:root body .dialoghead>.workdesk-confirm .ui-icon,html:root body .dialoghead>.icon::after{width:23px;height:23px}
+ html:root body .settings-dialog-body{padding:12px 16px;max-height:calc(100dvh - 72px)}
+ html:root body.workdesk-configurator>header{padding:14px 12px;gap:12px}
+ html:root body.workdesk-configurator .brand{min-width:0}
+ html:root body.workdesk-configurator .brandmark{width:30px;height:30px;font-size:19px}
+ html:root body.workdesk-configurator .brand b{font-size:17px}
+ html:root body.workdesk-configurator .brand small{font-size:11px}
+ html:root body.workdesk-configurator .toolbar{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
+ html:root body.workdesk-configurator .toolbar button{min-height:38px;padding:8px!important;font-size:11px!important;white-space:normal}
+ html:root body.workdesk-configurator .families{padding:0 12px 10px;gap:6px}
+ html:root body.workdesk-configurator .families .family{min-height:40px;padding:8px!important;font-size:11px!important;white-space:normal}
+ html:root body.workdesk-configurator .variants{margin:0 12px;border-radius:12px;padding:4px;min-height:40px}
+ html:root body.workdesk-configurator .kit-tabs .variant{width:140px;max-width:140px;flex-basis:140px;min-height:36px;padding:8px 10px!important;font-size:12px!important}
+ html:root body.workdesk-configurator main{padding:12px}
+ html:root body.workdesk-configurator .sheetbar{padding:12px;border-radius:16px;gap:6px}
+ html:root body.workdesk-configurator .sheetbar button{min-height:36px;font-size:11px!important;padding:7px 8px!important}
+ html:root body.workdesk-configurator .sheettitle{margin:14px 2px 10px;gap:8px}
+ html:root body.workdesk-configurator .sheettitle h1{font-size:18px}
+ html:root body.workdesk-configurator .sheet{border-radius:16px;max-height:55dvh}
+ html:root body.workdesk-configurator .matrix th,html:root body.workdesk-configurator .matrix td{font-size:12px!important;padding:8px}
+ html:root body.workdesk-configurator .matrix thead th{height:42px;font-size:11px!important}
+ html:root body.workdesk-configurator .cellbutton{min-height:50px!important;padding:8px!important;font-size:13px!important}
+ html:root body.workdesk-configurator .calculation{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:14px;gap:10px;border-radius:16px}
+ html:root body.workdesk-configurator .calculation>div,html:root body.workdesk-configurator .calculation>button{grid-column:1/-1}
+ html:root body.workdesk-configurator .calculation h2{font-size:17px}
+ html:root body.workdesk-configurator .calculation p{font-size:11px}
+ html:root body.workdesk-configurator .bomwrap,html:root body.workdesk-configurator .pickscroll{padding:0 16px}
+ html:root body.workdesk-configurator .searchbar{top:64px;padding:10px 16px;gap:8px}
+ html:root body.workdesk-configurator .small-dialog>label{margin:0 16px 14px}
+ html:root body.workdesk-configurator .small-dialog .article-grid{padding:12px 16px 18px;gap:14px 10px}
+ html:root body.workdesk-configurator .small-dialog input:not([type=checkbox]),html:root body.workdesk-configurator .small-dialog select,html:root body.workdesk-configurator .small-dialog textarea{min-height:42px}
+ html:root body .estimate-save-dialog{padding:82px 16px 18px!important}
+ html:root body .estimate-save-dialog h2{top:25px;font-size:16px;left:64px;right:64px}
+ html:root body .estimate-save-dialog .estimate-dialog-close{left:16px;top:12px;width:40px;height:40px;min-height:40px!important}
+}
+
+/* Auth surfaces: distinct cards, readable fields and clear primary actions. */
+@media screen {
+ html:root body .standalone-view{padding:40px 20px;min-height:100dvh;box-sizing:border-box;background:radial-gradient(ellipse at 50% 0%,var(--accent-soft),transparent 65%),var(--bg)}
+ html:root body .standalone-card{box-sizing:border-box;width:min(480px,100%);padding:28px!important;background:var(--surface)!important;border:1px solid var(--border)!important;border-radius:28px!important;box-shadow:0 20px 70px #101b3820!important;position:relative;overflow:hidden}
+ html:root body .standalone-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent)}
+ html:root body .standalone-brand-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+ html:root body .standalone-brand{font-size:14px!important;white-space:nowrap}
+ html:root body .standalone-brand::before{width:30px;height:30px;min-width:30px;font-size:18px}
+ html:root body .standalone-brand-row .language-control{width:72px;flex:none}
+ html:root body .standalone-brand-row .language-control select{width:72px;max-width:72px;min-width:0;min-height:34px!important;padding:4px!important;font-size:10px!important;background:var(--surface-alt)!important;border-radius:10px!important}
+ html:root body .auth-welcome-icon{display:grid;place-items:center;width:56px;height:56px;margin:28px 0 16px;background:var(--accent-soft);color:var(--accent);border-radius:18px}
+ html:root body .auth-welcome-icon .ui-icon{width:28px;height:28px}
+ html:root body .standalone-card h1{font-size:26px!important;line-height:1.2;margin:24px 0 12px!important;letter-spacing:-.6px}
+ html:root body .setup-card h1{margin-top:0!important}
+ html:root body .standalone-hint{font-size:13px;line-height:1.6;margin:0 0 24px!important;color:var(--secondary)}
+ html:root body .standalone-card .field>label,html:root body .auth-modal .spa-modal-body>label{font-size:13px!important;font-weight:600;color:var(--text)!important}
+ html:root body .standalone-card .field input,html:root body .auth-modal .spa-modal-body>input,html:root body .auth-modal .spa-password-wrap input{min-height:48px!important;background:var(--surface-alt)!important;border:1px solid var(--border)!important;border-radius:12px!important;font-size:16px!important}
+ html:root body .standalone-card .login-availability:empty{min-height:0;margin:0}
+ html:root body .standalone-card>.primary{min-height:48px!important;margin-top:8px;border-radius:14px!important;font-size:14px!important}
+ html:root body .standalone-card .primary:not(:disabled),html:root body .auth-modal .primary:not(:disabled){background:var(--accent)!important;color:#fff!important;box-shadow:0 5px 14px #007aff26!important}
+ html:root body .spa-modal-backdrop:has(.auth-modal){background:rgba(15,23,42,.48)!important;backdrop-filter:blur(10px)}
+ html:root body .spa-modal.auth-modal{background:var(--surface)!important;border:1px solid var(--border)!important;box-shadow:0 24px 90px #00000040!important;overflow:hidden}
+ html:root body .auth-modal .spa-modal-head{background:var(--surface)!important;border-bottom:1px solid var(--border)!important;padding-bottom:18px}
+ html:root body .auth-modal .spa-modal-head .spa-icon-btn{background:var(--surface-alt)!important}
+ html:root body .auth-modal .spa-modal-body{background:var(--surface)!important;padding-top:20px}
+ html:root body .auth-modal .auth-tabs{border:1px solid var(--border)!important;margin-bottom:22px!important}
+ html:root body .auth-modal .spa-modal-body>label{margin-top:16px}
+ html:root body .auth-modal .spa-password-toggle{background:transparent!important}
+}
+@media screen and (max-width:767px){
+ html:root body .standalone-view{padding:24px 12px;align-items:center}
+ html:root body .standalone-card{padding:22px 18px!important;border-radius:24px!important}
+ html:root body .standalone-card h1{font-size:23px!important}
+ html:root body .standalone-brand{font-size:12px!important}
+ html:root body .auth-welcome-icon{margin-top:24px}
+ html:root body .spa-modal-backdrop:has(.auth-modal){padding:12px 0 0!important}
+ html:root body .spa-modal.auth-modal{border-bottom:0!important;border-radius:24px 24px 0 0!important}
+ html:root body .auth-modal .spa-modal-head{min-height:76px;padding-top:16px;padding-bottom:14px}
+}
+@media screen {
+ html:root body form.spa-modal.auth-modal .spa-modal-head>.workdesk-confirm:not(:disabled){background:var(--accent)!important;color:#fff!important;box-shadow:0 5px 14px #007aff26!important}
+ html:root body .spa-modal.auth-modal:not(.delete-modal) .spa-modal-head{background:var(--surface)!important}
+}
+
+/* Desktop calculator: header navigation, configuration left, invoice center. */
+@media screen and (min-width:768px){
+ html:root body.workdesk-app .wrap{max-width:none!important;margin:0!important;padding:148px 20px 40px!important}
+ html:root body.workdesk-app .hero-left header{left:20px;top:16px;width:240px;height:40px;display:flex;align-items:center}
+ html:root body.workdesk-app .hero-left .badge{font-size:15px!important;white-space:nowrap;display:flex;align-items:center;gap:8px}
+ html:root body.workdesk-app .hero-left .badge::before{width:32px;height:32px;min-width:32px;margin:0}
+ html:root body.workdesk-app .hero-left header::after{content:"";position:fixed;left:0;right:0;top:0;height:128px;background:var(--surface);border-bottom:1px solid var(--border);z-index:-1}
+ html:root body.workdesk-app .workdesk-calculator-title{display:none!important}
+ html:root body.workdesk-app .tabs{left:20px;right:20px;top:72px;width:auto;height:44px;display:flex!important;flex-direction:row;align-items:center;justify-content:flex-end;gap:6px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none;backdrop-filter:none}
+ html:root body.workdesk-app .tabs>.tab-btn{width:auto;min-height:40px;height:40px;padding:8px 14px!important;border-radius:12px!important;font-size:13px!important}
+ html:root body.workdesk-app .header-actions,html:root body.workdesk-app #futurussSessionMount,html:root body.workdesk-app .session-controls{display:contents!important}
+ html:root body.workdesk-app .header-actions .header-icon-button,html:root body.workdesk-app .header-actions .header-catalog,html:root body.workdesk-app .session-pill{width:auto!important;min-height:40px!important;height:40px!important;padding:8px 12px!important;border-radius:12px!important;gap:7px;flex:none!important;font-size:13px!important;white-space:nowrap}
+ html:root body.workdesk-app .header-actions .ui-icon,html:root body.workdesk-app .session-pill .ui-icon{width:19px;height:19px}
+ html:root body.workdesk-app .header-icon-button .sr-only,html:root body.workdesk-app .header-catalog span{font-size:13px!important}
+ html:root body.workdesk-app .session-controls>.language-control{width:76px;padding:0;flex:none}
+ html:root body.workdesk-app .session-controls>.language-control select{width:76px;max-width:76px!important;min-width:0;min-height:40px!important;padding:6px!important;font-size:11px!important;border-radius:12px!important}
+ html:root body.workdesk-app .layout-grid{grid-template-columns:280px minmax(0,1fr)!important;gap:20px!important;justify-content:stretch;align-items:start}
+ html:root body.workdesk-app .input-card{grid-column:1!important;grid-row:1 / span 2!important;max-width:none!important;width:100%;justify-self:stretch}
+ html:root body.workdesk-app #combined-card{grid-column:2!important;grid-row:1!important;max-width:none!important;width:100%;justify-self:stretch}
+ html:root body.workdesk-app #designPreview{grid-column:2!important;grid-row:2!important;position:static!important;width:100%}
+ html:root body.workdesk-app .input-card .design-section{padding:16px!important;margin-bottom:14px!important}
+ html:root body.workdesk-app .input-card .design-section .row2{gap:10px!important}
+ html:root body.workdesk-app .input-card #futuruss-extra-options .useful-options-grid{grid-template-columns:1fr!important}
+ html:root body.workdesk-app .input-card #futuruss-extra-options label.useful-option{min-height:44px!important;padding:10px!important;font-size:13px!important}
+}
+@media screen and (min-width:1024px){
+ html:root body.workdesk-app .wrap{padding-top:92px!important}
+ html:root body.workdesk-app .hero-left header::after{height:72px}
+ html:root body.workdesk-app .tabs{left:260px;top:14px;right:20px}
+}
+@media screen and (min-width:1280px){
+ html:root body.workdesk-app .layout-grid{grid-template-columns:minmax(280px,360px) minmax(0,1fr) 248px!important}
+ html:root body.workdesk-app .input-card{grid-row:1!important}
+ html:root body.workdesk-app #designPreview{grid-column:3!important;grid-row:1!important;position:sticky!important;top:92px}
+}
+@media screen and (min-width:768px){
+ html:root body.workdesk-app .tabs{z-index:33;flex-wrap:nowrap!important}
+}
+@media screen and (min-width:768px){
+ html:root body.workdesk-app #combined-card table th:first-child,html:root body.workdesk-app #combined-card table td:first-child{width:38px!important;white-space:nowrap}
+}
+
+/* Let each desktop block use its own height; prioritize invoice width. */
+@media screen and (min-width:1280px){
+ html:root body.workdesk-app .wrap{padding-left:28px!important;padding-right:28px!important}
+ html:root body.workdesk-app .layout-grid{grid-template-columns:320px minmax(0,1fr) 224px!important;column-gap:32px!important;row-gap:28px!important;align-items:start}
+ html:root body.workdesk-app .input-card,html:root body.workdesk-app #combined-card{height:auto!important;align-self:start!important}
+ html:root body.workdesk-app .input-card .design-section{margin-bottom:20px!important;padding:18px!important}
+ html:root body.workdesk-app #combined-card{padding:28px!important}
+ html:root body.workdesk-app #designPreview{height:auto!important;min-height:0!important;display:block!important;align-self:start!important;padding:18px!important;overflow:visible}
+ html:root body.workdesk-app #designPreview>.design-photo{height:180px!important;min-height:0!important}
+ html:root body.workdesk-app #designPreview>.design-part-name{max-height:none;overflow:visible;margin:14px 0!important}
+ html:root body.workdesk-app #designPreview #constructorAdPreview{height:auto!important;display:block!important;padding:14px 0!important;margin:14px 0!important}
+ html:root body.workdesk-app #designPreview .glass-preview-photo{height:150px!important;min-height:0!important}
+ html:root body.workdesk-app #designPreview>div:last-child{height:auto!important;padding-top:14px!important}
+ html:root body.workdesk-app #designPreview .design-window{height:190px!important;max-height:190px!important}
+}
+@media screen and (min-width:1700px){
+ html:root body.workdesk-app .wrap{padding-left:32px!important;padding-right:32px!important}
+ html:root body.workdesk-app .layout-grid{grid-template-columns:340px minmax(0,1fr) 240px!important;column-gap:40px!important}
+ html:root body.workdesk-app #combined-card{padding:32px!important}
+}
+@media screen and (min-width:1280px){
+ html:root body.workdesk-app .layout-grid{grid-template-columns:224px minmax(0,1fr) 224px!important}
+ html:root body.workdesk-app .input-card .design-section{padding:14px!important}
+ html:root body.workdesk-app .input-card .design-section .row2{grid-template-columns:1fr!important;gap:12px!important}
+ html:root body.workdesk-app .input-card .design-section h3{flex-wrap:wrap;gap:10px}
+}
+@media screen and (min-width:1700px){html:root body.workdesk-app .layout-grid{grid-template-columns:240px minmax(0,1fr) 240px!important}}
+@media screen {
+ html:root body .language-control{display:block}
+ html:root body .language-trigger{display:flex!important;align-items:center;justify-content:center;gap:5px;width:100%;min-height:36px;padding:6px!important;background:var(--surface-alt)!important;color:var(--text)!important;border:0!important;border-radius:12px!important;font-size:11px!important;white-space:nowrap}
+ html:root body .language-trigger>.ui-icon{width:13px!important;height:13px!important}
+ html:root body .management-actions .language-trigger{min-height:32px;font-size:9px!important}
+ html:root body .standalone-brand-row .language-control{width:78px}
+ html:root body .spa-modal-backdrop.language-backdrop{align-items:center!important;justify-content:center!important;padding:20px!important;background:#10182770!important;z-index:6500}
+ html:root body .spa-modal.language-modal{width:min(360px,100%)!important;height:auto!important;min-height:0!important;max-height:calc(100dvh - 40px)!important;border-radius:24px!important;background:var(--surface)!important;box-shadow:0 20px 70px #00000030!important;overflow:auto}
+ html:root body .spa-modal.language-modal .spa-modal-head{grid-template-columns:40px minmax(0,1fr) 40px!important;min-height:64px!important;padding:14px 16px!important;background:var(--surface)!important;gap:8px!important}
+ html:root body .language-modal .spa-modal-head h2{grid-column:2;grid-row:1;font-size:17px!important;text-align:center;margin:0}
+ html:root body .language-modal .spa-modal-head .spa-icon-btn{grid-column:1;grid-row:1;width:40px!important;height:40px!important;min-height:40px!important;background:var(--surface-alt)!important}
+ html:root body .language-options{display:grid;gap:8px;padding:0 16px 16px}
+ html:root body .language-options button{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;height:52px;padding:12px 16px!important;border:0!important;border-radius:14px!important;background:var(--surface-alt)!important;color:var(--text)!important;font-size:15px!important;text-align:left}
+ html:root body .language-options button[aria-pressed=true]{color:var(--accent)!important;background:var(--accent-soft)!important;font-weight:650}
+ html:root body .language-options button .ui-icon{width:20px;height:20px;visibility:hidden}
+ html:root body .language-options button[aria-pressed=true] .ui-icon{visibility:visible}
+}
+@media screen and (max-width:767px){
+ html:root body .management-actions .language-control{width:42px!important;max-width:42px}
+ html:root body.workdesk-app .session-controls>.language-control{width:72px!important}
+ html:root body.workdesk-app .session-controls>button.session-pill:has(.i-logout){right:90px}
+}
+@media screen{html:root body .language-trigger>.ui-icon{transform:rotate(90deg)}}
+
+/* Both side columns are 15 percent wider than 2026.10.06.8. */
+@media screen and (min-width:1280px){html:root body.workdesk-app .layout-grid{grid-template-columns:257.6px minmax(0,1fr) 257.6px!important}}
+@media screen and (min-width:1700px){html:root body.workdesk-app .layout-grid{grid-template-columns:276px minmax(0,1fr) 276px!important}}
+
+/* Override the embedded legacy top:8px!important below the 72px header. */
+@media screen and (min-width:1280px){html:root body.workdesk-app #designPreview{top:92px!important}}
+
+/* Viewport-sized side panels stay within the invoice grid. */
+@media screen and (min-width:1280px){
+ html:root body.workdesk-app .input-card,html:root body.workdesk-app #designPreview{position:sticky!important;top:92px!important;align-self:start!important;box-sizing:border-box;height:auto!important;max-height:calc(100dvh - 108px)!important;min-height:0!important;overflow-x:hidden!important;overflow-y:auto!important;scrollbar-width:thin;scrollbar-color:var(--border) transparent;scroll-padding-block:12px}
+ html:root body.workdesk-app .input-card{padding:0 3px 0 0!important}
+ html:root body.workdesk-app .input-card .design-section{padding:10px!important;margin-bottom:8px!important;border-radius:16px!important}
+ html:root body.workdesk-app .input-card .design-section h3{font-size:13px!important;line-height:1.3;margin-bottom:8px!important;gap:7px}
+ html:root body.workdesk-app .input-card .design-section label{font-size:11px!important;line-height:1.3;margin-bottom:4px!important}
+ html:root body.workdesk-app .input-card .design-section .row2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px!important;margin-bottom:8px!important}
+ html:root body.workdesk-app .input-card .design-section input:not([type=checkbox]),html:root body.workdesk-app .input-card .design-section select{height:36px!important;min-height:36px!important;padding:6px 8px!important;font-size:13px!important;border-radius:9px!important}
+ html:root body.workdesk-app .input-card #futuruss-extra-options .useful-options-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:4px!important}
+ html:root body.workdesk-app .input-card #futuruss-extra-options label.useful-option{min-height:34px!important;padding:6px!important;font-size:10px!important;gap:5px!important;line-height:1.25!important}
+ html:root body.workdesk-app .input-card .useful-option-wide{grid-column:auto!important}
+ html:root body.workdesk-app .input-card .design-section .hint{font-size:10px!important;line-height:1.4;margin-top:5px!important}
+ html:root body.workdesk-app .input-card .matrix-family-tabs{gap:3px!important}
+ html:root body.workdesk-app .input-card .matrix-family{min-height:28px!important;padding:4px 7px!important;font-size:10px!important}
+ html:root body.workdesk-app .input-card .design-actions{position:sticky;bottom:0;z-index:2;padding:8px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:0 -6px 18px #0000000c}
+ html:root body.workdesk-app .input-card .design-actions button{min-height:34px!important;padding:7px!important;font-size:11px!important;margin:0 0 5px!important}
+ html:root body.workdesk-app .input-card .design-actions .calc{min-height:40px!important}
+ html:root body.workdesk-app .input-card .design-actions #msg{font-size:10px!important;line-height:1.35;margin-top:4px!important}
+ html:root body.workdesk-app #designPreview{padding:14px!important}
+ html:root body.workdesk-app #designPreview h2{font-size:16px!important;margin-bottom:10px!important}
+ html:root body.workdesk-app #designPreview h3{font-size:13px!important;margin-bottom:8px!important}
+ html:root body.workdesk-app #designPreview>.design-photo{height:clamp(80px,16dvh,180px)!important}
+ html:root body.workdesk-app #designPreview>.design-part-name{font-size:12px!important;line-height:1.4;margin:10px 0!important}
+ html:root body.workdesk-app #designPreview #constructorAdPreview{padding:10px 0!important;margin:10px 0!important}
+ html:root body.workdesk-app #designPreview .glass-preview-photo{height:clamp(70px,14dvh,150px)!important;font-size:11px!important;line-height:1.4}
+ html:root body.workdesk-app #designPreview>div:last-child{padding-top:10px!important;margin-top:10px!important;min-height:0!important}
+ html:root body.workdesk-app #designPreview .design-window{height:clamp(90px,20dvh,190px)!important;max-height:190px!important}
+}
+@media screen and (min-width:1280px){
+ html:root body.workdesk-app .hero-row{height:0!important;min-height:0!important;margin:0!important;padding:0!important}
+}
+
+/* Use the existing server-driven catalog state to hide unavailable controls. */
+@media screen {
+ html:root body.workdesk-app.catalog-empty .input-card>:not(#centralCatalogState){display:none!important}
+ html:root body.workdesk-app.catalog-empty .input-card{padding:0!important;overflow:visible!important}
+ html:root body.workdesk-app .input-card #centralCatalogState:not([hidden]){padding:18px!important;margin:0!important;border-radius:18px!important;background:var(--surface)!important;border:1px solid var(--border)!important;color:var(--secondary)!important;font-size:13px;line-height:1.6}
+ html:root body.workdesk-app .input-card #centralCatalogState strong{font-size:15px;color:var(--text);margin-bottom:8px}
+ html:root body.workdesk-app .input-card #centralCatalogState[hidden]{display:none!important}
+}
+
+/* Photo gallery: main image and thumbnail rail occupy separate rows. */
+@media screen {
+ html:root body.workdesk-app #designPreview>.design-photo{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr)!important;gap:10px!important;height:clamp(220px,30dvh,300px)!important;min-height:0!important;padding:8px!important;background:var(--surface-alt)!important}
+ html:root body.workdesk-app #designPreview>.design-photo:has(.design-photo-thumbs){grid-template-rows:minmax(0,1fr) 56px!important;height:clamp(280px,38dvh,360px)!important}
+ html:root body.workdesk-app #designPreview .design-photo-main{grid-area:1/1!important;display:block!important;min-height:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:0!important;background:#fff;border-radius:10px;cursor:zoom-in}
+ html:root body.workdesk-app #designPreview .design-photo-thumbs{grid-area:2/1!important;align-self:stretch!important;display:flex!important;flex-wrap:nowrap!important;justify-content:flex-start!important;gap:8px!important;padding:3px!important;min-width:0!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;overflow-x:auto!important;overflow-y:hidden!important;background:transparent!important;scrollbar-width:thin;scroll-snap-type:x proximity}
+ html:root body.workdesk-app #designPreview .design-photo-thumb{flex:0 0 54px!important;width:54px!important;height:46px!important;min-height:46px!important;padding:3px!important;margin:0!important;box-sizing:border-box;scroll-snap-align:start;border:1px solid var(--border)!important;box-shadow:none!important}
+ html:root body.workdesk-app #designPreview .design-photo-thumb img{object-fit:contain!important;background:#fff;border-radius:5px}
+ html:root body.workdesk-app #designPreview .glass-preview-photo{height:clamp(150px,22dvh,220px)!important;padding:8px!important}
+ html:root body.workdesk-app #constructorAdPreview img:not([hidden]){cursor:zoom-in;background:#fff;border-radius:10px}
+ html:root body.workdesk-app #designPreview img[role=button]:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+ body.preview-viewer-open{overflow:hidden!important}
+ html:root body dialog.preview-image-viewer{position:fixed!important;inset:0!important;box-sizing:border-box!important;width:min(1080px,calc(100vw - 40px))!important;max-width:none!important;height:min(860px,calc(100dvh - 40px))!important;max-height:none!important;margin:auto!important;padding:16px!important;border:1px solid var(--border)!important;border-radius:24px!important;background:var(--surface)!important;color:var(--text)!important;box-shadow:0 24px 80px #0005!important;overflow:hidden!important}
+ html:root body dialog.preview-image-viewer[open]{display:flex!important;flex-direction:column!important;gap:12px!important}
+ html:root body dialog.preview-image-viewer::backdrop{background:rgba(15,23,42,.72);backdrop-filter:blur(5px)}
+ .preview-viewer-head{display:flex;align-items:center;justify-content:space-between;flex:none;font-size:14px;font-weight:600;color:var(--secondary)}
+ .preview-viewer-stage{display:flex;align-items:center;gap:12px;flex:1;min-height:0;background:#fff;border-radius:14px;padding:12px}
+ .preview-viewer-stage>img{flex:1;min-width:0;min-height:0;width:0;height:100%;object-fit:contain}
+ html:root body .preview-viewer-button{display:grid!important;place-items:center!important;flex:none;width:42px!important;height:42px!important;min-height:42px!important;padding:0!important;border:1px solid var(--border)!important;border-radius:12px!important;background:var(--surface)!important;color:var(--text)!important;box-shadow:none!important}
+ .preview-viewer-thumbs{display:flex;flex:none;gap:10px;overflow-x:auto;padding:3px;scrollbar-width:thin}
+ html:root body .preview-viewer-thumb{flex:0 0 68px;width:68px!important;height:60px!important;padding:4px!important;border:1px solid var(--border)!important;border-radius:10px!important;background:#fff!important}
+ .preview-viewer-thumb img{width:100%;height:100%;object-fit:contain}
+ html:root body .preview-viewer-thumb[aria-pressed=true]{outline:2px solid var(--accent);outline-offset:0}
+ html:root body .preview-image-viewer [hidden]{display:none!important}
+ @media(max-width:767px){html:root body dialog.preview-image-viewer{width:calc(100vw - 16px)!important;height:calc(100dvh - 24px)!important;padding:12px!important;border-radius:18px!important}.preview-viewer-stage{gap:4px;padding:4px}.preview-viewer-stage .preview-viewer-button{width:34px!important;height:40px!important}}
+}
+@media screen {
+ html:root body.workdesk-app #designPreview>.design-photo:has(.design-photo-main)::after{content:'';grid-area:1/1;align-self:end;justify-self:end;width:32px;height:32px;border-radius:9px;border:1px solid var(--border);background:var(--surface) url('../icons/zoom-in.svg') center/18px no-repeat;pointer-events:none;z-index:2;margin:6px}
+}
+
+/* Both invoices share the center column; positions follow the summary directly. */
+@media screen {
+ html:root body.workdesk-app .invoice-column{min-width:0;width:100%;align-self:start;display:flex;flex-direction:column;gap:28px}
+ html:root body.workdesk-app .invoice-column #combined-card{margin:0!important;box-sizing:border-box}
+ html:root body.workdesk-app .invoice-column #results{margin:0!important;width:100%;min-width:0}
+ html:root body.workdesk-app .invoice-column #invoice-card{width:100%!important;max-width:none!important;margin:0!important;box-sizing:border-box}
+ html:root body.workdesk-app .invoice-column #positions-container{grid-template-columns:minmax(0,1fr)!important;min-width:0}
+ @media(min-width:768px){html:root body.workdesk-app .invoice-column{grid-column:2!important;grid-row:1!important}}
+ @media(max-width:767px){html:root body.workdesk-app .invoice-column{grid-column:1!important;gap:18px}}
+}
+
+/* Editable invoice values need a clear input surface and visible focus. */
+@media screen {
+ html:root body.workdesk-app #positions-container{--invoice-field-bg:#fff;--invoice-field-border:#64748b;--invoice-placeholder:#596579}
+ html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item{height:38px!important}
+ html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item>td{padding:4px 5px!important;line-height:1.35!important}
+ html:root body.workdesk-app #positions-container input:not([type=checkbox]){background:var(--invoice-field-bg)!important;color:var(--text)!important;border:1.5px solid var(--invoice-field-border)!important;border-radius:8px!important;box-shadow:0 1px 2px #00000008!important;font-size:14px!important;cursor:text}
+ html:root body.workdesk-app #positions-container .qty-input{width:70px!important;height:32px!important;min-height:32px!important;padding:3px 7px!important;line-height:24px!important;font-weight:600;text-align:center}
+ html:root body.workdesk-app #positions-container .add-row input{height:42px!important;min-height:42px!important;padding:8px 10px!important}
+ html:root body.workdesk-app #positions-container input::placeholder{color:var(--invoice-placeholder)!important;opacity:1!important}
+ html:root body.workdesk-app #positions-container input:hover{border-color:var(--accent)!important}
+ html:root body.workdesk-app #positions-container input:focus{outline:3px solid color-mix(in srgb,var(--accent) 25%,transparent)!important;outline-offset:1px!important;border-color:var(--accent)!important;background:var(--invoice-field-bg)!important}
+ html:root body.workdesk-app #positions-container .invoice-edit-hint{display:flex;align-items:center;gap:7px;margin:10px 0 12px;color:var(--secondary);font-size:12px;line-height:1.5}
+ html:root body.workdesk-app #positions-container .invoice-edit-hint .ui-icon{width:15px;height:15px;flex:none;color:var(--accent)}
+ html:root body dialog#destructiveConfirm.destructive-confirm{position:fixed!important;inset:0!important;width:min(440px,calc(100vw - 28px))!important;max-width:none!important;height:fit-content!important;min-height:0!important;max-height:calc(100dvh - 40px)!important;margin:auto!important;padding:24px!important;box-sizing:border-box!important;border:1px solid var(--border)!important;border-radius:24px!important;background:var(--surface)!important;color:var(--text)!important;box-shadow:0 24px 80px #0005!important;overflow:auto!important}
+ html:root body dialog#destructiveConfirm.destructive-confirm::backdrop{background:rgba(15,23,42,.65);backdrop-filter:blur(5px)}
+ .destructive-confirm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+ html:root body .destructive-confirm-symbol{width:38px!important;height:38px!important;color:#d92d20!important}
+ html:root body .destructive-confirm-close{display:grid;place-items:center;width:38px!important;height:38px!important;min-height:38px!important;padding:0!important;background:var(--surface-alt)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:10px!important}
+ html:root body .destructive-confirm h2{font-size:21px!important;font-weight:700!important;margin:0 0 12px!important;padding:0!important;color:var(--text)!important}
+ html:root body .destructive-confirm p{font-size:14px!important;line-height:1.6!important;margin:0 0 14px!important;color:var(--text)!important}
+ html:root body .destructive-confirm p.destructive-confirm-detail{font-size:12px!important;color:var(--secondary)!important}
+ .destructive-confirm-context{padding:10px 12px;margin:0 0 12px;border-radius:10px;background:var(--surface-alt);font-size:13px;font-weight:600;overflow-wrap:anywhere}
+ .destructive-confirm-foot{display:flex;gap:10px;margin-top:22px}
+ html:root body .destructive-confirm-foot button{flex:1;min-height:44px!important;padding:10px!important;font-size:14px!important;font-weight:600!important;border-radius:12px!important;border:1px solid var(--border)!important;box-shadow:none!important}
+ html:root body #destructiveConfirm .destructive-confirm-cancel{background:var(--surface-alt)!important;color:var(--text)!important}
+ html:root body #destructiveConfirm .destructive-confirm-approve{background:#d92d20!important;color:#fff!important;border-color:#d92d20!important}
+ html:root body .destructive-confirm button:focus-visible{outline:3px solid var(--accent)!important;outline-offset:3px!important}
+ html:root body .destructive-confirm [hidden]{display:none!important}
+ @media(prefers-color-scheme:dark){html:root body.workdesk-app #positions-container{--invoice-field-bg:#30343c;--invoice-field-border:#949ca8;--invoice-placeholder:#c2c9d3}}
+}
+@media print{.invoice-edit-hint,dialog.destructive-confirm{display:none!important}}
+@media screen {
+ html:root body.workdesk-app .tabs>#tabbtn-nakladnaya,html:root body.workdesk-app .tabs .header-icon-button,html:root body.workdesk-app .tabs .header-catalog{display:none!important}
+ html:root body.workdesk-app .tabs{justify-content:flex-end!important}
+ html:root body dialog#globalUploadPreloader{position:fixed!important;inset:0!important;width:100vw!important;max-width:none!important;height:100dvh!important;min-height:100dvh!important;max-height:none!important;margin:0!important;padding:24px!important;box-sizing:border-box!important;border:0!important;border-radius:0!important;background:color-mix(in srgb,var(--surface) 75%,transparent)!important;backdrop-filter:blur(12px);box-shadow:none!important;color:var(--text)!important}
+ html:root body dialog#globalUploadPreloader[open]{display:grid!important;place-items:center!important}
+ html:root body dialog#globalUploadPreloader::backdrop{background:#17203566;backdrop-filter:blur(8px)}
+ .upload-preloader-content{text-align:center;display:flex;align-items:center;flex-direction:column;gap:22px;max-width:420px}
+ .upload-preloader-content p{font-size:17px;font-weight:600;line-height:1.6;margin:0}
+ .upload-preloader-spinner{width:52px;height:52px;box-sizing:border-box;border:4px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:upload-spin .8s linear infinite}
+ @keyframes upload-spin{to{transform:rotate(360deg)}}
+ html:root body #invoiceAdvertising{height:clamp(260px,55dvh,640px)!important;min-height:0!important;overflow:hidden!important;background:var(--surface-alt)!important}
+ html:root body #invoiceAdvertising>img{object-fit:contain!important}
+ html:root body .has-advertising-media>img,html:root body .has-advertising-media>span{display:none!important}
+ .advertising-carousel{height:100%;width:100%;min-width:0;min-height:0;display:grid;place-items:center;overflow:hidden}
+ html:root body .advertising-carousel .advertising-carousel-media{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;border-radius:0!important}
+ html:root body #constructorAdPreview .has-advertising-media{display:block!important}
+ .advertising-preview video{width:100%;height:100%;object-fit:contain;max-height:420px}
+ .advertising-media-list{display:flex;flex-direction:column;gap:10px;width:100%;margin-top:16px}
+ .advertising-media-item{display:flex;align-items:center;gap:8px;background:var(--surface-alt);padding:8px;border-radius:12px}
+ .advertising-media-select{display:flex;align-items:center;gap:12px;min-width:0;flex:1;text-align:left!important;border:1px solid transparent!important;background:transparent!important;box-shadow:none!important;padding:6px!important}
+ .advertising-media-select[aria-pressed=true]{border-color:var(--accent)!important}
+ .advertising-media-select img{width:52px;height:44px;object-fit:contain;border-radius:8px;background:var(--surface)}
+ .advertising-media-select>span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+
+}
+@media print{#globalUploadPreloader{display:none!important}}
+@media screen {
+ html:root body .advertising-carousel{position:relative;display:block!important}
+ html:root body .advertising-carousel .advertising-carousel-media{position:absolute!important;inset:0!important;min-width:0!important;min-height:0!important}
+}

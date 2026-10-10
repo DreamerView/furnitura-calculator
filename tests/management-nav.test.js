@@ -1,0 +1,24 @@
+const fs=require('fs');
+const path=require('path');
+const root=path.resolve(__dirname,'..');
+const spa=fs.readFileSync(path.join(root,'assets/js/spa.js'),'utf8');
+const html=fs.readFileSync(path.join(root,'configurator.html'),'utf8');
+const css=fs.readFileSync(path.join(root,'assets/css/spa.css'),'utf8');
+let n=0;function ok(v,m){if(!v){console.error('FAIL:',m);process.exit(1)}console.log(`ok ${++n} - ${m}`)}
+ok((spa.match(/<management-nav><\/management-nav>/g)||[]).length===2&&fs.readFileSync(path.join(root,'assets/js/price-categories.js'),'utf8').includes('<management-nav/>'),'shared navigation remains on Users, pricing and advertising');
+ok(spa.includes('<span class="ui-icon i-users"></span>Пользователи'),'Users icon is always in the shared nav');
+ok(spa.includes('exact-active-class="router-link-active"'),'Users active state is exact');
+ok(spa.includes('management-session')&&spa.includes('to="/calculator"'),'session actions and calculator are shared by management pages');
+ok(spa.includes("v-if=\"actor.role==='central'\" class=\"management-nav-btn\" type=\"button\" @click=\"openConfigurator\""),'HTML configurator launch is Central-only');
+ok(spa.includes("window.open(url,'FUTURUSS_CONFIGURATOR')")&&spa.includes('openConfiguratorPage'),'HTML configurator opens and reuses one named browser tab');
+ok(!spa.includes('<iframe')&&!spa.includes('configurator-frame'),'configurator is not embedded in an iframe');
+ok(spa.includes('const AdvertisingView=')&&spa.includes('to="/advertising"')&&spa.includes("api('catalog_save','POST',{catalog:next})"),'advertising controls live in Vue and save through the API');
+ok(spa.includes("if(to.path==='/advertising'&&state.auth.role!=='central')"),'advertising page is Central-only');
+ok(!spa.includes('<configurator-editor')&&!fs.existsSync(path.join(root,'assets/js/configurator.js')),'native Vue catalog editor implementation is removed');
+ok(html.includes('id="returnManagement"')&&spa.includes('>Управление</router-link>'),'calculator and configurator return to Management');
+ok(!spa.includes('catalog_import')&&!spa.includes('Импорт базы'),'separate JSON import workflow is removed');
+ok(html.includes('signalCatalogUpdate()')&&!html.includes('window.parent.FUTURUSS_SPA'),'standalone page broadcasts catalog updates without a parent frame');
+ok(!spa.includes('<router-link class="management-nav-btn" to="/next"'),'Soon item is never a RouterLink');
+ok(spa.includes("if(to.path==='/next')return '/users';"),'legacy /next route redirects to Users');
+ok(css.includes('.management-nav-btn.soon{cursor:default')&&css.includes('.advertising-manager{'),'Soon item and Vue advertising styles exist');
+console.log(`PASS ${n} management-nav checks`);

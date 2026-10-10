@@ -1,0 +1,1562 @@
+[
+  {
+    "kit": "roller11",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "df1d412ef0f5fca45129027fec54af462b31f19c7ae8d968ff3d6641f276869f"
+  },
+  {
+    "kit": "roller11",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "aacffeaadbcae1ef89614240defa461f79e37ecfa668edd613e8d1f96e8f9fbd"
+  },
+  {
+    "kit": "roller11",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e3f8041e49004421e75d4958224b557b4d41096689e71151510b5295b1d277dd"
+  },
+  {
+    "kit": "roller11",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "d8149edffb7891eb98427ff2037c1b17c3457c282faeb48eb0c52f8da558c3f3"
+  },
+  {
+    "kit": "roller11",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "86f8a9b13b1e0221d0fd99217b2fbacf0b464ffa34310752ebc4756ddd99dc35"
+  },
+  {
+    "kit": "roller11",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a75b4d314b174397ef2852a831e7f972dabf950f06b6861ad158b764c888d629"
+  },
+  {
+    "kit": "roller8",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "ebd1d5b43f2a36ac9eae0ed27afc1edf79d33d78ef5fe4f92a9b3ace4503c8af"
+  },
+  {
+    "kit": "roller8",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "2bebc408470568f6b7620937c6b5bc805b810662c4dae7465bbef0b1961eac25"
+  },
+  {
+    "kit": "roller8",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "dcbba505d8a230f063683294d143f72c394a76ab65c2e9e603d34adf49ae8ec8"
+  },
+  {
+    "kit": "roller8",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "ebd1d5b43f2a36ac9eae0ed27afc1edf79d33d78ef5fe4f92a9b3ace4503c8af"
+  },
+  {
+    "kit": "roller8",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "2bebc408470568f6b7620937c6b5bc805b810662c4dae7465bbef0b1961eac25"
+  },
+  {
+    "kit": "roller8",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "dcbba505d8a230f063683294d143f72c394a76ab65c2e9e603d34adf49ae8ec8"
+  },
+  {
+    "kit": "mushroom",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "2d5bf2edfb50854109efe592e6360d59167d281b75fcb51aa083793a2d97f37a"
+  },
+  {
+    "kit": "mushroom",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e62a470a3dfb9c0545788b3fc2b456196b0940d57415192914af74abb1e03fbb"
+  },
+  {
+    "kit": "mushroom",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "366a8f4e809abc8ced1dc838804e6c5ec55c663fa68623594b0d319cdcd5d2b6"
+  },
+  {
+    "kit": "mushroom",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "2d5bf2edfb50854109efe592e6360d59167d281b75fcb51aa083793a2d97f37a"
+  },
+  {
+    "kit": "mushroom",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e62a470a3dfb9c0545788b3fc2b456196b0940d57415192914af74abb1e03fbb"
+  },
+  {
+    "kit": "mushroom",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "366a8f4e809abc8ced1dc838804e6c5ec55c663fa68623594b0d319cdcd5d2b6"
+  },
+  {
+    "kit": "alu-tilt-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e30c20bcde61c8108ca1c29965dc363fe4fd4a8dbbeba97452b7f8d03de5a8f3"
+  },
+  {
+    "kit": "alu-tilt-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "6aab17dad4bc0b6b5d9984a2d09ba06c23c2fdb5df2118b047fc2b4a740da006"
+  },
+  {
+    "kit": "alu-tilt-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "70de268570c0dc698bf6670c8bd1d28cc5d1440508b2fb441c30c3a2b40ee96c"
+  },
+  {
+    "kit": "alu-tilt-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e30c20bcde61c8108ca1c29965dc363fe4fd4a8dbbeba97452b7f8d03de5a8f3"
+  },
+  {
+    "kit": "alu-tilt-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "40ff1b9fa576966055ee0a47c82b29fe27164b6e92a4b7d8ea9312bd56b24918"
+  },
+  {
+    "kit": "alu-tilt-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "70de268570c0dc698bf6670c8bd1d28cc5d1440508b2fb441c30c3a2b40ee96c"
+  },
+  {
+    "kit": "alu-tilt-security",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-tilt-security",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "3aa86d309d8a1531b32ae24ddbc844721be28a0a7ddf120a40d6893ac824d15b"
+  },
+  {
+    "kit": "alu-tilt-security",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-tilt-security",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-tilt-security",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "75b90c8814ae6b6fc0b552f661c41a43eb992f5302a256e8e859585653338c3c"
+  },
+  {
+    "kit": "alu-tilt-security",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-tilt-high",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-tilt-high",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "3aa86d309d8a1531b32ae24ddbc844721be28a0a7ddf120a40d6893ac824d15b"
+  },
+  {
+    "kit": "alu-tilt-high",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-tilt-high",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-tilt-high",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "75b90c8814ae6b6fc0b552f661c41a43eb992f5302a256e8e859585653338c3c"
+  },
+  {
+    "kit": "alu-tilt-high",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-turn-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e30c20bcde61c8108ca1c29965dc363fe4fd4a8dbbeba97452b7f8d03de5a8f3"
+  },
+  {
+    "kit": "alu-turn-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "3fd90920ceaefa78aea82c057643621fbc18a955e80e592c23736fa1dda8e4ae"
+  },
+  {
+    "kit": "alu-turn-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "70de268570c0dc698bf6670c8bd1d28cc5d1440508b2fb441c30c3a2b40ee96c"
+  },
+  {
+    "kit": "alu-turn-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e30c20bcde61c8108ca1c29965dc363fe4fd4a8dbbeba97452b7f8d03de5a8f3"
+  },
+  {
+    "kit": "alu-turn-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "2a1650100f68f729cf11f854bbd1579c984350e1a1746adaf9974406fa7d330d"
+  },
+  {
+    "kit": "alu-turn-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "70de268570c0dc698bf6670c8bd1d28cc5d1440508b2fb441c30c3a2b40ee96c"
+  },
+  {
+    "kit": "alu-turn-security",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-turn-security",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "212b1b4775cf9bafdc91ab7babdcb7cccd412f1567c1a46f0e616a33c319bbc9"
+  },
+  {
+    "kit": "alu-turn-security",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-turn-security",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-turn-security",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "5c3eb3a08e864cbd90d0e53bc815b41c032719adc4f92ac3e7bbb099e1b6cb95"
+  },
+  {
+    "kit": "alu-turn-security",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-turn-high",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-turn-high",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "ebbb02b7584f8a9db9a5df9d4dd91ef939a8cae254ef17f8b35199861e3fc039"
+  },
+  {
+    "kit": "alu-turn-high",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-turn-high",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-turn-high",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "20176f6aed6024bba302dbae239da50999547469aa9ed3cedd5eeec7ac5c2286"
+  },
+  {
+    "kit": "alu-turn-high",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-child-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e30c20bcde61c8108ca1c29965dc363fe4fd4a8dbbeba97452b7f8d03de5a8f3"
+  },
+  {
+    "kit": "alu-child-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "63d05c81979fc62c541e2f348fb0d4c28dcb91c6e9e655db203024f27bc16ad3"
+  },
+  {
+    "kit": "alu-child-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "70de268570c0dc698bf6670c8bd1d28cc5d1440508b2fb441c30c3a2b40ee96c"
+  },
+  {
+    "kit": "alu-child-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "e30c20bcde61c8108ca1c29965dc363fe4fd4a8dbbeba97452b7f8d03de5a8f3"
+  },
+  {
+    "kit": "alu-child-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "f7d1c37b030e04adf6cff61822cfebebbe8a7a0142f3444b1827fb2002908d18"
+  },
+  {
+    "kit": "alu-child-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "70de268570c0dc698bf6670c8bd1d28cc5d1440508b2fb441c30c3a2b40ee96c"
+  },
+  {
+    "kit": "alu-child-security",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-child-security",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "68725cded5bd5bfa807fee5ead389d6ac185f4aa2fec73cfc06bb67963c61098"
+  },
+  {
+    "kit": "alu-child-security",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-child-security",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-child-security",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "fdc88dec0e9a9a945e6d95d8136e8f00c1286e4080f852265d479cac6d0a49ef"
+  },
+  {
+    "kit": "alu-child-security",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-child-high",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-child-high",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "68725cded5bd5bfa807fee5ead389d6ac185f4aa2fec73cfc06bb67963c61098"
+  },
+  {
+    "kit": "alu-child-high",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-child-high",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7dfae3426b9399b4f9ba205366be316c3d2cd671712e27dd1ce10354a9f42125"
+  },
+  {
+    "kit": "alu-child-high",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "fdc88dec0e9a9a945e6d95d8136e8f00c1286e4080f852265d479cac6d0a49ef"
+  },
+  {
+    "kit": "alu-child-high",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "a5e8145f777b979391da7b133d076c80bbfaeedfd4c64274069c32daa7b8e3c6"
+  },
+  {
+    "kit": "alu-tilt-d25-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "ff6141151e15da408cc73f97c2bad0fbcfa532ecab259638fae34a647014f0b9"
+  },
+  {
+    "kit": "alu-tilt-d25-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "31f2a4cc96b34e619ef3c9856ac26341cac3f39e2e2220767eb7ffb5572c435a"
+  },
+  {
+    "kit": "alu-tilt-d25-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7a093631640d640e4cba68c83ea8eb65735dfe5d2ac675ce93f1bac08b710d05"
+  },
+  {
+    "kit": "alu-tilt-d25-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "ff6141151e15da408cc73f97c2bad0fbcfa532ecab259638fae34a647014f0b9"
+  },
+  {
+    "kit": "alu-tilt-d25-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "0f4fb746a09040f26641ee5c4c93e1854c6dc9f65de6116e285fb167e41f5b06"
+  },
+  {
+    "kit": "alu-tilt-d25-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7a093631640d640e4cba68c83ea8eb65735dfe5d2ac675ce93f1bac08b710d05"
+  },
+  {
+    "kit": "alu-tilt-d25-basic",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "ff6141151e15da408cc73f97c2bad0fbcfa532ecab259638fae34a647014f0b9"
+  },
+  {
+    "kit": "alu-tilt-d25-basic",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "2fcce0a47eff1660d4a3c512d5ce6edd5a8894d5fc830210a59690e03188e769"
+  },
+  {
+    "kit": "alu-tilt-d25-basic",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7a093631640d640e4cba68c83ea8eb65735dfe5d2ac675ce93f1bac08b710d05"
+  },
+  {
+    "kit": "alu-tilt-d25-basic",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "ff6141151e15da408cc73f97c2bad0fbcfa532ecab259638fae34a647014f0b9"
+  },
+  {
+    "kit": "alu-tilt-d25-basic",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "9a40f8cc81737be7116db24a26c3fb183ad1e98ef7b05a54921e69d35cb0446f"
+  },
+  {
+    "kit": "alu-tilt-d25-basic",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "7a093631640d640e4cba68c83ea8eb65735dfe5d2ac675ce93f1bac08b710d05"
+  },
+  {
+    "kit": "alu-tilt-d25-high-catalog",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "dd24a210a3fcfdff0a17ae847341046f0f84d4cd68b3cc67be28c436925087fc"
+  },
+  {
+    "kit": "alu-tilt-d25-high-catalog",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "dadb1c6cad999355961041cdf6ebda40e88c84d0d5fd03e0b3d5dccda20faf66"
+  },
+  {
+    "kit": "alu-tilt-d25-high-catalog",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "76811b16966386af1d62668056cd683eb1b5b699fe1291522f62d2618d97218a"
+  },
+  {
+    "kit": "alu-tilt-d25-high-catalog",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "dd24a210a3fcfdff0a17ae847341046f0f84d4cd68b3cc67be28c436925087fc"
+  },
+  {
+    "kit": "alu-tilt-d25-high-catalog",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "06e2808631686e39248815c5f5096faea4dc3b31a94e38c0532698b150db4389"
+  },
+  {
+    "kit": "alu-tilt-d25-high-catalog",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "76811b16966386af1d62668056cd683eb1b5b699fe1291522f62d2618d97218a"
+  },
+  {
+    "kit": "alu-stulp-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "799866898998c6b11ac01ac89898e85791a02a8517f73c7b29c8c9ee7bd3447c"
+  },
+  {
+    "kit": "alu-stulp-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "10dabc3dd64a9929c3c3657794cc098acb222d53991df77bba99f1e295ccb541"
+  },
+  {
+    "kit": "alu-stulp-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "4ef53c9b617eeac7548aa1f70af305b19ca078070b8c141ea22eeaec0ebf1b8e"
+  },
+  {
+    "kit": "alu-stulp-standard",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "799866898998c6b11ac01ac89898e85791a02a8517f73c7b29c8c9ee7bd3447c"
+  },
+  {
+    "kit": "alu-stulp-standard",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "0d304db392a2a73401182b29f57819e1fd8d9607727f6581e7237af4112a9e61"
+  },
+  {
+    "kit": "alu-stulp-standard",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "4ef53c9b617eeac7548aa1f70af305b19ca078070b8c141ea22eeaec0ebf1b8e"
+  },
+  {
+    "kit": "pvc-turn-11",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "583d1eb201b8b7cf67c3ceb02000717b1f48b7da4bb80b03b47ab7ae91b6a6fe"
+  },
+  {
+    "kit": "pvc-turn-11",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "232cf025337af32ae4742036c7c767123988b9be8048528dba110b6b0d3af466"
+  },
+  {
+    "kit": "pvc-turn-11",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "d1b2d26dcf6c2ad6755c9aa9d9f6c71780b88afc039c40dbaeed661e985e376b"
+  },
+  {
+    "kit": "pvc-turn-11",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "583d1eb201b8b7cf67c3ceb02000717b1f48b7da4bb80b03b47ab7ae91b6a6fe"
+  },
+  {
+    "kit": "pvc-turn-11",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "232cf025337af32ae4742036c7c767123988b9be8048528dba110b6b0d3af466"
+  },
+  {
+    "kit": "pvc-turn-11",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "d1b2d26dcf6c2ad6755c9aa9d9f6c71780b88afc039c40dbaeed661e985e376b"
+  },
+  {
+    "kit": "pvc-stulp-bolts-11",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-11",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-11",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-11",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-11",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-11",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-turn-8",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "d90e0f8dec67caacfaebd917ddcb84f3cbee54e4387e0b6b5797e8110f0b3f6c"
+  },
+  {
+    "kit": "pvc-turn-8",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "6d294a333b3e75449242208cfe17297a887c9d4f2afa809243ea1f5d86425278"
+  },
+  {
+    "kit": "pvc-turn-8",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "96cf85e53318d424b26d0ff0c24cb169c0c6a0f31ef24f527e0b47e814483764"
+  },
+  {
+    "kit": "pvc-turn-8",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "d90e0f8dec67caacfaebd917ddcb84f3cbee54e4387e0b6b5797e8110f0b3f6c"
+  },
+  {
+    "kit": "pvc-turn-8",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "6d294a333b3e75449242208cfe17297a887c9d4f2afa809243ea1f5d86425278"
+  },
+  {
+    "kit": "pvc-turn-8",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "96cf85e53318d424b26d0ff0c24cb169c0c6a0f31ef24f527e0b47e814483764"
+  },
+  {
+    "kit": "pvc-stulp-bolts-8",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-8",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-8",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "L",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-8",
+    "params": {
+      "width": 700,
+      "height": 800,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-8",
+    "params": {
+      "width": 700,
+      "height": 1500,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  },
+  {
+    "kit": "pvc-stulp-bolts-8",
+    "params": {
+      "width": 700,
+      "height": 2000,
+      "side": "R",
+      "count": 2,
+      "dornmass": 15,
+      "optionSeries": "13",
+      "options": {}
+    },
+    "hash": "537eafb5c9d3a1333961b8525cb2b4e33f47a4c5c525668edb742d40e786a95e"
+  }
+]

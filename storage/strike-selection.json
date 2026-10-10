@@ -1,0 +1,164 @@
+{
+  "defaultSuffix": "40",
+  "source": "Таблица 10.4 подбора ответных планок — изображение пользователя; обозначения приведены к артикулам существующей базы.",
+  "profiles": {
+    "KBE 09": {
+      "series": "9",
+      "perimeter": {
+        "35": "ZK9.35",
+        "40": "ZK9.40",
+        "45": "ZK9.45",
+        "50": "ZK9.50"
+      },
+      "security": {
+        "35": "ZUP.K9/35",
+        "40": "ZUP.K9/40",
+        "45": "ZUP.K9/45"
+      },
+      "tiltSecurity": {
+        "35": "ZUO.K9/35",
+        "40": "ZUO.K9/40",
+        "45": "ZUO.K9/45"
+      },
+      "tiltFirst": "VTF.9",
+      "microvent": "XZMV.9",
+      "step": "ZPP",
+      "lifterPlastic": "ZM9.P",
+      "lifterZinc": "ZM9.Z",
+      "tiltBolt": "XZSP.9",
+      "hiddenClamp": "PS.R9",
+      "adapter": null
+    },
+    "KBE 13": {
+      "series": "13",
+      "perimeter": {
+        "35": "ZK.35",
+        "40": "ZK.40",
+        "45": "ZK.45",
+        "50": "ZK.50"
+      },
+      "security": {
+        "35": "ZUP.K/35",
+        "40": "ZUP.K/40",
+        "45": "ZUP.K/45"
+      },
+      "tiltSecurity": {
+        "35": "ZUO.K/35",
+        "40": "ZUO.K/40",
+        "45": "ZUO.K/45"
+      },
+      "tiltFirst": "ZTF.K13/30",
+      "microvent": "XZMV.13",
+      "step": "ZPP",
+      "lifterPlastic": "ZM13.P",
+      "lifterZinc": "ZM13.Z",
+      "tiltBolt": "XZSP.13",
+      "hiddenClamp": "PS.R13",
+      "adapter": null
+    },
+    "REHAU": {
+      "series": "13",
+      "perimeter": {
+        "35": "ZK.35",
+        "40": "ZK.40",
+        "45": "ZK.45",
+        "50": "ZK.50"
+      },
+      "security": {
+        "35": "ZUP.R/35",
+        "40": "ZUP.R/40",
+        "45": "ZUP.R/45"
+      },
+      "tiltSecurity": {
+        "35": "ZUO.R/35",
+        "40": "ZUO.R/40",
+        "45": "ZUO.R/45"
+      },
+      "tiltFirst": "ZTF.K13/30",
+      "microvent": "XZMV.13",
+      "step": "ZPP",
+      "lifterPlastic": "ZM13.P",
+      "lifterZinc": "ZM13.Z",
+      "tiltBolt": "XZSP.13",
+      "hiddenClamp": "PS.R13",
+      "adapter": null
+    },
+    "VEKA 13 / VHS": {
+      "series": "13",
+      "perimeter": {
+        "35": "ZK.35",
+        "40": "ZK.40",
+        "45": "ZK.45",
+        "50": "ZK.50"
+      },
+      "security": {
+        "35": "ZUP.V/35",
+        "40": "ZUP.V/40",
+        "45": "ZUP.V/45"
+      },
+      "tiltSecurity": {
+        "35": "ZUO.V/35",
+        "40": "ZUO.V/40",
+        "45": "ZUO.V/45"
+      },
+      "tiltFirst": "ZTF.K13/30",
+      "microvent": "XZMV.13",
+      "step": "ZPP",
+      "lifterPlastic": "ZM13.P",
+      "lifterZinc": "ZM13.Z",
+      "tiltBolt": "XZSP.13",
+      "hiddenClamp": "PS.R13",
+      "adapter": null
+    },
+    "Gealan/Ivaper": {
+      "series": "13",
+      "perimeter": {
+        "35": "ZQ.35",
+        "45": "ZQ.45"
+      },
+      "security": {
+        "35": "ZUP.G/35",
+        "40": "ZUP.G/40",
+        "45": "ZUP.G/45"
+      },
+      "tiltSecurity": {
+        "35": "ZUO.G/35",
+        "40": "ZUO.G/40",
+        "45": "ZUO.G/45"
+      },
+      "tiltFirst": "ZTF.K13/30",
+      "microvent": "XZMV.13",
+      "step": "ZPP",
+      "lifterPlastic": "ZM13.P",
+      "lifterZinc": "ZM13.Z",
+      "tiltBolt": "XZSP.13",
+      "hiddenClamp": "PS.R13",
+      "adapter": null
+    },
+    "Deceuninck/Thyssen": {
+      "series": "13",
+      "perimeter": {
+        "35": "ZD.35",
+        "45": "ZD.45"
+      },
+      "security": {
+        "35": "ZUP.K/35",
+        "40": "ZUP.K/40",
+        "45": "ZUP.K/45"
+      },
+      "tiltSecurity": {
+        "35": "ZUO.D/35",
+        "40": "ZUO.D/40",
+        "45": "ZUO.D/45"
+      },
+      "tiltFirst": "VTF.D",
+      "microvent": "XZMV.13",
+      "step": "ZPP",
+      "lifterPlastic": "ZM13.P",
+      "lifterZinc": "ZM13.Z",
+      "tiltBolt": "XZSP.13",
+      "hiddenClamp": "PS.R13",
+      "adapter": "APD"
+    }
+  }
+}

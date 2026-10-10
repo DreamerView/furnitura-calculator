@@ -1,0 +1,26 @@
+const fs=require('fs');
+const path=require('path');
+const root=path.resolve(__dirname,'..');
+const app=fs.readFileSync(path.join(root,'assets/legacy/app-core.js'),'utf8');
+const index=fs.readFileSync(path.join(root,'index.php'),'utf8');
+const boot=fs.readFileSync(path.join(root,'assets/js/bootstrap.js'),'utf8');
+const spa=fs.readFileSync(path.join(root,'assets/js/spa.js'),'utf8');
+let passed=0;
+function ok(cond,msg){if(!cond){console.error('FAIL:',msg);process.exitCode=1;}else{passed++;console.log('OK:',msg);}}
+ok(app.includes('https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js'),'SheetJS CDN URL configured');
+ok(app.includes('function ensureSheetJS()'),'lazy loader exists');
+ok(app.includes('if (globalThis.XLSX) return Promise.resolve(globalThis.XLSX);'),'loaded SheetJS is reused');
+ok(app.includes('if (sheetJsLoadPromise) return sheetJsLoadPromise;'),'concurrent/repeated loads share one promise');
+ok(!/xlsx(?:\.full)?(?:\.min)?\.js/i.test(index),'SheetJS is not a parser-blocking index script');
+ok(!/xlsx(?:\.full)?(?:\.min)?\.js/i.test(boot),'SheetJS is not part of bootstrap critical path');
+ok(!/xlsx(?:\.full)?(?:\.min)?\.js/i.test(spa),'SheetJS is not part of SPA critical path');
+ok(app.includes('function warmSheetJSAfterWindowLoad()'),'SheetJS background warmup exists');
+ok(app.includes('window.addEventListener("load", warm, {once:true})'),'SheetJS starts after window load');
+ok(app.includes('document.readyState === "complete"'),'late app-core load still starts SheetJS warmup');
+ok(/async function exportToExcel\(\)[\s\S]*?await ensureSheetJS\(\)/.test(app),'invoice export waits for lazy SheetJS');
+ok(/async function exportMaster\(\)[\s\S]*?await ensureSheetJS\(\)/.test(app),'catalog export waits for lazy SheetJS');
+ok(/async function importMaster\(file\)[\s\S]*?await ensureSheetJS\(\)/.test(app),'catalog import waits for lazy SheetJS');
+ok(/async function exportSchemes\(\)[\s\S]*?await ensureSheetJS\(\)/.test(app),'schemes export waits for lazy SheetJS');
+ok(/async function importSchemes\(file\)[\s\S]*?await ensureSheetJS\(\)/.test(app),'schemes import waits for lazy SheetJS');
+ok(!app.includes('Библиотека Excel не загрузилась'),'obsolete Excel error removed');
+if(!process.exitCode)console.log(`Excel lazy tests: ${passed}/16`);

@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');let n=0;const ok=(c,m)=>{if(!c){console.error('FAIL:',m);process.exit(1)}console.log(`ok ${++n} - ${m}`)};
+const spa=fs.readFileSync(path.join(root,'assets/js/spa.js'),'utf8');const i18n=fs.readFileSync(path.join(root,'assets/js/i18n.js'),'utf8');const boot=fs.readFileSync(path.join(root,'assets/js/bootstrap.js'),'utf8');const api=fs.readFileSync(path.join(root,'api/index.php'),'utf8');const access=fs.readFileSync(path.join(root,'api/src/Access.php'),'utf8');const themes=fs.readFileSync(path.join(root,'assets/css/themes.css'),'utf8');
+ok(i18n.includes("langs=['ru','en','tr']"),'Russian, English and Turkish are registered');
+ok(spa.includes('value="ru"')&&spa.includes('value="en"')&&spa.includes('value="tr"'),'language selector exposes all three languages');
+ok(boot.includes("loadScript('assets/js/i18n.js')"),'i18n loads before app is revealed');
+for(const t of ['default','soft','easy','glossy','material'])ok(themes.includes(`data-interface-theme=${t}`),`theme ${t} has CSS`);
+ok(!spa.includes('@click="openTheme"')&&!spa.includes('v-if="themeOpen"'),'design selection has been removed from management');
+ok(api.includes("$action==='app_settings_update'")&&api.includes("['central']"),'only Central can persist global design style');
+ok(access.includes('registerClient')&&access.includes("['registered']=true"),'Client activation creates credentials and registration state');
+ok(!access.includes('public function loginKey('),'secret key no longer authenticates Client directly');
+ok(spa.includes("mode==='activate'")&&spa.includes("api('client_register'"),'SPA uses key activation flow instead of key login');
+ok(api.includes("$action==='login_available'"),'login availability endpoint exists');
+ok(access.includes('strcasecmp')&&access.includes('loginAvailable'),'login uniqueness is case-insensitive and centralized');
+ok(spa.includes('loginState')&&spa.includes('Логин доступен')&&spa.includes('Логин уже занят'),'create/edit/activation UI reports login availability');
+console.log(`PASS ${n} checks`);

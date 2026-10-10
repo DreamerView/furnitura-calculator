@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');let n=0;const ok=(c,m)=>{if(!c){console.error('FAIL:',m);process.exit(1)}console.log(`ok ${++n} - ${m}`)};
+const index=fs.readFileSync(path.join(root,'index.php'),'utf8');const spa=fs.readFileSync(path.join(root,'assets/js/spa.js'),'utf8');const boot=fs.readFileSync(path.join(root,'assets/js/bootstrap.js'),'utf8');const theme=fs.readFileSync(path.join(root,'assets/legacy/theme-ui.js'),'utf8');const adapter=fs.readFileSync(path.join(root,'assets/legacy/matrix-adapter.js'),'utf8');
+ok(index.includes('class="app-booting" data-interface-theme="default"'),'default design is the first paint shell');
+ok(index.includes('id="appPreloader"')&&index.includes('Калькулятор открывается'),'preloader covers app boot');
+ok(boot.includes("api('app_settings')")&&boot.includes('dataset.interfaceTheme'),'bootstrap resolves server theme behind preloader');
+ok(!theme.includes("dataset.interfaceTheme='soft'"),'legacy theme module no longer forces Soft');
+ok(spa.includes("createRouter({history:createWebHashHistory()"),'SPA router configured');
+ok(!spa.includes('location.reload')&&!spa.includes('location.href'),'active SPA does not reload documents');
+ok(!fs.existsSync(path.join(root,'assets/js/public-shell.js')),'legacy reload-based public shell removed');
+ok(!/\{createButtonText\}|\{submitButtonText\}|\{deleting\?/.test(spa),'known raw placeholder bugs absent');
+ok(index.includes('id="legacyCalculatorRoute"')&&index.includes('id="spaApp"'),'calculator and routed views share one document');
+ok(spa.includes("to.path==='/users'&&!['central','dealer'].includes(state.auth.role)"),'Client/public management route is blocked');
+ok(!/https?:\/\//.test(fs.readFileSync(path.join(root,'assets/css/spa.css'),'utf8')),'SPA CSS is fully local');
+ok(adapter.includes('Array.isArray(seed.kits)?MatrixCore.copy(seed):MatrixCore.initial(seed)'),'imported Central kits are used directly');
+console.log(`PASS ${n} checks`);

@@ -1,0 +1,24 @@
+# Local runtime data and generated output
+/storage/*
+!/storage/.htaccess
+!/storage/.gitkeep
+!/storage/default-catalog.json
+!/storage/strike-selection.json
+!/storage/tilt-first-workbook-previous.json
+!/storage/product-photos/
+/storage/product-photos/*
+!/storage/product-photos/.htaccess
+!/storage/product-photos/.gitkeep
+!/storage/advertising-media/
+/storage/advertising-media/*
+!/storage/advertising-media/.htaccess
+!/storage/advertising-media/.gitkeep
+/UI-Preview/
+/node_modules/
+/.env
+/.env.*
+*.zip
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

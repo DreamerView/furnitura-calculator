@@ -1,0 +1,10 @@
+.cam-selectors{display:inline-flex;align-items:center;gap:4px;margin-left:8px}.cam-selectors[hidden]{display:none!important}
+html:root body .cam-selector{display:inline-grid;place-items:center;width:36px;height:36px;min-width:36px;min-height:36px;padding:2px;border:1px solid var(--separator,#d1d5db);border-radius:8px;background:var(--surface,#fff);cursor:pointer}
+.cam-selector img{display:block;width:28px;height:28px;object-fit:contain;border-radius:4px}.cam-selector[aria-pressed=true]{outline:2px solid var(--accent,#007aff);outline-offset:0}.cam-selector:disabled{opacity:.35;cursor:not-allowed}.cam-selector:focus-visible{outline:2px solid var(--accent,#007aff);outline-offset:2px}
+html:root body :is(#matrixFamilyTabs,#familyTabs){display:flex;flex-wrap:wrap;align-items:center}
+
+/* Three viewports of the original user image (39 x 172), without redrawing. */
+.cam-photo{display:block;width:28px;height:28px;background-image:url('../images/cams/user-cams.png?v=2026.10.08.9');background-size:24px auto;background-repeat:no-repeat;background-color:#fff;border-radius:4px}
+[data-cam="mushroom"] .cam-photo{background-position:center 0}
+[data-cam="roller11"] .cam-photo{background-position:center -39px}
+[data-cam="roller8"] .cam-photo{background-position:center -74px}

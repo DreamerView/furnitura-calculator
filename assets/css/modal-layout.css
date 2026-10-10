@@ -1,0 +1,44 @@
+@media screen {
+ html.modal-surface-open,html.modal-surface-open body{overflow:hidden!important}
+ html:root body .spa-modal-backdrop{overflow:hidden!important;box-sizing:border-box}
+ html:root body .spa-modal{display:flex!important;flex-direction:column!important;overflow:hidden!important;min-height:0!important;max-height:calc(100dvh - 32px)!important}
+ html:root body .spa-modal .spa-modal-head,html:root body .spa-modal .spa-modal-foot{position:relative!important;flex:0 0 auto!important}
+ html:root body .spa-modal .spa-modal-body{flex:1 1 auto!important;min-height:0!important;max-height:none!important;overflow:auto!important;overscroll-behavior:contain;scrollbar-gutter:stable}
+ html:root body .language-modal .language-options{flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain}
+ html:root body .spa-modal .spa-modal-foot{display:flex!important;padding:10px 16px!important;gap:8px;border-top:1px solid var(--separator);background:var(--surface)}
+ html:root body dialog.modal-frame{inset:0!important;margin:auto!important;box-sizing:border-box!important;padding:0!important;height:auto!important;min-height:0!important;max-height:calc(100dvh - 32px)!important;overflow:hidden!important}
+ html:root body dialog.modal-frame[open]{display:flex!important;flex-direction:column!important}
+ html:root body dialog.modal-frame.editor-dialog,html:root body dialog.modal-frame.picker-dialog,html:root body dialog.modal-frame.range-dialog{height:min(820px,calc(100dvh - 32px))!important}
+ html:root body .modal-frame>.modal-fixed-head,html:root body .modal-frame>.modal-fixed-foot{flex:0 0 auto!important;position:relative!important;min-width:0}
+ html:root body .modal-frame>.modal-scroll-body{flex:1 1 auto;min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+ html:root body .modal-frame .bomwrap,html:root body .modal-frame .pickscroll,html:root body .modal-frame .rangegrid,html:root body .modal-frame .settings-dialog-body{max-height:none!important;overflow:visible!important}
+ html:root body .modal-frame .searchbar{top:0!important}
+ html:root body .modal-frame>.modal-fixed-foot{background:var(--modal-bg);border-top:1px solid var(--separator)}
+ html:root body .modal-frame .editTools,html:root body .modal-frame .editbottom{padding:8px 12px!important;border-top:0!important;gap:8px;flex-wrap:wrap;margin:0}
+ html:root body .modal-frame .editbottom>input{width:120px;min-width:0;flex:1}
+ html:root body .modal-frame.small-dialog .modal-scroll-body>label{margin:0 14px 12px}
+ html:root body .dialoghead>.icon::after,html:root body .estimate-save-dialog .estimate-dialog-close::after{content:none!important;display:none!important}
+ html:root body .modal-frame .dialoghead>.icon{display:grid!important;place-items:center!important;padding:0!important}
+ html:root body .modal-frame .dialoghead>.icon .ui-icon{width:24px;height:24px}
+ html:root body .modal-frame.estimate-save-dialog .modal-fixed-head{display:flex;align-items:center;gap:12px;padding:12px 16px}
+ html:root body .modal-frame.estimate-save-dialog h2{position:static!important;flex:1;font-size:18px!important;margin:0!important;text-align:center}
+ html:root body .modal-frame.estimate-save-dialog .estimate-dialog-close{position:static!important;order:-1;display:grid!important;place-items:center!important;flex:none;margin:0!important}
+ html:root body .modal-frame.estimate-save-dialog .modal-scroll-body{padding:0 16px 16px}
+ html:root body .modal-frame.estimate-save-dialog .estimate-dialog-status{padding:8px 16px;margin:0}
+ html:root body .modal-frame.destructive-confirm .modal-fixed-head{padding:18px 20px 0}
+ html:root body .modal-frame.destructive-confirm .modal-scroll-body{padding:0 20px 16px}
+ html:root body .modal-frame.destructive-confirm .destructive-confirm-foot{padding:12px 20px;margin:0}
+ html:root body .modal-frame>.modal-fixed-head:not(.dialoghead):not(.settings-dialog-head):not(.destructive-confirm-head){padding:12px 16px}
+ html:root body .advertising-viewer-body{display:flex;align-items:center;gap:12px;flex:1 1 auto;min-height:0;overflow:hidden}
+ html:root body .advertising-viewer-stage{position:relative;flex:1;min-width:0;height:100%;overflow:hidden;border-radius:14px;background:#fff}
+ html:root body .advertising-viewer-stage .advertising-carousel{position:absolute;inset:0}
+ html:root body .advertising-viewer-stage .advertising-carousel-media{width:100%;height:100%;object-fit:contain}
+ html:root body .advertising-viewer-foot{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:6px 0;font-size:12px;color:var(--secondary)}
+ html:root body .advertising-viewer-foot progress{flex:1;min-width:0;width:100%;height:6px;accent-color:var(--accent);border:0;border-radius:10px;overflow:hidden;background:var(--surface-alt)}
+ .advertising-viewer-foot progress::-webkit-progress-bar{background:var(--surface-alt);border-radius:10px}
+ .advertising-viewer-foot progress::-webkit-progress-value{background:var(--accent);border-radius:10px}
+ .advertising-viewer-foot progress::-moz-progress-bar{background:var(--accent);border-radius:10px}
+ [data-advertising-viewer]{cursor:zoom-in}
+ @media(max-width:767px){html:root body dialog.modal-frame{width:calc(100vw - 16px)!important;max-width:calc(100vw - 16px)!important;border-radius:20px!important;max-height:calc(100dvh - 16px)!important}html:root body .spa-modal{max-height:calc(100dvh - 12px)!important}}
+ @media(max-height:480px){html:root body .modal-frame .dialoghead,html:root body .spa-modal .spa-modal-head{padding:6px 12px!important;min-height:48px!important}html:root body .modal-frame .dialoghead button,html:root body .spa-modal .spa-modal-head button{width:34px!important;height:34px!important;min-height:34px!important}html:root body .modal-frame .editTools,html:root body .modal-frame .editbottom{padding:4px 12px!important}html:root body .modal-frame .editTools button{min-height:28px!important;padding:4px 8px!important}}
+}

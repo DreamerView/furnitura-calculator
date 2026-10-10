@@ -1,0 +1,10 @@
+/* One palette for options and the actual assembled article cells. */
+:root{--hardware-white:#FFFFFF;--hardware-black:#171717;--hardware-anthracite:#50545A;--hardware-brown:#6F4937}
+.hardware-color--white{--hardware-fill:var(--hardware-white);--hardware-ink:#25232B}
+.hardware-color--black{--hardware-fill:var(--hardware-black);--hardware-ink:#FFFFFF}
+.hardware-color--anthracite{--hardware-fill:var(--hardware-anthracite);--hardware-ink:#FFFFFF}
+.hardware-color--brown{--hardware-fill:var(--hardware-brown);--hardware-ink:#FFFFFF}
+select.hardware-color{border-color:#9CA3AF;color-scheme:light}
+select.hardware-color option{background:#FFFFFF;color:#25232B}
+.handle-color[aria-pressed="true"],button[id^="handleColor"][aria-pressed="true"]{outline:2px solid var(--primary,#2563EB);outline-offset:2px}
+html:root body select.hardware-color{background-color:var(--hardware-fill)!important;color:var(--hardware-ink)!important}

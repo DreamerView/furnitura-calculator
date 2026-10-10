@@ -1,0 +1,62 @@
+/* Compact calculator actions and a single, balanced confirmation surface. */
+@media screen {
+html:root body.workdesk-app .input-card .design-actions{display:flex!important;align-items:center!important;flex-wrap:wrap!important;gap:8px!important}
+html:root body.workdesk-app .input-card .design-actions>.calc{flex:1 1 0!important;min-width:0!important;width:auto!important;min-height:44px!important;margin:0!important;padding:8px 10px!important;font-size:13px!important;line-height:1.2!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;border-radius:12px!important}
+html:root body.workdesk-app .input-card .design-actions>.calculator-clear{flex:0 0 44px!important;width:44px!important;height:44px!important;min-height:44px!important;display:grid!important;place-items:center!important;padding:0!important;margin:0!important;border:0!important;border-radius:12px!important;background:#fff0ef!important;color:#d92d20!important}
+html:root body.workdesk-app .input-card .design-actions>.calculator-clear:hover{background:#ffe1de!important}
+html:root body.workdesk-app .input-card .design-actions>.calculator-clear .ui-icon{width:20px!important;height:20px!important}
+html:root body.workdesk-app .input-card .design-actions>#msg{flex:0 0 100%!important;min-width:0!important}
+html:root body.workdesk-app .input-card .design-actions>#msg:empty{display:none!important}
+html:root body dialog#destructiveConfirm.destructive-confirm{padding:0!important;width:min(420px,calc(100vw - 24px))!important;max-width:420px!important;max-height:calc(100dvh - 24px)!important;border:1px solid var(--border)!important;border-radius:20px!important;overflow:hidden!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif!important;box-shadow:0 16px 60px #0003!important}
+html:root body dialog#destructiveConfirm::backdrop{background:rgba(24,32,48,.46)!important;backdrop-filter:blur(6px)!important}
+html:root body #destructiveConfirm .destructive-confirm-head{display:flex!important;align-items:center!important;gap:10px!important;margin:0!important;padding:16px!important;border-bottom:1px solid var(--border)!important;flex-shrink:0!important}
+html:root body #destructiveConfirm .destructive-confirm-badge{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;border-radius:11px;background:#fff0ef;color:#d92d20}
+html:root body #destructiveConfirm .destructive-confirm-symbol{width:20px!important;height:20px!important}
+html:root body #destructiveConfirm h2{flex:1!important;min-width:0!important;font-size:17px!important;font-weight:650!important;line-height:1.3!important;margin:0!important;text-align:left!important}
+html:root body #destructiveConfirm .destructive-confirm-close{flex:0 0 32px!important;width:32px!important;height:32px!important;min-height:32px!important;border:0!important;border-radius:9px!important;background:var(--surface-alt)!important;margin:0!important}
+html:root body #destructiveConfirm .destructive-confirm-close .ui-icon{width:18px!important;height:18px!important}
+html:root body #destructiveConfirm .modal-scroll-body{padding:18px 16px!important;scrollbar-gutter:auto!important}
+html:root body #destructiveConfirm p{font-size:14px!important;line-height:1.5!important;margin:0 0 12px!important}
+html:root body #destructiveConfirm p.destructive-confirm-detail{font-size:12px!important;line-height:1.4!important;color:var(--secondary)!important;margin:0!important}
+html:root body #destructiveConfirm .destructive-confirm-context{padding:10px 12px!important;margin:0 0 12px!important;border-radius:10px!important;border:1px solid var(--border)!important;font-weight:500!important}
+html:root body #destructiveConfirm>.modal-fixed-foot{background:var(--surface)!important;border-top:1px solid var(--border)!important}
+html:root body #destructiveConfirm .destructive-confirm-foot{display:flex!important;gap:8px!important;padding:12px 16px!important;margin:0!important;background:transparent!important}
+html:root body #destructiveConfirm .destructive-confirm-foot button{height:40px!important;min-height:40px!important;margin:0!important;padding:8px 12px!important;border-radius:10px!important;font-size:13px!important;line-height:1.2!important}
+html:root body #destructiveConfirm .destructive-confirm-approve:hover{background:#be251a!important}
+@media(max-height:400px){html:root body #destructiveConfirm .destructive-confirm-head{padding:10px 16px!important}html:root body #destructiveConfirm .modal-scroll-body{padding:12px 16px!important}}
+}
+
+/* Profile and backset share one compact flex row. */
+@media screen {
+html:root body.workdesk-app .input-card .system-profile-slot{display:flex!important;align-items:flex-end!important;gap:8px!important;min-width:0!important}
+html:root body.workdesk-app .input-card .system-profile-slot>#groove-block,
+html:root body.workdesk-app .input-card .system-profile-slot>#aluminumControls{flex:1 1 0!important;min-width:0!important;height:auto!important;min-height:0!important;gap:0!important}
+html:root body.workdesk-app .input-card .system-profile-slot>#dornmassWrap{flex:0 0 90px!important;min-width:0!important;margin:0!important;padding:0!important}
+html:root body.workdesk-app .input-card .system-profile-slot label{display:block!important;margin:0 0 5px!important;height:auto!important;min-height:0!important;line-height:1.3!important}
+html:root body.workdesk-app .input-card .system-profile-slot select{box-sizing:border-box!important;width:100%!important;min-width:0!important;height:36px!important;min-height:36px!important;margin:0!important;padding:6px 8px!important}
+html:root body.workdesk-app .input-card .system-profile-slot>[hidden]{display:none!important}
+}
+
+/* Reserve a square advertising stage regardless of media dimensions. */
+@media screen {
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo{position:relative!important;box-sizing:border-box!important;width:100%!important;aspect-ratio:1/1!important;height:auto!important;min-height:0!important;max-height:none!important;padding:0!important;overflow:hidden!important;flex:none!important}
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo>.advertising-carousel{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo img,
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo video{position:absolute!important;inset:0!important;display:block;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important;object-position:center!important;border-radius:0!important}
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo>span{position:absolute!important;inset:0!important;box-sizing:border-box!important;padding:16px!important;display:grid;place-items:center;text-align:center}
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo>img[hidden],
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo.has-advertising-media>img,
+html:root body.workdesk-app #designPreview #constructorAdPreview .glass-preview-photo.has-advertising-media>span{display:none!important}
+}
+
+/* The photo and thumbnail rail remain inside one stable bordered preview. */
+@media screen {
+html:root body.workdesk-app #designPreview>.design-photo,
+html:root body.workdesk-app #designPreview>.design-photo:has(.design-photo-thumbs){box-sizing:border-box!important;position:relative!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr) 56px!important;height:clamp(280px,38dvh,360px)!important;min-height:0!important;max-width:100%!important;gap:8px!important;padding:8px!important;border:1px solid var(--border)!important;border-radius:16px!important;overflow:hidden!important}
+html:root body.workdesk-app #designPreview .design-photo-main{box-sizing:border-box!important;grid-area:1/1!important;min-width:0!important;min-height:0!important;max-width:100%!important;max-height:100%!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;border:1px solid var(--border)!important;border-radius:10px!important;background:#fff!important}
+html:root body.workdesk-app #designPreview .design-photo-thumbs{box-sizing:border-box!important;grid-area:2/1!important;min-width:0!important;min-height:0!important;max-width:100%!important;width:100%!important;height:56px!important;align-self:start!important;overflow-x:auto!important;overflow-y:hidden!important;margin:0!important}
+html:root body.workdesk-app #designPreview>.design-photo:has(.design-photo-main)::after{margin:6px!important}
+}
+
+/* Keep article metadata available to the viewer without a caption below the photo. */
+html:root body.workdesk-app #designPreview>.design-part-name{display:none!important}

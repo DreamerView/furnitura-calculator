@@ -1,0 +1,8 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+vm.runInThisContext(fs.readFileSync('assets/js/price-categories.js','utf8'));vm.runInThisContext(fs.readFileSync('assets/js/wholesale.js','utf8'));vm.runInThisContext(fs.readFileSync('assets/vendor/vue.global.prod.js','utf8'));
+for(const labels of [FuturussPriceLabels,FuturussWholesaleLabels])for(const values of Object.values(labels)){assert.equal(values.length,3);assert(values.every(Boolean));assert(!/[а-яё]/i.test(values[1]+values[2]));}
+const deps={api:async()=>({ok:true}),state:{auth:{role:'dealer'}},ManagementNav:{},LanguageSelect:{}};
+const price=createPriceCategoriesView(deps),ws=createWholesaleView(deps);Vue.compile(price.template,{decodeEntities:s=>s});Vue.compile(ws.template,{decodeEntities:s=>s});
+assert.deepEqual(FuturussPriceCSV('art;A;B\r\n"T;1";"12,5";20'),[['art','A','B'],['T;1','12,5','20']]);
+const ctx={...price.data(),...price.methods,w:FuturussPriceWords()};ctx.accept({rows:[{art:'X',sourcePrice:100,sourceAvailable:true,prices:[]}],categories:['A','B'],revision:0,sourceRevision:'s'});assert(!Array.isArray(ctx.rows[0].prices));ctx.filtered=ctx.rows;ctx.percent=20;ctx.apply();assert.equal(ctx.rows[0].prices.A,120);ctx.basis='current';ctx.percent=-10;ctx.apply();assert.equal(ctx.rows[0].prices.A,108);assert.equal(ctx.number('12,5'),12.5);assert.throws(()=>ctx.number('-1'));assert.equal(ctx.markup(ctx.rows[0],'A'),'8.0%');
+let reloaded=false;const wctx={busy:false,load(){reloaded=true;},message:e=>e.message},r={art:'X',favorite:false};ws.methods.favorite.call(wctx,r).then(()=>{assert.equal(r.favorite,true);assert.equal(reloaded,false);console.log('Categories template, CSV, percentages, translations, and stable favorite passed');});

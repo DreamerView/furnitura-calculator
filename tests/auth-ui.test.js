@@ -1,0 +1,11 @@
+const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');const read=n=>fs.readFileSync(path.join(root,n),'utf8');let n=0;const ok=(c,m)=>{if(!c){console.error('FAIL:',m);process.exit(1)}console.log(`ok ${++n} - ${m}`)};
+const spa=read('assets/js/spa.js'),index=read('index.php'),boot=read('assets/js/bootstrap.js');
+ok(spa.includes('@submit.prevent="send"'),'SPA login uses form submit / Enter');
+ok(spa.includes('spa-password-toggle'),'password eye exists');
+ok(spa.includes("mode==='activate'")&&spa.includes("client_register"),'secret key flow requires Client activation with credentials');
+ok(spa.includes("api('logout','POST'")&&!spa.includes('location.reload'),'SPA logout has no reload');
+ok(spa.includes('<router-link')&&spa.includes('<router-view'),'SPA uses RouterLink and RouterView');
+ok(index.includes('vue-router-lite.js?v='+fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()),'local router is versioned');
+ok(index.includes('assets/js/bootstrap.js?v='+fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()),'bootstrap cache bust current version');
+ok(boot.includes("await loadScript('assets/js/spa.js')"),'SPA loads from bootstrap');
+console.log(`PASS ${n} checks`);

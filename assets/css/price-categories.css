@@ -1,0 +1,160 @@
+/* Shared management shell: right navigation and top session actions. */
+html:root body .management-view .management-actions{display:none!important}
+html:root body .management-nav{display:flex!important;flex-direction:column!important;gap:4px;max-height:calc(100dvh - 110px);overflow:auto;height:auto!important}
+.management-nav-language{padding:8px 12px;border-top:1px solid var(--separator)}
+.management-nav-language .language-control{width:100%}
+html:root body .management-view .management-wrap{width:calc(100% - 240px);max-width:none;margin:0 240px 0 0;padding:80px 24px 28px}
+html:root body .category-pricing .management-card,html:root body .category-pricing .workdesk-page-title,html:root body .wholesale-view .management-card,html:root body .wholesale-view .workdesk-page-title{max-width:1440px}
+.category-table{display:table!important;width:auto!important;min-width:0!important;table-layout:fixed!important}
+.category-table th{width:112px!important;min-width:112px}.category-table .pricing-article-col{width:120px!important;min-width:120px}.category-table .pricing-product-col{width:260px!important;min-width:260px}.category-table .pricing-purchase-col{width:96px!important;min-width:96px}
+.category-table td{vertical-align:middle}.category-table td small{display:block;font-size:11px;color:var(--secondary)}
+.category-table td input{width:100%!important;min-width:0!important;text-align:right}
+.category-bulk{display:flex;gap:12px;flex-wrap:wrap;padding-block:16px}.category-bulk label{display:grid;gap:4px}.category-bulk p{flex-basis:100%}
+.category-file{position:absolute;width:1px!important;height:1px!important;min-height:0!important;padding:0!important;overflow:hidden;clip-path:inset(50%)}
+.category-import:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.node-price-category{display:grid;gap:4px;font-size:12px;max-width:100%}
+html:root body .category-table tr{display:table-row!important}html:root body .category-table td{display:table-cell!important}
+.wholesale-view .pricing-table{min-width:850px!important}.wholesale-view .pricing-table td small{display:block}
+@media(max-width:767px){html:root body .management-view .management-wrap{width:100%;margin:0;padding:80px 12px 24px!important}html:root body .management-nav{position:relative;inset:auto;width:100%;max-height:none;flex-direction:row!important;flex-wrap:wrap;box-sizing:border-box;margin-bottom:16px}.node-price-category select{max-width:200px}}
+
+html:root body :is(.category-pricing,.wholesale-view) .pricing-table-wrap{display:block!important;width:100%;max-width:100%;overflow:auto!important;min-width:0}
+html:root body :is(.category-pricing,.wholesale-view) .management-content{min-width:0;max-width:100%;box-sizing:border-box}
+html:root body .category-table .pricing-name{max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+html:root body :is(.category-pricing,.wholesale-view) .pricing-toolbar{justify-content:flex-start;gap:12px}
+html:root body :is(.category-pricing,.wholesale-view) .pricing-toolbar select{max-width:320px;min-width:0}
+@media(max-width:767px){html:root body .management-nav-btn{flex:1 1 120px!important;min-width:120px!important;white-space:normal;padding:8px!important;min-height:40px!important}html:root body .category-table thead{display:table-header-group!important}html:root body .category-table tbody{display:table-row-group!important}}
+
+/* User identity and controls have independent rows: long names cannot collapse. */
+html:root body .node-main{width:100%;min-width:0}
+html:root body .node-title{overflow-wrap:break-word;word-break:normal}
+html:root body .node-actions{justify-content:flex-start;flex-wrap:wrap;width:auto;gap:8px;align-items:center}
+html:root body .node-price-category{width:max-content;max-width:100%;min-width:0}
+html:root body .node-price-category select{position:absolute;inset:0;width:100%;max-width:none;min-width:0;height:32px!important;min-height:32px!important;font-size:13px!important;padding:4px 28px 4px 10px!important}
+html:root body .wholesale-commandbar{position:sticky;top:8px;z-index:20;background:var(--surface);padding:12px 0;align-items:center;justify-content:space-between!important;border-bottom:1px solid var(--separator)}
+.wholesale-command-nav,.wholesale-draft-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.wholesale-draft-actions{margin-left:auto;justify-content:flex-end}
+.wholesale-live-total{display:grid;gap:4px;font-variant-numeric:tabular-nums;text-align:right}
+.wholesale-live-total span,.wholesale-live-total small{font-size:12px}
+html:root body .wholesale-catalog-table{display:table!important;table-layout:fixed;min-width:1000px!important}
+.wholesale-col-favorite{width:90px}.wholesale-col-pack{width:96px}.wholesale-col-qty{width:160px}.wholesale-col-price{width:96px}.wholesale-col-amount{width:112px}.wholesale-col-weight{width:88px}
+html:root body .wholesale-catalog-table thead{display:table-header-group!important}
+html:root body .wholesale-catalog-table tbody{display:table-row-group!important}
+html:root body .wholesale-catalog-table tr{display:table-row!important}
+html:root body .wholesale-catalog-table td{display:table-cell!important;vertical-align:middle;padding:4px 6px!important;font-variant-numeric:tabular-nums}
+html:root body .wholesale-catalog-table td:before{display:none}
+html:root body .wholesale-catalog-table input[type=number]{font:inherit!important;text-align:center;width:100%!important;min-width:0;box-sizing:border-box;height:28px!important;min-height:28px!important;padding:2px 8px!important}
+.wholesale-pack-hint{height:16px;line-height:16px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wholesale-pack-hint.is-hidden{visibility:hidden}
+.wholesale-catalog-table td:nth-child(n+6){text-align:right}
+.wholesale-catalog-table th:nth-child(5),.wholesale-catalog-table td:nth-child(4){text-align:center}
+.wholesale-catalog-table .pricing-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:767px){html:root body .wholesale-commandbar{top:0;gap:8px}.wholesale-draft-actions{margin-left:0;justify-content:flex-start}.wholesale-live-total{flex-basis:100%;text-align:left}}
+
+/* Shared category actions and compact, stable article/name columns. */
+.category-heading-actions{display:flex;gap:4px;justify-content:center}
+html:root body .category-heading-actions .spa-btn{padding:2px 8px;min-height:24px;height:24px}
+html:root body .category-table :is(th,td):nth-child(n+3),html:root body .category-table td input{text-align:center}
+.category-dialog-backdrop{position:fixed;inset:0;z-index:1200;background:#0006;display:grid;place-items:center;padding:16px}
+html:root body .category-dialog{width:480px;max-width:100%;padding:24px;box-sizing:border-box}
+.category-dialog label{display:grid;gap:8px}.category-dialog :is(input,select){width:100%}
+.wholesale-col-article{width:140px}.wholesale-col-name{width:280px}
+
+/* Use existing WorkDesk tokens; geometry shared by every management role. */
+html:root body .management-nav{left:auto;right:12px;top:84px;bottom:auto;min-height:0}
+html:root body .management-session{position:fixed;top:24px;right:24px;z-index:34;display:flex;align-items:center;gap:8px}
+html:root body .management-session .spa-btn{display:flex;align-items:center;gap:6px;min-height:36px;height:36px;padding:6px 12px;font-size:13px}
+html:root body .management-session .language-control{width:auto;min-width:72px}
+html:root body .language-trigger .i-language{transform:none;width:16px!important;height:16px!important}
+html:root body .management-view .management-card,html:root body .management-view .workdesk-page-title{max-width:1100px}
+html:root body .category-pricing .management-card,html:root body .wholesale-view .management-card{max-width:1440px}
+html:root body .management-section-head{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:16px;padding:20px;margin-bottom:16px}
+html:root body .management-section-head .workdesk-intro-icon{width:44px;height:44px;margin:0}
+html:root body .management-section-head h1{font-size:22px;margin:0 0 4px}
+html:root body .management-section-head p{font-size:13px;line-height:1.4}
+html:root body .management-section-head .management-toolbar{margin:0;width:auto}
+html:root body .node-row{display:grid;align-items:start;grid-template-columns:minmax(180px,1fr) auto;min-height:0;padding:12px 0!important;gap:12px}
+html:root body .node-title-line{flex-wrap:wrap}
+html:root body .node-title{flex:0 1 auto;max-width:100%}
+.node-category-field{display:block;position:relative;width:max-content;max-width:260px;min-width:76px;height:32px}
+.node-category-size{display:block;visibility:hidden;white-space:nowrap;overflow:hidden;padding:4px 52px 4px 10px;font-size:13px;line-height:24px;max-width:260px;box-sizing:border-box}
+html:root body .category-table .pricing-article-cell,html:root body .category-table .pricing-product-cell{text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html:root body .category-table :is(th,td){font-size:12px;padding:3px 6px!important}
+html:root body .category-table td small{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html:root body .category-pricing .category-table td input[type=number]{height:24px!important;min-height:24px!important;font-size:13px!important;max-width:112px}
+html:root body .category-pricing .pricing-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-block:10px}
+html:root body .category-pricing .pricing-toolbar :is(button,.spa-btn){width:auto!important;flex:0 0 auto!important}
+html:root body .category-pricing .pricing-toolbar :is(input,select,button,.spa-btn){min-height:34px!important;height:34px!important;padding:5px 10px!important;font-size:13px!important}
+@media(max-width:1199px){html:root body .node-row{grid-template-columns:minmax(0,1fr)}html:root body .management-section-head{grid-template-columns:44px minmax(0,1fr)}html:root body .management-section-head .management-toolbar{grid-column:1/-1;justify-content:flex-start}}
+@media(max-width:767px){
+ html:root body .management-nav{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;border-radius:20px;margin:0 0 16px;flex-direction:row!important;flex-wrap:wrap}
+ html:root body .management-nav-btn{flex-direction:row;justify-content:flex-start;font-size:12px!important}
+ html:root body .management-session{top:10px;right:12px;gap:6px}
+ html:root body .management-session .spa-btn{padding:4px 8px;min-height:34px;height:34px;font-size:12px}
+ html:root body .management-session .language-control{min-width:66px}
+ html:root body .management-view .management-identity{max-width:calc(100vw - 190px);min-height:36px;align-content:center;overflow:hidden}
+ html:root body .management-view .management-brand{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+ html:root body .management-section-head{padding:16px;gap:12px}
+ html:root body .node-actions{max-width:100%}
+ .node-category-field,.node-category-size{max-width:min(260px,calc(100vw - 100px))}
+}
+@media print{.management-session{display:none!important}}
+
+/* Price workspace follows the table width; help never stretches its intrinsic size. */
+html:root body .category-pricing .pricing-workspace{width:fit-content;max-width:100%;margin-inline:auto;box-sizing:border-box}
+html:root body .category-pricing .pricing-workspace>.management-content{padding:16px 18px;box-sizing:border-box}
+.pricing-help{margin:8px 0;color:var(--secondary);font-size:12px}
+.pricing-help summary{cursor:pointer;width:fit-content;color:var(--accent);padding:4px 0}
+.pricing-help-body{contain:inline-size;width:100%;overflow-wrap:anywhere;line-height:1.5}
+.pricing-help-body p{margin:6px 0}
+html:root body .category-pricing .category-bulk{contain:inline-size;max-width:100%;box-sizing:border-box}
+@media(max-width:767px){html:root body .category-pricing .pricing-workspace{width:100%}html:root body .category-pricing .pricing-workspace>.management-content{padding:12px}}
+
+/* Wholesale detail: totals stay with their columns; secondary information is collapsible. */
+html:root body :is(.wholesale-view,.category-pricing) .management-wrap{padding-top:60px}
+html:root body :is(.wholesale-view,.category-pricing) .workdesk-page-title{margin-top:0;margin-bottom:12px;padding-block:8px;min-height:0}
+html:root body .wholesale-view .management-card{max-width:1240px;margin-inline:auto}
+html:root body .wholesale-view .management-content{padding:12px 18px}
+html:root body .wholesale-view .pricing-toolbar{gap:8px;margin-block:8px;align-items:center}
+html:root body .wholesale-view .pricing-toolbar :is(input,select){flex:1 1 180px;width:auto;max-width:280px}
+html:root body .wholesale-view .pricing-toolbar :is(button,.spa-btn){width:auto;flex:0 0 auto}
+html:root body .wholesale-view :is(.pricing-toolbar,.wholesale-detail-bottom) :is(input,select,button,.spa-btn){min-height:32px!important;height:32px!important;padding:4px 10px!important;font-size:13px!important}
+html:root body .wholesale-detail-title h2{font-size:17px;margin:0;flex:1;min-width:0;overflow-wrap:anywhere}
+html:root body .wholesale-detail-table{display:table!important;table-layout:fixed;width:100%;min-width:850px!important}
+html:root body .wholesale-detail-table thead{display:table-header-group!important}
+html:root body .wholesale-detail-table tbody{display:table-row-group!important}
+html:root body .wholesale-detail-table tfoot{display:table-footer-group!important}
+html:root body .wholesale-detail-table tr{display:table-row!important}
+html:root body .wholesale-detail-table :is(th,td){display:table-cell!important;vertical-align:middle;padding:6px!important;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-variant-numeric:tabular-nums}
+html:root body .wholesale-detail-table td:before{display:none}
+html:root body .wholesale-detail-table th{white-space:normal}
+html:root body .wholesale-detail-table :is(th,td):nth-child(n+3){text-align:center}
+html:root body .wholesale-detail-table .wholesale-col-qty{width:104px}
+html:root body .wholesale-detail-table tfoot :is(th,td){border-top:2px solid var(--separator);font-weight:600}
+.wholesale-detail-table tfoot small{display:block;color:var(--secondary);font-size:11px;font-weight:400;margin-bottom:4px}
+.wholesale-notes{margin-block:8px;font-size:12px;color:var(--secondary)}
+.wholesale-notes summary{cursor:pointer;padding:6px 0;color:var(--accent)}
+.wholesale-notes p{margin:6px 0}
+.wholesale-detail-bottom{display:grid;grid-template-columns:minmax(0,2fr) minmax(200px,1fr);gap:20px;align-items:start}
+.wholesale-shipment-fields{display:grid;grid-template-columns:minmax(120px,1fr) minmax(0,2fr);gap:12px}
+.wholesale-shipment-fields label{display:grid;align-content:start;gap:4px;min-width:0}
+html:root body .wholesale-detail-bottom :is(input,textarea){width:100%;min-width:0;box-sizing:border-box;font:inherit}
+html:root body .wholesale-detail-bottom textarea{min-height:52px!important;height:52px!important;padding:8px 10px;resize:vertical}
+.wholesale-history ol{margin:0;padding-left:16px;max-height:240px;overflow:auto}
+.wholesale-history li{margin-bottom:8px;overflow-wrap:anywhere}
+.wholesale-history small{font-size:11px}
+.wholesale-reply{display:flex;gap:8px;align-items:start}
+.wholesale-reply textarea{flex:1}
+.wholesale-reply button{flex-shrink:0}
+.wholesale-messages{max-height:200px;overflow:auto}
+.wholesale-messages article{border-bottom:1px solid var(--separator);padding:6px 0}
+.wholesale-message-text{white-space:pre-wrap;overflow-wrap:anywhere}
+html:root body .wholesale-meta-modal{width:520px;max-width:calc(100vw - 24px)}
+html:root body .wholesale-meta-modal .spa-modal-head{padding:16px 20px;min-height:0}
+html:root body .wholesale-view .spa-modal-head h2{grid-column:1 / -1;width:auto;margin:0;font-size:18px;min-width:0;overflow-wrap:anywhere}
+html:root body .wholesale-meta-modal .spa-modal-body{padding:12px 20px}
+html:root body .wholesale-meta-modal .spa-modal-body p{margin:0 0 12px}
+html:root body .wholesale-meta-modal .spa-field{margin-bottom:12px}
+html:root body .wholesale-meta-modal input{height:36px!important;min-height:36px!important;font-size:13px}
+html:root body .wholesale-meta-modal .spa-modal-foot{display:flex;justify-content:flex-end;gap:8px;padding:12px 20px}
+html:root body .wholesale-meta-modal .spa-modal-foot .spa-btn{width:auto;flex:0 0 auto;min-height:36px;height:36px}
+@media(max-width:767px){html:root body .wholesale-view .management-content{padding:12px}.wholesale-detail-bottom,.wholesale-shipment-fields{grid-template-columns:minmax(0,1fr);gap:8px}.wholesale-reply{flex-wrap:wrap}.wholesale-reply textarea{flex-basis:100%}html:root body .wholesale-view .pricing-toolbar :is(input,select){max-width:100%}}

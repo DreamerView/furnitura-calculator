@@ -1,0 +1,3 @@
+const assert=require('node:assert/strict'),M=require('../assets/legacy/matrix-core'),db=require('../storage/default-catalog.json'),fs=require('fs');
+let count=0;for(const n of [12,13,14,21,30,31,32,48]){const k=db.kits.find(k=>k.catalogScheme==='7.'+n);assert(k.catalogDraft&&k.catalogPrepared);assert(k.verificationRequired.length>=4);assert(k.catalogGroups.length>=5);for(const a of k.catalogParts)assert(db.articles[a]);for(const c of Object.values(k.cells)){count++;assert(!c.reviewed);for(const i of c.items)assert(db.articles[i.art]);}assert.equal(M.calculate(db,k,{width:700,height:1200,count:1}).total,null);}
+console.log('8 prepared stulp schemes; '+count+' partial cells; unfinished invoices blocked.');

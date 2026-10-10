@@ -1,0 +1,16 @@
+const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');const file=fs.readFileSync(path.join(root,'assets/js/spa.js'),'utf8');let n=0;const ok=(c,m)=>{if(!c){console.error('FAIL:',m);process.exit(1)}console.log(`ok ${++n} - ${m}`)};
+ok(file.includes('const ManagementNav='),'management navigation is shared between management views');
+ok(file.includes('exact-active-class="router-link-active" to="/users"'),'Users navigation has explicit exact active state');
+ok(!file.includes('class="management-nav-btn soon"'),'unused placeholder removed from unified menu');
+ok(!file.includes('to="/next">Следующее'),'Next/Soon cannot become an active route tab');
+ok(file.includes('spa-modal-backdrop')&&file.includes('@click="openCreate"'),'creation uses modal');
+ok(!file.includes('form.parent_id')&&!file.includes('>Родитель<'),'parent selector absent');
+ok(file.includes("this.actor.role==='central'?'Создать дилера':'Создать пользователя'"),'role-specific create button');
+ok(file.includes('>Subdealer</button>')&&file.includes('>Client</button>'),'Dealer can choose Subdealer or Client');
+ok(file.includes('class="more-menu"')&&file.includes('Редактировать')&&file.includes('Удалить'),'More/Edit/Delete exists');
+ok(file.includes("api('node_delete','POST'"),'delete uses API');
+ok(file.includes("if(to.path==='/users'&&!['central','dealer'].includes(state.auth.role))"),'Client has no management route');
+ok(!file.includes("auth.role==='client'\" class=\"session-pill\" to=\"/users"),'Client session has no management link');
+ok(file.includes('v-text="createButtonText"')&&file.includes('v-text="submitButtonText"'),'dynamic labels use v-text and cannot leak raw placeholders');
+ok(file.includes("v-text=\"deleting?'Удаление…':'Удалить'\""),'delete dynamic label is bound');
+console.log(`PASS ${n} checks`);
