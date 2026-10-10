@@ -1,0 +1,11 @@
+/* Only the new chain controls; use the existing surface, font and colour tokens. */
+#calculationTechnologyOptions [data-tech="chainWrap"]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px;flex-basis:100%;min-width:0}
+#calculationTechnologyOptions [data-tech="chainDetails"]{display:contents}
+#calculationTechnologyOptions [data-tech="chainDetails"]>p,#calculationTechnologyOptions [data-tech="chainDetails"]>details,#calculationTechnologyOptions [data-tech="reviewWrap"],#calculationTechnologyOptions [data-tech="chainPreview"]{grid-column:1/-1;min-width:0}
+#calculationTechnologyOptions [data-tech="chainPreview"] p{margin:4px 0;overflow-wrap:anywhere}
+#calculationTechnologyOptions [data-tech="reviewWrap"]{display:flex;flex-direction:row;align-items:center;gap:6px}
+#calculationTechnologyOptions [data-tech="chainWrap"] select{width:100%;min-width:0}
+#calculationTechnologyOptions [data-tech="chainWrap"] [hidden]{display:none!important}
+@media(max-width:600px){#calculationTechnologyOptions [data-tech="chainWrap"]{grid-template-columns:minmax(0,1fr)}}
+
+#calculationTechnologyOptions [data-tech="chainPreview"]{width:100%!important;justify-self:stretch}

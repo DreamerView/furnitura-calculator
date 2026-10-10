@@ -43,7 +43,7 @@
     if(typeof renderMasterGroups==='function')renderMasterGroups();
     return count;
   }
-  const technologyControls=FuturussTechnologyUI.create({container:el('futuruss-extra-options'),preferences:true,getContext:()=>({db:imported,kit:currentProfileId==='futuruss'?selectedKit():null,params:{width:num('width'),height:num('height'),dornmass:num('dornmass')||15,handle:el('offsetHandle').checked?'offset':'center',strikeProfile:el('grooveType').value||'KBE 13',optionSeries:grooveSeries(el('grooveType').value||'13')}})});
+  const technologyControls=FuturussTechnologyUI.create({container:el('futuruss-extra-options'),preferences:true,getContext:()=>({db:imported,kit:currentProfileId==='futuruss'?selectedKit():null,params:{width:num('width'),height:num('height'),dornmass:num('dornmass')||15,hingeType:el('hingeType').value||'standard',handle:el('offsetHandle').checked?'offset':'center',strikeProfile:el('grooveType').value||'KBE 13',optionSeries:grooveSeries(el('grooveType').value||'13')}})});
   const camControl=globalThis.FuturussCamSelector?.create(el('matrixFamilyTabs'),()=>({kits:imported?.kits||[],kit:selectedKit()}),kit=>{activeCam=kit.variant;populate(PREFIX+kit.id);});
   function populate(preferred){
     document.body?.classList?.toggle('matrix-generic-profile',currentProfileId!=='futuruss');
@@ -151,7 +151,7 @@
     const params={width:num('width'),height:num('height'),dornmass:num('dornmass')||15,hingeType:!alu&&num('width')>650?el('hingeType').value:'standard',handle,handleArticle:el('handleArticle').value,handleColor:el('handleColor').value||'white',coverColor:alu?'white':el('coverColor').value,aluminumProfile:el('aluminumProfile').value||'14',count:right+left};
     Object.assign(params,technologyControls.read());
     const data=MatrixCore.copy(imported);
-    params.options=Object.fromEntries(['microvent','lifter','plsEnabled','bprEnabled','handleEnabled','aluLifter','aluPlate','aluTravelLimiter','aluSupport','aluLimiter','aluFixingPlate','aluClip','aluDriveEnd','aluSecurityPlate'].map(id=>[id,alu?!['microvent','lifter','plsEnabled','bprEnabled'].includes(id)&&el(id).checked:!/^alu/.test(id)&&el(id).checked]));
+    params.options=Object.fromEntries(['microvent','lifter','plsEnabled','bprEnabled','handleEnabled','aluLifter','aluPlate','aluTravelLimiter','aluSupport','aluLimiter','aluFixingPlate','aluClip','aluDriveEnd','aluSecurityPlate'].map(id=>[id,!el(id).disabled&&(alu?!['microvent','lifter','plsEnabled','bprEnabled'].includes(id)&&el(id).checked:!/^alu/.test(id)&&el(id).checked)]));
     params.optionSeries=alu?'13':groove?grooveSeries(groove):(kit.optionSeries||'9');
     const results=[['R',right],['L',left]].filter(([,count])=>count>0).map(([side,count])=>MatrixCore.calculate(data,data.kits.find(k=>k.id===kit.id),{...params,side,count},selection));
     const result={...results[0],errors:[...new Set(results.flatMap(r=>r.errors))],warnings:[...new Set(results.flatMap(r=>r.warnings))]};
@@ -162,12 +162,12 @@
     if(result.needsChoice){setMsg('Для этой высоты подходит несколько приводов. Выберите нужный в поле «Вариант привода» под количеством правых и левых створок.','warn');el('matrixDriveChoice').focus();return;}
     const row=kit.rows.find(r=>r.id===result.chosen.rowId),col=kit.columns.find(c=>c.id===result.chosen.colId);
     posCounter++;
-    orderPositions.push({id:posCounter,currency:imported?.priceCurrency||'KZT',label:el('poslabel').value||'Просчёт '+(orderPositions.length+1),scheme:kit.name,family:kitFamily(kit),width:params.width,height:params.height,dornmass:params.dornmass,aluminumProfile:params.aluminumProfile,sashQty:right+left,qtyRight:right,qtyLeft:left,groove:kit.sizeRecipeMode?params.strikeProfile:(kit.profile||groove),handle,hingeType:params.hingeType,handleColor:params.handleColor,coverColor:params.coverColor,hiddenProfile:params.hiddenProfile,hiddenStrike:params.hiddenStrike,strikeProfile:params.strikeProfile,strikeSuffix:params.strikeSuffix,strikeOverrides:params.strikeOverrides,lowerNode:params.lowerNode,handleHeightMode:params.handleHeightMode,handleHeight:result.technology?.handleHeight??null,handleTechnology:result.technology||null,
+    orderPositions.push({id:posCounter,currency:imported?.priceCurrency||'KZT',label:el('poslabel').value||'Просчёт '+(orderPositions.length+1),scheme:kit.name,family:kitFamily(kit),width:params.width,height:params.height,dornmass:params.dornmass,aluminumProfile:params.aluminumProfile,sashQty:right+left,qtyRight:right,qtyLeft:left,groove:kit.sizeRecipeMode?params.strikeProfile:(kit.profile||groove),handle,hingeType:params.hingeType,handleColor:params.handleColor,coverColor:params.coverColor,hiddenProfile:params.hiddenProfile,hiddenStrike:params.hiddenStrike,strikeProfile:params.strikeProfile,strikeSuffix:params.strikeSuffix,strikeOverrides:params.strikeOverrides,lowerNode:params.lowerNode,rearChain:params.rearChain,rearCam:params.rearCam,chainReviewed:params.chainReviewed,chainCalculation:result.chainCalculation||null,handleHeightMode:params.handleHeightMode,handleHeight:result.technology?.handleHeight??null,handleTechnology:result.technology||null,
       plateCalculation:result.plateCalculation?{...result.plateCalculation,connections:results.flatMap((r,index)=>(r.plateCalculation?.connections||[]).map(c=>({...c,scope:index,id:index+':'+c.id}))),quantity:results.reduce((n,r)=>n+(r.plateCalculation?.quantity||0),0)}:null,plateManualAdjustment:0,rows:result.items.map(i=>({...i,isDefaultPrice:false})),blockRange:'Из конструктора: ШСФ '+col.from+'–'+col.to+', ВСФ '+row.from+'–'+row.to+(result.technology?' · '+MatrixCore.technologyText(result.technology):'')});
     el('poslabel').value='';renderOrder();
     setMsg('Позиция добавлена из загруженной комплектации.'+(result.warnings.length?' '+result.warnings.join(' '):''),result.warnings.length?'warn':'ok');
   }
-  for(const id of ['width','height','dornmass','grooveType','offsetHandle'])el(id).addEventListener(id==='width'||id==='height'?'input':'change',()=>technologyControls.refresh());
+  for(const id of ['width','height','dornmass','grooveType','offsetHandle','hingeType'])el(id).addEventListener(id==='width'||id==='height'?'input':'change',()=>technologyControls.refresh());
   populateSchemeSelect=populate;addPosition=addImported;
   el('matrixFamilyPvc').addEventListener('click',()=>{activeFamily='pvc',activeCam='roller11';choiceKey='';populate();});el('matrixFamilyAluminum').addEventListener('click',()=>{activeFamily='aluminum';choiceKey='';populate();});
   el('scheme').addEventListener('change',reflect);

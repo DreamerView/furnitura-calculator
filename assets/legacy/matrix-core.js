@@ -181,6 +181,107 @@
     }
     return result;
   }
+
+  // FUTURUSS 2026-07: p.196 (8.6.4), pp.277/279 (10.3).
+  // Inclusive bounds: overlapping 1700/2300 belong to the preceding row.
+  // No interpolation across the missing 2001–2100 short-chain catalogue row.
+  const chainRules={
+    long:[
+      [700,1000,400,1,[],[402]], [1001,1300,600,2,[],[151,602]],
+      [1301,1450,800,2,[],[151,802]], [1451,1700,400,1,[600],[402,1001]],
+      [1701,1900,600,2,[600],[151,602,1201]], [1901,2100,800,2,[600],[151,802,1401]],
+      [2101,2300,600,2,[600,400],[151,602,1201,1600]], [2301,2400,600,2,[600,600],[151,602,1201,1800]]
+    ],
+    short:[
+      [600,800,[],0,[152]], [801,1200,[],400,[152,552]], [1201,1400,[],600,[152,752]],
+      [1401,1600,[400],400,[152,550,951]], [1601,1800,[400],600,[152,550,1151]],
+      [1801,2000,[600],600,[152,750,1351]], [2101,2400,[600,600],600,[152,750,1349,1751]]
+    ],
+    bottomBolt:[[600,1000,400,1],[1001,1300,600,1],[1301,1400,800,2]],
+    bottomCorner:[[700,1000,[],400],[1001,1300,[],600],[1301,1400,[400],400]]
+  };
+  function chainSupported(k){return !!k&&!k.catalogDraft&&k.family!=='aluminum'&&k.calculationMode!=='generic'&&['roller11','roller8','mushroom'].includes(k.variant)&&(!k.openingType||k.openingType==='tilt-turn');}
+  function inferredLowerNode(k){if(['bolt','security'].includes(k?.lowerNode))return k.lowerNode;return k?.common?.some(i=>i.art==='XUSP')?'bolt':'security';}
+  function chainReviewKey(k,p){return JSON.stringify([k.id,k.variant,p.width,p.height,p.rearChain,p.rearCam,p.lowerNode,p.strikeProfile,p.optionSeries,p.dornmass||k.dornmass||15,p.handleHeightMode||'catalog',p.handleHeight??null,p.hingeType||k.hingeType||'standard',p.handle||k.handle||'center']);}
+  function chainArticle(type,kind,size,cams=1){
+    if(kind==='drive')return (type==='roller11'?'XPNB.':'PNB.')+size+'-'+cams+(type==='mushroom'?'.V':'');
+    if(kind==='short')return {roller11:'XPNB.S.200-1',roller8:'PNF.200-1',mushroom:'PNF.V.200-1'}[type];
+    if(kind==='longExtension')return (type==='roller11'?'XU.':'UB.')+size+'-1'+(type==='mushroom'?'.V':'');
+    if(kind==='connector')return (type==='roller11'?'XUF.':'UF.')+size+'-1'+(type==='mushroom'?'.V':'');
+    return type==='roller11'?(size===400?'U.400-1VR':'XUK.600-1'):'U.'+size+'-1'+(type==='mushroom'?'.V':'');
+  }
+  function chainPlan(db,k,p={}){
+    const mode=p.rearChain||k.rearChain||'catalog';if(mode==='catalog')return null;
+    const q={...k,...p,rearChain:mode,rearCam:p.rearCam||k.rearCam||'same',lowerNode:p.lowerNode&&p.lowerNode!=='catalog'?p.lowerNode:inferredLowerNode(k)};
+    const plan={version:1,mode,lowerNode:q.lowerNode,rearCam:q.rearCam==='mushroom'?'mushroom':k.variant,items:[],rear:[],bottom:[],errors:[],warnings:[],reviewReasons:[],source:'FUTURUSS 2026-07: 196–209, 276–279, 286–287',targetFromTop:Math.round(p.height*2/3),strikeCoordinates:[]};
+    if(!chainSupported(k)||!['short','long'].includes(mode)||!['same','mushroom'].includes(q.rearCam)||!['bolt','security'].includes(q.lowerNode)||(p.hingeType||k.hingeType||'standard')==='hidden'){
+      plan.errors.push('Автоподбор задней цепочки для этой комплектации не подтверждён.');return plan;
+    }
+    const add=(zone,type,kind,size,cams=1)=>{const art=chainArticle(type,kind,size,cams);const item={art,qty:1,role:'chain',chainZone:zone,chainCam:type,camCount:cams};plan.items.push(item);plan[zone].push(art);return item;};
+    const rearType=plan.rearCam,row=chainRules[mode].find(r=>p.height>=r[0]&&p.height<=r[1]);
+    if(!row)plan.errors.push('Для высоты нет подтверждённого диапазона задней цепочки.');
+    else if(mode==='long'){
+      add('rear',rearType,'drive',row[2],row[3]);for(const n of row[4])add('rear',rearType,'longExtension',n);
+      if(rearType==='roller11')plan.strikeCoordinates=row[5].slice();
+    }else{
+      add('rear',rearType,'short',200);for(const n of row[2])add('rear',rearType,'connector',n);if(row[3])add('rear',rearType,'terminal',row[3]);
+      if(rearType==='roller11')plan.strikeCoordinates=row[4].slice();
+      else plan.reviewReasons.push('Сверьте цепочку 200 по монтажной схеме: в таблице каталога есть расхождения артикулов.');
+    }
+    if(rearType!==k.variant)plan.reviewReasons.push('Смешанная задняя цепочка: проверьте соединение с ножницами и профильные взломостойкие планки.');
+    const bottom=chainRules[q.lowerNode==='bolt'?'bottomBolt':'bottomCorner'].find(r=>p.width>=r[0]&&p.width<=r[1]);
+    if(bottom){
+      if(q.lowerNode==='bolt')add('bottom',k.variant,'drive',bottom[2],bottom[3]);
+      else {for(const n of bottom[2])add('bottom',k.variant,'connector',n);add('bottom',k.variant,'terminal',bottom[3]);}
+    }else if(p.width>=370&&p.width<700&&q.lowerNode==='security')plan.warnings.push('Для нижней горизонтали менее 700 мм удлинитель автоматически не добавлен; проверьте точки прижима.');
+    else plan.errors.push('Для ширины нет подтверждённого диапазона нижней цепочки.');
+    if(q.lowerNode==='security'&&k.variant!=='roller11')plan.reviewReasons.push('Нижняя цепочка для цапфы 8 мм или грибовидной требует сверки соединений и каталожных обозначений.');
+    if(q.lowerNode==='bolt'&&k.variant!=='roller11')plan.reviewReasons.push('Соединение нижнего шпингалета с выбранной цапфой требует проверки.');
+    const lower=q.lowerNode==='bolt'?'XUSP':{roller11:'XU.2',roller8:'U1.2',mushroom:'U2.2'}[k.variant];
+    plan.items.push({art:lower,qty:1,role:'chain',chainZone:'lower',chainCam:k.variant,camCount:q.lowerNode==='bolt'?0:1});
+    const strikes=strikePlan(db,k,q);
+    if(!strikes)plan.errors.push('Выберите профиль ответных планок.');else{
+      plan.errors.push(...strikes.errors);
+      for(const parent of plan.items.slice()){
+        const role=parent.chainCam==='mushroom'?'security':'perimeter';
+        if(parent.camCount)plan.items.push({art:strikes.roles[role]?.art,qty:parent.camCount,role:'chainStrike',chainZone:parent.chainZone,chainCam:parent.chainCam,dependency:{parent:parent.art,ratio:parent.camCount},...(strikes.roles[role]?.manual?{manualStrike:true,compatibilityApproved:true}:{})});
+      }
+      const role=q.lowerNode==='bolt'?'tiltBolt':'tiltSecurity';
+      plan.items.push({art:strikes.roles[role]?.art,qty:1,role:'chainStrike',chainZone:'lower',chainCam:k.variant,dependency:{parent:lower,ratio:1}});
+    }
+    for(const i of plan.items)if(!i.art||!db.articles[i.art]||db.articles[i.art].available===false)plan.errors.push('Деталь цепочки недоступна: '+(i.art||'—'));
+    if(plan.strikeCoordinates.length){
+      plan.lastStrikeFromTop=Math.max(...plan.strikeCoordinates);
+      if(plan.lastStrikeFromTop<plan.targetFromTop)plan.warnings.push('Нижняя точка прижима выше ориентира ⅔ высоты. Проверьте дополнительный прижим.');
+      plan.warnings.push('Координаты ответных планок даны по раме из монтажной таблицы; положение цапфы по фальцу проверьте отдельно.');
+    }else plan.warnings.push('Положение нижней цапфы и ориентир ⅔ высоты требуют проверки по монтажной схеме.');
+    plan.reviewKey=chainReviewKey(k,q);
+    plan.reviewed=(p.chainReviewed??k.chainReviewed)===plan.reviewKey;
+    if(plan.reviewReasons.length&&!plan.reviewed)plan.errors.push('Подтвердите проверку схемы соединений или выберите другую цепочку.');
+    // Only the explicitly selected, reviewed chain can cross the main cam family.
+    if(plan.reviewed)for(const i of plan.items)if(i.chainCam!==k.variant||i.art==='XUSP')i.compatibilityApproved=true;
+    return plan;
+  }
+  function applyChain(items,plan,errors){
+    const old=copy(items),remove=new Set(),subtract={perimeter:0,security:0};
+    // Untagged extension rows can belong to the handle side. Never guess ownership.
+    const extension=/^(?:X?UF|UB|XUK)\.|^XU\.(?:400|600)-1$|^U\.(?:400|600)-1/;
+    if(old.some(i=>extension.test(i.art)&&!i.chainZone)){errors.push('В составе есть удлинители без привязки к стороне. Уточните состав в конструкторе перед автоподбором.');return items;}
+    for(const [index,i] of old.entries()){
+      if(i.chainZone){remove.add(index);continue;}
+      if(/^(?:XPNB|PNB|PNF)\./.test(i.art)||['XUSP','XU.2','U1.2','U2.2'].includes(i.art)){
+        remove.add(index);const role=/\.V(?:\.|$)/.test(i.art)||i.art==='U2.2'?'security':'perimeter';
+        subtract[role]+=i.qty*(i.art==='XUSP'?0:['XU.2','U1.2','U2.2'].includes(i.art)?1:Number(i.art.match(/-(\d)(?:\.|$)/)?.[1]||1));
+      }
+      if(['tiltBolt','tiltSecurity'].includes(strikeRole(i.art)))remove.add(index);
+    }
+    for(const [index,i] of old.entries())if(!remove.has(index)){
+      const role=strikeRole(i.art);if(!subtract[role])continue;const n=Math.min(i.qty,subtract[role]);i.qty-=n;subtract[role]-=n;if(i.qty===0)remove.add(index);
+    }
+    if(Object.values(subtract).some(n=>n>0))plan.warnings.push('В исходной комплектации не хватало ответных планок заднего узла; новый узел рассчитан отдельно.');
+    return [...old.filter((_,n)=>!remove.has(n)),...copy(plan.items)];
+  }
+
   function lowerNodeSupported(kit){return kit.family!=='aluminum'&&kit.calculationMode!=='generic'&&kit.variant==='roller11'&&!['turn','fanlight','door','stulp','stulp-drive','stulp-bolts','tilt-first'].includes(kit.openingType);}
 
   function strikeRole(art){
@@ -380,7 +481,9 @@
       if(current&&current!==side){const target=dotted?it.art.replace(/\.[RL](?=\.|$)/,'.'+side):it.art.replace(/(\d{2})[RL](?=\.|$)/,'$1'+side),isHanded=/прав|лев/i.test(db.articles[it.art]?.name||'');if(has(db.articles,target))it.art=target;else if(isHanded)errors.push(it.art+': в файле нет парной детали '+target+' для выбранного открывания.');}
     }
     const lowerNode=params.lowerNode||kit.lowerNode||'catalog';
-    if(lowerNode!=='catalog'){
+    const chain=chainPlan(db,kit,params);
+    if(chain){errors.push(...chain.errors);warnings.push(...chain.reviewReasons,...chain.warnings);if(!chain.errors.length)items=applyChain(items,chain,errors);}
+    if(!chain&&lowerNode!=='catalog'){
       if(!['bolt','security'].includes(lowerNode)||!lowerNodeSupported(kit)||hingeType==='hidden')errors.push('Для этой комплектации смена нижнего узла не подтверждена.');
       else {
         const from=lowerNode==='security'?'XUSP':'XU.2',to=lowerNode==='security'?'XU.2':'XUSP';
@@ -433,6 +536,7 @@
       if(!replaced&&!items.some(it=>it.art.includes('.BLACK')))errors.push('Для выбранного состава чёрные исполнения не подтверждены каталогом.');
       if(unchanged.length)warnings.push('Стандартное исполнение без подтверждённой чёрной замены: '+[...new Set(unchanged)].join(', '));
     }
+    if((params.hardwareFinish||kit.hardwareFinish)==='black')for(const it of items)if(it.chainZone&&it.dependency){const target=db.articles[it.dependency.parent]?.blackVariant;if(target&&items.some(i=>i.art===target))it.dependency.parent=target;}
     const autoPlates=kit.family==='aluminum'?opts?.aluPlate===true:opts?.plsEnabled===true;
     let plateCalculation;
     if(autoPlates){
@@ -458,9 +562,9 @@
       if(a.variants?.length&&!a.variants.includes(kit.variant)&&it.art!=='NO.600'&&!it.compatibilityApproved)errors.push(it.art+': не соответствует виду цапфы.');
       for(const axis of ['width','height']){const value=kit.driveAxis==='width'&&it.role==='drive'?(axis==='height'?params.width:params.height):params[axis];if(a[axis]&&(value<a[axis].min||value>a[axis].max))errors.push(it.art+': размер вне каталожного диапазона.');}
       if(a.price==null)errors.push(it.art+': не задана цена.');
-      const old=totals.get(it.art);if(old)old.qty+=it.qty*params.count;else totals.set(it.art,{art:it.art,name:a.name,price:a.price,qty:it.qty*params.count,...(it.dependency?{dependency:it.dependency}:{}),...(strikeRole(it.art)?{strikeRole:strikeRole(it.art)}:{})});
+      const old=totals.get(it.art);if(old){old.qty+=it.qty*params.count;if(it.chainZone&&it.dependency){old.dependencies??=[];if(!old.dependencies.some(d=>d.parent===it.dependency.parent&&d.ratio===it.dependency.ratio))old.dependencies.push({...it.dependency});}}else totals.set(it.art,{art:it.art,name:a.name,price:a.price,qty:it.qty*params.count,...(it.dependency?(it.chainZone?{dependencies:[{...it.dependency}]}:{dependency:it.dependency}):{}),...(it.chainZone?{chainZone:it.chainZone}:{}),...(strikeRole(it.art)?{strikeRole:strikeRole(it.art)}:{})});
     }
-    const result=[...totals.values()];return {errors:[...new Set(errors)],warnings,items:result,choices,chosen,technology,...(plateCalculation?{plateCalculation}:{}),total:errors.length?null:result.reduce((s,i)=>s+i.price*i.qty,0)};
+    const result=[...totals.values()];return {errors:[...new Set(errors)],warnings,items:result,choices,chosen,technology,...(chain?{chainCalculation:chain}:{}),...(plateCalculation?{plateCalculation}:{}),total:errors.length?null:result.reduce((s,i)=>s+i.price*i.qty,0)};
   }
   function importOld(old){
     if(old.schemaVersion===2)return copy(old);
@@ -478,6 +582,6 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
 })(typeof globalThis!=='undefined'?globalThis:this);

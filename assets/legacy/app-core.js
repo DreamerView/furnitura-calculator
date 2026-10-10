@@ -859,12 +859,13 @@ function applyPlateDependencies(pos,nextRows,editedArticle){
 function applyNodeDependencies(pos,nextRows,editedArticle){
   const oldQty=pos.rows.filter(r=>r.art===editedArticle).reduce((n,r)=>n+r.qty,0),newQty=nextRows.filter(r=>r.art===editedArticle).reduce((n,r)=>n+r.qty,0);
   if(oldQty===newQty)return;
-  const affected=nextRows.filter(r=>r.dependency?.parent===editedArticle);
+  const ratio=r=>Array.isArray(r.dependencies)?r.dependencies.filter(d=>d.parent===editedArticle).reduce((n,d)=>n+d.ratio,0):(r.dependency?.parent===editedArticle?r.dependency.ratio:0);
+  const affected=nextRows.filter(r=>ratio(r)>0);
   if(!affected.length)return;
   const tr=v=>globalThis.FuturussI18n?.translate(v)||v;
-  if(affected.length>1){setMsg(tr('В просчёте разные стороны открывания. Проверьте количество ответных планок вручную.'),'warn');return;}
-  if(!confirm(tr('Пересчитать ответные детали нижнего узла?')+'\n'+affected.map(r=>r.art+': '+r.qty+' → '+Math.max(0,r.qty+(newQty-oldQty)*r.dependency.ratio)).join('\n')))return;
-  for(const r of affected)r.qty=Math.max(0,r.qty+(newQty-oldQty)*r.dependency.ratio);
+  if(affected.filter(r=>/\.[RL]$/.test(r.art)).length>1){setMsg(tr('В просчёте разные стороны открывания. Проверьте количество ответных планок вручную.'),'warn');return;}
+  if(!confirm(tr('Пересчитать связанные ответные планки?')+'\n'+affected.map(r=>r.art+': '+r.qty+' → '+Math.max(0,r.qty+(newQty-oldQty)*ratio(r))).join('\n')))return;
+  for(const r of affected)r.qty=Math.max(0,r.qty+(newQty-oldQty)*ratio(r));
   for(let i=nextRows.length-1;i>=0;i--)if(affected.includes(nextRows[i])&&nextRows[i].qty===0)nextRows.splice(i,1);
 }
 function removeRow(posId, rowIdx){
