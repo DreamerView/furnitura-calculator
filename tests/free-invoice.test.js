@@ -51,3 +51,9 @@ ctx.DATA.master.RN.packQty=400;assert(ctx.invoicePackNote("RN").includes("400"))
 ctx.renderOrder();assert(elements["combined-tbody"].children.at(-2).innerHTML.includes("invoice-pack-cell"));
 
 assert.equal(ctx.invoiceDisplayLabel("Просчёт 1"),"Расчёт 1");assert.equal(ctx.invoiceDisplayLabel("Заказ Иванова"),"Заказ Иванова");
+
+const modalDraft={label:'Modal order',comment:'Saved comment',rows:[{art:'RN',name:'Hinge',qty:3,price:15,manualPrice:true,manualPriceOwner:ctx.freePriceOwner()}]};
+const oldLength=ctx.orderPositions.length,added=ctx.addFreePosition(modalDraft);
+assert.equal(ctx.orderPositions.length,oldLength+1);assert.equal(ctx.orderPositions.at(-1),added);assert.equal(added.comment,'Saved comment');assert.equal(added.rows[0].price,15);
+modalDraft.rows[0].qty=999;assert.equal(added.rows[0].qty,3);
+console.log('Saving a modal draft appends an isolated normal invoice position.');

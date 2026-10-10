@@ -1,6 +1,12 @@
 (function(){
 'use strict';
 const dict={
+"Добавьте хотя бы один товар.":["Add at least one item.","En az bir ürün ekleyin."],
+"Товар больше недоступен. Выберите другую позицию.":["This item is no longer available. Choose another item.","Bu ürün artık mevcut değil. Başka bir ürün seçin."],
+"Укажите количество больше нуля.":["Enter a quantity greater than zero.","Sıfırdan büyük bir miktar girin."],
+"Укажите неотрицательную цену.":["Enter a non-negative price.","Negatif olmayan bir fiyat girin."],
+"Ничего не найдено":["No results","Sonuç bulunamadı"],
+"Цены скрыты":["Prices hidden","Fiyatlar gizli"],
 "Серебристое":["Silver","Gümüş"],
 "Шт./кор.":["Pcs/box","Adet/kutu"],
 "Точки прижима на один комплект":["Locking points per set","Set başına kilitleme noktaları"],

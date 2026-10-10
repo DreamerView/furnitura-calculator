@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+const {prepare}=require('../assets/js/free-invoice-modal');
+const master={A:{name:'Part',price:10}},draft={label:'Extra',comment:'Note',rows:[{art:'A',qty:3,price:15,manualPrice:true,manualPriceOwner:'dealer-1'}]};
+assert.equal(prepare(draft,master,true,'dealer-1').rows[0].price,15);
+assert.equal(prepare(draft,master,true,'dealer-2').rows[0].price,10);
+assert.equal(prepare(draft,master,false,'dealer-1').rows[0].price,0);
+assert.equal(prepare(draft,master,false,'dealer-1').rows[0].manualPrice,undefined);
+assert.equal(draft.rows[0].price,15);
+assert.throws(()=>prepare({...draft,rows:[]},master,true,'dealer-1'));
+assert.throws(()=>prepare(draft,{},true,'dealer-1'));
+for(const qty of [0,-1,NaN,Infinity])assert.throws(()=>prepare({...draft,rows:[{art:'A',qty}]},master,true,'dealer-1'));
+assert.throws(()=>prepare({...draft,rows:[{...draft.rows[0],price:-1}]},master,true,'dealer-1'));
+console.log('Modal draft: manual prices, owner change, hidden prices, unavailable items and invalid inputs passed.');

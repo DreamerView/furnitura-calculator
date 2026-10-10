@@ -885,11 +885,12 @@ function updateRowQty(posId, rowIdx, newVal){
 }
 function clearOrder(){ orderPositions = []; renderOrder(); setMsg("Накладная очищена.", "ok"); }
 
-function addFreePosition(){
+function addFreePosition(draft){
   const label=document.getElementById('poslabel').value.trim();
-  const pos={id:++posCounter,freeInvoice:true,label:label||'Свободная заявка',scheme:'Дополнительные товары',rows:[],width:'',height:'',sashQty:'',qtyRight:0,qtyLeft:0,blockRange:''};
+  const pos={id:++posCounter,freeInvoice:true,label:draft?.label?.trim()||label||'Свободная заявка',comment:draft?.comment||'',scheme:'Дополнительные товары',rows:draft?JSON.parse(JSON.stringify(draft.rows)):[],width:'',height:'',sashQty:'',qtyRight:0,qtyLeft:0,blockRange:''};
   orderPositions.push(pos);document.getElementById('poslabel').value='';renderOrder();
   document.getElementById('add-art-search-'+pos.id)?.focus();
+  return pos;
 }
 function freePriceOwner(){
   const auth=globalThis.FUTURUSS_SPA?.state?.auth||globalThis.FUTURUSS_AUTH||{};
