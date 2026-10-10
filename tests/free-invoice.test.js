@@ -28,7 +28,7 @@ if(previewPath){
  pos.label='Свободная заявка';pos.rows[0].name='Петля рамы нижняя';ctx.orderPositions[1].label='Позиция с длинными названиями';ctx.orderPositions[1].scheme='Поворотно-откидная · профиль KBE 13';ctx.orderPositions[1].rows=Array.from({length:48},(_,i)=>({art:'XPNB.600-2.V.TEST-'+i,name:'Привод-ножницы с удлинителем и подтверждённой ответной планкой для профильной системы',qty:2,price:10}));for(const x of ctx.orderPositions[1].rows)ctx.DATA.master[x.art]={name:x.name,price:10};ctx.renderOrder();
  const positions=elements['positions-container'].children.slice(-2).map(x=>'<div class="'+x.className+'">'+x.innerHTML+'</div>').join('');
  const head='<thead><tr><th>№</th><th>Артикул</th><th>Наименование</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr></thead>';
- fs.writeFileSync(previewPath,'<!doctype html><meta charset="utf-8"><style>'+css+'</style><style>html{width:186mm!important;margin:auto!important}body{margin:0!important}</style><body class="workdesk-app print-positions"><div class="wrap"><div id="combined-card"><div class="invoice-print-only invoice-print-heading"><strong>FUTURUSS</strong></div><h2>Общая накладная</h2><div class="table-wrap"><table>'+head+'<tbody>'+elements['combined-tbody'].children.slice(-49).map(x=>x.innerHTML?'<tr>'+x.innerHTML+'</tr>':'').join('')+'</tbody></table></div></div><div id="results"><div id="invoice-card"><div id="positions-container">'+positions+'</div></div></div></div></body>');
+ fs.writeFileSync(previewPath,'<!doctype html><meta charset="utf-8"><style>'+css+'</style><style>html{width:186mm!important;margin:auto!important}body{margin:0!important}</style><body class="workdesk-app print-positions"><div class="wrap"><div id="combined-card"><div class="invoice-print-only invoice-print-heading"><strong>FUTURUSS</strong></div><h2>Общая накладная</h2><div class="table-wrap"><table>'+head+'<tbody>'+elements['combined-tbody'].children.slice(-49).map(x=>x.innerHTML?'<tr>'+x.innerHTML+'</tr>':'').join('')+'</tbody></table></div><table><tfoot><tr class="total"><td>Итого по накладной</td><td id="inv-grand-total">'+elements['inv-grand-total'].textContent+'</td></tr></tfoot></table></div><div id="results"><div id="invoice-card"><div id="positions-container">'+positions+'</div></div></div></div></body>');
 }
 console.log('Print values and multiline position comments passed.');
 
@@ -37,3 +37,11 @@ const merged=Object.values(ctx.invoiceCombinedRows([{rows:[{art:'XU',qty:1,price
 assert.equal(merged.qty,4);assert.equal(merged.engineeringNotes.length,2);assert(merged.engineeringNotes.join('').includes('снизу'));assert(merged.engineeringNotes.join('').includes('со стороны петель'));
 ctx.renderOrder();assert(elements['combined-position-notes'].innerHTML.includes('Первая строка'));assert(elements['combined-position-notes'].innerHTML.includes('Точки прижима'));
 console.log('Combined invoice retains distinct placements, comments and pressure summaries.');
+
+ctx.MatrixCore.pressureSummary=rows=>({points:rows.reduce((n,r)=>n+r.qty*2,0),complete:true,unknown:[]});
+for(const count of [1,3,10]){
+ const note=ctx.positionPressureNote({sashQty:count,rows:[{qty:count*2}]});
+ assert(note.includes('Точки прижима на один комплект'));assert(note.includes(': 4</span>'));
+}
+assert(ctx.positionPressureNote({qtyRight:2,qtyLeft:3,rows:[{qty:10}]}).includes(': 4</span>'));
+console.log('Pressure count stays per set for 1, 3, 10 and mixed-hand quantities.');

@@ -863,7 +863,7 @@ function applyNodeDependencies(pos,nextRows,editedArticle){
   const affected=nextRows.filter(r=>ratio(r)>0);
   if(!affected.length)return;
   const tr=v=>globalThis.FuturussI18n?.translate(v)||v;
-  if(affected.filter(r=>/\.[RL]$/.test(r.art)).length>1){setMsg(tr('В просчёте разные стороны открывания. Проверьте количество ответных планок вручную.'),'warn');return;}
+  if(affected.filter(r=>/\.[RL]$/.test(r.art)).length>1){setMsg(tr('В расчёте разные стороны открывания. Проверьте количество ответных планок вручную.'),'warn');return;}
   if(!confirm(tr('Пересчитать связанные ответные планки?')+'\n'+affected.map(r=>r.art+': '+r.qty+' → '+Math.max(0,r.qty+(newQty-oldQty)*ratio(r))).join('\n')))return;
   for(const r of affected)r.qty=Math.max(0,r.qty+(newQty-oldQty)*ratio(r));
   for(let i=nextRows.length-1;i>=0;i--)if(affected.includes(nextRows[i])&&nextRows[i].qty===0)nextRows.splice(i,1);
@@ -934,10 +934,12 @@ function positionEngineeringNote(row){
 }
 function positionPressureNote(pos){
   const M=globalThis.MatrixCore;if(!M)return '';
-  const summary=M.pressureSummary(pos.rows,pos.family),tr=v=>globalThis.FuturussI18n?.translate(v)||v;
-  const label=summary.complete?'Точки прижима по цапфам':'Подтверждённые точки прижима';
-  const title=summary.complete?'Всего по позиции. Петли и пассивные прижимы не включены.':'Подсчёт неполный. Проверьте детали без подтверждённого числа цапф.';
-  return '<span class="pill pressure-summary" title="'+esc(tr(title)+(summary.unknown.length?' '+summary.unknown.join(', '):''))+'">'+esc(tr(label))+': '+summary.points+(summary.complete?'':' · '+esc(tr('требует проверки')))+'</span>';
+  const count=Number(pos.sashQty)||(Number(pos.qtyRight)||0)+(Number(pos.qtyLeft)||0)||1;
+  const rows=pos.rows.map(row=>({...row,qty:row.qty/count}));
+  const summary=M.pressureSummary(rows,pos.family),tr=v=>globalThis.FuturussI18n?.translate(v)||v;
+  const label=summary.complete?'Точки прижима на один комплект':'Подтверждённые точки прижима на один комплект';
+  const title=summary.complete?'На один комплект. Петли и пассивные прижимы не включены.':'Подсчёт неполный. Проверьте детали без подтверждённого числа цапф.';
+  return '<span class="pill pressure-summary" title="'+esc(tr(title)+(summary.unknown.length?' '+summary.unknown.join(', '):''))+'">'+esc(tr(label))+': '+Number(summary.points.toFixed(2))+(summary.complete?'':' · '+esc(tr('требует проверки')))+'</span>';
 }
 
 function renderOrder(){

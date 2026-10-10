@@ -13,7 +13,7 @@ root.openStrikeReplacement=function(posId,index){
  const head=document.createElement('div');head.className='dialoghead spa-modal-head';const title=document.createElement('h2');title.id='strikeReplacementTitle';title.textContent=tr('Заменить ответную планку');head.append(title);
  const body=document.createElement('div');body.className='spa-modal-body';
  const current=document.createElement('p');current.textContent=pos.label+' · '+original+' · '+row.name;
- const hint=document.createElement('p');hint.textContent=tr('Изменится только эта строка текущего просчёта. Количество сохранится.');
+ const hint=document.createElement('p');hint.textContent=tr('Изменится только эта строка текущего расчёта. Количество сохранится.');
  const label=document.createElement('label');label.textContent=tr('Рекомендованные варианты');
  const select=document.createElement('select');select.add(new Option(tr('Выберите артикул'),''));for(const r of recommended)select.add(new Option(r.art+' · '+db.articles[r.art].name,r.art));label.append(select);
  const manual=document.createElement('label');manual.textContent=tr('Другой артикул из доступного каталога');const input=document.createElement('input');input.value=original;input.setAttribute('list','invoiceStrikeArticles');manual.append(input);

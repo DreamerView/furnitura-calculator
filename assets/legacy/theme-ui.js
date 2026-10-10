@@ -27,14 +27,14 @@ if(host&&!host.querySelector('.useful-options-grid')){const grid=document.create
 (function(){
  const row=document.querySelector('.document-action-toolbar'),panel=document.querySelector('.estimate-save-panel');
  const name=document.getElementById('poslabel');
- if(name){name.placeholder='Введите название просчёта';name.setAttribute('aria-label','Название просчёта');document.querySelector('label[for="poslabel"]')?.classList.add('estimate-name-label-hidden');}
+ if(name){name.placeholder='Введите название расчёта';name.setAttribute('aria-label','Название расчёта');document.querySelector('label[for="poslabel"]')?.classList.add('estimate-name-label-hidden');}
  if(!row||!panel||document.getElementById('estimateSaveDialog'))return;
  const dialog=document.createElement('dialog');dialog.id='estimateSaveDialog';dialog.className='estimate-save-dialog';dialog.setAttribute('aria-labelledby','estimateSaveTitle');
- const heading=document.createElement('h2');heading.id='estimateSaveTitle';heading.textContent='Сохранение просчёта';
+ const heading=document.createElement('h2');heading.id='estimateSaveTitle';heading.textContent='Сохранение расчёта';
  const close=document.createElement('button');close.type='button';close.className='estimate-dialog-close';close.textContent='Готово';close.onclick=()=>dialog.close();
  const status=document.createElement('p');status.className='estimate-dialog-status';status.setAttribute('role','status');
  panel.classList.add('open');dialog.append(heading,panel,status,close);document.body.append(dialog);
- const button=document.createElement('button');button.type='button';button.className='estimate-dialog-open';button.textContent='Сохранить';button.title='Сохранить, открыть или выгрузить просчёт';
+ const button=document.createElement('button');button.type='button';button.className='estimate-dialog-open';button.textContent='Сохранить';button.title='Сохранить, открыть или выгрузить расчёт';
  button.onclick=()=>{const input=document.getElementById('estimateName');if(input&&!input.value.trim()&&name?.value.trim())input.value=name.value.trim();status.textContent='';dialog.showModal();input?.focus();};row.append(button);
  const msg=document.getElementById('msg');if(msg)new MutationObserver(()=>{if(dialog.open)status.textContent=msg.textContent;}).observe(msg,{childList:true,subtree:true,characterData:true});
 })();

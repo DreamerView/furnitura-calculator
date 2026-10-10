@@ -31,13 +31,14 @@
  html:root body.workdesk-app :is(#combined-card,#positions-container) tfoot{display:table-row-group!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) tr{display:table-row!important;height:auto!important;break-inside:avoid;page-break-inside:avoid}
  html:root body.workdesk-app :is(#combined-card,#positions-container) :is(th,td){display:table-cell!important;height:auto!important;max-height:none!important;padding:1.5mm 1.3mm!important;border:0!important;border-bottom:.4pt solid #ccc!important;vertical-align:top!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:anywhere!important;color:#111!important;font:9pt/1.35 Arial,sans-serif!important;background:white!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td){border-left:.4pt solid #bbb!important;border-right:.4pt solid #bbb!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) th{font-weight:600!important;background:#eee!important;border-top:.6pt solid #555!important;border-bottom:.6pt solid #555!important;print-color-adjust:exact}
- html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(1){width:5%!important;text-align:center!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(1){width:4%!important;text-align:center!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(2){width:18%!important;text-align:left!important}
- html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(3){width:39%!important;text-align:left!important}
- html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(4){width:10%!important;text-align:center!important}
- html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(5){width:13%!important;text-align:right!important}
- html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(6){width:15%!important;text-align:right!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(3){width:48%!important;text-align:left!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(4){width:8%!important;text-align:center!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(5){width:10%!important;text-align:right!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(6){width:12%!important;text-align:right!important}
  html:root body.workdesk-app #positions-container :is(thead,tbody) tr>:nth-child(7),html:root body.workdesk-app #positions-container tfoot tr>td:last-child{display:none!important}
  html:root body.workdesk-app #positions-container input{display:none!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) .engineering-note{font-size:8pt!important;color:#555!important;font-weight:400!important}
@@ -45,13 +46,14 @@
  html:root body.workdesk-app #positions-container tr.hinge-kit td{background:#f5f5f5!important;print-color-adjust:exact}
  html:root body.workdesk-app #positions-container tfoot tr.total td{width:auto!important;font-weight:600!important;border-top:.7pt solid #555!important;text-align:right!important}
  html:root body.workdesk-app #positions-container tfoot tr.total td:first-child{text-align:left!important}
+ html:root body.workdesk-app #combined-card #inv-grand-total{font:700 11pt/1.35 Arial,sans-serif!important;color:#111!important;white-space:normal!important;overflow-wrap:anywhere!important}
  html:root body.workdesk-app #combined-card>table{margin-top:2mm!important;break-inside:avoid}
- html:root body.workdesk-app #combined-card>table td:first-child{width:85%!important;font-weight:600!important}
- html:root body.workdesk-app #combined-card>table td:last-child{width:15%!important;text-align:right!important;font-weight:600!important}
+ html:root body.workdesk-app #combined-card>table td:first-child{width:88%!important;font-weight:600!important}
+ html:root body.workdesk-app #combined-card>table td:last-child{width:12%!important;text-align:right!important;font-weight:600!important}
  html:root body.workdesk-app .invoice-print-comment{display:block!important;margin:3mm 0!important;font-size:9pt;white-space:normal;overflow-wrap:anywhere}
  .invoice-print-comment p{margin:1mm 0 0;white-space:pre-wrap;orphans:2;widows:2}
  html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap :is(th,td):is(:nth-child(5),:nth-child(6)){display:none!important}
- html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(3){width:65%!important}
+ html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(3){width:70%!important}
  html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) :is(tfoot,.price-default),html:root body.workdesk-app.price-hidden #combined-card>table{display:none!important}
  html:root body.workdesk-app.pricing-invoice-invalid :is(#combined-card,#results){display:none!important}
 }
