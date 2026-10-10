@@ -15915,6 +15915,94 @@
       "variants": [
         "mushroom"
       ]
+    },
+    "AL.RSNO.313-09R": {
+      "name": "Рычаг скрытых ножниц 313, профиль 14, правый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL.RSNO.313-09L": {
+      "name": "Рычаг скрытых ножниц 313, профиль 14, левый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL.RSNO.413-09R": {
+      "name": "Рычаг скрытых ножниц 413, профиль 14, правый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL.RSNO.413-09L": {
+      "name": "Рычаг скрытых ножниц 413, профиль 14, левый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL02.RSNO.313-09R": {
+      "name": "Рычаг скрытых ножниц 313, профиль 10, правый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL02.RSNO.313-09L": {
+      "name": "Рычаг скрытых ножниц 313, профиль 10, левый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL02.RSNO.413-09R": {
+      "name": "Рычаг скрытых ножниц 413, профиль 10, правый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL02.RSNO.413-09L": {
+      "name": "Рычаг скрытых ножниц 413, профиль 10, левый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 29"
+    },
+    "AL02.PS1.R": {
+      "name": "Скрытый прижим, рамная часть, профиль 10",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Скрытая петлевая группа ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 35"
+    },
+    "ZMS.R": {
+      "name": "Зацеп приподнимателя штульповый правый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Зацепы ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 53–57"
+    },
+    "ZMS.L": {
+      "name": "Зацеп приподнимателя штульповый левый",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Зацепы ALU 16",
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 53–57"
+    },
+    "U22": {
+      "name": "Угловая передача взломоустойчивая с двумя грибовидными цапфами",
+      "price": 10,
+      "section": "Алюминий ALU 16",
+      "group": "Угловые передачи",
+      "variants": [
+        "mushroom"
+      ],
+      "packQty": 100,
+      "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 83"
     }
   },
   "kits": [
@@ -16405,2139 +16493,6 @@
       "handle": "center",
       "handleColor": "white",
       "coverColor": "white"
-    },
-    {
-      "id": "alu-tilt-standard",
-      "name": "ALU 16 · ПО стандартная · роликовая цапфа",
-      "variant": "roller11",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.1, печатные страницы 29–30. Диапазоны по ШСФ и ВСФ, скрытые петли и ножницы SNO/XSNO.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 490,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1",
-            "XPO.1450-2"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "XU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.Z.930",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-tilt-security",
-      "name": "ALU 16 · ПО базовая взломостойкость · грибовидная цапфа",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.2, печатные страницы 30–31. Грибовидная цапфа, взломостойкие зацепы и скрытая петлевая группа.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 490,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.V"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.V"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.V"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.V",
-            "XPO.1450-2.V"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.V"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.V"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.V"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLV",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-tilt-high",
-      "name": "ALU 16 · ПО повышенная взломостойкость · грибовидная цапфа",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.3, печатные страницы 32–33. Усиленный комплект с PLV и грибовидными приводами.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 490,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.V"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.V"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.V"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.V",
-            "XPO.1450-2.V"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.V"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.V"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.V"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLV",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-turn-standard",
-      "name": "ALU 16 · поворотная стандартная",
-      "variant": "roller11",
-      "family": "aluminum",
-      "openingType": "turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.4, печатные страницы 34–35. Поворотная створка без ножниц, скрытые верхние и нижние петли.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 370,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 250,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1",
-            "XPO.1450-2"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "XU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.Z.930",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-turn-security",
-      "name": "ALU 16 · поворотная базовая взломостойкость",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.5, печатные страницы 36–37.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 370,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 250,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.V"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.V"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.V"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.V",
-            "XPO.1450-2.V"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.V"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.V"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.V"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-turn-high",
-      "name": "ALU 16 · поворотная повышенная взломостойкость",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.6, печатные страницы 38–39.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 370,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 250,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.V"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.V"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.V"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.V",
-            "XPO.1450-2.V"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.V"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.V"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.V"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLV",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-child-standard",
-      "name": "ALU 16 · Тилт-Фёст стандарт · безопасность детей",
-      "variant": "roller11",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.7, печатные страницы 40–41. Детский блокиратор Тилт-Фёст.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 490,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1",
-            "XPO.1450-2"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "XU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.Z.930",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "BTF",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-child-security",
-      "name": "ALU 16 · Тилт-Фёст базовая взломостойкость",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.8, печатные страницы 42–43. Взломостойкие и детские элементы.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 490,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.V"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.V"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.V"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.V",
-            "XPO.1450-2.V"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.V"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.V"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.V"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLV",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZTF.9/30.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "BTF",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-child-high",
-      "name": "ALU 16 · Тилт-Фёст повышенная взломостойкость",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.9, печатные страницы 44–45.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 490,
-          "to": 790,
-          "drives": [
-            "POK.790"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.V"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.V"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.V"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.V",
-            "XPO.1450-2.V"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.V"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.V"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.V"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLV",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZTF.9/30.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "BTF",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-tilt-d25-standard",
-      "name": "ALU 16 · ПО стандартная · дорнмасс 25",
-      "variant": "roller11",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 25,
-      "note": "Каталог алюминия 2026-07, раздел 7.10, печатные страницы 46–47.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740.D25"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.D25"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.D25"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.D25"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.D25",
-            "XPO.1450-2.D25"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.D25"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.D25",
-            "XPOZ.2000-2.D25"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.D25",
-            "XPOZ.2400-2.D25"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "XU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.Z.930",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "XU1.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "XU1.L",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PNF.S.V.200-1",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-tilt-d25-basic",
-      "name": "ALU 16 · ПО базовая взломостойкость · дорнмасс 25",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 25,
-      "note": "Каталог алюминия 2026-07, раздел 7.11, печатные страницы 48–49.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "PO.740.D25"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.D25"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.D25"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.D25"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.D25",
-            "XPO.1450-2.D25"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.D25"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.D25",
-            "XPOZ.2000-2.D25"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.D25",
-            "XPOZ.2400-2.D25"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLV",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PNF.S.V.200-1",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-tilt-d25-high-catalog",
-      "name": "ALU 16 · ПО повышенная взломостойкость · дорнмасс 25",
-      "variant": "mushroom",
-      "family": "aluminum",
-      "openingType": "tilt-turn",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 25,
-      "note": "Каталог алюминия 2026-07, раздел 7.12, печатные страницы 50–51.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 600
-        },
-        {
-          "id": "w1",
-          "from": 601,
-          "to": 800
-        },
-        {
-          "id": "w2",
-          "from": 801,
-          "to": 1000
-        },
-        {
-          "id": "w3",
-          "from": 1001,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 490,
-          "to": 790,
-          "drives": [
-            "XPOK.790.D25.V"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 530,
-          "to": 740,
-          "drives": [
-            "XPO.740.D25.V"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 590,
-          "to": 800,
-          "drives": [
-            "XPO.800-1.D25.V"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "XPO.1200-1.D25.V"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 900,
-          "to": 1300,
-          "drives": [
-            "XPO.1300-1.D25.V"
-          ]
-        },
-        {
-          "id": "h5",
-          "from": 1050,
-          "to": 1450,
-          "drives": [
-            "XPO.1450-1.D25.V",
-            "XPO.1450-2.D25.V"
-          ]
-        },
-        {
-          "id": "h6",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "XPO.1600-2.D25.V"
-          ]
-        },
-        {
-          "id": "h7",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "XPO.2000-2.D25.V"
-          ]
-        },
-        {
-          "id": "h8",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "XPO.2400-4.D25.V"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "U2",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "U2.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVP.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZVO.9/30",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLV",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PNF.S.V.200-1",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
-    },
-    {
-      "id": "alu-stulp-standard",
-      "name": "ALU 16 · штульповая створка · стандарт",
-      "variant": "roller11",
-      "family": "aluminum",
-      "openingType": "stulp",
-      "profile": "AL V.01 · паз 16 мм",
-      "aluminumProfile": "14",
-      "side": "R",
-      "handle": "center",
-      "handleColor": "white",
-      "coverColor": "white",
-      "optionSeries": "13",
-      "dornmass": 15,
-      "note": "Каталог алюминия 2026-07, раздел 7.13, печатные страницы 52–53. Штульповые приводы PS.800–PS.2400.",
-      "columns": [
-        {
-          "id": "w0",
-          "from": 450,
-          "to": 700
-        },
-        {
-          "id": "w1",
-          "from": 701,
-          "to": 900
-        },
-        {
-          "id": "w2",
-          "from": 901,
-          "to": 1200
-        }
-      ],
-      "rows": [
-        {
-          "id": "h0",
-          "from": 690,
-          "to": 890,
-          "drives": [
-            "PS.800"
-          ]
-        },
-        {
-          "id": "h1",
-          "from": 800,
-          "to": 1200,
-          "drives": [
-            "PS.1200"
-          ]
-        },
-        {
-          "id": "h2",
-          "from": 1200,
-          "to": 1600,
-          "drives": [
-            "PS.1600"
-          ]
-        },
-        {
-          "id": "h3",
-          "from": 1600,
-          "to": 2000,
-          "drives": [
-            "PS.2000"
-          ]
-        },
-        {
-          "id": "h4",
-          "from": 2000,
-          "to": 2400,
-          "drives": [
-            "PS.2400"
-          ]
-        }
-      ],
-      "common": [
-        {
-          "art": "XU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SPK-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.SNP-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.Z.930",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.ZM9",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "MBU",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "PLS",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "RSP",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.OR-09R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.PS1.S",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.PS1.R",
-          "qty": 1,
-          "role": "manual"
-        },
-        {
-          "art": "AL.PSO.N.2000",
-          "qty": 1,
-          "role": "manual"
-        }
-      ],
-      "cells": {}
     },
     {
       "family": "pvc",
@@ -72982,6 +70937,3738 @@
         "Проверить массу створки, крепление петлевой группы, гарнитур и цилиндр.",
         "Применяется прямой привод без рубки; угловые передачи и удлинители требуют отдельной схемы."
       ]
+    },
+    {
+      "id": "alu-tilt-standard",
+      "name": "ALU 16 · Поворотно-откидная · стандартная",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.1, стр. 28–29. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "XPNB.S.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "tilt",
+      "assemblyLevel": "standard",
+      "assemblyLabel": "Поворотно-откидная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.1",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-tilt-security",
+      "name": "ALU 16 · Поворотно-откидная · базовая взломостойкость",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.2, стр. 30–31. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.2"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.2"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "tilt",
+      "assemblyLevel": "basic",
+      "assemblyLabel": "Поворотно-откидная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.2",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-tilt-high",
+      "name": "ALU 16 · Поворотно-откидная · повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.3, стр. 32–33. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "tilt",
+      "assemblyLevel": "high",
+      "assemblyLabel": "Поворотно-откидная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.3",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-turn-standard",
+      "name": "ALU 16 · Поворотная · стандартная",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.4, стр. 34–35. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 250,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "turn",
+      "assemblyLevel": "standard",
+      "assemblyLabel": "Поворотная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.4"
+    },
+    {
+      "id": "alu-turn-security",
+      "name": "ALU 16 · Поворотная · базовая взломостойкость",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.5, стр. 36–37. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 250,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 2,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.5"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.5"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "turn",
+      "assemblyLevel": "basic",
+      "assemblyLabel": "Поворотная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.5"
+    },
+    {
+      "id": "alu-turn-high",
+      "name": "ALU 16 · Поворотная · повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.6, стр. 38–39. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "U22",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "turn",
+      "assemblyLevel": "high",
+      "assemblyLabel": "Поворотная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.6",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-child-standard",
+      "name": "ALU 16 · Откидно-поворотная · стандартная",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-first",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.7, стр. 40–41. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "BTF",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZTF.9/30.R",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "child",
+      "assemblyLevel": "standard",
+      "assemblyLabel": "Откидно-поворотная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.7",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-child-security",
+      "name": "ALU 16 · Откидно-поворотная · базовая взломостойкость",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-first",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.8, стр. 42–43. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.8"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.8"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZTF.9/30.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "BTF",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "child",
+      "assemblyLevel": "basic",
+      "assemblyLabel": "Откидно-поворотная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.8",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-child-high",
+      "name": "ALU 16 · Откидно-поворотная · повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-first",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.9, стр. 44–45. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZTF.9/30.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "BTF",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "child",
+      "assemblyLevel": "high",
+      "assemblyLabel": "Откидно-поворотная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.9",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-tilt-d25-standard",
+      "name": "ALU 16 · Поворотно-откидная · дорнмасс 25 · стандартная",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "note": "Каталог ALU 16, раздел 7.10, стр. 46–47. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.D25"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.D25"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.D25",
+            "XPO.1450-2.D25"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.D25"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.D25",
+            "XPOZ.2000-2.D25"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.D25",
+            "XPOZ.2400-2.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "XU1.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "tilt-d25",
+      "assemblyLevel": "standard",
+      "assemblyLabel": "Поворотно-откидная · дорнмасс 25",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        25
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.10",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-tilt-d25-basic",
+      "name": "ALU 16 · Поворотно-откидная · дорнмасс 25 · базовая взломостойкость",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "note": "Каталог ALU 16, раздел 7.11, стр. 48–49. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.D25"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.D25"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.D25",
+            "XPO.1450-2.D25"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.D25"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.D25",
+            "XPOZ.2000-2.D25"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.D25",
+            "XPOZ.2400-2.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.11"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.11"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "tilt-d25",
+      "assemblyLevel": "basic",
+      "assemblyLabel": "Поворотно-откидная · дорнмасс 25",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        25
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.11",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-tilt-d25-high-catalog",
+      "name": "ALU 16 · Поворотно-откидная · дорнмасс 25 · повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "note": "Каталог ALU 16, раздел 7.12, стр. 50–51. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 790,
+          "drives": [
+            "XPOK.790.D25.V"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "XPO.740.D25.V"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.D25.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.D25.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.D25.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.D25.V",
+            "XPO.1450-2.D25.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.D25.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.D25.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.D25.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "tilt-d25",
+      "assemblyLevel": "high",
+      "assemblyLabel": "Поворотно-откидная · дорнмасс 25",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        25
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.12",
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-stulp-standard",
+      "name": "ALU 16 · Штульповая — привод · стандартная",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "stulp",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.13, стр. 52–53. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 700
+        },
+        {
+          "id": "w1",
+          "from": 701,
+          "to": 900
+        },
+        {
+          "id": "w2",
+          "from": 901,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 690,
+          "to": 890,
+          "drives": [
+            "PS.800"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "PS.1200"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "PS.1600"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "PS.2000"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "PS.2400"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.OR-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.S",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZMS.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "XZ.ST",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "stulp",
+      "assemblyLevel": "standard",
+      "assemblyLabel": "Штульповая — привод",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.13",
+      "catalogMixedArticles": []
+    },
+    {
+      "id": "alu-stulp-security",
+      "name": "ALU 16 · Штульповая — привод · базовая взломостойкость",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "stulp",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.14, стр. 54–55. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 700
+        },
+        {
+          "id": "w1",
+          "from": 701,
+          "to": 900
+        },
+        {
+          "id": "w2",
+          "from": 901,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 690,
+          "to": 890,
+          "drives": [
+            "PS.800"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "PS.1200"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "PS.1600"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "PS.2000"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "PS.2400"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 2,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.14"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.OR-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.S",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZMS.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "XZ.ST",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "stulp",
+      "assemblyLevel": "basic",
+      "assemblyLabel": "Штульповая — привод",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.14",
+      "catalogMixedArticles": []
+    },
+    {
+      "id": "alu-stulp-high",
+      "name": "ALU 16 · Штульповая — привод · повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "stulp",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.15, стр. 56–57. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 690,
+          "to": 890,
+          "drives": [
+            "PS.800"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "PS.1200"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "PS.1600"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "PS.2000"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "PS.2400"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.OR-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZMS.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZV.ST",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {},
+      "assemblyGroup": "stulp",
+      "assemblyLevel": "high",
+      "assemblyLabel": "Штульповая — привод",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.15",
+      "catalogMixedArticles": [
+        "PS.800",
+        "PS.1200",
+        "PS.1600",
+        "PS.2000",
+        "PS.2400"
+      ],
+      "aluminumScissorLever": true
+    },
+    {
+      "id": "alu-fanlight-standard",
+      "name": "ALU 16 · Фрамужная · стандартная",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "fanlight",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 530,
+          "to": 790
+        },
+        {
+          "id": "w1",
+          "from": 530,
+          "to": 740
+        },
+        {
+          "id": "w2",
+          "from": 590,
+          "to": 800
+        },
+        {
+          "id": "w3",
+          "from": 800,
+          "to": 1200
+        },
+        {
+          "id": "w4",
+          "from": 900,
+          "to": 1300
+        },
+        {
+          "id": "w5",
+          "from": 1050,
+          "to": 1400
+        },
+        {
+          "id": "w6",
+          "from": 1200,
+          "to": 1400
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 350,
+          "to": 1200,
+          "drives": []
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.S",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.R",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.FO1",
+          "qty": 2,
+          "role": "scissors"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 2,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "POK.790",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "XU",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w1": {
+          "items": [
+            {
+              "art": "PO.740",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "XU",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w2": {
+          "items": [
+            {
+              "art": "XPO.800-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "XU",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w3": {
+          "items": [
+            {
+              "art": "XPO.1200-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "XU",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w4": {
+          "items": [
+            {
+              "art": "XPO.1300-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "XU",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w5": {
+          "items": [
+            {
+              "art": "XPO.1450-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "XU",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w6": {
+          "items": [
+            {
+              "art": "XPO.1600-2",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "XU",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.16. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        }
+      },
+      "assemblyGroup": "fanlight",
+      "assemblyLevel": "standard",
+      "assemblyLabel": "Фрамужная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.16",
+      "driveAxis": "width",
+      "aluminumScissorLever": false
+    },
+    {
+      "id": "alu-fanlight-basic",
+      "name": "ALU 16 · Фрамужная · базовая взломостойкость",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "fanlight",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 530,
+          "to": 790
+        },
+        {
+          "id": "w1",
+          "from": 530,
+          "to": 740
+        },
+        {
+          "id": "w2",
+          "from": 590,
+          "to": 800
+        },
+        {
+          "id": "w3",
+          "from": 800,
+          "to": 1200
+        },
+        {
+          "id": "w4",
+          "from": 900,
+          "to": 1300
+        },
+        {
+          "id": "w5",
+          "from": 1050,
+          "to": 1400
+        },
+        {
+          "id": "w6",
+          "from": 1200,
+          "to": 1400
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 350,
+          "to": 1200,
+          "drives": []
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 2,
+          "role": "manual",
+          "compatibilityApproved": true,
+          "catalogCompatibilitySource": "7.17"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.S",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.R",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.FO1",
+          "qty": 2,
+          "role": "scissors"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 2,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "POK.790",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual",
+              "compatibilityApproved": true,
+              "catalogCompatibilitySource": "7.17"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w1": {
+          "items": [
+            {
+              "art": "PO.740",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual",
+              "compatibilityApproved": true,
+              "catalogCompatibilitySource": "7.17"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w2": {
+          "items": [
+            {
+              "art": "XPO.800-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual",
+              "compatibilityApproved": true,
+              "catalogCompatibilitySource": "7.17"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w3": {
+          "items": [
+            {
+              "art": "XPO.1200-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual",
+              "compatibilityApproved": true,
+              "catalogCompatibilitySource": "7.17"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w4": {
+          "items": [
+            {
+              "art": "XPO.1300-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual",
+              "compatibilityApproved": true,
+              "catalogCompatibilitySource": "7.17"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w5": {
+          "items": [
+            {
+              "art": "XPO.1450-1",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual",
+              "compatibilityApproved": true,
+              "catalogCompatibilitySource": "7.17"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w6": {
+          "items": [
+            {
+              "art": "XPO.1600-2",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual",
+              "compatibilityApproved": true,
+              "catalogCompatibilitySource": "7.17"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.Z.930",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.17. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        }
+      },
+      "assemblyGroup": "fanlight",
+      "assemblyLevel": "basic",
+      "assemblyLabel": "Фрамужная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.17",
+      "driveAxis": "width",
+      "aluminumScissorLever": false
+    },
+    {
+      "id": "alu-fanlight-high",
+      "name": "ALU 16 · Фрамужная · повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "fanlight",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог ALU 16, раздел 7.18. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 530,
+          "to": 740
+        },
+        {
+          "id": "w1",
+          "from": 590,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 800,
+          "to": 1200
+        },
+        {
+          "id": "w3",
+          "from": 900,
+          "to": 1300
+        },
+        {
+          "id": "w4",
+          "from": 1050,
+          "to": 1400
+        },
+        {
+          "id": "w5",
+          "from": 1200,
+          "to": 1400
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 350,
+          "to": 1200,
+          "drives": []
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.S",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.R",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "AL.FO1",
+          "qty": 2,
+          "role": "scissors"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 2,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "PO.740",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.18. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w1": {
+          "items": [
+            {
+              "art": "XPO.800-1.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.18. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w2": {
+          "items": [
+            {
+              "art": "XPO.1200-1.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.18. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w3": {
+          "items": [
+            {
+              "art": "XPO.1300-1.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.18. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w4": {
+          "items": [
+            {
+              "art": "XPO.1450-1.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.18. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        },
+        "h0|w5": {
+          "items": [
+            {
+              "art": "XPO.1600-2.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "U2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.SPK-09R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.S",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.PS1.R",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "AL.FO1",
+              "qty": 2,
+              "role": "scissors"
+            },
+            {
+              "art": "AL.ZVP.9/30",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Каталог ALU 16, раздел 7.18. Привод по ширине. Удлинители и дополнительные прижимы проверяются в размерной ячейке по монтажной схеме."
+        }
+      },
+      "assemblyGroup": "fanlight",
+      "assemblyLevel": "high",
+      "assemblyLabel": "Фрамужная",
+      "aluminumAssemblyVersion": 1,
+      "dornmassChoices": [
+        15
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf",
+      "catalogSection": "7.18",
+      "driveAxis": "width",
+      "aluminumScissorLever": false
     }
   ],
   "strikeSelection": {
@@ -76948,5 +78635,6 @@
   "tiltFirstWorkbookVersion": 1,
   "priceCurrency": "RUB",
   "commonCompositionVersion": 1,
-  "catalogExpansionVersion": 1
+  "catalogExpansionVersion": 1,
+  "aluminumAssembliesVersion": 1
 }

@@ -1,6 +1,10 @@
 (function(){
 'use strict';
 const dict={
+"Стандартная сборка":["Standard assembly","Standart montaj"],
+"Базовая взломостойкость":["Basic burglary resistance","Temel hırsızlık direnci"],
+"Повышенная взломостойкость":["Enhanced burglary resistance","Artırılmış hırsızlık direnci"],
+"Вариант сборки":["Assembly variant","Montaj seçeneği"],
 "Добавьте хотя бы один товар.":["Add at least one item.","En az bir ürün ekleyin."],
 "Товар больше недоступен. Выберите другую позицию.":["This item is no longer available. Choose another item.","Bu ürün artık mevcut değil. Başka bir ürün seçin."],
 "Укажите количество больше нуля.":["Enter a quantity greater than zero.","Sıfırdan büyük bir miktar girin."],

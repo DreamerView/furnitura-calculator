@@ -20,8 +20,8 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.15">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.15"><script src="assets/js/hardware-colors.js?v=2026.10.10.15"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.15"></script><script src="assets/js/cam-selector.js?v=2026.10.10.15"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.15"><script src="assets/js/calculation-technology.js?v=2026.10.10.15"></script>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.16">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.16"><script src="assets/js/hardware-colors.js?v=2026.10.10.16"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.16"></script><script src="assets/js/cam-selector.js?v=2026.10.10.16"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.16"><script src="assets/js/calculation-technology.js?v=2026.10.10.16"></script>
 <style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
@@ -101,7 +101,7 @@
     return {schemaVersion:2,format:'futuruss-matrix',nomenclatureVersion:seed.nomenclatureVersion||'',articles,kits:[...kits,...extraKits]};
   }
   function scissors(db,kit,col){
-    if(['turn','fanlight','door','stulp','stulp-bolts','stulp-drive'].includes(kit.openingType))return '';
+    if(!kit.aluminumScissorLever&&['turn','fanlight','door','stulp','stulp-bolts','stulp-drive'].includes(kit.openingType))return '';
     if(kit.family==='aluminum'){
       const preferred=col.to<=600?'SNO.600':(kit.variant==='mushroom'?'SNO.':'XSNO.')+col.to+'-1'+(kit.variant==='mushroom'?'.V':'');
       if(has(db.articles,preferred))return preferred;
@@ -133,6 +133,8 @@
     if(params&&kit.sizeRecipeMode){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
     if(stored)return copy(stored);
     const items=[...(row.drives[0]?[rowItem(row.drives[0],1,'drive')]:[]),...copy(kit.common)],sc= scissors(db,kit,col);if(sc)items.push(rowItem(sc,1,'scissors'));
+    if(kit.aluminumScissorLever&&sc)items.push(rowItem('AL.RSNO.'+(col.to<=800?'313':'413')+'-09R'+(kit.openingType==='tilt-first'?'.TF':'')));
+    if(kit.family==='aluminum'&&kit.catalogMixedArticles)for(const it of items)if(kit.catalogMixedArticles.includes(it.art)){it.compatibilityApproved=true;it.catalogCompatibilitySource=kit.catalogSection;}
     return {items,reviewed:false,driveChosen:row.drives.length===1,note:''};
   }
   function candidates(kit,width,height){
@@ -800,7 +802,7 @@ function render(){
   const k=kit();catalogSchemesUI.refresh(k);family=kitFamily(k);camControl.refresh();
   
   $('familyTabs').querySelectorAll('[data-family]').forEach(button=>{const current=button.dataset.family===family;button.classList.toggle('active',current);button.setAttribute('aria-pressed',String(current));button.onclick=()=>{const next=library.kits.find(x=>kitFamily(x)===button.dataset.family);if(!next)return;family=button.dataset.family;active=next.id;variant=next.variant;resetResult();render();};});
-  $('kitTabs').innerHTML=library.kits.filter(x=>(!x.catalogDraft||x.catalogPrepared||x.id===active)&&kitFamily(x)===family&&(family!=='pvc'||!FuturussCamSelector.types.includes(x.variant)||x.variant===k.variant)).map(x=>`<button class="variant ${x.id===active?'active':''}" data-kit="${e(x.id)}" title="${e(x.name)}" ${x.id===active?'aria-current="page"':''}>${e(kitTabLabel(x))}</button>`).join('');
+  $('kitTabs').innerHTML=library.kits.filter(x=>(!x.catalogDraft||x.catalogPrepared||x.id===active)&&kitFamily(x)===family&&FuturussCamSelector.visible(x,k)&&(family!=='pvc'||!FuturussCamSelector.types.includes(x.variant)||x.variant===k.variant)).map(x=>`<button class="variant ${x.id===active?'active':''}" data-kit="${e(x.id)}" title="${e(x.name)}" ${x.id===active?'aria-current="page"':''}>${e(kitTabLabel(x))}</button>`).join('');
   if(family==='pvc')for(const [kind,name]of Object.entries(FuturussCamSelector.openings)){if(library.kits.some(x=>(!x.catalogDraft||x.catalogPrepared)&&kitFamily(x)==='pvc'&&x.variant===k.variant&&FuturussCamSelector.opening(x)===kind))continue;const button=document.createElement('button');button.className='variant';button.disabled=true;button.textContent=name;button.title='Нет комплектации';$('kitTabs').append(button);}
   $('kitTabs').querySelectorAll('[data-kit]').forEach(b=>b.onclick=()=>{const next=library.kits.find(x=>x.id===b.dataset.kit);if(!next)return;active=next.id;variant=next.variant;resetResult();render();});
   $('sheet').hidden=!!k.catalogDraft&&!k.rows.length;$('catalogRecipeReference').hidden=!k.catalogScheme&&!library.catalogSchemes?.some(s=>s.kitId===k.id);$('kitTitle').textContent=k.name;$('kitNote').textContent=k.note;$('tableCount').textContent=`${k.columns.length} ширин × ${k.rows.length} высот${k.profile?' · '+k.profile:''} · ${k.side==='L'?'левая':'правая'}`;
@@ -980,15 +982,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.15"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.15"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.15"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.15">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.15"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.16"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.16"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.16"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.16">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.16"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.15"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.15">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.15">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.15">
+<script src="assets/js/modal-layout.js?v=2026.10.10.16"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.16">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.16">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.16">
 </body></html>
 

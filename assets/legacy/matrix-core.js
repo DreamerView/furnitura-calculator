@@ -54,7 +54,7 @@
     return {schemaVersion:2,format:'futuruss-matrix',nomenclatureVersion:seed.nomenclatureVersion||'',articles,kits:[...kits,...extraKits]};
   }
   function scissors(db,kit,col){
-    if(['turn','fanlight','door','stulp','stulp-bolts','stulp-drive'].includes(kit.openingType))return '';
+    if(!kit.aluminumScissorLever&&['turn','fanlight','door','stulp','stulp-bolts','stulp-drive'].includes(kit.openingType))return '';
     if(kit.family==='aluminum'){
       const preferred=col.to<=600?'SNO.600':(kit.variant==='mushroom'?'SNO.':'XSNO.')+col.to+'-1'+(kit.variant==='mushroom'?'.V':'');
       if(has(db.articles,preferred))return preferred;
@@ -86,6 +86,8 @@
     if(params&&kit.sizeRecipeMode){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
     if(stored)return copy(stored);
     const items=[...(row.drives[0]?[rowItem(row.drives[0],1,'drive')]:[]),...copy(kit.common)],sc= scissors(db,kit,col);if(sc)items.push(rowItem(sc,1,'scissors'));
+    if(kit.aluminumScissorLever&&sc)items.push(rowItem('AL.RSNO.'+(col.to<=800?'313':'413')+'-09R'+(kit.openingType==='tilt-first'?'.TF':'')));
+    if(kit.family==='aluminum'&&kit.catalogMixedArticles)for(const it of items)if(kit.catalogMixedArticles.includes(it.art)){it.compatibilityApproved=true;it.catalogCompatibilitySource=kit.catalogSection;}
     return {items,reviewed:false,driveChosen:row.drives.length===1,note:''};
   }
   function candidates(kit,width,height){

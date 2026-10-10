@@ -50,7 +50,7 @@
     const previous=typeof preferred==='string'?preferred:el('scheme').value;el('scheme').replaceChildren();
     if(imported&&currentProfileId==='futuruss'){
       const previousKit=imported.kits.find(k=>PREFIX+k.id===previous);if(previousKit&&globalThis.FuturussCamSelector?.types.includes(previousKit.variant))activeCam=previousKit.variant;
-      const visible=imported.kits.filter(kit=>(!kit.catalogDraft||kit.catalogPrepared)&&kitFamily(kit)===activeFamily&&(activeFamily!=='pvc'||!globalThis.FuturussCamSelector||!FuturussCamSelector.types.includes(kit.variant)||kit.variant===activeCam));
+      const visible=imported.kits.filter(kit=>(!kit.catalogDraft||kit.catalogPrepared)&&kitFamily(kit)===activeFamily&&(!globalThis.FuturussCamSelector||FuturussCamSelector.visible(kit,previousKit))&&(activeFamily!=='pvc'||!globalThis.FuturussCamSelector||!FuturussCamSelector.types.includes(kit.variant)||kit.variant===activeCam));
       if(!visible.length){info('В этой базе нет комплектаций '+(activeFamily==='aluminum'?'ALU':'для ПВХ')+'. Откройте настройку калькулятора и добавьте комплектацию.',true);reflect();return;}
       for(const kit of visible){const opt=document.createElement('option');opt.value=PREFIX+kit.id;opt.textContent=(globalThis.FuturussCamSelector?.label(kit)||kit.name)+(kit.catalogDraft?' · '+(globalThis.FuturussI18n?.translate?.('Состав неполный')||'Состав неполный'):'');el('scheme').appendChild(opt);}
       el('scheme').value=visible.some(k=>PREFIX+k.id===previous)?previous:PREFIX+visible[0].id;

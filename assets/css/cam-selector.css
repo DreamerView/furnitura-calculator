@@ -8,3 +8,5 @@ html:root body :is(#matrixFamilyTabs,#familyTabs){display:flex;flex-wrap:wrap;al
 [data-cam="mushroom"] .cam-photo{background-position:center 0}
 [data-cam="roller11"] .cam-photo{background-position:center -39px}
 [data-cam="roller8"] .cam-photo{background-position:center -74px}
+
+.alu-assembly-select{display:block;margin:8px 0}.alu-assembly-select[hidden]{display:none!important}.alu-assembly-select select{box-sizing:border-box;width:100%;max-width:360px;min-height:34px;font:inherit;border:1px solid var(--border,#ddd);border-radius:9px;padding:6px 9px;background:var(--surface,#fff);color:var(--text,#222)}

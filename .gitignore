@@ -3,6 +3,7 @@
 !/storage/.htaccess
 !/storage/.gitkeep
 !/storage/default-catalog.json
+!/storage/aluminum-assemblies-previous.json
 !/storage/strike-selection.json
 !/storage/tilt-first-workbook-previous.json
 !/storage/tilt-first-8-previous.json

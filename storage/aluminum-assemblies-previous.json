@@ -1,0 +1,2137 @@
+{
+  "kits": {
+    "alu-tilt-standard": {
+      "id": "alu-tilt-standard",
+      "name": "ALU 16 · ПО стандартная · роликовая цапфа",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.1, печатные страницы 29–30. Диапазоны по ШСФ и ВСФ, скрытые петли и ножницы SNO/XSNO.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 490,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-tilt-security": {
+      "id": "alu-tilt-security",
+      "name": "ALU 16 · ПО базовая взломостойкость · грибовидная цапфа",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.2, печатные страницы 30–31. Грибовидная цапфа, взломостойкие зацепы и скрытая петлевая группа.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 490,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-tilt-high": {
+      "id": "alu-tilt-high",
+      "name": "ALU 16 · ПО повышенная взломостойкость · грибовидная цапфа",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.3, печатные страницы 32–33. Усиленный комплект с PLV и грибовидными приводами.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 490,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-turn-standard": {
+      "id": "alu-turn-standard",
+      "name": "ALU 16 · поворотная стандартная",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.4, печатные страницы 34–35. Поворотная створка без ножниц, скрытые верхние и нижние петли.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 250,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-turn-security": {
+      "id": "alu-turn-security",
+      "name": "ALU 16 · поворотная базовая взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.5, печатные страницы 36–37.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 250,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-turn-high": {
+      "id": "alu-turn-high",
+      "name": "ALU 16 · поворотная повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.6, печатные страницы 38–39.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 250,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-child-standard": {
+      "id": "alu-child-standard",
+      "name": "ALU 16 · Тилт-Фёст стандарт · безопасность детей",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.7, печатные страницы 40–41. Детский блокиратор Тилт-Фёст.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 490,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1",
+            "XPO.1450-2"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "BTF",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-child-security": {
+      "id": "alu-child-security",
+      "name": "ALU 16 · Тилт-Фёст базовая взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.8, печатные страницы 42–43. Взломостойкие и детские элементы.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 490,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZTF.9/30.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "BTF",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-child-high": {
+      "id": "alu-child-high",
+      "name": "ALU 16 · Тилт-Фёст повышенная взломостойкость",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.9, печатные страницы 44–45.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 490,
+          "to": 790,
+          "drives": [
+            "POK.790"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.V",
+            "XPO.1450-2.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZTF.9/30.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "BTF",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-tilt-d25-standard": {
+      "id": "alu-tilt-d25-standard",
+      "name": "ALU 16 · ПО стандартная · дорнмасс 25",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "note": "Каталог алюминия 2026-07, раздел 7.10, печатные страницы 46–47.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.D25"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.D25"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.D25",
+            "XPO.1450-2.D25"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.D25"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.D25",
+            "XPOZ.2000-2.D25"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.D25",
+            "XPOZ.2400-2.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "XU1.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "XU1.L",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-tilt-d25-basic": {
+      "id": "alu-tilt-d25-basic",
+      "name": "ALU 16 · ПО базовая взломостойкость · дорнмасс 25",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "note": "Каталог алюминия 2026-07, раздел 7.11, печатные страницы 48–49.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "PO.740.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.D25"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.D25"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.D25",
+            "XPO.1450-2.D25"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.D25"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.D25",
+            "XPOZ.2000-2.D25"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.D25",
+            "XPOZ.2400-2.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-tilt-d25-high-catalog": {
+      "id": "alu-tilt-d25-high-catalog",
+      "name": "ALU 16 · ПО повышенная взломостойкость · дорнмасс 25",
+      "variant": "mushroom",
+      "family": "aluminum",
+      "openingType": "tilt-turn",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "note": "Каталог алюминия 2026-07, раздел 7.12, печатные страницы 50–51.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 600
+        },
+        {
+          "id": "w1",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w2",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w3",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 490,
+          "to": 790,
+          "drives": [
+            "XPOK.790.D25.V"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 530,
+          "to": 740,
+          "drives": [
+            "XPO.740.D25.V"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 590,
+          "to": 800,
+          "drives": [
+            "XPO.800-1.D25.V"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "XPO.1200-1.D25.V"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 900,
+          "to": 1300,
+          "drives": [
+            "XPO.1300-1.D25.V"
+          ]
+        },
+        {
+          "id": "h5",
+          "from": 1050,
+          "to": 1450,
+          "drives": [
+            "XPO.1450-1.D25.V",
+            "XPO.1450-2.D25.V"
+          ]
+        },
+        {
+          "id": "h6",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "XPO.1600-2.D25.V"
+          ]
+        },
+        {
+          "id": "h7",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "XPO.2000-2.D25.V"
+          ]
+        },
+        {
+          "id": "h8",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "XPO.2400-4.D25.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "U2",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "U2.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVP.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZVO.9/30",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PNF.S.V.200-1",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    },
+    "alu-stulp-standard": {
+      "id": "alu-stulp-standard",
+      "name": "ALU 16 · штульповая створка · стандарт",
+      "variant": "roller11",
+      "family": "aluminum",
+      "openingType": "stulp",
+      "profile": "AL V.01 · паз 16 мм",
+      "aluminumProfile": "14",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "note": "Каталог алюминия 2026-07, раздел 7.13, печатные страницы 52–53. Штульповые приводы PS.800–PS.2400.",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 450,
+          "to": 700
+        },
+        {
+          "id": "w1",
+          "from": 701,
+          "to": 900
+        },
+        {
+          "id": "w2",
+          "from": 901,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 690,
+          "to": 890,
+          "drives": [
+            "PS.800"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 800,
+          "to": 1200,
+          "drives": [
+            "PS.1200"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 1200,
+          "to": 1600,
+          "drives": [
+            "PS.1600"
+          ]
+        },
+        {
+          "id": "h3",
+          "from": 1600,
+          "to": 2000,
+          "drives": [
+            "PS.2000"
+          ]
+        },
+        {
+          "id": "h4",
+          "from": 2000,
+          "to": 2400,
+          "drives": [
+            "PS.2400"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "XU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SPK-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.SNP-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.Z.930",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.ZM9",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "MBU",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PLS",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RSP",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.OR-09R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.S",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PS1.R",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "AL.PSO.N.2000",
+          "qty": 1,
+          "role": "manual"
+        }
+      ],
+      "cells": {}
+    }
+  }
+}
