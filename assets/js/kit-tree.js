@@ -2,7 +2,7 @@
 (function(root){
 'use strict';
 // These catalogue recipes are selected through the main kit options, not navigation.
-const optionRecipes=new Set([2,3,4,5,8,17,23,24].map(n=>'catalog-pvc-7-'+n));
+const optionRecipes=new Set([...([2,3,4,5,7,8,10,17,18,23,24,28,34,35,37,38,42,44,45].map(n=>'catalog-pvc-7-'+n)),'pvc-door-11-latch','pvc-door-8-latch','pvc-door-mushroom-latch']);
 function groups(kits){const result=[];for(const family of ['pvc','aluminum']){const branches=new Map();for(const kit of kits){if(optionRecipes.has(kit.id))continue;if((kit.family==='aluminum'?'aluminum':'pvc')!==family)continue;const kind=kit.openingType||'tilt-turn';if(!branches.has(kind))branches.set(kind,[]);branches.get(kind).push(kit);}result.push({family,branches:[...branches].map(([kind,kits])=>({kind,kits}))});}return result;}
 function create({main,families,variants,onSelect}){
  const make=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text)n.textContent=text;return n;};
