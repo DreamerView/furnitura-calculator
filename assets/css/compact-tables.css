@@ -201,3 +201,7 @@ dialog.frame-profiles-dialog{width:min(940px,95vw);height:auto!important;max-hei
 .frame-dimensions .frame-mode-toggle{flex-direction:row}
 
 dialog.frame-profiles-dialog{padding:16px!important}.frame-profile-row details{font-size:11px;color:var(--muted,#64748b)}.frame-profile-row details label{margin-top:6px}.frame-profile-row summary{cursor:pointer}
+
+/* Only positional calculations: one continuous rule between installation sides. */
+html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item.invoice-side-start>td{border-top:1px solid #8e9caf!important}
+@media print{html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item.invoice-side-start>td{border-top:1px solid #666!important}}

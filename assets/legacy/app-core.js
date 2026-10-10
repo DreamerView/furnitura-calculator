@@ -868,18 +868,20 @@ function applyNodeDependencies(pos,nextRows,editedArticle){
   for(const r of affected)r.qty=Math.max(0,r.qty+(newQty-oldQty)*ratio(r));
   for(let i=nextRows.length-1;i>=0;i--)if(affected.includes(nextRows[i])&&nextRows[i].qty===0)nextRows.splice(i,1);
 }
-function removeRow(posId, rowIdx){
+function removeRow(posId, rowIdx, zone=null){
+  if(zone){updateRowQty(posId,rowIdx,0,zone);return;}
   const pos = orderPositions.find(p => p.id === posId);
   if (!pos) return;
   const edited=pos.rows[rowIdx].art,next=pos.rows.filter((_,i)=>i!==rowIdx).map(r=>({...r}));
   applyNodeDependencies(pos,next,edited);applyPlateDependencies(pos,next,edited);pos.rows=next;
   renderOrder();
 }
-function updateRowQty(posId, rowIdx, newVal){
+function updateRowQty(posId, rowIdx, newVal, zone=null){
   const pos = orderPositions.find(p => p.id === posId);
   if (!pos) return;
   const q = parseFloat(newVal);
-  const next=pos.rows.map(r=>({...r}));next[rowIdx].qty=isNaN(q)?0:Math.max(0,q);
+  const next=pos.rows.map(r=>({...r}));const value=Number.isFinite(q)?Math.max(0,q):0;
+  if(zone){const changed=globalThis.FuturussInvoiceSides?.changeZone(next[rowIdx],zone,value);if(!changed)return;next[rowIdx]=changed;if(changed.qty===0)next.splice(rowIdx,1);}else{next[rowIdx].qty=value;if(next[rowIdx].placements?.length===1)next[rowIdx].placements=[{...next[rowIdx].placements[0],qty:value}];}
   applyNodeDependencies(pos,next,pos.rows[rowIdx].art);applyPlateDependencies(pos,next,pos.rows[rowIdx].art);pos.rows=next;
   renderOrder();
 }
@@ -981,22 +983,24 @@ function renderOrder(){
     let posSubtotal = 0;
     const posDiv = document.createElement("div");
     posDiv.className = "pos-block"+(pos.freeInvoice?" free-invoice":"");
-    const displayOrder = groupRowsForDisplay(pos.rows.map((r, i) => i), i => pos.rows[i].art);
-    let rowsHtml = displayOrder.map((idx, displayIdx) => {
-      const r = pos.rows[idx];
+    const displayOrder = !pos.freeInvoice&&globalThis.FuturussInvoiceSides?FuturussInvoiceSides.entries(pos.rows):groupRowsForDisplay(pos.rows.map((r,i)=>i),i=>pos.rows[i].art).map(index=>({index,row:pos.rows[index],zone:null,editZone:null}));
+    let rowsHtml = displayOrder.map((entry, displayIdx) => {
+      const {index:idx,row:r,zone,editZone}=entry;
+      const boundary=displayIdx>0&&zone!==displayOrder[displayIdx-1].zone;
+      const zoneArg=editZone?', '+inlineJsArg(editZone):'';
       const sum = r.qty * r.price;
       posSubtotal += sum;
 
       return `
-      <tr data-position-id="${pos.id}" data-row-index="${idx}" class="row-item${r.pricingUnavailable?' pricing-unavailable':''}${isHingeKitArt(r.art) ? ' hinge-kit' : ''}${isDriveArt(r.art) ? ' drive-row' : ''}" ondblclick="showPhoto(${inlineJsArg(r.art)}, ${inlineJsArg(r.name)}, 'invoice')">
+      <tr data-position-id="${pos.id}" data-row-index="${idx}" class="row-item${boundary?' invoice-side-start':''}${r.pricingUnavailable?' pricing-unavailable':''}${isHingeKitArt(r.art) ? ' hinge-kit' : ''}${isDriveArt(r.art) ? ' drive-row' : ''}" ondblclick="showPhoto(${inlineJsArg(r.art)}, ${inlineJsArg(r.name)}, 'invoice')">
         <td>${displayIdx+1}</td>
         <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}</td>
         <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}${pos.freeInvoice?'':positionEngineeringNote(r)}</td>
-        <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value)"><span class="invoice-print-only">${esc(r.qty)}</span></td>
+        <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value${zoneArg})"><span class="invoice-print-only">${esc(r.qty)}</span></td>
         <td class="num${r.isDefaultPrice?' price-default':''}">${pos.freeInvoice&&canPrice?`<input class="qty-input free-price-input" type="number" min="0" step="0.01" aria-label="Цена" value="${r.price.toFixed(2)}" onclick="event.stopPropagation()" onchange="updateFreeRowPrice(${pos.id},${idx},this.value)"><span class="invoice-print-only">${r.price.toFixed(2)}</span>`:r.price.toFixed(2)+(r.isDefaultPrice?'*':'')}</td>
         <td class="num">${sum.toFixed(2)}</td>
         <td class="num invoice-pack-cell">${invoicePackNote(r.art)}</td>
-        <td>${globalThis.MatrixCore?.strikeRole(r.art)||r.strikeRole?` <button class="small strike-replace" type="button" title="Заменить ответную планку" aria-label="Заменить ответную планку" onclick="event.stopPropagation(); openStrikeReplacement(${pos.id},${idx})"><span class="ui-icon i-pencil" aria-hidden="true"></span></button>`:''}<button class="small danger" onclick="event.stopPropagation(); removeRow(${pos.id},${idx})"><span class="ui-icon i-xmark" aria-hidden="true"></span></button></td>
+        <td>${globalThis.MatrixCore?.strikeRole(r.art)||r.strikeRole?` <button class="small strike-replace" type="button" title="Заменить ответную планку" aria-label="Заменить ответную планку" onclick="event.stopPropagation(); openStrikeReplacement(${pos.id},${idx})"><span class="ui-icon i-pencil" aria-hidden="true"></span></button>`:''}<button class="small danger" onclick="event.stopPropagation(); removeRow(${pos.id},${idx}${zoneArg})"><span class="ui-icon i-xmark" aria-hidden="true"></span></button></td>
       </tr>`;
     }).join("");
     grandTotal += posSubtotal;
