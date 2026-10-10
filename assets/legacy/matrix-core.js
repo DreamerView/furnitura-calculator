@@ -70,6 +70,17 @@
     const matches=(stored?.sizeRecipes||[]).filter(r=>fits(width,r.width)&&fits(height,r.height));
     return matches.length===1?matches[0]:null;
   }
+  function replaceCommon(kit,items){
+    // Full cell recipes already contain their common parts. Replace only that share,
+    // keeping size-dependent extras, manual rows and automatic parts intact.
+    const previous=kit.common||[];
+    const signature=it=>JSON.stringify(Object.fromEntries(Object.entries(it).filter(([k])=>k!=='qty'&&k!=='editPrice').sort(([a],[b])=>a.localeCompare(b))));
+    for(const saved of Object.values(kit.cells||{}).flatMap(c=>c.sizeRecipes?.length?[c,...c.sizeRecipes]:[c])){
+      for(const old of previous){let remaining=old.qty;for(const it of saved.items){if(signature(it)===signature(old)){const take=Math.min(it.qty,remaining);it.qty-=take;remaining-=take;}}}
+      saved.items=saved.items.filter(i=>i.qty>0);saved.items.push(...copy(items));saved.reviewed=false;
+    }
+    kit.common=copy(items);
+  }
   function cell(db,kit,row,col,params){
     const stored=kit.cells[key(row,col)];
     if(params&&kit.sizeRecipeMode){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
@@ -465,6 +476,6 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
 })(typeof globalThis!=='undefined'?globalThis:this);

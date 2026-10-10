@@ -3,7 +3,7 @@ const fs=require('node:fs'),M=require('../assets/legacy/matrix-core');
 const seed=require('../storage/default-catalog.json');const db=structuredClone(seed);for(const a of Object.values(db.articles))a.price=10;
 assert.deepEqual(M.validate(db),[]);assert.equal(db.catalogSchemes.length,54);assert.equal(new Set(db.catalogSchemes.map(x=>x.section)).size,54);
 for(const source of db.catalogSchemes){assert(db.kits.some(k=>k.id===source.kitId));assert(source.articles.length>0);for(const art of source.articles)assert(db.articles[art]);}
-for(const k of db.kits.filter(k=>k.catalogDraft)){const r=M.calculate(db,k,{width:700,height:1000,count:1});assert.equal(r.total,null);assert.equal(r.items.length,0);assert(r.errors.length);assert.equal(k.common.length,0);}
+for(const k of db.kits.filter(k=>k.catalogDraft)){const r=M.calculate(db,k,{width:700,height:1000,count:1});assert.equal(r.total,null);assert.equal(r.items.length,0);assert(r.errors.length);for(const item of k.common){assert(db.articles[item.art]);for(const c of Object.values(k.cells))assert(c.items.some(i=>i.art===item.art&&i.qty>=item.qty));}}
 let checks=0;
 for(const variant of ['11','8']){
  const k=db.kits.find(k=>k.id==='pvc-fanlight-'+variant);
@@ -21,4 +21,4 @@ for(const variant of ['11','8']){
 const adapter=fs.readFileSync('assets/legacy/matrix-adapter.js','utf8');assert(adapter.includes('(!kit.catalogDraft||kit.catalogPrepared)&&kitFamily(kit)'));
 const html=fs.readFileSync('configurator.html','utf8');assert(html.includes('FuturussCatalogSchemes.create'));assert(html.indexOf('assets/js/catalog-schemes.js')<html.indexOf('FuturussCatalogSchemes.create'));
 assert.equal((html.match(/const catalogSchemesUI=/g)||[]).length,1);
-console.log('54 scheme references, 45 blocked drafts, '+checks+' fanlight calculations, dimensions, axes and integration passed.');
+console.log('54 scheme references, blocked unfinished drafts, '+checks+' fanlight calculations, dimensions, axes and integration passed.');

@@ -5,6 +5,7 @@
 !/storage/default-catalog.json
 !/storage/strike-selection.json
 !/storage/tilt-first-workbook-previous.json
+!/storage/tilt-first-8-previous.json
 !/storage/product-photos/
 /storage/product-photos/*
 !/storage/product-photos/.htaccess
