@@ -1,0 +1,5908 @@
+[
+  {
+    "id": "catalog-pvc-7-12",
+    "name": "Штульповая ПО: оконная ручка · цапфа 11 мм",
+    "variant": "roller11",
+    "family": "pvc",
+    "openingType": "stulp",
+    "catalogDraft": true,
+    "calculationMode": "catalogue",
+    "catalogScheme": "7.12",
+    "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+    "catalogPages": [
+      68,
+      69
+    ],
+    "catalogParts": [
+      "XPO.800-1",
+      "XPO.1200-1",
+      "XPO.1600-2",
+      "XPO.2000-2",
+      "XU",
+      "XU.400-1U",
+      "U.400-1VR",
+      "XUK.600-1",
+      "XNO.800-1",
+      "XNO.1000-1",
+      "XNO.1200-1",
+      "XNO.1400-1",
+      "XPNB.400-1",
+      "XPNB.400-2",
+      "XPNB.600-2",
+      "XPNB.800-2",
+      "NO.600",
+      "NO.700",
+      "RV",
+      "RV.U",
+      "ST",
+      "RN",
+      "RN.U",
+      "SV.10",
+      "SV.13",
+      "SV.14",
+      "SN",
+      "SN.U",
+      "SF.9.L",
+      "SF.9.R",
+      "SF.13.L",
+      "SF.13.R",
+      "SV.09",
+      "N.RV.B",
+      "N.RV.K",
+      "N.RV.BLACK",
+      "N.RV.A",
+      "N.RN1.B",
+      "N.RN1.K",
+      "N.RN1.BLACK",
+      "N.RN1.BS",
+      "N.RN1.A",
+      "N.RN2.B",
+      "N.RN2.K",
+      "N.RN2.BLACK",
+      "N.RN2.A",
+      "N.SV.B",
+      "N.SV.K",
+      "N.SV.BLACK",
+      "N.SV.A",
+      "N.SN.B",
+      "N.SN.K",
+      "N.SN.BLACK",
+      "N.SN.A",
+      "N.3DS.L.B",
+      "N.3DS.L.K",
+      "N.3DS.L.A",
+      "N.3DS.L.BLACK",
+      "N.3DS.R.B",
+      "N.3DS.R.K",
+      "N.3DS.R.A",
+      "N.3DS.R.BLACK",
+      "XZ.SP",
+      "ZMS.L",
+      "ZMS.R",
+      "PLM",
+      "ZK.40",
+      "ZK9.40",
+      "BZ.SP",
+      "PLS",
+      "TP.13",
+      "TP.09",
+      "U2",
+      "NO.800"
+    ],
+    "profile": "",
+    "side": "R",
+    "handle": "center",
+    "handleColor": "white",
+    "coverColor": "white",
+    "dornmass": 15,
+    "rows": [
+      {
+        "id": "h0",
+        "from": 620,
+        "to": 800,
+        "drives": [
+          "XPO.800-1"
+        ]
+      },
+      {
+        "id": "h1",
+        "from": 801,
+        "to": 1200,
+        "drives": [
+          "XPO.1200-1"
+        ]
+      },
+      {
+        "id": "h2",
+        "from": 1201,
+        "to": 1600,
+        "drives": [
+          "XPO.1600-2"
+        ]
+      },
+      {
+        "id": "h3",
+        "from": 1601,
+        "to": 2000,
+        "drives": [
+          "XPO.2000-2"
+        ]
+      }
+    ],
+    "columns": [
+      {
+        "id": "sc0",
+        "from": 400,
+        "to": 600,
+        "scissorArticle": "NO.600"
+      },
+      {
+        "id": "sc1",
+        "from": 500,
+        "to": 700,
+        "scissorArticle": "NO.700"
+      },
+      {
+        "id": "sc2",
+        "from": 600,
+        "to": 800,
+        "scissorArticle": "XNO.800-1"
+      },
+      {
+        "id": "sc3",
+        "from": 600,
+        "to": 800,
+        "scissorArticle": "NO.800"
+      },
+      {
+        "id": "sc4",
+        "from": 800,
+        "to": 1000,
+        "scissorArticle": "XNO.1000-1"
+      },
+      {
+        "id": "sc5",
+        "from": 1000,
+        "to": 1200,
+        "scissorArticle": "XNO.1200-1"
+      },
+      {
+        "id": "sc6",
+        "from": 1200,
+        "to": 1400,
+        "scissorArticle": "XNO.1400-1"
+      }
+    ],
+    "common": [
+      {
+        "art": "RV",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "RN",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "SV.13",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "SN",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.RV.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.RN1.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.RN2.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.SV.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.SN.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "XU",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "U2",
+        "qty": 1,
+        "role": "manual"
+      }
+    ],
+    "cells": {
+      "h0|sc0": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc1": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc2": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc3": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc4": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc5": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc6": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc0": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc1": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc2": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc3": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc4": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc5": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc6": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc0": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc1": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc2": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc3": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc4": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc5": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc6": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc0": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc1": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc2": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc3": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc4": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc5": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc6": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "XNO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      }
+    },
+    "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки.",
+    "catalogPrepared": true,
+    "sourceFile": "Штульповая пвх.pdf",
+    "componentRangesOnly": true,
+    "stulpControl": "handle",
+    "stulpMotion": "tilt-turn",
+    "verificationRequired": [
+      "Проверить монтаж привода под штульпом и обработку профиля.",
+      "Подобрать удлинители сверху и снизу по монтажным размерам и схеме рубки.",
+      "Подобрать ответные детали по цапфам активной створки; количество не определяется длиной привода PS.",
+      "Выбрать петли, сторону открывания и допустимую нагрузку.",
+      "Зацеп ZMS.L/R выбирается по направлению активной створки; при монтаже в паз нужна пластина PLM."
+    ],
+    "catalogGroups": [
+      {
+        "title": "Приводы",
+        "articles": [
+          "XPO.800-1",
+          "XPO.1200-1",
+          "XPO.1600-2",
+          "XPO.2000-2"
+        ]
+      },
+      {
+        "title": "Угловые передачи и удлинители",
+        "articles": [
+          "XU",
+          "XU.400-1U",
+          "U.400-1VR",
+          "XUK.600-1"
+        ]
+      },
+      {
+        "title": "Ножницы и приводы ножниц",
+        "articles": [
+          "XNO.800-1",
+          "XNO.1000-1",
+          "XNO.1200-1",
+          "XNO.1400-1",
+          "XPNB.400-1",
+          "XPNB.400-2",
+          "XPNB.600-2",
+          "XPNB.800-2",
+          "NO.600",
+          "NO.700"
+        ]
+      },
+      {
+        "title": "Петлевая группа — выбрать исполнение",
+        "articles": [
+          "RV",
+          "RV.U",
+          "ST",
+          "RN",
+          "RN.U",
+          "SV.10",
+          "SV.13",
+          "SV.14",
+          "SN",
+          "SN.U",
+          "SF.9.L",
+          "SF.9.R",
+          "SF.13.L",
+          "SF.13.R",
+          "SV.09"
+        ]
+      },
+      {
+        "title": "Декоративные накладки",
+        "articles": [
+          "N.RV.B",
+          "N.RV.K",
+          "N.RV.BLACK",
+          "N.RV.A",
+          "N.RN1.B",
+          "N.RN1.K",
+          "N.RN1.BLACK",
+          "N.RN1.BS",
+          "N.RN1.A",
+          "N.RN2.B",
+          "N.RN2.K",
+          "N.RN2.BLACK",
+          "N.RN2.A",
+          "N.SV.B",
+          "N.SV.K",
+          "N.SV.BLACK",
+          "N.SV.A",
+          "N.SN.B",
+          "N.SN.K",
+          "N.SN.BLACK",
+          "N.SN.A",
+          "N.3DS.L.B",
+          "N.3DS.L.K",
+          "N.3DS.L.A",
+          "N.3DS.L.BLACK",
+          "N.3DS.R.B",
+          "N.3DS.R.K",
+          "N.3DS.R.A",
+          "N.3DS.R.BLACK"
+        ]
+      },
+      {
+        "title": "Штульповые ответные детали",
+        "articles": [
+          "XZ.SP",
+          "ZMS.L",
+          "ZMS.R",
+          "PLM"
+        ]
+      },
+      {
+        "title": "Профильные планки — количество требует проверки",
+        "articles": [
+          "ZK.40",
+          "ZK9.40"
+        ]
+      },
+      {
+        "title": "Дополнительные опции и соединения",
+        "articles": [
+          "PLM",
+          "BZ.SP",
+          "PLS",
+          "TP.13",
+          "TP.09"
+        ]
+      },
+      {
+        "title": "Детали схемы",
+        "articles": [
+          "U2",
+          "NO.800"
+        ]
+      }
+    ],
+    "catalogReviewPages": [
+      68,
+      69
+    ],
+    "stulpDetailsVersion": 1,
+    "stulpStrike": "XZ.SP",
+    "heightRecipes": {
+      "h0": {
+        "items": [
+          {
+            "art": "XPO.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1": {
+        "items": [
+          {
+            "art": "XPO.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2": {
+        "items": [
+          {
+            "art": "XPO.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3": {
+        "items": [
+          {
+            "art": "XPO.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "XU",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      }
+    },
+    "stulpRangesVersion": 1,
+    "catalogScissorRanges": true
+  },
+  {
+    "id": "catalog-pvc-7-30",
+    "name": "Штульповая ПО: оконная ручка · цапфа 8 мм",
+    "variant": "roller8",
+    "family": "pvc",
+    "openingType": "stulp",
+    "catalogDraft": true,
+    "calculationMode": "catalogue",
+    "catalogScheme": "7.30",
+    "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+    "catalogPages": [
+      104,
+      105
+    ],
+    "catalogParts": [
+      "POM.800-1",
+      "POM.1200-1",
+      "POM.1600-2",
+      "POM.2000-2",
+      "POM.2400-4",
+      "UF.400-1.U",
+      "U.400-1",
+      "U.600-1",
+      "NO.600",
+      "NO.700",
+      "NO.800",
+      "NO.800-1",
+      "NO.1000-1",
+      "NO.1200-1",
+      "NO.1400-1",
+      "PNB.400-1",
+      "PNB.400-2",
+      "PNB.600-2",
+      "PNB.800-2",
+      "RV",
+      "RV.U",
+      "ST",
+      "RN",
+      "RN.U",
+      "SV.10",
+      "SV.13",
+      "SV.14",
+      "SN",
+      "SN.U",
+      "SF.9.L",
+      "SF.9.R",
+      "SF.13.L",
+      "SF.13.R",
+      "SV.09",
+      "N.RV.B",
+      "N.RV.K",
+      "N.RV.BLACK",
+      "N.RV.A",
+      "N.RN1.B",
+      "N.RN1.K",
+      "N.RN1.BLACK",
+      "N.RN1.BS",
+      "N.RN1.A",
+      "N.RN2.B",
+      "N.RN2.K",
+      "N.RN2.BLACK",
+      "N.RN2.A",
+      "N.SV.B",
+      "N.SV.K",
+      "N.SV.BLACK",
+      "N.SV.A",
+      "N.SN.B",
+      "N.SN.K",
+      "N.SN.BLACK",
+      "N.SN.A",
+      "N.3DS.L.B",
+      "N.3DS.L.K",
+      "N.3DS.L.A",
+      "N.3DS.L.BLACK",
+      "N.3DS.R.B",
+      "N.3DS.R.K",
+      "N.3DS.R.A",
+      "N.3DS.R.BLACK",
+      "Z.SP",
+      "ZMS.L",
+      "ZMS.R",
+      "PLM",
+      "ZK.40",
+      "ZK9.40",
+      "BZ.SP",
+      "PLS",
+      "TP.13",
+      "TP.09",
+      "U2",
+      "U1"
+    ],
+    "profile": "",
+    "side": "R",
+    "handle": "center",
+    "handleColor": "white",
+    "coverColor": "white",
+    "dornmass": 15,
+    "rows": [
+      {
+        "id": "h0",
+        "from": 620,
+        "to": 800,
+        "drives": [
+          "POM.800-1"
+        ]
+      },
+      {
+        "id": "h1",
+        "from": 801,
+        "to": 1200,
+        "drives": [
+          "POM.1200-1"
+        ]
+      },
+      {
+        "id": "h2",
+        "from": 1201,
+        "to": 1600,
+        "drives": [
+          "POM.1600-2"
+        ]
+      },
+      {
+        "id": "h3",
+        "from": 1601,
+        "to": 2000,
+        "drives": [
+          "POM.2000-2"
+        ]
+      },
+      {
+        "id": "h4",
+        "from": 2001,
+        "to": 2400,
+        "drives": [
+          "POM.2400-4"
+        ]
+      }
+    ],
+    "columns": [
+      {
+        "id": "sc0",
+        "from": 400,
+        "to": 600,
+        "scissorArticle": "NO.600"
+      },
+      {
+        "id": "sc1",
+        "from": 500,
+        "to": 700,
+        "scissorArticle": "NO.700"
+      },
+      {
+        "id": "sc2",
+        "from": 600,
+        "to": 800,
+        "scissorArticle": "NO.800-1"
+      },
+      {
+        "id": "sc3",
+        "from": 600,
+        "to": 800,
+        "scissorArticle": "NO.800"
+      },
+      {
+        "id": "sc4",
+        "from": 800,
+        "to": 1000,
+        "scissorArticle": "NO.1000-1"
+      },
+      {
+        "id": "sc5",
+        "from": 1000,
+        "to": 1200,
+        "scissorArticle": "NO.1200-1"
+      },
+      {
+        "id": "sc6",
+        "from": 1200,
+        "to": 1400,
+        "scissorArticle": "NO.1400-1"
+      }
+    ],
+    "common": [
+      {
+        "art": "RV",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "RN",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "SV.13",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "SN",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.RV.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.RN1.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.RN2.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.SV.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "N.SN.B",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "U1",
+        "qty": 1,
+        "role": "manual"
+      },
+      {
+        "art": "U2",
+        "qty": 1,
+        "role": "manual"
+      }
+    ],
+    "cells": {
+      "h0|sc0": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc1": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc2": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc3": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc4": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc5": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h0|sc6": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc0": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc1": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc2": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc3": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc4": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc5": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1|sc6": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc0": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc1": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc2": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc3": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc4": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc5": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2|sc6": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc0": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc1": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc2": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc3": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc4": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc5": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3|sc6": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4|sc0": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.600",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4|sc1": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.700",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4|sc2": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4|sc3": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.800",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4|sc4": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1000-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4|sc5": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1200-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4|sc6": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "NO.1400-1",
+            "qty": 1,
+            "role": "scissors"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      }
+    },
+    "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки.",
+    "catalogPrepared": true,
+    "sourceFile": "Штульповая пвх.pdf",
+    "componentRangesOnly": true,
+    "stulpControl": "handle",
+    "stulpMotion": "tilt-turn",
+    "verificationRequired": [
+      "Проверить монтаж привода под штульпом и обработку профиля.",
+      "Подобрать удлинители сверху и снизу по монтажным размерам и схеме рубки.",
+      "Подобрать ответные детали по цапфам активной створки; количество не определяется длиной привода PS.",
+      "Выбрать петли, сторону открывания и допустимую нагрузку.",
+      "Зацеп ZMS.L/R выбирается по направлению активной створки; при монтаже в паз нужна пластина PLM."
+    ],
+    "catalogGroups": [
+      {
+        "title": "Приводы",
+        "articles": [
+          "POM.800-1",
+          "POM.1200-1",
+          "POM.1600-2",
+          "POM.2000-2",
+          "POM.2400-4"
+        ]
+      },
+      {
+        "title": "Угловые передачи и удлинители",
+        "articles": [
+          "UF.400-1.U",
+          "U.400-1",
+          "U.600-1"
+        ]
+      },
+      {
+        "title": "Ножницы и приводы ножниц",
+        "articles": [
+          "NO.600",
+          "NO.700",
+          "NO.800",
+          "NO.800-1",
+          "NO.1000-1",
+          "NO.1200-1",
+          "NO.1400-1",
+          "PNB.400-1",
+          "PNB.400-2",
+          "PNB.600-2",
+          "PNB.800-2"
+        ]
+      },
+      {
+        "title": "Петлевая группа — выбрать исполнение",
+        "articles": [
+          "RV",
+          "RV.U",
+          "ST",
+          "RN",
+          "RN.U",
+          "SV.10",
+          "SV.13",
+          "SV.14",
+          "SN",
+          "SN.U",
+          "SF.9.L",
+          "SF.9.R",
+          "SF.13.L",
+          "SF.13.R",
+          "SV.09"
+        ]
+      },
+      {
+        "title": "Декоративные накладки",
+        "articles": [
+          "N.RV.B",
+          "N.RV.K",
+          "N.RV.BLACK",
+          "N.RV.A",
+          "N.RN1.B",
+          "N.RN1.K",
+          "N.RN1.BLACK",
+          "N.RN1.BS",
+          "N.RN1.A",
+          "N.RN2.B",
+          "N.RN2.K",
+          "N.RN2.BLACK",
+          "N.RN2.A",
+          "N.SV.B",
+          "N.SV.K",
+          "N.SV.BLACK",
+          "N.SV.A",
+          "N.SN.B",
+          "N.SN.K",
+          "N.SN.BLACK",
+          "N.SN.A",
+          "N.3DS.L.B",
+          "N.3DS.L.K",
+          "N.3DS.L.A",
+          "N.3DS.L.BLACK",
+          "N.3DS.R.B",
+          "N.3DS.R.K",
+          "N.3DS.R.A",
+          "N.3DS.R.BLACK"
+        ]
+      },
+      {
+        "title": "Штульповые ответные детали",
+        "articles": [
+          "Z.SP",
+          "ZMS.L",
+          "ZMS.R",
+          "PLM"
+        ]
+      },
+      {
+        "title": "Профильные планки — количество требует проверки",
+        "articles": [
+          "ZK.40",
+          "ZK9.40"
+        ]
+      },
+      {
+        "title": "Дополнительные опции и соединения",
+        "articles": [
+          "PLM",
+          "BZ.SP",
+          "PLS",
+          "TP.13",
+          "TP.09"
+        ]
+      },
+      {
+        "title": "Детали схемы",
+        "articles": [
+          "U2"
+        ]
+      }
+    ],
+    "catalogReviewPages": [
+      104,
+      105
+    ],
+    "stulpDetailsVersion": 1,
+    "stulpStrike": "Z.SP",
+    "heightRecipes": {
+      "h0": {
+        "items": [
+          {
+            "art": "POM.800-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h1": {
+        "items": [
+          {
+            "art": "POM.1200-1",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h2": {
+        "items": [
+          {
+            "art": "POM.1600-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h3": {
+        "items": [
+          {
+            "art": "POM.2000-2",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      },
+      "h4": {
+        "items": [
+          {
+            "art": "POM.2400-4",
+            "qty": 1,
+            "role": "drive"
+          },
+          {
+            "art": "RV",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "RN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SV.13",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "SN",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN1.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.RN2.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SV.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "N.SN.B",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U1",
+            "qty": 1,
+            "role": "manual"
+          },
+          {
+            "art": "U2",
+            "qty": 1,
+            "role": "manual"
+          }
+        ],
+        "reviewed": false,
+        "driveChosen": true,
+        "note": "Высота — по приводам схемы: от 620 мм. Для поворотно-откидной створки ширина — по ножницам; пересекающиеся диапазоны являются альтернативами. Таблица совместимости с PS относится к паре створок и приведена отдельно. Удлинители и количество ответных деталей требуют проверки."
+      }
+    },
+    "stulpRangesVersion": 1,
+    "catalogScissorRanges": true
+  }
+]

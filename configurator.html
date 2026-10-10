@@ -20,9 +20,9 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.28">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.28"><script src="assets/js/hardware-colors.js?v=2026.10.10.28"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.28"></script><script src="assets/js/cam-selector.js?v=2026.10.10.28"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.28"><script src="assets/js/calculation-technology.js?v=2026.10.10.28"></script>
-<style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style><link rel="stylesheet" href="assets/css/kit-tree.css?v=2026.10.10.28"><script src="assets/js/kit-tree.js?v=2026.10.10.28"></script></head>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.29">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.29"><script src="assets/js/hardware-colors.js?v=2026.10.10.29"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.29"></script><script src="assets/js/cam-selector.js?v=2026.10.10.29"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.29"><script src="assets/js/calculation-technology.js?v=2026.10.10.29"></script>
+<style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style><link rel="stylesheet" href="assets/css/kit-tree.css?v=2026.10.10.29"><script src="assets/js/kit-tree.js?v=2026.10.10.29"></script></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
 <nav class="families" id="familyTabs" aria-label="Раздел фурнитуры"><button type="button" class="family active" data-family="pvc">FUTURUSS для ПВХ окон</button><button type="button" class="family" data-family="aluminum">FUTURUSS для ALU</button></nav>
@@ -130,7 +130,7 @@
   }
   function cell(db,kit,row,col,params){
     const stored=kit.cells[key(row,col)];
-    if(params&&kit.sizeRecipeMode){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
+    if(params&&(kit.sizeRecipeMode||kit.stulpSizeRecipes)){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
     if(stored)return copy(stored);
     if(kit.heightRecipes?.[row.id]){const recipe=copy(kit.heightRecipes[row.id]);if(col.scissorArticle&&!recipe.items.some(i=>i.role==='scissors'))recipe.items.push(rowItem(col.scissorArticle,1,'scissors'));return recipe;}
     const items=[...(row.drives[0]?[rowItem(row.drives[0],1,'drive')]:[]),...copy(kit.common)],sc= scissors(db,kit,col);if(sc)items.push(rowItem(sc,1,'scissors'));
@@ -140,7 +140,7 @@
   }
   function candidates(kit,width,height,db=null,dornmass=15){
     const out=[];for(const row of kit.rows)for(const col of kit.columns)if(fits(width,col)&&(fits(height,row)||(db&&kit._derivedTurnAssembly&&Number(dornmass)!==15))){
-      const base=kit.cells[key(row,col)],stored=kit.sizeRecipeMode?sizeRecipe(base,width,height):base;if(kit.sizeRecipeMode&&!stored)continue;const manual=stored?.items.find(i=>i.role==='drive')?.art;
+      const base=kit.cells[key(row,col)],stored=(kit.sizeRecipeMode||kit.stulpSizeRecipes)?sizeRecipe(base,width,height):base;if((kit.sizeRecipeMode||kit.stulpSizeRecipes)&&!stored)continue;const manual=stored?.items.find(i=>i.role==='drive')?.art;
       const drives=stored&&manual?[manual]:(row.drives.length?row.drives:['']);
       for(const drive of drives){const alt=db&&kit._derivedTurnAssembly&&Number(dornmass)!==15?db.articles[dornAlternative(db,drive,dornmass)]:null;if(alt?.height?(height>=alt.height.min&&height<=alt.height.max):fits(height,row))out.push({rowId:row.id,colId:col.id,drive});}
     }return out;
@@ -885,6 +885,14 @@ function renderBom(){
     draft.container.sizeRecipes.forEach((r,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${range(r.width)} × ${range(r.height)} мм · ${r.sourceCell||''}`;select.append(o);});select.value=draft.recipeIndex;
     select.onchange=()=>{draft.base.reviewed=$('reviewed').checked;draft.base.note=$('cellNote').value;draft.recipeIndex=Number(select.value);draft.base=draft.container.sizeRecipes[draft.recipeIndex];$('reviewed').checked=!!draft.base.reviewed;$('cellNote').value=draft.base.note||'';renderBom();};label.append(select);wrap.append(label);$('driveOptions').prepend(wrap);
   }
+  if(draft.kind!=='common'&&kit().assemblyAdditions?.length){
+    const wrap=document.createElement('div');wrap.className='driveselect';
+    const select=document.createElement('select');select.setAttribute('aria-label','Дополнительные детали');
+    for(const art of kit().assemblyAdditions){const option=document.createElement('option');option.value=art;option.textContent=art+' — '+(library.articles[art]?.name||art);select.append(option);}
+    const add=document.createElement('button');add.textContent='+ Добавить деталь';add.onclick=()=>{const existing=rows.find(i=>i.art===select.value&&i.role==='manual'&&!i.chainZone);if(existing)existing.qty+=1;else rows.push(M.rowItem(select.value,1,'manual'));draft.base.reviewed=false;$('reviewed').checked=false;renderBom();};
+    wrap.append(select,add);$('driveOptions').append(wrap);
+    const hint=document.createElement('small');hint.textContent='PLS: количество задаётся по соединениям и типу рубки.';$('driveOptions').append(hint);
+  }
   if($('driveChoice'))$('driveChoice').onchange=ev=>{if(!ev.target.value)return;const item=rows.find(i=>i.role==='drive');if(item)item.art=ev.target.value;else rows.unshift(M.rowItem(ev.target.value,1,'drive'));draft.base.driveChosen=true;renderBom();};
   const displayed=bomDisplayRows(rows,kit().common,draft.kind==='common');
   $('bomRows').innerHTML=displayed.map(({it,i,shared},position)=>{const a=library.articles[it.art],price=it.editPrice!==undefined?it.editPrice:a?.price,role=it.role==='drive'?'<small>Привод по высоте</small>':it.role==='scissors'?'<small>Автоматические ножницы по ширине</small>':'',approval=it.compatibilityApproved?'<small class="manual-approval">Добавлено из другой группы после двойного подтверждения</small>':'';return `${position===0||shared!==displayed[position-1].shared?`<tr class="bom-section${shared?' bom-common':''}"><th colspan="6">${shared?'Общий состав':'Переменные детали'}</th></tr>`:''}<tr class="${shared?'bom-common':''}"><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partname" data-pick="${i}">${e(a?.name||'Выбрать деталь по названию')}</button>${role}${approval}</td><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partcode" data-pick="${i}">${e(it.art||'+ Артикул')}</button>${packNorm(it.art)}</td><td><input type="number" step="1" min="1" value="${it.qty}" data-qty="${i}" aria-label="Количество ${e(it.art)}"></td><td><input class="priceinput" type="number" step="0.01" min="0" value="${price??''}" placeholder="нет" data-price="${i}" aria-label="Цена ${e(it.art)}"></td><td data-sum="${i}">${price==null?'—':money(price*it.qty)}</td><td><button class="icon" data-remove="${i}" aria-label="Удалить ${e(it.art)}">×</button></td></tr>`;}).join('');
@@ -1053,15 +1061,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.28"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.28"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.28"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.28">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.28"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.29"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.29"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.29"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.29">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.29"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.28"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.28">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.28">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.28">
+<script src="assets/js/modal-layout.js?v=2026.10.10.29"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.29">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.29">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.29">
 </body></html>
 

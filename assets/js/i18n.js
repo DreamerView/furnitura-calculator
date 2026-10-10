@@ -143,6 +143,8 @@ const dict={
 "Для выбранной петлевой группы Tilt First полный состав ещё не подтверждён. Выберите стандартные петли или настройте отдельную комплектацию в конструкторе.":["The full Tilt First bill of materials for the selected hinge group is not confirmed yet. Select standard hinges or configure a separate assembly in the constructor.", "Seçilen Tilt First menteşe grubu için tam parça listesi henüz doğrulanmadı. Standart menteşeleri seçin veya yapılandırıcıda ayrı bir set hazırlayın."],
 "Для этой комплектации выберите профиль из каталога и стандартные петли.":["Select a catalogue profile and standard hinges for this assembly.", "Bu set için katalogdan bir profil ve standart menteşeler seçin."],
 "Для этой комплектации доступны KBE 13 и REHAU 13 со стандартными петлями.":["This assembly supports KBE 13 and REHAU 13 with standard hinges.", "Bu set KBE 13 ve REHAU 13 profillerini standart menteşelerle destekler."],
+"Дополнительные детали":["Additional parts", "Ek parçalar"],
+"PLS: количество задаётся по соединениям и типу рубки.":["PLS: quantity depends on connections and cutting type.", "PLS: miktar bağlantılara ve kesim türüne bağlıdır."],
 "Обвязка по размеру":["Size-specific hardware", "Ölçüye göre donanım"],
 "размерных составов":["size-specific assemblies", "ölçüye özel set"],
 "Для этой комплектации из Excel подтверждены REHAU 13 и стандартные петли.":["This Excel assembly supports REHAU 13 with standard hinges.", "Bu Excel seti REHAU 13 ve standart menteşeler için doğrulanmıştır."],

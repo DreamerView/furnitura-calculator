@@ -83,7 +83,7 @@
   }
   function cell(db,kit,row,col,params){
     const stored=kit.cells[key(row,col)];
-    if(params&&kit.sizeRecipeMode){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
+    if(params&&(kit.sizeRecipeMode||kit.stulpSizeRecipes)){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
     if(stored)return copy(stored);
     if(kit.heightRecipes?.[row.id]){const recipe=copy(kit.heightRecipes[row.id]);if(col.scissorArticle&&!recipe.items.some(i=>i.role==='scissors'))recipe.items.push(rowItem(col.scissorArticle,1,'scissors'));return recipe;}
     const items=[...(row.drives[0]?[rowItem(row.drives[0],1,'drive')]:[]),...copy(kit.common)],sc= scissors(db,kit,col);if(sc)items.push(rowItem(sc,1,'scissors'));
@@ -93,7 +93,7 @@
   }
   function candidates(kit,width,height,db=null,dornmass=15){
     const out=[];for(const row of kit.rows)for(const col of kit.columns)if(fits(width,col)&&(fits(height,row)||(db&&kit._derivedTurnAssembly&&Number(dornmass)!==15))){
-      const base=kit.cells[key(row,col)],stored=kit.sizeRecipeMode?sizeRecipe(base,width,height):base;if(kit.sizeRecipeMode&&!stored)continue;const manual=stored?.items.find(i=>i.role==='drive')?.art;
+      const base=kit.cells[key(row,col)],stored=(kit.sizeRecipeMode||kit.stulpSizeRecipes)?sizeRecipe(base,width,height):base;if((kit.sizeRecipeMode||kit.stulpSizeRecipes)&&!stored)continue;const manual=stored?.items.find(i=>i.role==='drive')?.art;
       const drives=stored&&manual?[manual]:(row.drives.length?row.drives:['']);
       for(const drive of drives){const alt=db&&kit._derivedTurnAssembly&&Number(dornmass)!==15?db.articles[dornAlternative(db,drive,dornmass)]:null;if(alt?.height?(height>=alt.height.min&&height<=alt.height.max):fits(height,row))out.push({rowId:row.id,colId:col.id,drive});}
     }return out;
