@@ -95,3 +95,11 @@ html:root body.workdesk-configurator .brandmark{width:32px!important;height:32px
 html:root body.workdesk-configurator .brand b{font-size:19px!important}
 html:root body.workdesk-configurator .brand small{font-size:11px!important;margin-top:2px!important}
 @media(max-width:640px){html:root body.workdesk-configurator>header,html:root body.workdesk-configurator main{padding:8px!important}html:root body.workdesk-configurator .families{padding:4px 8px!important}html:root body.workdesk-configurator .variants{margin:0 8px!important}}
+
+/* Dense constructor BOM; invoice and catalogue packaging remain unchanged. */
+html:root body.workdesk-configurator .bom td{padding:2px 6px!important;vertical-align:middle!important}
+html:root body.workdesk-configurator .bom .partname,html:root body.workdesk-configurator .bom .partcode{min-height:0!important;padding:1px 0!important;line-height:1.15!important;font-size:12px!important}
+html:root body.workdesk-configurator .bom input{min-height:24px!important;height:24px!important;padding:2px 5px!important}
+html:root body.workdesk-configurator .bom .icon{min-height:24px!important;height:24px!important;padding:1px 5px!important}
+html:root body.workdesk-configurator #bomRows .bom-section>th{padding:4px 6px!important}
+html:root body.workdesk-configurator .bom small{font-size:10px!important;line-height:1.1!important;margin-top:1px!important}

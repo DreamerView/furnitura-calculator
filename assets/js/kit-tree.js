@@ -3,7 +3,8 @@
 'use strict';
 // These catalogue recipes are selected through the main kit options, not navigation.
 const optionRecipes=new Set([...([2,3,4,5,7,8,10,17,18,23,24,28,34,35,37,38,42,44,45].map(n=>'catalog-pvc-7-'+n)),'pvc-door-11-latch','pvc-door-8-latch','pvc-door-mushroom-latch']);
-function groups(kits){const result=[];for(const family of ['pvc','aluminum']){const branches=new Map();for(const kit of kits){if(optionRecipes.has(kit.id))continue;if((kit.family==='aluminum'?'aluminum':'pvc')!==family)continue;const kind=kit.openingType||'tilt-turn';if(!branches.has(kind))branches.set(kind,[]);branches.get(kind).push(kit);}result.push({family,branches:[...branches].map(([kind,kits])=>({kind,kits}))});}return result;}
+const stulpLabels={stulp:'Штульповые · ручка и скрытые петли','stulp-bolts':'Штульповые · шпингалеты','stulp-drive':'Штульповые · штульповый привод'};
+function groups(kits){const result=[];for(const family of ['pvc','aluminum']){const branches=new Map();for(const kit of kits){if(optionRecipes.has(kit.id)||kits.some(k=>k.id===kit.navigationSupersededBy))continue;if((kit.family==='aluminum'?'aluminum':'pvc')!==family)continue;const kind=kit.openingType||'tilt-turn';if(!branches.has(kind))branches.set(kind,[]);branches.get(kind).push(kit);}const ordered=[...branches].map(([kind,kits])=>({kind,kits})),stulp=ordered.filter(b=>Object.hasOwn(stulpLabels,b.kind)).sort((a,b)=>Object.keys(stulpLabels).indexOf(a.kind)-Object.keys(stulpLabels).indexOf(b.kind)),first=ordered.findIndex(b=>Object.hasOwn(stulpLabels,b.kind));const other=ordered.filter(b=>!Object.hasOwn(stulpLabels,b.kind));if(first>=0)other.splice(first,0,...stulp);result.push({family,branches:other});}return result;}
 function create({main,families,variants,onSelect}){
  const make=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text)n.textContent=text;return n;};
  const shell=make('div','kit-workspace'),aside=make('aside','kit-browser'),right=make('div','kit-workspace-main');shell.id='kitWorkspace';
@@ -15,7 +16,7 @@ function create({main,families,variants,onSelect}){
   const top=folder(tree,'root','FUTURUSS');let visible=0;
   for(const group of groups(kits)){const matching=group.branches.map(b=>({...b,kits:b.kits.filter(k=>(k.name+' '+k.id+' '+(root.MatrixCore?.variants[k.variant]||'')).toLocaleLowerCase().includes(query))})).filter(b=>b.kits.length);if(!matching.length)continue;
    const f=folder(top,group.family,group.family==='pvc'?'ПВХ':'Алюминий');
-   for(const branch of matching){const g=folder(f,group.family+'/'+branch.kind,root.FuturussCamSelector?.openings[branch.kind]||({stulp:'Штульповая',arched:'Арочная',trapezoid:'Трапециевидная'}[branch.kind])||'Другие комплектации');
+   for(const branch of matching){const g=folder(f,group.family+'/'+branch.kind,(group.family==='pvc'?stulpLabels[branch.kind]:branch.kind==='stulp'?'Штульповая — привод':null)||root.FuturussCamSelector?.openings[branch.kind]||({stulp:'Штульповая',arched:'Арочная',trapezoid:'Трапециевидная'}[branch.kind])||'Другие комплектации');
     for(const k of branch.kits){visible++;const b=make('button','kit-tree-item'+(k.id===active?' active':''));b.type='button';b.dataset.kitId=k.id;b.title=k.name;b.append(make('span','',k.name));if(k.catalogDraft)b.append(make('small','kit-tree-draft','Требует проверки'));if(k.id===active)b.setAttribute('aria-current','page');b.onclick=()=>onSelect(k.id);g.append(b);}
    }
   }
