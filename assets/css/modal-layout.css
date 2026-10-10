@@ -42,3 +42,26 @@
  @media(max-width:767px){html:root body dialog.modal-frame{width:calc(100vw - 16px)!important;max-width:calc(100vw - 16px)!important;border-radius:20px!important;max-height:calc(100dvh - 16px)!important}html:root body .spa-modal{max-height:calc(100dvh - 12px)!important}}
  @media(max-height:480px){html:root body .modal-frame .dialoghead,html:root body .spa-modal .spa-modal-head{padding:6px 12px!important;min-height:48px!important}html:root body .modal-frame .dialoghead button,html:root body .spa-modal .spa-modal-head button{width:34px!important;height:34px!important;min-height:34px!important}html:root body .modal-frame .editTools,html:root body .modal-frame .editbottom{padding:4px 12px!important}html:root body .modal-frame .editTools button{min-height:28px!important;padding:4px 8px!important}}
 }
+
+@media screen{
+ html:root body dialog#estimateSaveDialog.modal-frame,html:root body dialog#strikeReplacementDialog.modal-frame{position:fixed!important;inset:0!important;transform:none!important;margin:auto!important;width:min(580px,calc(100vw - 24px))!important;max-width:calc(100vw - 24px)!important;height:fit-content!important;max-height:calc(100dvh - 24px)!important;min-height:0!important;border-radius:18px!important}
+ html:root body dialog#estimateSaveDialog .modal-fixed-head,html:root body dialog#strikeReplacementDialog .modal-fixed-head{min-height:48px!important;padding:10px 14px!important}
+ html:root body dialog#estimateSaveDialog h2{position:static!important;margin:0 42px!important;font-size:16px!important}
+ html:root body dialog#estimateSaveDialog .estimate-dialog-close{top:7px!important;left:10px!important;width:32px!important;height:32px!important;min-height:32px!important}
+ html:root body dialog#estimateSaveDialog .estimate-save-row{display:flex!important;gap:6px!important;margin:8px 0!important;flex-wrap:wrap!important}
+ html:root body dialog#estimateSaveDialog .estimate-save-row :is(input,select,button){min-height:32px!important;height:32px!important;font-size:12px!important;padding:5px 8px!important;min-width:0!important}
+ html:root body dialog#estimateSaveDialog .estimate-save-row :is(input,select){flex:1 1 180px!important;width:auto!important}
+ html:root body dialog#estimateSaveDialog .estimate-body-inner{padding:0!important}
+ html:root body dialog#estimateSaveDialog .estimate-save-panel{margin:0!important;padding:0!important}
+ html:root body dialog#estimateSaveDialog .estimate-autosave{font-size:11px!important;margin:6px 0!important}
+ html:root body dialog#strikeReplacementDialog .spa-modal-body{padding:12px 16px!important;font-size:13px!important}
+ html:root body dialog#strikeReplacementDialog .spa-modal-body p{margin:0 0 10px!important}
+ html:root body dialog#strikeReplacementDialog :is(select,input){min-height:34px!important;height:auto!important;padding:6px 8px!important;font-size:13px!important}
+}
+
+@media screen{
+ html:root body dialog#strikeReplacementDialog .dialoghead{display:block!important}
+ html:root body dialog#strikeReplacementDialog .dialoghead h2{position:static!important;width:100%!important;margin:0!important;font-size:16px!important;text-align:center!important;white-space:normal!important}
+ html:root body dialog#strikeReplacementDialog .spa-modal-body label{display:block!important;margin:10px 0!important}
+ html:root body dialog#strikeReplacementDialog .spa-modal-body label :is(select,input){display:block!important;box-sizing:border-box!important;width:100%!important;margin-top:4px!important}
+}

@@ -1,6 +1,11 @@
 (function(){
 'use strict';
 const dict={
+"Усиленные верх и низ":["Reinforced upper and lower hinges", "Güçlendirilmiş üst ve alt menteşeler"],
+"Усиленные верх и низ — кронштейн PK":["Reinforced upper/lower — PK bracket", "Güçlendirilmiş üst/alt — PK konsol"],
+"Усиленная нижняя / стандартная верхняя":["Reinforced lower / standard upper hinge", "Güçlendirilmiş alt / standart üst menteşe"],
+"В одной серии планок для одного профиля: 35 — сильнее прижим, 40 — средний, 45 — слабее. Проверяйте уплотнение и совместимость.":["Within one strike series for the same profile: 35 gives more pressure, 40 medium, 45 less. Check the gasket and compatibility.", "Aynı profil ve karşılık serisinde: 35 daha güçlü, 40 orta, 45 daha hafif baskı sağlar. Conta ve uyumluluğu kontrol edin."],
+
 "Поворотно-фрамужная FPR":["Turn/fanlight FPR hinge", "Açılır/vasistas FPR menteşe"],
 "Обычно используется дорнмасс 15 мм. Подтвердите выбранный размер:":["The usual backset is 15 mm. Confirm the selected size:", "Genellikle 15 mm kullanılır. Seçilen ölçüyü onaylayın:"],
 "Дополнительные прижимы со стороны петель":["Additional hinge-side clamps", "Menteşe tarafındaki ek baskılar"],

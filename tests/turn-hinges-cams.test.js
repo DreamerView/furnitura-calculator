@@ -31,3 +31,9 @@ for(const color of ['white','brown','anthracite','black']){
  assert(!coated.items.some(i=>/^SPK/.test(i.art)));
 }
 console.log('Mechanism finish is independent from cover colour, handle colour and hinge type.');
+
+for(const id of ['roller11','roller8','mushroom','pvc-turn-11','pvc-turn-8','pvc-turn-mushroom'])for(const side of ['L','R']){
+ const r=calc(id,{side,hingeType:'reinforcedLower'});assert.deepEqual(r.errors,[],id);for(const art of ['RN.U','SN.U','RV'])assert(r.items.some(i=>i.art===art&&i.qty===2),id+' '+art);assert(!r.items.some(i=>['RV.U','RN','SN'].includes(i.art)));
+ const full=calc(id,{side,hingeType:'reinforced130'});assert.deepEqual(full.errors,[]);assert(full.items.some(i=>i.art==='RV.U'));assert.equal(r.total,r.items.reduce((n,i)=>n+i.qty*i.price,0));
+}
+console.log('Mixed hinge group preserves the standard upper hinge and reinforces both lower parts.');

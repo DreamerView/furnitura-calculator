@@ -25,10 +25,10 @@
   tbody.replaceChildren();
   draft.rows.forEach((row,i)=>{
    const line=el('tr');line.append(el('td',row.art),el('td',row.name));
-   const pack=Number(DATA.master[row.art]?.packQty);line.append(el('td',pack>0?String(pack):'—'));
+   const pack=Number(DATA.master[row.art]?.packQty);
    function inputCell(key,label){const cell=el('td'),input=el('input');input.type='number';input.min=key==='qty'?'0.001':'0';input.step='any';input.value=row[key];input.setAttribute('aria-label',tr(label)+' '+row.art);input.oninput=()=>{row[key]=input.value===''?NaN:Number(input.value);if(key==='price'){row.manualPrice=true;row.manualPriceOwner=freePriceOwner();}amount.textContent=canPrice()?((Number(row.qty)||0)*(Number(row.price)||0)).toFixed(2):'—';updateTotal();};cell.append(input);line.append(cell);}
    inputCell('qty','Количество');if(canPrice())inputCell('price','Цена продажи');else line.append(el('td','—'));
-   const amount=el('td',canPrice()?(row.qty*row.price).toFixed(2):'—');line.append(amount);
+   const amount=el('td',canPrice()?(row.qty*row.price).toFixed(2):'—');line.append(amount,el('td',pack>0?String(pack):'—','invoice-pack-cell'));
    const actions=el('td');actions.append(button('Удалить',()=>{draft.rows.splice(i,1);drawRows();},'small'));line.append(actions);tbody.append(line);
   });
   updateTotal();
@@ -51,7 +51,7 @@
   const body=el('div',null,'free-modal-body');const name=el('input');name.placeholder=tr('Название позиции');name.setAttribute('aria-label',tr('Название позиции'));name.value=draft.label;name.oninput=()=>{draft.label=name.value;};body.append(name);
   search=el('input');search.type='search';search.placeholder=tr('Поиск по артикулу или названию');search.setAttribute('aria-label',search.placeholder);search.oninput=()=>{limit=60;find();};body.append(search);
   group=el('select');group.setAttribute('aria-label',tr('Ассортимент'));const all=el('option','Все группы');all.value='';group.append(all);for(const title of [...new Set(Object.entries(DATA.master).map(([art,a])=>a.group||DATA.groups?.[art]).filter(Boolean))].sort()){const option=el('option',title);option.value=title;group.append(option);}group.onchange=()=>{limit=60;find();};body.append(group);hits=el('div',null,'free-modal-hits');body.append(hits);
-  const wrap=el('div',null,'free-modal-table-wrap'),table=el('table'),thead=el('thead'),hr=el('tr');for(const title of ['Артикул','Наименование','Шт./кор.','Количество','Цена продажи','Сумма',''])hr.append(el('th',title));thead.append(hr);tbody=el('tbody');table.append(thead,tbody);wrap.append(table);body.append(wrap);
+  const wrap=el('div',null,'free-modal-table-wrap'),table=el('table'),thead=el('thead'),hr=el('tr');for(const title of ['Артикул','Наименование','Количество','Цена продажи','Сумма','Шт./кор.',''])hr.append(el('th',title));thead.append(hr);tbody=el('tbody');table.append(thead,tbody);wrap.append(table);body.append(wrap);
   const comment=el('textarea');comment.placeholder=tr('Комментарий к позиции');comment.setAttribute('aria-label',comment.placeholder);comment.rows=2;comment.oninput=()=>{draft.comment=comment.value;};body.append(comment);
   error=el('p',null,'free-modal-error');error.setAttribute('role','alert');body.append(error);
   const foot=el('div',null,'free-modal-foot');total=el('strong');const save=button('Сохранить',()=>{try{const ready=prepare(draft,DATA.master,canPrice(),freePriceOwner());const pos=addFreePosition(ready);dialog.close();requestAnimationFrame(()=>document.getElementById('add-art-search-'+pos.id)?.closest('.pos-block')?.scrollIntoView({block:'start',behavior:'smooth'}));}catch(e){message(e.message);}},'accent');foot.append(total,button('Отмена',()=>dialog.close()),save);

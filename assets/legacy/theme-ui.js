@@ -89,6 +89,6 @@ if(host&&!host.querySelector('.useful-options-grid')){const grid=document.create
  const card=document.getElementById('combined-card'),column=card?.closest('.invoice-column'),row=card?.querySelector('.document-action-toolbar'),options=card?.querySelector('.print-options');
  if(!column||!row||!options)return;
  const bar=document.createElement('div');bar.className='invoice-sticky-actions';bar.append(row,options);column.prepend(bar);
- const sync=()=>{bar.hidden=card.style.display==='none';};sync();
+ const sync=()=>{bar.hidden=false;};sync();
  new MutationObserver(sync).observe(card,{attributes:true,attributeFilter:['style']});
 })();

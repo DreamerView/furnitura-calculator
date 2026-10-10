@@ -528,7 +528,7 @@
     }
     items=applyRearClamps(db,kit,params,items,errors);
     const hingeType=params.hingeType||kit.hingeType||'standard';
-    if(!['standard','reinforced130','hidden','rebated'].includes(hingeType))errors.push('Выберите вариант петель.');
+    if(!['standard','reinforced130','reinforcedLower','hidden','rebated'].includes(hingeType))errors.push('Выберите вариант петель.');
 
     const turnOnly=kit.family!=='aluminum'&&kit.openingType==='turn';
     if(hingeType==='rebated'&&!turnOnly)errors.push('Фальцевая петля доступна только для поворотной створки.');
@@ -571,10 +571,10 @@
         if(params.height>900||params.height<700)warnings.push('Привод и удлинители ножниц требуют проверки по монтажной схеме.');
       }
     }
-    if(hingeType==='reinforced130'){
+    if(['reinforced130','reinforcedLower'].includes(hingeType)){
       if(params.width<=650)errors.push('Усиленные петли 130 кг доступны при ширине створки больше 650 мм.');
       else for(const it of items){
-        const target={RV:'RV.U',RN:'RN.U',SN:'SN.U'}[it.art];
+        const target={...(hingeType==='reinforced130'?{RV:'RV.U'}:{}),RN:'RN.U',SN:'SN.U'}[it.art];
         if(target){if(has(db.articles,target))it.art=target;else errors.push('В базе нет усиленной петли '+target+'.');}
       }
     }

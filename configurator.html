@@ -20,8 +20,8 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.19"><script src="assets/js/hardware-colors.js?v=2026.10.10.19"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.19"></script><script src="assets/js/cam-selector.js?v=2026.10.10.19"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.19"><script src="assets/js/calculation-technology.js?v=2026.10.10.19"></script>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.20"><script src="assets/js/hardware-colors.js?v=2026.10.10.20"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.20"></script><script src="assets/js/cam-selector.js?v=2026.10.10.20"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.20"><script src="assets/js/calculation-technology.js?v=2026.10.10.20"></script>
 <style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
@@ -32,7 +32,7 @@
 <div class="sheettitle"><h1 id="kitTitle"></h1><span id="tableCount"></span></div>
 <section id="sheet" class="sheet" aria-label="Таблица ширины и высоты"></section>
 <div class="legend"><span><i class="dot"></i> Начальный состав</span><span><i class="dot edited"></i> Изменено вручную</span><span><i class="dot checked"></i> Состав проверен</span><span class="push">Размеры по фальцу · миллиметры · 600 → предыдущий диапазон, 601 → следующий</span></div>
-<section class="calculation"><div><h2>Подобрать по размерам</h2><p>При пересечении высот выберите привод из предложенных вариантов.</p></div><label>ШСФ, мм<input id="width" type="number" step="1" min="1" value="500"></label><label>ВСФ, мм<input id="height" type="number" step="1" min="1" value="1200"></label><label>Дорнмасс<select id="dornmass"><option value="15" selected>15 мм</option><option value="25">25 мм</option></select></label><label>Открывание<select id="opening"><option value="R">Правое</option><option value="L">Левое</option></select></label><label id="hingeTypeWrap" hidden>Петли<select id="hingeType"><option value="standard">Стандартные</option><option value="reinforced130">Усиленные 130 кг</option></select></label><label>Створок<input id="count" type="number" min="1" step="1" value="1"></label><button id="calculate" class="primary">Подобрать</button></section>
+<section class="calculation"><div><h2>Подобрать по размерам</h2><p>При пересечении высот выберите привод из предложенных вариантов.</p></div><label>ШСФ, мм<input id="width" type="number" step="1" min="1" value="500"></label><label>ВСФ, мм<input id="height" type="number" step="1" min="1" value="1200"></label><label>Дорнмасс<select id="dornmass"><option value="15" selected>15 мм</option><option value="25">25 мм</option></select></label><label>Открывание<select id="opening"><option value="R">Правое</option><option value="L">Левое</option></select></label><label id="hingeTypeWrap" hidden>Петли<select id="hingeType"><option value="standard">Стандартные</option><option value="reinforced130">Усиленные верх и низ</option><option value="reinforcedLower">Усиленная нижняя / стандартная верхняя</option></select></label><label>Створок<input id="count" type="number" min="1" step="1" value="1"></label><button id="calculate" class="primary">Подобрать</button></section>
 <section class="editTools" aria-label="Дополнительные опции"><label class="checkbox" id="offsetHandleWrap"><input type="checkbox" id="offsetHandle">Положение ручки смещённое</label><label class="checkbox" id="microventWrap"><input type="checkbox" id="microvent">Микровентиляция</label><label class="checkbox" id="lifterWrap"><input type="checkbox" id="lifter">Приподниматель</label><label class="checkbox" id="plsEnabledWrap"><input type="checkbox" id="plsEnabled">Пластины</label><label class="checkbox" id="bprEnabledWrap"><input type="checkbox" id="bprEnabled">Кнопка-блокиратор</label><label class="checkbox"><input type="checkbox" id="handleEnabled">Ручка</label><label id="handleArticleWrap" hidden>Вариант ручки<select id="handleArticle"></select></label><div id="handleColorWrap" class="handle-color-wrap" hidden><span>Цвет ручки</span><div class="handle-colors" role="group" aria-label="Цвет ручки"><button type="button" class="handle-color white" data-handle-color="white" title="Белый" aria-label="Белая ручка"></button><button type="button" class="handle-color black" data-handle-color="black" title="Чёрный" aria-label="Чёрная ручка"></button><button type="button" class="handle-color brown" data-handle-color="brown" title="Коричневый" aria-label="Коричневая ручка"></button><button type="button" class="handle-color anthracite" data-handle-color="anthracite" title="Антрацит" aria-label="Ручка антрацит"></button></div></div><label id="coverColorWrap">Цвет накладок<select id="coverColor"><option value="white">Белый</option><option value="brown">Коричневый</option><option value="anthracite">Тёмно-серый (антрацит)</option><option value="black">Чёрный</option></select></label><label id="optionSeriesWrap">Паз для дополнительных деталей<select id="optionSeries"><option value="13" selected>13 мм</option><option value="9">9 мм</option></select></label><label id="aluminumProfileWrap" hidden>Профиль ALU<select id="aluminumProfile"><option value="14">Профиль 14 · AL</option><option value="10">Профиль 10 · AL02</option></select></label><label class="checkbox alu-option" id="aluLifterWrap" hidden><input type="checkbox" id="aluLifter">Приподниматель-блокиратор MBU</label><label class="checkbox alu-option" id="aluPlateWrap" hidden><input type="checkbox" id="aluPlate">Соединительная пластина PLS</label><label class="checkbox alu-option" id="aluTravelLimiterWrap" hidden><input type="checkbox" id="aluTravelLimiter">Ограничитель хода цапфы OZ</label><label class="checkbox alu-option" id="aluSupportWrap" hidden><input type="checkbox" id="aluSupport">Разгружатель скрытой петли</label><label class="checkbox alu-option" id="aluLimiterWrap" hidden><input type="checkbox" id="aluLimiter">Ограничитель угла открывания</label><label class="checkbox alu-option" id="aluFixingPlateWrap" hidden><input type="checkbox" id="aluFixingPlate">Пластина-фиксатор PLD</label><label class="checkbox alu-option" id="aluClipWrap" hidden><input type="checkbox" id="aluClip">Клипса фиксирующая KF</label><label class="checkbox alu-option" id="aluDriveEndWrap" hidden><input type="checkbox" id="aluDriveEnd">Декоративное окончание привода OP</label><label class="checkbox alu-option" id="aluSecurityPlateWrap" hidden><input type="checkbox" id="aluSecurityPlate">Взломостойкая пластина PLV</label><span>Выбор сохраняется в файле комплектации.</span></section>
 <section id="calculated" class="calculated" aria-live="polite" hidden></section>
 <section id="order" class="order" hidden></section>
@@ -575,7 +575,7 @@
     }
     items=applyRearClamps(db,kit,params,items,errors);
     const hingeType=params.hingeType||kit.hingeType||'standard';
-    if(!['standard','reinforced130','hidden','rebated'].includes(hingeType))errors.push('Выберите вариант петель.');
+    if(!['standard','reinforced130','reinforcedLower','hidden','rebated'].includes(hingeType))errors.push('Выберите вариант петель.');
 
     const turnOnly=kit.family!=='aluminum'&&kit.openingType==='turn';
     if(hingeType==='rebated'&&!turnOnly)errors.push('Фальцевая петля доступна только для поворотной створки.');
@@ -618,10 +618,10 @@
         if(params.height>900||params.height<700)warnings.push('Привод и удлинители ножниц требуют проверки по монтажной схеме.');
       }
     }
-    if(hingeType==='reinforced130'){
+    if(['reinforced130','reinforcedLower'].includes(hingeType)){
       if(params.width<=650)errors.push('Усиленные петли 130 кг доступны при ширине створки больше 650 мм.');
       else for(const it of items){
-        const target={RV:'RV.U',RN:'RN.U',SN:'SN.U'}[it.art];
+        const target={...(hingeType==='reinforced130'?{RV:'RV.U'}:{}),RN:'RN.U',SN:'SN.U'}[it.art];
         if(target){if(has(db.articles,target))it.art=target;else errors.push('В базе нет усиленной петли '+target+'.');}
       }
     }
@@ -1007,15 +1007,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.19"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.19"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.19"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.19">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.19"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.20"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.20"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.20"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.20">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.20"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.19"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.19">
+<script src="assets/js/modal-layout.js?v=2026.10.10.20"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.20">
 </body></html>
 

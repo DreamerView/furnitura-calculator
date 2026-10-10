@@ -30,7 +30,7 @@ root.openStrikeReplacement=function(posId,index){
   // A frame strike replacement does not alter the sash connections or their PLS count.
   dialog.close();renderOrder();
  };
- foot.append(cancel,apply);body.append(current,hint,label,manual,list,preview,error);dialog.append(head,body,foot);document.body.append(dialog);
+ const pressureHint=document.createElement('p');pressureHint.className='hint';pressureHint.textContent=tr('В одной серии планок для одного профиля: 35 — сильнее прижим, 40 — средний, 45 — слабее. Проверяйте уплотнение и совместимость.');foot.append(cancel,apply);body.append(current,hint,pressureHint,label,manual,list,preview,error);dialog.append(head,body,foot);document.body.append(dialog);
  const selected=document.querySelector('[data-position-id="'+posId+'"][data-row-index="'+index+'"]');selected?.classList.add('strike-editing');
  dialog.addEventListener('close',()=>{selected?.classList.remove('strike-editing');dialog.remove();},{once:true});refresh();dialog.showModal();select.focus();
 };

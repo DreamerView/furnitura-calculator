@@ -63,7 +63,7 @@
  html:root body.workdesk-app #combined-card .combined-print-heading{margin-bottom:1.5mm!important;padding-bottom:1.5mm!important;font-weight:600!important}
  html:root body.workdesk-app #combined-card .invoice-head{margin-bottom:1.5mm!important}
  html:root body.workdesk-app #combined-card #inv-grand-total{text-align:center!important}
- html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap :is(th,td):is(:nth-child(6),:nth-child(7)){display:none!important}
+ html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap :is(th,td):is(:nth-child(5),:nth-child(6)){display:none!important}
  html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(3){width:71%!important}
  html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) :is(tfoot,.price-default),html:root body.workdesk-app.price-hidden #combined-card>table{display:none!important}
  html:root body.workdesk-app.pricing-invoice-invalid :is(#combined-card,#results){display:none!important}
@@ -79,3 +79,15 @@
  html:root body.workdesk-app #results{border-top:3px solid var(--accent,#087cff);padding-top:12px;margin-top:16px}
 }
 @media print{.invoice-sticky-actions{display:none!important}}
+
+@media print{
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(thead,tbody) :is(th,td):nth-child(1){width:4%!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(thead,tbody) :is(th,td):nth-child(2){width:13%!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(thead,tbody) :is(th,td):nth-child(3){width:49%!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(thead,tbody) :is(th,td):nth-child(4){width:7%!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(thead,tbody) :is(th,td):nth-child(5){width:9%!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(thead,tbody) :is(th,td):nth-child(6){width:10%!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(thead,tbody) :is(th,td):nth-child(7){width:8%!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) tr.hinge-kit td{background:#f3f6fa!important;print-color-adjust:exact}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .invoice-pack-cell{color:#777!important;font-size:7pt!important;font-weight:400!important}
+}

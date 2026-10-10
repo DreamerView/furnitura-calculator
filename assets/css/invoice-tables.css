@@ -124,7 +124,7 @@ html:root body.workdesk-app #combined-card #inv-grand-total{text-align:center!im
 html:root body.workdesk-app #positions-container tfoot .num{text-align:center!important}
 }
 
-html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:is(:nth-child(6),:nth-child(7)){display:none!important}
+html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:is(:nth-child(5),:nth-child(6)){display:none!important}
 
 /* Position BOM fits its card, including editable values and action buttons. */
 @media screen{
@@ -143,4 +143,19 @@ html:root body.workdesk-app #positions-container .pos-block .table-wrap table :i
 html:root body.workdesk-app #positions-container .pos-block .table-wrap table input.qty-input{box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;padding:2px!important;appearance:textfield}
 html:root body.workdesk-app #positions-container .pos-block .table-wrap table input.qty-input::-webkit-inner-spin-button{appearance:none;margin:0}
 html:root body.workdesk-app #positions-container .pos-block .table-wrap table td:last-child button{box-sizing:border-box!important;width:22px!important;min-width:0!important;max-width:100%!important;height:24px!important;min-height:24px!important;padding:2px!important;margin:1px!important;vertical-align:middle}
+}
+
+/* Shared invoice geometry: quantities and prices precede muted package information. */
+@media screen{
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(1){width:3%!important;text-align:center!important;vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(2){width:12%!important;text-align:left!important;vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(3){width:40%!important;text-align:left!important;vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(4){width:8%!important;text-align:center!important;vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(5){width:9%!important;text-align:center!important;vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(6){width:10%!important;text-align:center!important;vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(7){width:8%!important;text-align:center!important;vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container .pos-block) .table-wrap table :is(thead,tbody) tr>:nth-child(8){width:10%!important;text-align:center!important;vertical-align:middle!important}
+html:root body.workdesk-app #positions-container .pos-block{padding-inline:0!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) table tr.hinge-kit td{background:color-mix(in srgb,var(--accent,#087cff) 5%,var(--surface,#fff))!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) table .invoice-pack-cell{color:var(--secondary,#757575)!important;font-size:11px!important;font-weight:400!important;background:color-mix(in srgb,var(--surface-alt,#eee) 45%,transparent)!important}
 }

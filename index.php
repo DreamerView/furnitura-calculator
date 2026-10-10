@@ -334,9 +334,9 @@ header('Expires: 0');
 <style>#subtabbtn-komplekt,#subtabbtn-rules,#subtab-komplekt,#subtab-rules{display:none!important}#subtabbtn-layout,#subtab-layout{display:none!important}.matrix-family-tabs{display:flex;gap:6px;margin-top:10px}.matrix-family{flex:1;padding:8px 10px;}.matrix-family.active{}.aluminum-controls{display:grid;gap:8px;margin-top:10px;padding:10px;}.aluminum-controls[hidden],.aluminum-options[hidden]{display:none!important}.aluminum-options{display:grid;gap:7px}.aluminum-options label{display:flex!important;align-items:center;gap:7px;margin:0!important}.aluminum-options input[type=checkbox]{width:auto!important}</style>
 <!-- MATRIX_IMPORT_STYLE_END -->
 
-<meta name="futuruss-version" content="2026.10.10.19">
-<link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/spa.css?v=2026.10.10.19">
+<meta name="futuruss-version" content="2026.10.10.20">
+<link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/spa.css?v=2026.10.10.20">
 </head>
 <body class="workdesk-app">
 <div id="appPreloader" role="status" aria-live="polite">
@@ -400,7 +400,7 @@ header('Expires: 0');
       <p id="matrixImportedSummary" class="hint"></p>
       <div id="dornmassWrap"><label for="dornmass">Дорнмасс</label><select id="dornmass"><option value="15" selected>15 мм</option><option value="25">25 мм</option></select></div>
       <div id="matrixDriveChoiceWrap" hidden><label for="matrixDriveChoice">Вариант привода</label><select id="matrixDriveChoice"></select></div>
-      <div id="hingeTypeWrap" hidden><label for="hingeType">Петли</label><select id="hingeType"><option value="standard">Стандартные</option><option value="reinforced130">Усиленные 130 кг</option></select></div>
+      <div id="hingeTypeWrap" hidden><label for="hingeType">Петли</label><select id="hingeType"><option value="standard">Стандартные</option><option value="reinforced130">Усиленные верх и низ</option><option value="reinforcedLower">Усиленная нижняя / стандартная верхняя</option></select></div>
       <div id="aluminumControls" class="aluminum-controls" hidden>
         <label for="aluminumProfile">Профиль ALU</label><select id="aluminumProfile"><option value="14">Профиль 14 · AL</option><option value="10">Профиль 10 · AL02</option></select>
       </div>
@@ -515,7 +515,7 @@ header('Expires: 0');
 
     <div class="table-wrap">
       <table>
-        <thead><tr><th style="width:24px;">№</th><th>Артикул</th><th>Наименование</th><th class="num invoice-pack-cell">Шт./кор.</th><th class="num">Кол-во</th><th class="num">Цена</th><th class="num">Сумма</th></tr></thead>
+        <thead><tr><th style="width:24px;">№</th><th>Артикул</th><th>Наименование</th><th class="num">Кол-во</th><th class="num">Цена</th><th class="num">Сумма</th><th class="num invoice-pack-cell">Шт./кор.</th></tr></thead>
         <tbody id="combined-tbody"></tbody>
       </table>
     </div>
@@ -1241,31 +1241,31 @@ html[data-interface-theme] #positions-container .pos-block tbody td>button.small
 
 
 
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.19">
-<script src="assets/vendor/vue.global.prod.js?v=2026.10.10.19"></script>
-<script src="assets/vendor/vue-router-lite.js?v=2026.10.10.19"></script>
-<script src="assets/js/idb-store.js?v=2026.10.10.19"></script>
-<script src="assets/js/preview-gallery.js?v=2026.10.10.19"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.19"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.19"></script>
-<script src="assets/js/bootstrap.js?v=2026.10.10.19"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.19">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.19"></script>
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.20">
+<script src="assets/vendor/vue.global.prod.js?v=2026.10.10.20"></script>
+<script src="assets/vendor/vue-router-lite.js?v=2026.10.10.20"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.20"></script>
+<script src="assets/js/preview-gallery.js?v=2026.10.10.20"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.20"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.20"></script>
+<script src="assets/js/bootstrap.js?v=2026.10.10.20"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.20">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.20"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.19"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/calculator-options.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/calculator-header.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/invoice-tables.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/calculator-actions.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.19">
-<link rel="stylesheet" href="assets/css/price-categories.css?v=2026.10.10.19">
-<script src="assets/js/invoice-strike-editor.js?v=2026.10.10.19"></script>
-<link rel="stylesheet" href="assets/css/invoice-print.css?v=2026.10.10.19">
-<script src="assets/js/free-invoice-modal.js?v=2026.10.10.19"></script>
-<link rel="stylesheet" href="assets/css/free-invoice-modal.css?v=2026.10.10.19">
+<script src="assets/js/modal-layout.js?v=2026.10.10.20"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/calculator-options.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/calculator-header.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/invoice-tables.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/calculator-actions.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.20">
+<link rel="stylesheet" href="assets/css/price-categories.css?v=2026.10.10.20">
+<script src="assets/js/invoice-strike-editor.js?v=2026.10.10.20"></script>
+<link rel="stylesheet" href="assets/css/invoice-print.css?v=2026.10.10.20">
+<script src="assets/js/free-invoice-modal.js?v=2026.10.10.20"></script>
+<link rel="stylesheet" href="assets/css/free-invoice-modal.css?v=2026.10.10.20">
 </body>
 </html>
 

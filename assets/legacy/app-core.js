@@ -992,10 +992,10 @@ function renderOrder(){
         <td>${displayIdx+1}</td>
         <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}</td>
         <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}${pos.freeInvoice?'':positionEngineeringNote(r)}</td>
-        <td class="num invoice-pack-cell">${invoicePackNote(r.art)}</td>
         <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value)"><span class="invoice-print-only">${esc(r.qty)}</span></td>
         <td class="num${r.isDefaultPrice?' price-default':''}">${pos.freeInvoice&&canPrice?`<input class="qty-input free-price-input" type="number" min="0" step="0.01" aria-label="Цена" value="${r.price.toFixed(2)}" onclick="event.stopPropagation()" onchange="updateFreeRowPrice(${pos.id},${idx},this.value)"><span class="invoice-print-only">${r.price.toFixed(2)}</span>`:r.price.toFixed(2)+(r.isDefaultPrice?'*':'')}</td>
         <td class="num">${sum.toFixed(2)}</td>
+        <td class="num invoice-pack-cell">${invoicePackNote(r.art)}</td>
         <td>${globalThis.MatrixCore?.strikeRole(r.art)||r.strikeRole?` <button class="small strike-replace" type="button" title="Заменить ответную планку" aria-label="Заменить ответную планку" onclick="event.stopPropagation(); openStrikeReplacement(${pos.id},${idx})"><span class="ui-icon i-pencil" aria-hidden="true"></span></button>`:''}<button class="small danger" onclick="event.stopPropagation(); removeRow(${pos.id},${idx})"><span class="ui-icon i-xmark" aria-hidden="true"></span></button></td>
       </tr>`;
     }).join("");
@@ -1019,9 +1019,9 @@ function renderOrder(){
       </div>`}
       <div class="table-wrap">
         <table>
-          <thead><tr><th style="width:20px;">№</th><th>Артикул</th><th>Наименование</th><th class="num invoice-pack-cell">Шт./кор.</th><th class="num">Кол-во</th><th class="num">Цена</th><th class="num">Сумма</th><th></th></tr></thead>
+          <thead><tr><th style="width:20px;">№</th><th>Артикул</th><th>Наименование</th><th class="num">Кол-во</th><th class="num">Цена</th><th class="num">Сумма</th><th class="num invoice-pack-cell">Шт./кор.</th><th></th></tr></thead>
           <tbody>${rowsHtml}</tbody>
-          <tfoot><tr class="total"><td colspan="6">Итого по позиции</td><td class="num">${posSubtotal.toFixed(2)}</td><td></td></tr></tfoot>
+          <tfoot><tr class="total"><td colspan="5">Итого по позиции</td><td class="num">${posSubtotal.toFixed(2)}</td><td colspan="2"></td></tr></tfoot>
         </table>
       </div>
       <div class="add-row" style="align-items:flex-start;">
@@ -1049,10 +1049,9 @@ function renderOrder(){
     tr.dataset.article = art;
     tr.ondblclick = () => showPhoto(art, c.name, "invoice");
     tr.innerHTML = `<td>${i+1}</td><td class="article ${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(art)}</td><td class="${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(c.name)}${(c.engineeringNotes||[]).join(' ')}</td>
-      <td class="num invoice-pack-cell">${invoicePackNote(art)}</td>
       <td class="num">${c.qty}</td>
       <td class="num${c.isDefaultPrice?' price-default':''}">${c.price.toFixed(2)}${c.isDefaultPrice?'*':''}</td>
-      <td class="num">${sum.toFixed(2)}</td>`;
+      <td class="num">${sum.toFixed(2)}</td><td class="num invoice-pack-cell">${invoicePackNote(art)}</td>`;
     combinedTbody.appendChild(tr);
   });
 
@@ -1117,7 +1116,7 @@ async function exportToExcel(){
       flatRows.push({
         "Позиция": excelSafe(pos.label), "Схема": excelSafe(pos.scheme), "ШСФ": pos.width, "ВСФ": pos.height, "Створок": pos.sashQty,
         "Правых": pos.qtyRight, "Левых": pos.qtyLeft, "Паз": pos.groove || "",
-        "Артикул": excelSafe(r.art), "Наименование": excelSafe(r.name), "Кол-во": r.qty, "Цена": r.price, "Сумма": +(r.qty*r.price).toFixed(2),
+        "Артикул": excelSafe(r.art), "Наименование": excelSafe(r.name), "Кол-во": r.qty, "Цена": r.price, "Сумма": +(r.qty*r.price).toFixed(2), "Шт./кор.": invoicePackNote(r.art),
         "Цена по умолчанию": r.isDefaultPrice ? "да" : "", "Комментарий к позиции": excelSafe(pos.comment||'')
       });
     });
@@ -1129,7 +1128,7 @@ async function exportToExcel(){
   const combined = invoiceCombinedRows(orderPositions);
   const combinedRows = Object.keys(combined).sort().map(key => ({
     "Артикул": excelSafe(combined[key].art), "Наименование": excelSafe(combined[key].name), "Кол-во": combined[key].qty,
-    "Цена": combined[key].price, "Сумма": +(combined[key].qty*combined[key].price).toFixed(2)
+    "Цена": combined[key].price, "Сумма": +(combined[key].qty*combined[key].price).toFixed(2), "Шт./кор.": invoicePackNote(combined[key].art)
   }));
   const ws2 = XLSX.utils.json_to_sheet(combinedRows);
   XLSX.utils.book_append_sheet(wb, ws2, "Сводная");
@@ -1805,7 +1804,7 @@ function isDriveArt(art){ const name=DATA.master[art]?.name||'';return !/^удл
 // PN.R/PN.S (средний прижим накладной) и их накладки формально в группе "поворотные петли",
 // но это не петли — подсвечивать как петли их не нужно.
 const HINGE_KIT_EXCLUDE = new Set(["PN.R", "PN.S", "N.PN.R.B", "N.PN.S.B", "N.PN.R.K", "N.PN.S.K"]);
-function isHingeKitArt(art){ return !HINGE_KIT_EXCLUDE.has(art) && (HINGE_KIT_GROUPS.has(DATA.groups[art]) || /^(?:N\.(?:RV|RN|SV|SN|3DS)|RV(?:\.|$)|RN(?:\.|$)|SV\.|SN(?:\.|$)|3DS\.|SF\.|SPK-|SPN-)/.test(art)); }
+function isHingeKitArt(art){ return !HINGE_KIT_EXCLUDE.has(art) && (HINGE_KIT_GROUPS.has(DATA.groups[art]) || /^(?:N\.(?:RV|RN|SV|SN|3DS)|RV(?:\.|$)|RN(?:\.|$)|SV\.|SN(?:\.|$)|3DS\.|SF\.|SPK-|SPN-|FPR\.)/.test(art)); }
 
 // PN.R/PN.S (средний прижим накладной) и их накладки — тоже идут комплектом, но это не петли:
 // подсвечиваться как петли не должны, а их блок в списке должен идти после блока петель, не перед ним.
