@@ -626,8 +626,8 @@
     items=completeStrikes(db,kit,params,items,strikeSelection,errors,warnings);
     if((params.hardwareFinish||kit.hardwareFinish)==='black'){
       const unchanged=[];let replaced=0;
-      for(const it of items){if(it.manualStrike)continue;const a=db.articles[it.art],target=a?.blackVariant;if(target&&db.articles[target]){it.art=target;replaced++;}else if(a?.finish!=='black'&&!it.art.includes('.BLACK'))unchanged.push(it.art);}
-      if(!replaced&&!items.some(it=>it.art.includes('.BLACK')))errors.push('Для выбранного состава чёрные исполнения не подтверждены каталогом.');
+      for(const it of items){const a=db.articles[it.art];if(it.manualStrike||isWindowHandle(it.art,a)||/^N\./i.test(it.art)||a?.coverColor||/декоративн.*наклад|накладк.*петл/i.test(a?.name||''))continue;const target=a?.blackVariant;if(target&&db.articles[target]){it.art=target;replaced++;}else if(a?.finish!=='black'&&!it.art.includes('.BLACK'))unchanged.push(it.art);}
+      if(!replaced&&!items.some(it=>it.art.includes('.BLACK')))warnings.push('Для выбранного состава чёрные исполнения не подтверждены каталогом.');
       if(unchanged.length)warnings.push('Стандартное исполнение без подтверждённой чёрной замены: '+[...new Set(unchanged)].join(', '));
     }
     if((params.hardwareFinish||kit.hardwareFinish)==='black')for(const it of items)for(const dep of [...(it.dependencies||[]),...(it.dependency?[it.dependency]:[])]){const target=db.articles[dep.parent]?.blackVariant;if(target&&items.some(i=>i.art===target))dep.parent=target;}

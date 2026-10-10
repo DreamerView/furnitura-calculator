@@ -19,3 +19,15 @@ console.log('Turn hinge combinations:',checks,'; side, axis, covers, black mappi
 assert.deepEqual(calc('pvc-turn-11',{hingeType:'hidden',hiddenProfile:'G',strikeProfile:'Gealan/Ivaper'}).errors,[]);
 assert(calc('pvc-turn-11',{hingeType:'hidden',hiddenProfile:'K',strikeProfile:'REHAU'}).errors.length);
 assert(calc('pvc-turn-11',{hingeType:'hidden',hiddenProfile:'K',strikeProfile:'Deceuninck/Thyssen'}).errors.length);
+
+// Mechanism coating must not override decorative cover and handle colours.
+M.ensureHandleColors(db);
+for(const color of ['white','brown','anthracite','black']){
+ const params={hingeType:'standard',coverColor:color,handleColor:color,options:{plsEnabled:false,handleEnabled:true}};
+ const silver=calc('pvc-turn-11',{...params,hardwareFinish:'standard'});
+ const coated=calc('pvc-turn-11',{...params,hardwareFinish:'black'});
+ const decorations=r=>r.items.filter(i=>/^N\./.test(i.art)||M.isWindowHandle(i.art,db.articles[i.art])).map(i=>[i.art,i.qty]);
+ assert.deepEqual(decorations(coated),decorations(silver));
+ assert(!coated.items.some(i=>/^SPK/.test(i.art)));
+}
+console.log('Mechanism finish is independent from cover colour, handle colour and hinge type.');

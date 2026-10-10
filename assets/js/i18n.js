@@ -1,6 +1,7 @@
 (function(){
 'use strict';
 const dict={
+"Серебристое":["Silver","Gümüş"],
 "Шт./кор.":["Pcs/box","Adet/kutu"],
 "Точки прижима на один комплект":["Locking points per set","Set başına kilitleme noktaları"],
 "Подтверждённые точки прижима на один комплект":["Confirmed locking points per set","Set başına doğrulanmış kilitleme noktaları"],

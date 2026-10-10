@@ -20,8 +20,8 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.13">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.13"><script src="assets/js/hardware-colors.js?v=2026.10.10.13"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.13"></script><script src="assets/js/cam-selector.js?v=2026.10.10.13"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.13"><script src="assets/js/calculation-technology.js?v=2026.10.10.13"></script>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.14">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.14"><script src="assets/js/hardware-colors.js?v=2026.10.10.14"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.14"></script><script src="assets/js/cam-selector.js?v=2026.10.10.14"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.14"><script src="assets/js/calculation-technology.js?v=2026.10.10.14"></script>
 <style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
@@ -673,8 +673,8 @@
     items=completeStrikes(db,kit,params,items,strikeSelection,errors,warnings);
     if((params.hardwareFinish||kit.hardwareFinish)==='black'){
       const unchanged=[];let replaced=0;
-      for(const it of items){if(it.manualStrike)continue;const a=db.articles[it.art],target=a?.blackVariant;if(target&&db.articles[target]){it.art=target;replaced++;}else if(a?.finish!=='black'&&!it.art.includes('.BLACK'))unchanged.push(it.art);}
-      if(!replaced&&!items.some(it=>it.art.includes('.BLACK')))errors.push('Для выбранного состава чёрные исполнения не подтверждены каталогом.');
+      for(const it of items){const a=db.articles[it.art];if(it.manualStrike||isWindowHandle(it.art,a)||/^N\./i.test(it.art)||a?.coverColor||/декоративн.*наклад|накладк.*петл/i.test(a?.name||''))continue;const target=a?.blackVariant;if(target&&db.articles[target]){it.art=target;replaced++;}else if(a?.finish!=='black'&&!it.art.includes('.BLACK'))unchanged.push(it.art);}
+      if(!replaced&&!items.some(it=>it.art.includes('.BLACK')))warnings.push('Для выбранного состава чёрные исполнения не подтверждены каталогом.');
       if(unchanged.length)warnings.push('Стандартное исполнение без подтверждённой чёрной замены: '+[...new Set(unchanged)].join(', '));
     }
     if((params.hardwareFinish||kit.hardwareFinish)==='black')for(const it of items)for(const dep of [...(it.dependencies||[]),...(it.dependency?[it.dependency]:[])]){const target=db.articles[dep.parent]?.blackVariant;if(target&&items.some(i=>i.art===target))dep.parent=target;}
@@ -980,15 +980,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.13"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.13"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.13"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.13">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.13"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.14"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.14"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.14"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.14">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.14"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.13"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.13">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.13">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.13">
+<script src="assets/js/modal-layout.js?v=2026.10.10.14"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.14">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.14">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.14">
 </body></html>
 
