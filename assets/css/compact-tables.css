@@ -215,3 +215,22 @@ html:root body.workdesk-app #positions-container .invoice-action-buttons>.invoic
 html:root body.workdesk-app #positions-container .invoice-action-buttons>.danger{grid-column:3}
 html:root body.workdesk-app #positions-container .invoice-action-buttons .ui-icon{width:16px!important;height:16px!important;margin:0!important}
 }
+
+/* One compact rule for every identical width/height deduction pair. */
+dialog.frame-profiles-dialog{width:min(880px,95vw)}
+.frame-rule{border:1px solid var(--border,#dce3ed);border-radius:12px;margin:10px 0;padding:12px;background:var(--panel,#fff)}
+.frame-rule-header{display:grid;grid-template-columns:120px 120px minmax(130px,1fr) auto;gap:12px;align-items:end}
+.frame-rule label{display:flex;flex-direction:column;gap:3px;font-size:11px;min-width:0}
+.frame-rule input:not([type=checkbox]),.frame-rule select{box-sizing:border-box;width:100%;min-width:0;height:30px;padding:4px 7px;font-size:12px}
+.frame-rule input[type=checkbox]{width:16px!important;height:16px!important}
+.frame-rule-profiles{list-style:none;padding:8px 0 0;margin:0;font-size:12px;line-height:1.65}
+.frame-rule-profiles li{overflow-wrap:anywhere}
+.frame-rule-editor{margin-top:8px;font-size:11px;color:var(--muted,#64748b)}
+.frame-rule-editor summary{cursor:pointer}
+.frame-rule-member{display:grid;grid-template-columns:minmax(170px,1fr) 180px auto;gap:6px;padding:10px 0;border-bottom:1px solid var(--border,#dce3ed)}
+.frame-member-wide{grid-column:1/-1}
+.frame-rule-editor>button{margin-top:8px}
+@media(max-width:600px){.frame-rule-header,.frame-rule-member{grid-template-columns:1fr 1fr}.frame-member-name{grid-column:1/-1}}
+
+html:root body.workdesk-configurator dialog.frame-profiles-dialog{padding:14px!important;box-sizing:border-box}
+.frame-rule-pending{margin:0 0 8px;color:#946200;font-size:12px;font-weight:600}

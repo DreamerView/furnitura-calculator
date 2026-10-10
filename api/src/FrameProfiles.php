@@ -2,7 +2,15 @@
 declare(strict_types=1);
 final class FrameProfiles {
  public static function withDefaults(array $catalog): array {
-  if(!array_key_exists('frameProfiles',$catalog))$catalog['frameProfiles']=json_decode(file_get_contents(dirname(__DIR__,2).'/assets/data/frame-profiles.json'),true,512,JSON_THROW_ON_ERROR);
+  $revision=2026101107;
+  $defaults=json_decode(file_get_contents(dirname(__DIR__,2).'/assets/data/frame-profiles.json'),true,512,JSON_THROW_ON_ERROR);
+  if(!array_key_exists('frameProfiles',$catalog))$catalog['frameProfiles']=$defaults;
+  elseif(is_array($catalog['frameProfiles'])&&$catalog['frameProfiles']!==[]&&($catalog['frameProfilesRevision']??0)<$revision){
+   // Append only this release's new records. Never overwrite custom deductions or restore older deletions.
+   $known=array_column($catalog['frameProfiles'],'id');
+   foreach($defaults as $row)if(($row['introducedRevision']??0)>($catalog['frameProfilesRevision']??0)&&($row['introducedRevision']??0)>0&&!in_array($row['id'],$known,true))$catalog['frameProfiles'][]=$row;
+  }
+  $catalog['frameProfilesRevision']=$revision;
   return $catalog;
  }
  public static function validate($rows): void {

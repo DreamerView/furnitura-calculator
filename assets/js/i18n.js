@@ -1,6 +1,15 @@
 (function(){
 'use strict';
 const dict={
+"Отключено":["Disabled", "Devre dışı"],
+"Вычет Ш / В, мм":["W / H deduction, mm", "G / Y düşümü, mm"],
+"Одинаковые вычеты — одна группа. Изменение вычетов применяется ко всем профилям группы.":["Identical deductions share one group. Changes apply to every profile in the group.", "Aynı düşümler tek gruptadır. Değişiklikler gruptaki tüm profillere uygulanır."],
+"Добавить правило":["Add rule", "Kural ekle"],
+"Удалить правило":["Delete rule", "Kuralı sil"],
+"Редактировать профили и источники":["Edit profiles and sources", "Profilleri ve kaynakları düzenle"],
+"Новый профиль":["New profile", "Yeni profil"],
+"Правило вычета":["Deduction rule", "Düşüm kuralı"],
+
 "Печатать":["Print", "Yazdır"],
 "Состав печати":["Print contents", "Yazdırılacak içerik"],
 "Общий свод":["Summary", "Genel özet"],

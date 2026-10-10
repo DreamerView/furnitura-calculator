@@ -106,5 +106,125 @@
     "enabled": false,
     "source": "",
     "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  },
+  {
+    "id": "kbe-engine-907",
+    "name": "KBE Engine 58 · 907 / 917",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://www.rtd-com.ru/wp-content/uploads/2020/08/2018_kbe-engine-58mm.pdf#page=77",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Каталог profine 2018, раздел 3 стр. 1 (PDF 77): от наружной рамы до края наплава 35, наплав 8+12=20; до фальца 55 мм на сторону. ШСФ=W−110, ВСФ=H−110.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "proplex-58-groove9",
+    "name": "PROPLEX BASIS ECO / BASIS / OPTIMA · C_1.063_N, L_1.063_N, PRNO_1.063 / C_2.077_T, L_2.077_T, PR_2.077",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://www.proplex.ru/download_reg/files/catalog/KATAL_OPT_BW-24.pdf#page=22",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Каталог 2024, стр. 22: рама 43 мм до фальца, фальцлюфт 12 мм, итог 2×55=110. Паз створки 9 мм.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "proplex-58-groove13",
+    "name": "PROPLEX BASIS ECO / BASIS / OPTIMA · C_1.063_N, L_1.063_N, PRNO_1.063 / L_2.377_T",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://www.proplex.ru/download_reg/files/catalog/KATAL_OPT_BW-24.pdf#page=23",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Каталог 2024, стр. 22–23: геометрия рамы и притвора соответствует группе 110 мм; паз створки 13 мм.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "proplex-70",
+    "name": "PROPLEX COMFORT / HIT / PREMIUM · PRN_1.070.4 / PR_2.370.5",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://www.proplex.ru/download_reg/files/catalog/KATAL_OPT_BW-24.pdf#page=33",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Каталог 2024, стр. 33: рама 43 мм до фальца + фальцлюфт 12 мм; вычет 2×55=110. Паз 13 мм. Только указанная комбинация.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "exprof-practica",
+    "name": "EXPROF Practica · S358.01 / S358.02, S358.33",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://exprof.pro/upload/iblock/245/4b3squeyod7h5ax6f16z10jqhgql08a1.pdf#page=9",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Папка переработчика 2025, глава 5, стр. 5.9–5.10: 35+8+12=55 мм на сторону. Пазы 9 и 13 мм. Откосный профиль в габарит не включён.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "exprof-prowin",
+    "name": "EXPROF ProWIN · XS358.01 / XS358.02, XS358.13",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://exprof.pro/upload/iblock/245/4b3squeyod7h5ax6f16z10jqhgql08a1.pdf#page=10",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Папка переработчика 2025, глава 5, стр. 5.9–5.10: 35+8+12=55 мм на сторону. Пазы 9 и 13 мм.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "exprof-profecta",
+    "name": "EXPROF Profecta · S571.11 / S571.12",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://exprof.pro/upload/iblock/56e/mlu9tui2jdx248tpw2ipfvtmin3s7psl.pdf#page=12",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Папка переработчика 2025, глава 6, стр. 6.12: 35+8+12=55 мм на сторону. Паз 9 мм.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "ortex-classic",
+    "name": "ORTEX Classic · 5801K / 5802K",
+    "widthDeduction": 114,
+    "heightDeduction": 114,
+    "enabled": true,
+    "source": "https://www.ortex.org/upload/iblock/d8e/b3nz2stfb23ikeyj6xxcvmsz0uc099zf/2023_Технический_каталог_ORTEX_Classic.pdf#page=9",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Каталог 2023, стр. 9: расстояние до фальца створки 57 мм, вычет 2×57=114. Не использовать размер 98 мм до стеклопакета.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "ortex-optima",
+    "name": "ORTEX Optima · 5701K / 5702K",
+    "widthDeduction": 114,
+    "heightDeduction": 114,
+    "enabled": true,
+    "source": "https://www.ortex.org/upload/iblock/52c/299dmb31r03nsdwou81sv657kvlh2zuv/2023_Технический_каталог_ORTEX_Optima.pdf#page=10",
+    "note": "Расчёт по размерному сечению, а не вычет монтажной глубины. Одинаковая рама по четырём сторонам, без импоста, порога, доборов и подставочного профиля. Каталог 2023, стр. 10: 37+8+12=57 мм до фальца створки, вычет 114 мм.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "kbe-expert",
+    "name": "KBE Expert 70 · пара рама/створка не задана",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://archi.kbe.ru/docs/",
+    "note": "Нужны конкретные артикулы рамы/створки и подтверждённые вычеты. Можно перенести в проверенную группу после проверки чертежа.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "exprof-experta",
+    "name": "EXPROF Experta S670 · пара рама/створка не задана",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://exprof.pro/proizvoditelyam/dokumentatsiya/folder-processor-profiles/",
+    "note": "Нужны конкретные артикулы рамы/створки и подтверждённые вычеты. Можно перенести в проверенную группу после проверки чертежа.",
+    "introducedRevision": 2026101107
+  },
+  {
+    "id": "ortex-premium",
+    "name": "ORTEX Premium · пара рама/створка не задана",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://www.ortex.org/cooperate/docs.php",
+    "note": "Нужны конкретные артикулы рамы/створки и подтверждённые вычеты. Можно перенести в проверенную группу после проверки чертежа.",
+    "introducedRevision": 2026101107
   }
 ]

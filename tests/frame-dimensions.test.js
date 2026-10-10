@@ -14,3 +14,15 @@ assert.notEqual(r.frameDimensions.profile,rows[0]);
 assert.equal(F.convert({...rows[0],widthDeduction:null},900,1500,kit).error,F.errors.profile);
 const file=fs.readFileSync('configurator.html','utf8');for(const match of file.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new Function(match[1]);
 console.log('PASS frame conversion, invalid dimensions, unsupported systems, snapshot and constructor syntax');
+
+const grouped=F.groupProfiles(rows),flat=F.flattenGroups(grouped);
+assert.equal(grouped.filter(g=>g.enabled).length,5);
+assert.equal(grouped.find(g=>g.widthDeduction===110).profiles.length,7);
+assert.deepEqual([...flat].sort((a,b)=>a.id.localeCompare(b.id)),[...rows].sort((a,b)=>a.id.localeCompare(b.id)));
+const rule=grouped.find(g=>g.widthDeduction===110);rule.widthDeduction=111;rule.heightDeduction=113;
+const edited=F.flattenGroups(grouped);for(const p of rule.profiles){const result=edited.find(r=>r.id===p.id);assert.equal(result.widthDeduction,111);assert.equal(result.heightDeduction,113);assert.equal(result.source,p.source);assert.equal(result.note,p.note);}
+assert.equal(rows.find(r=>r.id==='kbe-engine-907').widthDeduction,110);
+const separate=F.groupProfiles([{...rows[0],heightDeduction:101},{...rows[0],id:'off',enabled:false},rows[0]]);assert.equal(separate.length,3);
+assert.equal(F.groupProfiles([]).length,0);
+for(const p of rows.filter(p=>p.enabled)){const c=F.convert(p,900,1500,kit);assert.equal(c.width,900-p.widthDeduction);assert.equal(c.height,1500-p.heightDeduction);}
+console.log('PASS grouped rule roundtrip, bulk edits, stable profile IDs and sources, frame calculations');
