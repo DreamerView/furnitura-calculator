@@ -23,3 +23,7 @@ html:root body #kitWorkspace .kit-tree-item{background:transparent!important;col
 html:root body #kitWorkspace .kit-tree-item:hover{background:rgba(0,122,255,.06)!important}
 html:root body #kitWorkspace .kit-tree-item.active{background:rgba(0,122,255,.12)!important;color:var(--accent,#007aff)!important}
 html:root body #kitWorkspace .families .copy-tab{margin-left:auto!important}
+
+/* Common BOM rows share one tone across all constructor cells. */
+html:root body #bomRows .bom-common>td,html:root body #bomRows .bom-common>th{background:rgba(0,122,255,.07)!important}
+html:root body #bomRows .bom-section>th{text-align:left!important;padding:8px 10px!important;font-size:11px!important;color:var(--muted)!important;border-top:1px solid var(--line,#d9dce3)!important}

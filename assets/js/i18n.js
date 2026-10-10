@@ -1,6 +1,8 @@
 (function(){
 'use strict';
 const dict={
+"Общий состав":["Common composition","Ortak içerik"],
+"Переменные детали":["Variable parts","Değişken parçalar"],
 "Арочная":["Arched","Kemerli"],
 "Трапециевидная":["Trapezoidal","Trapez"],
 "Другие комплектации":["Other assemblies","Diğer donanımlar"],

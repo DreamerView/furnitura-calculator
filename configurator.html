@@ -20,9 +20,9 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.25">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.25"><script src="assets/js/hardware-colors.js?v=2026.10.10.25"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.25"></script><script src="assets/js/cam-selector.js?v=2026.10.10.25"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.25"><script src="assets/js/calculation-technology.js?v=2026.10.10.25"></script>
-<style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style><link rel="stylesheet" href="assets/css/kit-tree.css?v=2026.10.10.25"><script src="assets/js/kit-tree.js?v=2026.10.10.25"></script></head>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.26">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.26"><script src="assets/js/hardware-colors.js?v=2026.10.10.26"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.26"></script><script src="assets/js/cam-selector.js?v=2026.10.10.26"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.26"><script src="assets/js/calculation-technology.js?v=2026.10.10.26"></script>
+<style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style><link rel="stylesheet" href="assets/css/kit-tree.css?v=2026.10.10.26"><script src="assets/js/kit-tree.js?v=2026.10.10.26"></script></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
 <nav class="families" id="familyTabs" aria-label="Раздел фурнитуры"><button type="button" class="family active" data-family="pvc">FUTURUSS для ПВХ окон</button><button type="button" class="family" data-family="aluminum">FUTURUSS для ALU</button></nav>
@@ -864,6 +864,12 @@ function render(){
 function renderSheet(){const k=kit();$('sheet').innerHTML=`<table class="matrix"><thead><tr><th class="axis">Высота ВСФ ↓ / Ширина →</th>${k.columns.map(c=>`<th>${range(c)}</th>`).join('')}</tr></thead><tbody>${k.rows.map((r,ri)=>`<tr><th>${range(r)}<small>${r.drives.length>1?r.drives.length+' варианта привода':e(k.driveAxis==='width'?'Привод по ширине':r.drives[0]||'Привод не выбран')}</small></th>${k.columns.map((c,ci)=>{const saved=k.cells[M.key(r,c)];return `<td><button class="cellbutton ${saved?'modified':''} ${saved?.reviewed?'reviewed':''}" data-row="${ri}" data-col="${ci}" aria-label="Ширина ${range(c)}, высота ${range(r)}. Открыть состав" title="Двойной щелчок — состав"><span class="statusdot"></span>${range(r)}${saved?'<small>'+(saved.sizeRecipes?saved.sizeRecipes.length+' размерных составов':saved.items.length+' деталей')+'</small>':''}</button></td>`;}).join('')}</tr>`).join('')}</tbody></table>`;$('sheet').querySelectorAll('[data-row]').forEach(b=>{b.ondblclick=()=>openCell(+b.dataset.row,+b.dataset.col);b.onkeydown=ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();openCell(+b.dataset.row,+b.dataset.col);}};});}
 function openCell(ri,ci){const k=kit(),r=k.rows[ri],c=k.columns[ci];const saved=M.cell(library,k,r,c);draft={kind:'cell',row:r,col:c,base:saved};if(saved.sizeRecipes?.length){draft.container=saved;draft.recipeIndex=0;draft.base=saved.sizeRecipes[0];}openDraft();}
 function openDraft(){const common=draft.kind==='common';$('editEyebrow').textContent=common?'ОБЩИЙ СПИСОК ДЛЯ ВСЕХ РАЗМЕРОВ':'СОСТАВ ЯЧЕЙКИ';$('editTitle').textContent=common?kit().name:`ШСФ ${range(draft.col)} × ВСФ ${range(draft.row)} мм`;$('resetCell').hidden=common||!!kit().sizeRecipeMode;$('reviewed').parentElement.hidden=common;$('reviewed').checked=!!draft.base.reviewed;$('cellNote').value=draft.base.note||'';$('editError').hidden=true;renderBom();$('editor').showModal();}
+function bomDisplayRows(items,common,allCommon=false){
+  const signature=it=>JSON.stringify(Object.fromEntries(Object.entries(it).filter(([k])=>k!=='editPrice').sort(([a],[b])=>a.localeCompare(b))));
+  const remaining=new Map();
+  for(const it of common||[]){const key=signature(it);remaining.set(key,(remaining.get(key)||0)+1);}
+  return items.map((it,i)=>{const key=signature(it),shared=allCommon||(!['drive','scissors'].includes(it.role)&&!!it.art&&(remaining.get(key)||0)>0);if(shared&&!allCommon)remaining.set(key,remaining.get(key)-1);return {it,i,shared};}).sort((a,b)=>Number(a.shared)-Number(b.shared));
+}
 function renderBom(){
   const rows=draft.base.items;
   $('driveOptions').innerHTML=draft.kind==='cell'&&draft.row.drives.length>1?`<div class="driveselect"><b>Варианты ПО привода:</b><select id="driveChoice"><option value="">Выберите привод</option>${draft.row.drives.map(a=>`<option value="${e(a)}" ${draft.base.driveChosen&&rows.find(x=>x.role==='drive')?.art===a?'selected':''}>${e(a)} — ${e(library.articles[a]?.name||a)}</option>`).join('')}</select></div>`:draft.kind==='common'?'<div class="warn">Сохранение обновит этот общий список во всех ячейках. Ручные добавления, ножницы и ПО приводы сохранятся.</div>':'';
@@ -873,7 +879,8 @@ function renderBom(){
     select.onchange=()=>{draft.base.reviewed=$('reviewed').checked;draft.base.note=$('cellNote').value;draft.recipeIndex=Number(select.value);draft.base=draft.container.sizeRecipes[draft.recipeIndex];$('reviewed').checked=!!draft.base.reviewed;$('cellNote').value=draft.base.note||'';renderBom();};label.append(select);wrap.append(label);$('driveOptions').prepend(wrap);
   }
   if($('driveChoice'))$('driveChoice').onchange=ev=>{if(!ev.target.value)return;const item=rows.find(i=>i.role==='drive');if(item)item.art=ev.target.value;else rows.unshift(M.rowItem(ev.target.value,1,'drive'));draft.base.driveChosen=true;renderBom();};
-  $('bomRows').innerHTML=rows.map((it,i)=>{const a=library.articles[it.art],price=it.editPrice!==undefined?it.editPrice:a?.price,role=it.role==='drive'?'<small>Автоматический ПО привод по высоте</small>':it.role==='scissors'?'<small>Автоматические ножницы по ширине</small>':'',approval=it.compatibilityApproved?'<small class="manual-approval">Добавлено из другой группы после двойного подтверждения</small>':'';return `<tr><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partname" data-pick="${i}">${e(a?.name||'Выбрать деталь по названию')}</button>${role}${approval}</td><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partcode" data-pick="${i}">${e(it.art||'+ Артикул')}</button>${packNorm(it.art)}</td><td><input type="number" step="1" min="1" value="${it.qty}" data-qty="${i}" aria-label="Количество ${e(it.art)}"></td><td><input class="priceinput" type="number" step="0.01" min="0" value="${price??''}" placeholder="нет" data-price="${i}" aria-label="Цена ${e(it.art)}"></td><td data-sum="${i}">${price==null?'—':money(price*it.qty)}</td><td><button class="icon" data-remove="${i}" aria-label="Удалить ${e(it.art)}">×</button></td></tr>`;}).join('');
+  const displayed=bomDisplayRows(rows,kit().common,draft.kind==='common');
+  $('bomRows').innerHTML=displayed.map(({it,i,shared},position)=>{const a=library.articles[it.art],price=it.editPrice!==undefined?it.editPrice:a?.price,role=it.role==='drive'?'<small>Автоматический ПО привод по высоте</small>':it.role==='scissors'?'<small>Автоматические ножницы по ширине</small>':'',approval=it.compatibilityApproved?'<small class="manual-approval">Добавлено из другой группы после двойного подтверждения</small>':'';return `${position===0||shared!==displayed[position-1].shared?`<tr class="bom-section${shared?' bom-common':''}"><th colspan="6">${shared?'Общий состав':'Переменные детали'}</th></tr>`:''}<tr class="${shared?'bom-common':''}"><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partname" data-pick="${i}">${e(a?.name||'Выбрать деталь по названию')}</button>${role}${approval}</td><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partcode" data-pick="${i}">${e(it.art||'+ Артикул')}</button>${packNorm(it.art)}</td><td><input type="number" step="1" min="1" value="${it.qty}" data-qty="${i}" aria-label="Количество ${e(it.art)}"></td><td><input class="priceinput" type="number" step="0.01" min="0" value="${price??''}" placeholder="нет" data-price="${i}" aria-label="Цена ${e(it.art)}"></td><td data-sum="${i}">${price==null?'—':money(price*it.qty)}</td><td><button class="icon" data-remove="${i}" aria-label="Удалить ${e(it.art)}">×</button></td></tr>`;}).join('');
   $('bomRows').querySelectorAll('[data-pick]').forEach(b=>b.onclick=()=>openPicker(+b.dataset.pick));
   $('bomRows').querySelectorAll('[data-qty]').forEach(n=>n.oninput=()=>{rows[+n.dataset.qty].qty=n.value===''?null:Number(n.value);updateTotals();});
   $('bomRows').querySelectorAll('[data-price]').forEach(n=>n.oninput=()=>{rows[+n.dataset.price].editPrice=n.value===''?null:Number(n.value);updateTotals();});
@@ -1031,15 +1038,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.25"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.25"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.25"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.25">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.25"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.26"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.26"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.26"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.26">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.26"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.25"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.25">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.25">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.25">
+<script src="assets/js/modal-layout.js?v=2026.10.10.26"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.26">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.26">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.26">
 </body></html>
 

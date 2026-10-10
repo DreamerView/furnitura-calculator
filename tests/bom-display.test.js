@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const html=fs.readFileSync('configurator.html','utf8');
+const source=html.slice(html.indexOf('function bomDisplayRows('),html.indexOf('function renderBom(){'));
+const order=vm.runInNewContext(source+';bomDisplayRows');
+const common=[{art:'RN',qty:1,role:'common'}];
+const items=[{...common[0]},{art:'PO',qty:1,role:'drive'},{...common[0],qty:2},{...common[0]},{art:'NO',qty:1,role:'scissors'}];
+const before=JSON.stringify(items),result=order(items,common);
+assert.equal(JSON.stringify(result.map(x=>x.i)),JSON.stringify([1,2,3,4,0]));
+assert.equal(result.filter(x=>x.shared).length,1);
+assert.equal(JSON.stringify(items),before);
+assert.equal(order([{...common[0],editPrice:12}],common)[0].shared,true);
+assert.equal(order(items,common,true).every(x=>x.shared),true);
+assert.equal(order(items,[]).some(x=>x.shared),false);
+assert(html.includes('displayed.map(({it,i,shared},position)'));
+for(const name of ['pick','qty','price','sum','remove'])assert(html.includes('data-'+name+'="${i}"'));
+console.log('Common BOM display: ordering, duplicates, manual differences, original indices and immutable data verified.');
