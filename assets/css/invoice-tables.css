@@ -107,3 +107,21 @@ html:root body.workdesk-app #positions-container .free-invoice .table-wrap{margi
 html:root body.workdesk-app #positions-container .free-invoice .add-row{margin-top:4px!important}
 html:root body.workdesk-app #positions-container .free-invoice .add-row input,html:root body.workdesk-app #positions-container .free-invoice .add-row>button{height:32px!important;min-height:32px!important;padding-block:5px!important}
 html:root body.workdesk-app #positions-container .add-row .art-dd{top:auto!important;bottom:calc(100% + 4px)!important;max-height:min(260px,40vh)!important;z-index:120!important;overscroll-behavior:contain}
+
+@media screen{
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table{table-layout:fixed!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(th,td){vertical-align:middle!important}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(1){width:4%!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(2){width:13%!important;white-space:normal!important;overflow-wrap:anywhere!important;padding-left:8px!important;padding-right:8px!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(3){width:45%!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(4){width:8%!important;text-align:center!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(5){width:8%!important;text-align:center!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(6){width:9%!important;text-align:center!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(7){width:10%!important;text-align:center!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:nth-child(8){width:3%!important;text-align:center!important;}
+html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table input.qty-input{text-align:center!important}
+html:root body.workdesk-app #combined-card #inv-grand-total{text-align:center!important}
+html:root body.workdesk-app #positions-container tfoot .num{text-align:center!important}
+}
+
+html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr>:is(:nth-child(6),:nth-child(7)){display:none!important}

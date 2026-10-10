@@ -27,8 +27,8 @@ if(previewPath){
  css=css.replace(/@media screen/g,'@media not all').replace(/@media print/g,'@media all');
  pos.label='Свободная заявка';pos.rows[0].name='Петля рамы нижняя';ctx.orderPositions[1].label='Позиция с длинными названиями';ctx.orderPositions[1].scheme='Поворотно-откидная · профиль KBE 13';ctx.orderPositions[1].rows=Array.from({length:48},(_,i)=>({art:'XPNB.600-2.V.TEST-'+i,name:'Привод-ножницы с удлинителем и подтверждённой ответной планкой для профильной системы',qty:2,price:10}));for(const x of ctx.orderPositions[1].rows)ctx.DATA.master[x.art]={name:x.name,price:10};ctx.renderOrder();
  const positions=elements['positions-container'].children.slice(-2).map(x=>'<div class="'+x.className+'">'+x.innerHTML+'</div>').join('');
- const head='<thead><tr><th>№</th><th>Артикул</th><th>Наименование</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr></thead>';
- fs.writeFileSync(previewPath,'<!doctype html><meta charset="utf-8"><style>'+css+'</style><style>html{width:186mm!important;margin:auto!important}body{margin:0!important}</style><body class="workdesk-app print-positions"><div class="wrap"><div id="combined-card"><div class="invoice-print-only invoice-print-heading"><strong>FUTURUSS</strong></div><h2>Общая накладная</h2><div class="table-wrap"><table>'+head+'<tbody>'+elements['combined-tbody'].children.slice(-49).map(x=>x.innerHTML?'<tr>'+x.innerHTML+'</tr>':'').join('')+'</tbody></table></div><table><tfoot><tr class="total"><td>Итого по накладной</td><td id="inv-grand-total">'+elements['inv-grand-total'].textContent+'</td></tr></tfoot></table></div><div id="results"><div id="invoice-card"><div id="positions-container">'+positions+'</div></div></div></div></body>');
+ const head='<thead><tr><th>№</th><th>Артикул</th><th>Наименование</th><th>Шт./кор.</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr></thead>';
+ fs.writeFileSync(previewPath,'<!doctype html><meta charset="utf-8"><style>'+css+'</style><style>html{width:186mm!important;margin:auto!important}body{margin:0!important}</style><body class="workdesk-app print-positions"><div class="wrap"><div id="combined-card"><div class="invoice-print-only invoice-print-heading combined-print-heading"><span>Общая накладная (сводно по артикулам)</span><strong>FUTURUSS</strong></div><h2>Общая накладная</h2><div class="table-wrap"><table>'+head+'<tbody>'+elements['combined-tbody'].children.slice(-49).map(x=>x.innerHTML?'<tr>'+x.innerHTML+'</tr>':'').join('')+'</tbody></table></div><table><tfoot><tr class="total"><td>Итого по накладной</td><td id="inv-grand-total">'+elements['inv-grand-total'].textContent+'</td></tr></tfoot></table></div><div id="results"><div id="invoice-card"><div id="positions-container">'+positions+'</div></div></div></div></body>');
 }
 console.log('Print values and multiline position comments passed.');
 
@@ -47,3 +47,7 @@ assert(ctx.positionPressureNote({qtyRight:2,qtyLeft:3,rows:[{qty:10}]}).includes
 console.log('Pressure count stays per set for 1, 3, 10 and mixed-hand quantities.');
 
 ctx.DATA.master.RN.packQty=400;assert(ctx.invoicePackNote("RN").includes("400"));assert(ctx.invoicePackNote("MISSING").includes("—"));
+
+ctx.renderOrder();assert(elements["combined-tbody"].children.at(-2).innerHTML.includes("invoice-pack-cell"));
+
+assert.equal(ctx.invoiceDisplayLabel("Просчёт 1"),"Расчёт 1");assert.equal(ctx.invoiceDisplayLabel("Заказ Иванова"),"Заказ Иванова");

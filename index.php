@@ -334,9 +334,9 @@ header('Expires: 0');
 <style>#subtabbtn-komplekt,#subtabbtn-rules,#subtab-komplekt,#subtab-rules{display:none!important}#subtabbtn-layout,#subtab-layout{display:none!important}.matrix-family-tabs{display:flex;gap:6px;margin-top:10px}.matrix-family{flex:1;padding:8px 10px;}.matrix-family.active{}.aluminum-controls{display:grid;gap:8px;margin-top:10px;padding:10px;}.aluminum-controls[hidden],.aluminum-options[hidden]{display:none!important}.aluminum-options{display:grid;gap:7px}.aluminum-options label{display:flex!important;align-items:center;gap:7px;margin:0!important}.aluminum-options input[type=checkbox]{width:auto!important}</style>
 <!-- MATRIX_IMPORT_STYLE_END -->
 
-<meta name="futuruss-version" content="2026.10.10.11">
-<link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/spa.css?v=2026.10.10.11">
+<meta name="futuruss-version" content="2026.10.10.12">
+<link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/spa.css?v=2026.10.10.12">
 </head>
 <body class="workdesk-app">
 <div id="appPreloader" role="status" aria-live="polite">
@@ -506,7 +506,7 @@ header('Expires: 0');
 
   <div class="invoice-column">
   <div class="card" id="combined-card" style="display:none;">
-    <div class="invoice-print-only invoice-print-heading"><strong>FUTURUSS</strong></div>
+    <div class="invoice-print-only invoice-print-heading combined-print-heading"><span>Общая накладная (сводно по артикулам)</span><strong>FUTURUSS</strong></div>
     <h2><span class="num"><span class="ui-icon i-check-circle" aria-hidden="true"></span></span>Общая накладная (сводно по артикулам)</h2>
     <div class="invoice-head">
       <div><b>Позиций:</b> <span id="inv-count"></span></div>
@@ -515,7 +515,7 @@ header('Expires: 0');
 
     <div class="table-wrap">
       <table>
-        <thead><tr><th style="width:24px;">№</th><th>Артикул</th><th>Наименование</th><th class="num">Кол-во</th><th class="num">Цена</th><th class="num">Сумма</th></tr></thead>
+        <thead><tr><th style="width:24px;">№</th><th>Артикул</th><th>Наименование</th><th class="num invoice-pack-cell">Шт./кор.</th><th class="num">Кол-во</th><th class="num">Цена</th><th class="num">Сумма</th></tr></thead>
         <tbody id="combined-tbody"></tbody>
       </table>
     </div>
@@ -1241,29 +1241,29 @@ html[data-interface-theme] #positions-container .pos-block tbody td>button.small
 
 
 
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.11">
-<script src="assets/vendor/vue.global.prod.js?v=2026.10.10.11"></script>
-<script src="assets/vendor/vue-router-lite.js?v=2026.10.10.11"></script>
-<script src="assets/js/idb-store.js?v=2026.10.10.11"></script>
-<script src="assets/js/preview-gallery.js?v=2026.10.10.11"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.11"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.11"></script>
-<script src="assets/js/bootstrap.js?v=2026.10.10.11"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.11">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.11"></script>
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.12">
+<script src="assets/vendor/vue.global.prod.js?v=2026.10.10.12"></script>
+<script src="assets/vendor/vue-router-lite.js?v=2026.10.10.12"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.12"></script>
+<script src="assets/js/preview-gallery.js?v=2026.10.10.12"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.12"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.12"></script>
+<script src="assets/js/bootstrap.js?v=2026.10.10.12"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.12">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.12"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.11"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/calculator-options.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/calculator-header.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/invoice-tables.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/calculator-actions.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.11">
-<link rel="stylesheet" href="assets/css/price-categories.css?v=2026.10.10.11">
-<script src="assets/js/invoice-strike-editor.js?v=2026.10.10.11"></script>
-<link rel="stylesheet" href="assets/css/invoice-print.css?v=2026.10.10.11">
+<script src="assets/js/modal-layout.js?v=2026.10.10.12"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/calculator-options.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/calculator-header.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/invoice-tables.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/calculator-actions.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.12">
+<link rel="stylesheet" href="assets/css/price-categories.css?v=2026.10.10.12">
+<script src="assets/js/invoice-strike-editor.js?v=2026.10.10.12"></script>
+<link rel="stylesheet" href="assets/css/invoice-print.css?v=2026.10.10.12">
 </body>
 </html>
 
