@@ -31,3 +31,9 @@ if(previewPath){
  fs.writeFileSync(previewPath,'<!doctype html><meta charset="utf-8"><style>'+css+'</style><style>html{width:186mm!important;margin:auto!important}body{margin:0!important}</style><body class="workdesk-app print-positions"><div class="wrap"><div id="combined-card"><div class="invoice-print-only invoice-print-heading"><strong>FUTURUSS</strong></div><h2>Общая накладная</h2><div class="table-wrap"><table>'+head+'<tbody>'+elements['combined-tbody'].children.slice(-49).map(x=>x.innerHTML?'<tr>'+x.innerHTML+'</tr>':'').join('')+'</tbody></table></div></div><div id="results"><div id="invoice-card"><div id="positions-container">'+positions+'</div></div></div></div></body>');
 }
 console.log('Print values and multiline position comments passed.');
+
+ctx.MatrixCore={strikeRole:()=>null,camSpec:()=>({extension:true}),extensionZone:r=>r.zone,pressureSummary:()=>({complete:true,points:2,unknown:[]})};
+const merged=Object.values(ctx.invoiceCombinedRows([{rows:[{art:'XU',qty:1,price:10,zone:'rear'},{art:'XU',qty:2,price:10,zone:'bottom'},{art:'XU',qty:1,price:10,zone:'rear'}]}]))[0];
+assert.equal(merged.qty,4);assert.equal(merged.engineeringNotes.length,2);assert(merged.engineeringNotes.join('').includes('снизу'));assert(merged.engineeringNotes.join('').includes('со стороны петель'));
+ctx.renderOrder();assert(elements['combined-position-notes'].innerHTML.includes('Первая строка'));assert(elements['combined-position-notes'].innerHTML.includes('Точки прижима'));
+console.log('Combined invoice retains distinct placements, comments and pressure summaries.');

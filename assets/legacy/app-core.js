@@ -909,6 +909,11 @@ function invoiceCombinedRows(positions){
     const key=JSON.stringify([row.art,row.price]);
     combined[key]??={art:row.art,name:row.name,qty:0,price:row.price,isDefaultPrice:row.isDefaultPrice};
     combined[key].qty+=row.qty;
+    if(!pos.freeInvoice){
+      const note=positionEngineeringNote(row);
+      combined[key].engineeringNotes??=[];
+      if(note&&!combined[key].engineeringNotes.includes(note))combined[key].engineeringNotes.push(note);
+    }
   }
   return combined;
 }
@@ -1034,13 +1039,19 @@ function renderOrder(){
     tr.className = "row-item" + (isHingeKitArt(art) ? " hinge-kit" : "") + (isDriveArt(art) ? " drive-row" : "");
     tr.dataset.article = art;
     tr.ondblclick = () => showPhoto(art, c.name, "invoice");
-    tr.innerHTML = `<td>${i+1}</td><td class="article ${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(art)}</td><td class="${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(c.name)}</td>
+    tr.innerHTML = `<td>${i+1}</td><td class="article ${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(art)}</td><td class="${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(c.name)}${(c.engineeringNotes||[]).join(' ')}</td>
       <td class="num">${c.qty}</td>
       <td class="num${c.isDefaultPrice?' price-default':''}">${c.price.toFixed(2)}${c.isDefaultPrice?'*':''}</td>
       <td class="num">${sum.toFixed(2)}</td>`;
     combinedTbody.appendChild(tr);
   });
 
+  const summaryNotes=document.getElementById('combined-position-notes');
+  if(summaryNotes)summaryNotes.innerHTML=orderPositions.map((pos,i)=>{
+    const pressure=pos.freeInvoice?'':positionPressureNote(pos);
+    if(!pressure&&!pos.comment)return '';
+    return `<div class="invoice-summary-note"><b>№ ${i+1} · ${esc(pos.label)}</b> ${pressure}${pos.comment?`<p>${esc(pos.comment)}</p>`:''}</div>`;
+  }).join('');
   document.getElementById("inv-count").textContent = orderPositions.length;
   document.getElementById("inv-date").textContent = new Date().toLocaleDateString("ru-RU");
   document.getElementById("inv-grand-total").textContent = grandTotal.toFixed(2);
