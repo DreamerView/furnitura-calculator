@@ -10,6 +10,14 @@ final class Wholesale {
         if(($actor['role']??'')!=='dealer'||!$node||$node['parent_id']!==null||!$access->effectiveActive($state,$id))throw new RuntimeException('Недостаточно прав.');
         return $id;
     }
+    public static function withPackNorms(array $catalog, string $path): array {
+        return self::transact($path, static function(array &$data) use ($catalog): array {
+            foreach (($catalog['articles']??[]) as $art=>$record) {
+                $catalog['articles'][$art]['packQty']=$data['logistics'][$art]['packQty']??$record['packQty']??null;
+            }
+            return $catalog;
+        });
+    }
     public static function defaults(): array {return ['nextId'=>1,'requests'=>[],'favorites'=>[],'logistics'=>[],'logisticsRevision'=>0];}
     public static function transact(string $path,callable $fn): array {
         $lock=fopen($path.'.lock','c');if(!$lock||!flock($lock,LOCK_EX))throw new RuntimeException('WS_STORAGE');

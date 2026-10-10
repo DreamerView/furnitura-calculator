@@ -35,3 +35,14 @@ $r=Wholesale::mutate($d,$s,null,'wholesale_status',['id'=>1,'revision'=>7,'statu
 $r=Wholesale::mutate($d,$s,null,'wholesale_status',['id'=>1,'revision'=>8,'status'=>'returned','supplierComment'=>'Review again'])['request'];eq($r['status'],'returned','accepted may return');
 $hidden=Wholesale::redactPrices(['request'=>$r],false);eq($hidden['request']['history'][2]['previousTotals']['amount'],null,'history prices redacted');
 echo "Wholesale replies and correction lifecycle passed.\n";
+
+$packFixture=__DIR__.'/pack-norm-test-'.bin2hex(random_bytes(4)).'.json';
+try {
+ file_put_contents($packFixture,json_encode(['logistics'=>['A'=>['packQty'=>40]],'requests'=>[['comment'=>'private']]]));
+ $merged=Wholesale::withPackNorms($s['catalog'],$packFixture);
+ eq($merged['articles']['A']['packQty'],40,'logistics override');
+ eq($merged['articles']['B']['packQty'],10,'catalog fallback');
+ eq($merged['articles']['C']['packQty'],null,'unknown pack');
+ eq(isset($merged['requests']),false,'no private request data');
+} finally {unlink($packFixture);if(is_file($packFixture.'.lock'))unlink($packFixture.'.lock');}
+echo "Pack norms: override, fallback, unknown and no private data passed.\n";

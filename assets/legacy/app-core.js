@@ -923,6 +923,11 @@ function updatePositionComment(id,value){
   pos.comment=String(value);renderOrder();
 }
 
+function invoicePackNote(art){
+  const n=Number(DATA.master[art]?.packQty);
+  const label=globalThis.FuturussI18n?.translate('Шт./кор.')||'Шт./кор.';
+  return '<small class="invoice-pack-note">'+esc(label)+': '+(Number.isFinite(n)&&n>0?n:'—')+'</small>';
+}
 function positionEngineeringNote(row){
   const M=globalThis.MatrixCore;if(!M)return '';
   const stayDrive=/^(?:X?PNB|PNF)\./.test(row.art||'');
@@ -984,7 +989,7 @@ function renderOrder(){
       return `
       <tr data-position-id="${pos.id}" data-row-index="${idx}" class="row-item${r.pricingUnavailable?' pricing-unavailable':''}${isHingeKitArt(r.art) ? ' hinge-kit' : ''}${isDriveArt(r.art) ? ' drive-row' : ''}" ondblclick="showPhoto(${inlineJsArg(r.art)}, ${inlineJsArg(r.name)}, 'invoice')">
         <td>${displayIdx+1}</td>
-        <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}</td>
+        <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}${invoicePackNote(r.art)}</td>
         <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}${pos.freeInvoice?'':positionEngineeringNote(r)}</td>
         <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value)"><span class="invoice-print-only">${esc(r.qty)}</span></td>
         <td class="num${r.isDefaultPrice?' price-default':''}">${pos.freeInvoice&&canPrice?`<input class="qty-input free-price-input" type="number" min="0" step="0.01" aria-label="Цена" value="${r.price.toFixed(2)}" onclick="event.stopPropagation()" onchange="updateFreeRowPrice(${pos.id},${idx},this.value)"><span class="invoice-print-only">${r.price.toFixed(2)}</span>`:r.price.toFixed(2)+(r.isDefaultPrice?'*':'')}</td>
@@ -1004,9 +1009,9 @@ function renderOrder(){
       ${pos.plateCalculation?.rule==='unverified'?'<p class="hint">'+esc(globalThis.FuturussI18n?.translate('PLS: схема соединений не проверена. Сохранено количество из комплектации; проверьте его вручную.')||'PLS: схема соединений не проверена. Сохранено количество из комплектации; проверьте его вручную.')+'</p>':''}
       ${pos.freeInvoice?'':`<div class="swatch-row">
         ${pos.lowerNode&&pos.lowerNode!=='catalog'?'<span class="pill">'+esc(globalThis.FuturussI18n?.translate(pos.lowerNode==='bolt'?'Шпингалет — вертикальная ответная планка':'Взломостойкий зацеп — нижняя горизонталь')||pos.lowerNode)+'</span>':''}
-        <span class="pill">ШСФ ${pos.width}×ВСФ ${pos.height} мм</span>
+        <span class="pill">ШСФ×ВСФ: ${pos.width}×${pos.height} мм</span>
         <span class="pill">${pos.sashQty} ств. (П: ${pos.qtyRight} / Л: ${pos.qtyLeft})</span>
-        <span class="pill">${esc(pos.blockRange)}</span>
+        <span class="pill invoice-range">${esc(pos.blockRange)}</span>
         ${pos.groove ? `<span class="pill">Паз: ${esc(pos.groove)}</span>` : ""}
         ${positionPressureNote(pos)}
       </div>`}
@@ -1041,7 +1046,7 @@ function renderOrder(){
     tr.className = "row-item" + (isHingeKitArt(art) ? " hinge-kit" : "") + (isDriveArt(art) ? " drive-row" : "");
     tr.dataset.article = art;
     tr.ondblclick = () => showPhoto(art, c.name, "invoice");
-    tr.innerHTML = `<td>${i+1}</td><td class="article ${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(art)}</td><td class="${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(c.name)}${(c.engineeringNotes||[]).join(' ')}</td>
+    tr.innerHTML = `<td>${i+1}</td><td class="article ${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(art)}${invoicePackNote(art)}</td><td class="${globalThis.FuturussHardwareColors?.cellClass(art,DATA.master[art]||c)||''}">${esc(c.name)}${(c.engineeringNotes||[]).join(' ')}</td>
       <td class="num">${c.qty}</td>
       <td class="num${c.isDefaultPrice?' price-default':''}">${c.price.toFixed(2)}${c.isDefaultPrice?'*':''}</td>
       <td class="num">${sum.toFixed(2)}</td>`;

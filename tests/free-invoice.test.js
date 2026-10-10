@@ -45,3 +45,5 @@ for(const count of [1,3,10]){
 }
 assert(ctx.positionPressureNote({qtyRight:2,qtyLeft:3,rows:[{qty:10}]}).includes(': 4</span>'));
 console.log('Pressure count stays per set for 1, 3, 10 and mixed-hand quantities.');
+
+ctx.DATA.master.RN.packQty=400;assert(ctx.invoicePackNote("RN").includes("400"));assert(ctx.invoicePackNote("MISSING").includes("—"));

@@ -20,9 +20,9 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.10">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.10"><script src="assets/js/hardware-colors.js?v=2026.10.10.10"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.10"></script><script src="assets/js/cam-selector.js?v=2026.10.10.10"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.10"><script src="assets/js/calculation-technology.js?v=2026.10.10.10"></script>
-</head>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.11">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.11"><script src="assets/js/hardware-colors.js?v=2026.10.10.11"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.11"></script><script src="assets/js/cam-selector.js?v=2026.10.10.11"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.11"><script src="assets/js/calculation-technology.js?v=2026.10.10.11"></script>
+<style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
 <nav class="families" id="familyTabs" aria-label="Раздел фурнитуры"><button type="button" class="family active" data-family="pvc">FUTURUSS для ПВХ окон</button><button type="button" class="family" data-family="aluminum">FUTURUSS для ALU</button></nav>
@@ -822,7 +822,7 @@ function renderBom(){
     select.onchange=()=>{draft.base.reviewed=$('reviewed').checked;draft.base.note=$('cellNote').value;draft.recipeIndex=Number(select.value);draft.base=draft.container.sizeRecipes[draft.recipeIndex];$('reviewed').checked=!!draft.base.reviewed;$('cellNote').value=draft.base.note||'';renderBom();};label.append(select);wrap.append(label);$('driveOptions').prepend(wrap);
   }
   if($('driveChoice'))$('driveChoice').onchange=ev=>{if(!ev.target.value)return;const item=rows.find(i=>i.role==='drive');if(item)item.art=ev.target.value;else rows.unshift(M.rowItem(ev.target.value,1,'drive'));draft.base.driveChosen=true;renderBom();};
-  $('bomRows').innerHTML=rows.map((it,i)=>{const a=library.articles[it.art],price=it.editPrice!==undefined?it.editPrice:a?.price,role=it.role==='drive'?'<small>Автоматический ПО привод по высоте</small>':it.role==='scissors'?'<small>Автоматические ножницы по ширине</small>':'',approval=it.compatibilityApproved?'<small class="manual-approval">Добавлено из другой группы после двойного подтверждения</small>':'';return `<tr><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partname" data-pick="${i}">${e(a?.name||'Выбрать деталь по названию')}</button>${role}${approval}</td><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partcode" data-pick="${i}">${e(it.art||'+ Артикул')}</button></td><td><input type="number" step="1" min="1" value="${it.qty}" data-qty="${i}" aria-label="Количество ${e(it.art)}"></td><td><input class="priceinput" type="number" step="0.01" min="0" value="${price??''}" placeholder="нет" data-price="${i}" aria-label="Цена ${e(it.art)}"></td><td data-sum="${i}">${price==null?'—':money(price*it.qty)}</td><td><button class="icon" data-remove="${i}" aria-label="Удалить ${e(it.art)}">×</button></td></tr>`;}).join('');
+  $('bomRows').innerHTML=rows.map((it,i)=>{const a=library.articles[it.art],price=it.editPrice!==undefined?it.editPrice:a?.price,role=it.role==='drive'?'<small>Автоматический ПО привод по высоте</small>':it.role==='scissors'?'<small>Автоматические ножницы по ширине</small>':'',approval=it.compatibilityApproved?'<small class="manual-approval">Добавлено из другой группы после двойного подтверждения</small>':'';return `<tr><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partname" data-pick="${i}">${e(a?.name||'Выбрать деталь по названию')}</button>${role}${approval}</td><td class="${FuturussHardwareColors.cellClass(it.art,a)}"><button class="partcode" data-pick="${i}">${e(it.art||'+ Артикул')}</button>${packNorm(it.art)}</td><td><input type="number" step="1" min="1" value="${it.qty}" data-qty="${i}" aria-label="Количество ${e(it.art)}"></td><td><input class="priceinput" type="number" step="0.01" min="0" value="${price??''}" placeholder="нет" data-price="${i}" aria-label="Цена ${e(it.art)}"></td><td data-sum="${i}">${price==null?'—':money(price*it.qty)}</td><td><button class="icon" data-remove="${i}" aria-label="Удалить ${e(it.art)}">×</button></td></tr>`;}).join('');
   $('bomRows').querySelectorAll('[data-pick]').forEach(b=>b.onclick=()=>openPicker(+b.dataset.pick));
   $('bomRows').querySelectorAll('[data-qty]').forEach(n=>n.oninput=()=>{rows[+n.dataset.qty].qty=n.value===''?null:Number(n.value);updateTotals();});
   $('bomRows').querySelectorAll('[data-price]').forEach(n=>n.oninput=()=>{rows[+n.dataset.price].editPrice=n.value===''?null:Number(n.value);updateTotals();});
@@ -848,7 +848,7 @@ function openPicker(index=null){pickTarget=index;$('pickerTitle').textContent=in
 function searchParts(){
    const q=$('search').value.trim().toLocaleLowerCase(),filter=$('partFilter').value,section=$('sectionFilter').value,subgroup=$('subgroupFilter').value,current=kit(),column=pickTarget===null?null:current.columns.find(c=>c.id===draft.col.id),row=pickTarget===null?null:current.rows.find(r=>r.id===draft.row.id);
    const list=Object.entries(library.articles).filter(([a,p])=>{const groups=p.subgroups?.length?p.subgroups:[p.group],variantOk=filter==='all'||a==='NO.600'||!p.variants?.length||p.variants.includes(current.variant),sizeOk=filter!=='cell'||((!p.width||(column&&p.width.min<=column.from&&p.width.max>=column.to))&&(!p.height||(row&&p.height.min<=row.from&&p.height.max>=row.to)));return(a+' '+p.name).toLocaleLowerCase().includes(q)&&variantOk&&sizeOk&&(section==='all'||p.section===section)&&(subgroup==='all'||groups.includes(subgroup));});
-   $('searchCount').textContent=`Найдено ${list.length}`;$('searchRows').innerHTML=list.slice(0,120).map(([a,p])=>`<tr><td><b>${e(a)}</b></td><td>${e(p.name)}<br><small class="hint">${p.width?'ШСФ '+p.width.min+'–'+p.width.max+' · ':''}${p.height?'ВСФ '+p.height.min+'–'+p.height.max+' · ':''}${p.dornmass?'Дорнмасс '+p.dornmass+' мм · ':''}${p.photos?.length?'Фото '+p.photos.length+' · ':''}${e(p.section||'Без раздела')} · ${e((p.subgroups?.length?p.subgroups:[p.group]).filter(Boolean).join(' / '))}</small></td><td>${money(p.price)}</td><td><button data-article="${e(a)}">${pickTarget===null?'Править':'Выбрать'}</button></td></tr>`).join('');
+   $('searchCount').textContent=`Найдено ${list.length}`;$('searchRows').innerHTML=list.slice(0,120).map(([a,p])=>`<tr><td><b>${e(a)}</b>${packNorm(a)}</td><td>${e(p.name)}<br><small class="hint">${p.width?'ШСФ '+p.width.min+'–'+p.width.max+' · ':''}${p.height?'ВСФ '+p.height.min+'–'+p.height.max+' · ':''}${p.dornmass?'Дорнмасс '+p.dornmass+' мм · ':''}${p.photos?.length?'Фото '+p.photos.length+' · ':''}${e(p.section||'Без раздела')} · ${e((p.subgroups?.length?p.subgroups:[p.group]).filter(Boolean).join(' / '))}</small></td><td>${money(p.price)}</td><td><button data-article="${e(a)}">${pickTarget===null?'Править':'Выбрать'}</button></td></tr>`).join('');
   $('searchRows').querySelectorAll('[data-article]').forEach(b=>b.onclick=()=>{
     const art=b.dataset.article;if(pickTarget===null){openArticle(art);return;}const item=draft.base.items[pickTarget],mismatch=compatibilityMismatch(art);if(mismatch&&!approveCompatibility(art))return;
     if(art==='NO.600'){
@@ -881,7 +881,8 @@ function calculate(selection=null){const p=params(),k=kit(),r=M.calculate(librar
   if($('editResult'))$('editResult').onclick=()=>{const row=k.rows.findIndex(x=>x.id===r.chosen.rowId),col=k.columns.findIndex(x=>x.id===r.chosen.colId);openCell(row,col);if(!k.cells[M.key(k.rows[row],k.columns[col])]){const draftDrive=draft.base.items.find(i=>i.role==='drive');if(draftDrive)draftDrive.art=r.chosen.drive;draft.base.driveChosen=true;renderBom();}};
   if($('addInvoice'))$('addInvoice').onclick=()=>{invoice.push({id:M.uid(),name:k.name,profile:k.profile,side:k.side,...p,items:M.copy(r.items),total:r.total});renderInvoice();toast('Добавлено в накладную.');};
 }
-function itemTable(items){return `<table class="bom"><thead><tr><th>Наименование</th><th>Артикул</th><th>Шт.</th><th>Цена, ₽</th><th>Сумма, ₽</th></tr></thead><tbody>${items.map(i=>`<tr><td class="${FuturussHardwareColors.cellClass(i.art,library.articles[i.art]||i)}">${e(i.name)}</td><td class="${FuturussHardwareColors.cellClass(i.art,library.articles[i.art]||i)}">${e(i.art)}</td><td>${i.qty}</td><td>${money(i.price)}</td><td>${money(i.price==null?null:i.qty*i.price)}</td></tr>`).join('')}</tbody></table>`;}
+function packNorm(art){const n=Number(library.articles[art]?.packQty);return '<small class="pack-norm">Шт./кор.: '+(Number.isFinite(n)&&n>0?n:'—')+'</small>';}
+function itemTable(items){return `<table class="bom"><thead><tr><th>Наименование</th><th>Артикул</th><th>Шт.</th><th>Цена, ₽</th><th>Сумма, ₽</th></tr></thead><tbody>${items.map(i=>`<tr><td class="${FuturussHardwareColors.cellClass(i.art,library.articles[i.art]||i)}">${e(i.name)}</td><td class="${FuturussHardwareColors.cellClass(i.art,library.articles[i.art]||i)}">${e(i.art)}${packNorm(i.art)}</td><td>${i.qty}</td><td>${money(i.price)}</td><td>${money(i.price==null?null:i.qty*i.price)}</td></tr>`).join('')}</tbody></table>`;}
 function renderInvoice(){$('order').hidden=!invoice.length;if(!invoice.length)return;$('order').innerHTML='<h2>Накладная</h2>'+invoice.map((p,i)=>`<div class="sheettitle"><b>${i+1}. ${e(p.name)} · ${p.width} × ${p.height} · ${p.count} шт.</b><button data-delete-order="${i}" class="push">Удалить позицию</button></div>${itemTable(p.items)}`).join('')+`<p class="resulttotal">Общая сумма: ${money(invoice.reduce((s,p)=>s+p.total,0))} ₽</p><div class="resultactions"><button id="exportInvoice" class="primary">Скачать накладную CSV</button><button id="printInvoice">Печать</button></div>`;$('order').querySelectorAll('[data-delete-order]').forEach(b=>b.onclick=()=>{invoice.splice(+b.dataset.deleteOrder,1);renderInvoice();});$('exportInvoice').onclick=exportInvoice;$('printInvoice').onclick=()=>window.print();}
 function download(text,name,type){const url=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 
@@ -979,15 +980,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.10"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.10"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.10"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.10">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.10"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.11"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.11"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.11"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.11">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.11"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.10"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.10">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.10">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.10">
+<script src="assets/js/modal-layout.js?v=2026.10.10.11"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.11">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.11">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.11">
 </body></html>
 

@@ -37,7 +37,7 @@
     for(const [art,record] of Object.entries(data.articles)){
       if(record.available===false)continue;
       const previous=existing[art]||{},group=record.group||previous.group||'Из конструктора',photos=[...new Set(photoSources(record.photos))];
-      DATA.master[art]={...previous,name:record.name||previous.name||art,price:Number.isFinite(record.price)?record.price:0,section:record.section||previous.section||'',group,subgroups:Array.isArray(record.subgroups)?record.subgroups.slice():Array.isArray(previous.subgroups)?previous.subgroups.slice():[],photos};delete DATA.master[art].photo;
+      DATA.master[art]={...previous,name:record.name||previous.name||art,packQty:record.packQty??null,price:Number.isFinite(record.price)?record.price:0,section:record.section||previous.section||'',group,subgroups:Array.isArray(record.subgroups)?record.subgroups.slice():Array.isArray(previous.subgroups)?previous.subgroups.slice():[],photos};delete DATA.master[art].photo;
       DATA.groups[art]=group;if(!DATA.group_order.includes(group))DATA.group_order.push(group);count++;
     }
     if(typeof renderMasterGroups==='function')renderMasterGroups();

@@ -5,6 +5,7 @@
 .position-comment-editor textarea{box-sizing:border-box;width:100%;min-height:56px;margin-top:6px;padding:8px;border:1px solid var(--border);border-radius:8px;font:inherit;color:var(--text);background:var(--surface);resize:vertical}
 .invoice-summary-note{margin-top:8px;font-size:12px;overflow-wrap:anywhere}
 .invoice-summary-note p{margin:3px 0;white-space:pre-wrap}
+.invoice-pack-note{display:none}
 @page{size:A4 portrait;margin:12mm}
 @media print{
  html:root body.workdesk-app{background:white!important;color:#111!important;font:9pt/1.35 Arial,sans-serif!important;margin:0!important;padding:0!important}
@@ -16,6 +17,9 @@
  html:root body.workdesk-app.print-positions #results{display:block!important}
  html:root body.workdesk-app #invoice-card>h2{display:none!important}
  html:root body.workdesk-app #positions-container .pos-block{padding:0!important;margin:0!important;border:0!important;border-radius:0!important;break-before:page!important;page-break-before:always!important;break-after:auto!important;page-break-after:auto!important;break-inside:auto!important}
+ html:root body.workdesk-app #positions-container .swatch-row .invoice-range{display:none!important}
+ html:root body.workdesk-app .invoice-pack-note{display:block!important;font:7pt/1.2 Arial,sans-serif!important;color:#555!important;margin-top:.5mm}
+ html:root body.workdesk-app #positions-container .swatch-row .pill+ .pill{border-left:.4pt solid #bbb!important;padding-left:2mm!important}
  html:root body.workdesk-app .invoice-print-only{display:inline!important}
  html:root body.workdesk-app .invoice-print-heading{display:flex!important;justify-content:space-between;align-items:baseline;gap:8mm;padding:0 0 3mm!important;margin:0 0 3mm!important;border-bottom:1pt solid #333;font-size:9pt;break-after:avoid}
  .invoice-print-heading strong{font-size:14pt;letter-spacing:.3pt}
@@ -23,7 +27,7 @@
  html:root body.workdesk-app #combined-card .invoice-head{display:flex!important;flex-wrap:wrap;gap:3mm 8mm;margin:0 0 3mm!important;font-size:9pt;color:#333!important}
  html:root body.workdesk-app #positions-container .pos-title-row{display:block!important;margin:0 0 2mm!important;min-height:0!important;break-after:avoid}
  html:root body.workdesk-app #positions-container .pos-title-row>b{font:600 12pt/1.3 Arial,sans-serif!important}
- html:root body.workdesk-app #positions-container .swatch-row{display:flex!important;flex-wrap:wrap;gap:1mm 4mm;margin:2mm 0 3mm!important;break-after:avoid}
+ html:root body.workdesk-app #positions-container .swatch-row{display:flex!important;flex-wrap:wrap;gap:.7mm 3mm;margin:1mm 0 2mm!important;break-after:avoid}
  html:root body.workdesk-app #positions-container .pill{display:inline!important;background:transparent!important;color:#333!important;border:0!important;padding:0!important;margin:0!important;font:8pt/1.35 Arial,sans-serif!important;white-space:normal!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap{display:block!important;width:100%!important;overflow:visible!important;max-height:none!important;margin:0!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) table{display:table!important;width:100%!important;min-width:0!important;max-width:100%!important;table-layout:fixed!important;border-collapse:collapse!important;margin:0!important;font:9pt/1.35 Arial,sans-serif!important;color:#111!important}
@@ -37,19 +41,19 @@
  html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(2){width:18%!important;text-align:left!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(3){width:48%!important;text-align:left!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(4){width:8%!important;text-align:center!important}
- html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(5){width:10%!important;text-align:right!important}
- html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(6){width:12%!important;text-align:right!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(5){width:10%!important;text-align:center!important}
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap :is(th,td):nth-child(6){width:12%!important;text-align:center!important}
  html:root body.workdesk-app #positions-container :is(thead,tbody) tr>:nth-child(7),html:root body.workdesk-app #positions-container tfoot tr>td:last-child{display:none!important}
  html:root body.workdesk-app #positions-container input{display:none!important}
  html:root body.workdesk-app :is(#combined-card,#positions-container) .engineering-note{font-size:8pt!important;color:#555!important;font-weight:400!important}
  html:root body.workdesk-app #positions-container tr.drive-row td:nth-child(3){font-weight:600!important}
  html:root body.workdesk-app #positions-container tr.hinge-kit td{background:#f5f5f5!important;print-color-adjust:exact}
- html:root body.workdesk-app #positions-container tfoot tr.total td{width:auto!important;font-weight:600!important;border-top:.7pt solid #555!important;text-align:right!important}
+ html:root body.workdesk-app #positions-container tfoot tr.total td{width:auto!important;font-weight:600!important;border-top:.7pt solid #555!important;text-align:center!important}
  html:root body.workdesk-app #positions-container tfoot tr.total td:first-child{text-align:left!important}
  html:root body.workdesk-app #combined-card #inv-grand-total{font:700 11pt/1.35 Arial,sans-serif!important;color:#111!important;white-space:normal!important;overflow-wrap:anywhere!important}
  html:root body.workdesk-app #combined-card>table{margin-top:2mm!important;break-inside:avoid}
  html:root body.workdesk-app #combined-card>table td:first-child{width:88%!important;font-weight:600!important}
- html:root body.workdesk-app #combined-card>table td:last-child{width:12%!important;text-align:right!important;font-weight:600!important}
+ html:root body.workdesk-app #combined-card>table td:last-child{width:12%!important;text-align:center!important;font-weight:600!important}
  html:root body.workdesk-app .invoice-print-comment{display:block!important;margin:3mm 0!important;font-size:9pt;white-space:normal;overflow-wrap:anywhere}
  .invoice-print-comment p{margin:1mm 0 0;white-space:pre-wrap;orphans:2;widows:2}
  html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap :is(th,td):is(:nth-child(5),:nth-child(6)){display:none!important}

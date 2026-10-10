@@ -35,7 +35,7 @@ try{
  if($action==='client_register'){if($_SERVER['REQUEST_METHOD']!=='POST')out(['error'=>'POST required'],405);$r=$svc->registerClient(input());out(array_merge(['ok'=>true,'csrf'=>csrf()],$r));}
  if($action==='login_key'){if($_SERVER['REQUEST_METHOD']!=='POST')out(['error'=>'POST required'],405);$p=input();$invite=$svc->clientInvite((string)($p['key']??''));out(['ok'=>true,'requiresRegistration'=>true]+$invite);}
  if($action==='logout'){if($_SERVER['REQUEST_METHOD']!=='POST')out(['error'=>'POST required'],405);if(!empty($a['authenticated']))requireCsrf();$_SESSION=[];if(ini_get('session.use_cookies')){$params=session_get_cookie_params();setcookie(session_name(),'',time()-42000,$params['path'],$params['domain'],$params['secure'],$params['httponly']);}session_destroy();out(['ok'=>true]);}
-  if($action==='catalog'){$catalog=$s['catalog']??null;if(!$catalog)out(['ok'=>true,'available'=>false,'data'=>null,'canViewPrices'=>false,'updatedAt'=>null]);$can=!empty($a['canViewPrices']);$copy=Pricing::catalog($s,$svc,!empty($a['authenticated'])&&!empty($a['nodeId'])?(int)$a['nodeId']:null);if(!$can&&isset($copy['articles'])&&is_array($copy['articles']))foreach($copy['articles'] as &$article){if(is_array($article))$article['price']=0;}unset($article);out(['ok'=>true,'available'=>true,'data'=>$copy,'canViewPrices'=>$can,'updatedAt'=>$s['catalogUpdatedAt']??null]);}
+  if($action==='catalog'){$catalog=$s['catalog']??null;if(!$catalog)out(['ok'=>true,'available'=>false,'data'=>null,'canViewPrices'=>false,'updatedAt'=>null]);$can=!empty($a['canViewPrices']);$copy=Pricing::catalog($s,$svc,!empty($a['authenticated'])&&!empty($a['nodeId'])?(int)$a['nodeId']:null);$copy=Wholesale::withPackNorms($copy,dirname(__DIR__).'/storage/wholesale.json');if(!$can&&isset($copy['articles'])&&is_array($copy['articles']))foreach($copy['articles'] as &$article){if(is_array($article))$article['price']=0;}unset($article);out(['ok'=>true,'available'=>true,'data'=>$copy,'canViewPrices'=>$can,'updatedAt'=>$s['catalogUpdatedAt']??null]);}
  if(in_array($action,['wholesale','wholesale_save','wholesale_send','wholesale_status','wholesale_message','wholesale_favorite','wholesale_logistics'],true)){
   $dealer=Wholesale::authorize($a,$s,$svc);$p=[];
   if($action!=='wholesale'){if($_SERVER['REQUEST_METHOD']!=='POST')out(['error'=>'POST required'],405);requireCsrf();$p=input();}
@@ -57,7 +57,7 @@ try{
  if($action==='catalog_editor'){
   requireAuth($a,['central']);$catalog=$s['catalog']??null;$isSeed=false;
   if(!$catalog){$seedPath=dirname(__DIR__).'/storage/default-catalog.json';$raw=@file_get_contents($seedPath);$catalog=json_decode((string)$raw,true);if(!is_array($catalog))throw new RuntimeException('Не удалось загрузить исходный каталог.');$isSeed=true;}
-  out(['ok'=>true,'available'=>true,'data'=>$catalog,'isSeed'=>$isSeed,'updatedAt'=>$s['catalogUpdatedAt']??null]);
+  out(['ok'=>true,'available'=>true,'data'=>Wholesale::withPackNorms($catalog,dirname(__DIR__).'/storage/wholesale.json'),'isSeed'=>$isSeed,'updatedAt'=>$s['catalogUpdatedAt']??null]);
  }
  if($action==='catalog_save'){
   requireAuth($a,['central']);requireCsrf();$p=input();$cat=$p['catalog']??null;

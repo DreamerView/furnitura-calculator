@@ -1,6 +1,7 @@
 (function(){
 'use strict';
 const dict={
+"Шт./кор.":["Pcs/box","Adet/kutu"],
 "Точки прижима на один комплект":["Locking points per set","Set başına kilitleme noktaları"],
 "Подтверждённые точки прижима на один комплект":["Confirmed locking points per set","Set başına doğrulanmış kilitleme noktaları"],
 "На один комплект. Петли и пассивные прижимы не включены.":["Per set. Hinges and passive clamps are excluded.","Set başına. Menteşeler ve pasif baskılar dahil değildir."],
