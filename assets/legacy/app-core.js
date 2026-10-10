@@ -913,6 +913,11 @@ function invoiceCombinedRows(positions){
   return combined;
 }
 
+function updatePositionComment(id,value){
+  const pos=orderPositions.find(p=>p.id===id);if(!pos)return;
+  pos.comment=String(value);renderOrder();
+}
+
 function positionEngineeringNote(row){
   const M=globalThis.MatrixCore;if(!M)return '';
   const stayDrive=/^(?:X?PNB|PNF)\./.test(row.art||'');
@@ -959,7 +964,7 @@ function renderOrder(){
   let grandTotal = 0;
   const combined = invoiceCombinedRows(orderPositions);
 
-  orderPositions.forEach(pos => {
+  orderPositions.forEach((pos, positionIndex) => {
     let posSubtotal = 0;
     const posDiv = document.createElement("div");
     posDiv.className = "pos-block"+(pos.freeInvoice?" free-invoice":"");
@@ -974,8 +979,8 @@ function renderOrder(){
         <td>${displayIdx+1}</td>
         <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}</td>
         <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}${pos.freeInvoice?'':positionEngineeringNote(r)}</td>
-        <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value)"></td>
-        <td class="num${r.isDefaultPrice?' price-default':''}">${pos.freeInvoice&&canPrice?`<input class="qty-input free-price-input" type="number" min="0" step="0.01" aria-label="Цена" value="${r.price.toFixed(2)}" onclick="event.stopPropagation()" onchange="updateFreeRowPrice(${pos.id},${idx},this.value)">`:r.price.toFixed(2)+(r.isDefaultPrice?'*':'')}</td>
+        <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value)"><span class="invoice-print-only">${esc(r.qty)}</span></td>
+        <td class="num${r.isDefaultPrice?' price-default':''}">${pos.freeInvoice&&canPrice?`<input class="qty-input free-price-input" type="number" min="0" step="0.01" aria-label="Цена" value="${r.price.toFixed(2)}" onclick="event.stopPropagation()" onchange="updateFreeRowPrice(${pos.id},${idx},this.value)"><span class="invoice-print-only">${r.price.toFixed(2)}</span>`:r.price.toFixed(2)+(r.isDefaultPrice?'*':'')}</td>
         <td class="num">${sum.toFixed(2)}</td>
         <td>${globalThis.MatrixCore?.strikeRole(r.art)||r.strikeRole?` <button class="small strike-replace" type="button" title="Заменить ответную планку" aria-label="Заменить ответную планку" onclick="event.stopPropagation(); openStrikeReplacement(${pos.id},${idx})"><span class="ui-icon i-pencil" aria-hidden="true"></span></button>`:''}<button class="small danger" onclick="event.stopPropagation(); removeRow(${pos.id},${idx})"><span class="ui-icon i-xmark" aria-hidden="true"></span></button></td>
       </tr>`;
@@ -983,6 +988,7 @@ function renderOrder(){
     grandTotal += posSubtotal;
 
     posDiv.innerHTML = `
+      <div class="invoice-print-only invoice-print-heading"><strong>FUTURUSS</strong><span>${esc(globalThis.FuturussI18n?.translate('Позиционная накладная')||'Позиционная накладная')} № ${positionIndex+1} · ${new Date().toLocaleDateString('ru-RU')}</span></div>
       <div class="pos-title-row">
         <b>${esc(pos.label)}${pos.freeInvoice?' <small class="free-invoice-subtitle">('+esc(globalThis.FuturussI18n?.translate('Дополнительные товары')||'Дополнительные товары')+')</small>':''}</b>
         <button class="small danger" onclick="removePosition(${pos.id})"><span class="ui-icon i-trash" aria-hidden="true"></span>Удалить позицию</button>
@@ -1012,6 +1018,8 @@ function renderOrder(){
         <input type="number" id="add-qty-${pos.id}" value="1" min="1">
         <button class="small" onclick="addManualRow(${pos.id})">+ Добавить деталь</button>
       </div>
+      <details class="position-comment-editor" ${pos.comment?'open':''}><summary>Комментарий к позиции</summary><textarea aria-label="Комментарий к позиции" rows="2" onchange="updatePositionComment(${pos.id},this.value)">${esc(pos.comment||'')}</textarea></details>
+      ${pos.comment?`<div class="invoice-print-only invoice-print-comment"><b>Комментарий к позиции</b><p>${esc(pos.comment)}</p></div>`:''}
       ${renderLayoutSection(pos)}`;
     container.appendChild(posDiv);
   });
@@ -1089,7 +1097,7 @@ async function exportToExcel(){
         "Позиция": excelSafe(pos.label), "Схема": excelSafe(pos.scheme), "ШСФ": pos.width, "ВСФ": pos.height, "Створок": pos.sashQty,
         "Правых": pos.qtyRight, "Левых": pos.qtyLeft, "Паз": pos.groove || "",
         "Артикул": excelSafe(r.art), "Наименование": excelSafe(r.name), "Кол-во": r.qty, "Цена": r.price, "Сумма": +(r.qty*r.price).toFixed(2),
-        "Цена по умолчанию": r.isDefaultPrice ? "да" : ""
+        "Цена по умолчанию": r.isDefaultPrice ? "да" : "", "Комментарий к позиции": excelSafe(pos.comment||'')
       });
     });
   });

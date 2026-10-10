@@ -1,6 +1,8 @@
 (function(){
 'use strict';
 const dict={
+"Позиционная накладная":["Position invoice","Pozisyon dökümü"],
+"Комментарий к позиции":["Position comment","Pozisyon açıklaması"],
 "Свободная заявка":["Free-form order","Serbest sipariş"],
 "Дополнительные товары":["Additional items","Ek ürünler"],
 "со стороны петель":["hinge side", "menteşe tarafında"],
