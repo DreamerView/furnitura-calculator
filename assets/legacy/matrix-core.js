@@ -85,7 +85,7 @@
     const stored=kit.cells[key(row,col)];
     if(params&&kit.sizeRecipeMode){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
     if(stored)return copy(stored);
-    if(kit.heightRecipes?.[row.id])return copy(kit.heightRecipes[row.id]);
+    if(kit.heightRecipes?.[row.id]){const recipe=copy(kit.heightRecipes[row.id]);if(col.scissorArticle&&!recipe.items.some(i=>i.role==='scissors'))recipe.items.push(rowItem(col.scissorArticle,1,'scissors'));return recipe;}
     const items=[...(row.drives[0]?[rowItem(row.drives[0],1,'drive')]:[]),...copy(kit.common)],sc= scissors(db,kit,col);if(sc)items.push(rowItem(sc,1,'scissors'));
     if(kit.aluminumScissorLever&&sc)items.push(rowItem('AL.RSNO.'+(col.to<=800?'313':'413')+'-09R'+(kit.openingType==='tilt-first'?'.TF':'')));
     if(kit.family==='aluminum'&&kit.catalogMixedArticles)for(const it of items)if(kit.catalogMixedArticles.includes(it.art)){it.compatibilityApproved=true;it.catalogCompatibilitySource=kit.catalogSection;}

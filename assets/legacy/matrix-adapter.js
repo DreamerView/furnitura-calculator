@@ -104,7 +104,7 @@
       const hint=document.createElement('p');hint.textContent=tr('Состав по высоте привода. Ширина и удлинители требуют проверки.');preliminaryBox.append(hint);
     }
     if(!choices.length){const p=document.createElement('p');p.textContent=tr('Для этих размеров нет диапазона.');preliminaryBox.append(p);}
-    for(const choice of choices){const cell=kit.cells[choice.rowId+'|'+choice.colId]||kit.heightRecipes?.[choice.rowId];if(!cell)continue;const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('ul');summary.textContent=choice.drive;details.append(summary,list);
+    for(const choice of choices){const cell=kit.cells[choice.rowId+'|'+choice.colId]||kit.heightRecipes?.[choice.rowId];if(!cell)continue;const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('ul');summary.textContent=choice.drive+(kit.columns.find(c=>c.id===choice.colId)?.scissorArticle?' · '+kit.columns.find(c=>c.id===choice.colId).scissorArticle:'');details.append(summary,list);
       for(const item of cell.items){const li=document.createElement('li');li.textContent=item.art+' — '+(imported.articles[item.art]?.name||item.art)+' × '+item.qty;list.append(li);}preliminaryBox.append(details);}
     if(!kit.columns.length){for(const group of kit.catalogGroups||[]){const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('ul');summary.textContent=group.title;details.append(summary,list);for(const art of group.articles){const li=document.createElement('li');li.textContent=art+' — '+(imported.articles[art]?.name||art);list.append(li);}preliminaryBox.append(details);}}
     const p=document.createElement('p');p.textContent=tr('Полный состав и узлы для проверки доступны в конструкторе.');preliminaryBox.append(p);
@@ -117,7 +117,7 @@
     options=kit?MatrixCore.candidates(kit,width,height,imported,dornmass).filter(c=>!c.drive||MatrixCore.dornAlternative(imported,c.drive,dornmass)):[];
     const select=el('matrixDriveChoice');select.replaceChildren();
     const first=document.createElement('option');first.value='';first.textContent='Выберите привод для этих размеров';select.appendChild(first);
-    options.forEach((c,i)=>{const row=kit.rows.find(r=>r.id===c.rowId),col=kit.columns.find(w=>w.id===c.colId),art=MatrixCore.dornAlternative(imported,c.drive,dornmass)||c.drive;const opt=document.createElement('option');opt.value=String(i);opt.textContent=(art||'Привод не выбран')+' · дорнмасс '+dornmass+' мм · ВСФ '+row.from+'–'+row.to+' · ШСФ '+col.from+'–'+col.to;select.appendChild(opt);});
+    options.forEach((c,i)=>{const row=kit.rows.find(r=>r.id===c.rowId),col=kit.columns.find(w=>w.id===c.colId),art=MatrixCore.dornAlternative(imported,c.drive,dornmass)||c.drive;const opt=document.createElement('option');opt.value=String(i);opt.textContent=(art||'Привод не выбран')+' · дорнмасс '+dornmass+' мм · ВСФ '+row.from+'–'+row.to+' · ШСФ '+col.from+'–'+col.to+(col.scissorArticle?' · '+col.scissorArticle:'');select.appendChild(opt);});
     if(previous!==''&&options[Number(previous)])select.value=previous;
     el('matrixDriveChoiceWrap').hidden=options.length<2;previewPrepared();
   }

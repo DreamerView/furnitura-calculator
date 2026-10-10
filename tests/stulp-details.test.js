@@ -3,7 +3,7 @@ const ranges=[[690,800],[801,1200],[1201,1600],[1601,2000],[2001,2400]];
 let checked=0;
 for(const k of db.kits.filter(k=>k.stulpDetailsVersion)){
  for(const [i,r] of k.rows.entries()){
-  assert.deepEqual([r.from,r.to],ranges[i]);const recipe=k.heightRecipes[r.id];assert(recipe&&!recipe.reviewed);assert.equal(recipe.items.filter(x=>x.role==='drive').length,1);assert.equal(recipe.items[0].art,r.drives[0]);
+  assert.deepEqual([r.from,r.to],i===0&&k.stulpControl==='handle'?[620,800]:ranges[i]);const recipe=k.heightRecipes[r.id];assert(recipe&&!recipe.reviewed);assert.equal(recipe.items.filter(x=>x.role==='drive').length,1);assert.equal(recipe.items[0].art,r.drives[0]);
   for(const it of recipe.items)assert(db.articles[it.art]);
   for(const h of [r.from,r.to]){const rows=k.rows.filter(x=>M.fits(h,x));assert.equal(rows.length,1);assert.equal(rows[0].id,r.id);checked++;}
  }

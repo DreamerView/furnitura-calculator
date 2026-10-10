@@ -1,6 +1,7 @@
 (function(){
 'use strict';
 const dict={
+"Подходят несколько вариантов":["Multiple options match","Birden fazla seçenek uygun"],
 "Привод по высоте":["Drive selected by height", "Yüksekliğe göre ispanyolet"],
 "Варианты привода:":["Drive options:", "İspanyolet seçenekleri:"],
 "Подтверждены привод по высоте, угловые передачи и состав базовых узлов. Полный комплект требует подбора удлинителей, ответных деталей и проверки монтажа по профилю. Диапазоны совместной работы приводов взяты из таблицы на стр. 231.":["Drive height, corner transmissions and basic parts are verified. A full kit requires extensions, keeps and profile installation review. Paired drive ranges follow the table on page 231.", "İspanyolet yüksekliği, köşe iletimleri ve temel parçalar doğrulandı. Tam takım için uzatmalar, karşılıklar ve profil montajı kontrol edilmelidir. Eşli ispanyolet aralıkları sayfa 231 tablosuna göredir."],
