@@ -1,0 +1,110 @@
+[
+  {
+    "id": "rehau-blitz-1555009",
+    "name": "REHAU BLITZ NEW · 1555009 / Z55 1555029",
+    "widthDeduction": 100,
+    "heightDeduction": 100,
+    "enabled": true,
+    "source": "https://1-oz.ru/files/386/05-794690ru-razmery-zagot.pdf#page=6",
+    "note": "794690RU, 06.2018, стр. 2–3: b = EM − 100. Одностворчатое окно; одинаковая рама по четырём сторонам. Фальцлюфт по схеме 12/13 мм."
+  },
+  {
+    "id": "rehau-blitz-1555019",
+    "name": "REHAU BLITZ NEW · 1555019 / Z55 1555029",
+    "widthDeduction": 112,
+    "heightDeduction": 112,
+    "enabled": true,
+    "source": "https://1-oz.ru/files/386/05-794690ru-razmery-zagot.pdf#page=6",
+    "note": "794690RU, 06.2018, стр. 2–3: b = EM − 112. Одностворчатое окно; одинаковая рама по четырём сторонам. Фальцлюфт по схеме 12/13 мм."
+  },
+  {
+    "id": "deceuninck-favorit",
+    "name": "Deceuninck FAVORIT · LR740/745/743 + ZR710/715/713",
+    "widthDeduction": 108,
+    "heightDeduction": 108,
+    "enabled": true,
+    "source": "https://deceuninck.ru/upload/iblock/4b7/38kn1aesl0epvzm15heqxn6zybb7pwzg/Sistemnyy-katalog-FAVORIT_-BAUTEK-NEO_-BAUTEK-_-YAnvar-2025.pdf#page=129",
+    "note": "Каталог 01.2025, PDF стр. 79 и 129. Расчёт по чертежу: наружный размер створки W−68; фальц F = B+2 = (W−68)−2×21+2 = W−108. Аналогично высота. Без порога и доборов."
+  },
+  {
+    "id": "deceuninck-bautec-neo",
+    "name": "Deceuninck BAUTEC NEO · LR740/745/743 + ZR710/715/713",
+    "widthDeduction": 108,
+    "heightDeduction": 108,
+    "enabled": true,
+    "source": "https://deceuninck.ru/upload/iblock/4b7/38kn1aesl0epvzm15heqxn6zybb7pwzg/Sistemnyy-katalog-FAVORIT_-BAUTEK-NEO_-BAUTEK-_-YAnvar-2025.pdf#page=129",
+    "note": "Каталог 01.2025, PDF стр. 79 и 129. Расчёт по чертежу: наружный размер створки W−68; фальц F = B+2 = (W−68)−2×21+2 = W−108. Аналогично высота. Без порога и доборов."
+  },
+  {
+    "id": "deceuninck-bautec",
+    "name": "Deceuninck BAUTEC · LR740/745/743 + ZR710/715/713",
+    "widthDeduction": 108,
+    "heightDeduction": 108,
+    "enabled": true,
+    "source": "https://deceuninck.ru/upload/iblock/4b7/38kn1aesl0epvzm15heqxn6zybb7pwzg/Sistemnyy-katalog-FAVORIT_-BAUTEK-NEO_-BAUTEK-_-YAnvar-2025.pdf#page=129",
+    "note": "Каталог 01.2025, PDF стр. 79 и 129. Расчёт по чертежу: наружный размер створки W−68; фальц F = B+2 = (W−68)−2×21+2 = W−108. Аналогично высота. Без порога и доборов."
+  },
+  {
+    "id": "rehau-grazio",
+    "name": "REHAU GRAZIO",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://www.rehau.com/kz-kk/rehau-tech",
+    "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  },
+  {
+    "id": "rehau-intelio",
+    "name": "REHAU INTELIO 80",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://www.rehau.com/kz-kk/rehau-tech",
+    "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  },
+  {
+    "id": "veka-softline",
+    "name": "VEKA Softline 70",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://www.veka.ru/production/special/profilnye-sistemy-veka/veka-softline",
+    "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  },
+  {
+    "id": "gealan-s8000",
+    "name": "GEALAN S 8000",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://www.gealan.de/en/systems/s-8000",
+    "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  },
+  {
+    "id": "ivaper70",
+    "name": "IVAPER 70",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://ivaper.ru/",
+    "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  },
+  {
+    "id": "ivaper82",
+    "name": "IVAPER 82",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://ivaper.ru/",
+    "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  },
+  {
+    "id": "thyssen",
+    "name": "Thyssen · серия не задана",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "",
+    "note": "Нужны артикулы рамы/створки и таблица вычетов. Монтажная глубина не является вычетом."
+  }
+]

@@ -167,3 +167,37 @@ html:root body.workdesk-configurator #kitWorkspace .kit-browser{border-radius:14
 @media(max-width:1400px){html:root body.workdesk-configurator>header .saved{grid-column:2/-1;max-width:none}}
 @media(max-width:1100px){html:root body.workdesk-configurator{--kit-sidebar-width:270px}}
 @media(max-width:760px){html:root body.workdesk-configurator #kitWorkspace{grid-template-columns:1fr;padding:8px 10px}html:root body.workdesk-configurator>header{grid-template-columns:1fr;padding:10px!important}html:root body.workdesk-configurator>header .saved{grid-column:1}html:root body.workdesk-configurator>header .toolbar button{white-space:normal}html:root body.workdesk-configurator #kitWorkspace .families{flex-wrap:wrap}}
+
+html:root body.workdesk-configurator .bom-row-actions{display:flex;align-items:center;justify-content:flex-end;gap:4px}
+html:root body.workdesk-configurator .bom-photo-button .ui-icon{width:16px;height:16px}
+html:root body.workdesk-configurator .bom-photo-dialog{width:640px;max-width:94vw;height:auto!important;max-height:90dvh!important;inset:0!important;margin:auto!important;padding:14px!important;border-radius:16px!important}
+html:root body.workdesk-configurator .bom-photo-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+html:root body.workdesk-configurator .bom-photo-header h2{font-size:16px;line-height:1.4;margin:0;flex:1;overflow-wrap:anywhere}
+html:root body.workdesk-configurator .bom-photo-content{display:grid;place-items:center;min-height:180px;overflow:auto}
+html:root body.workdesk-configurator .bom-photo-content img{max-width:100%;max-height:60dvh;object-fit:contain}
+html:root body.workdesk-configurator .bom-photo-thumbs{display:flex;justify-content:center;gap:6px;margin-top:10px}
+html:root body.workdesk-configurator .bom-photo-thumbs button[aria-pressed=true]{background:var(--accent,#007aff)!important;color:#fff!important}
+html:root body.workdesk-configurator .bom-photo-dialog [hidden]{display:none!important}
+
+/* Compact frame input and editable technical deductions. */
+.frame-dimensions{grid-column:1/-1;flex:1 0 100%;border-top:1px solid #dce3ed;padding-top:7px;margin-top:5px;min-width:0}
+.frame-dimensions .frame-mode-toggle{display:flex;align-items:center;gap:6px;font-size:12px}
+.frame-dimensions input[type=checkbox],.frame-profile-row input[type=checkbox]{width:16px!important;height:16px!important;flex:none}
+.frame-dimensions-body{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.frame-dimensions-body>label:first-child,.frame-dimensions-body>small,.frame-dimensions-body>output{grid-column:1/-1}
+.frame-dimensions label,.frame-profile-row label{display:flex;flex-direction:column;gap:3px;font-size:11px;min-width:0}
+.frame-dimensions input,.frame-dimensions select{width:100%;min-width:0!important;max-width:100%;height:30px!important;padding:4px 7px!important;font-size:12px}
+.frame-dimensions output{font-size:11px;line-height:1.5;color:#235886}
+.frame-dimensions output.error{color:#b42318}.frame-dimensions small,.frame-dimensions a{font-size:10px}
+.frame-dimensions [hidden]{display:none!important}
+.calculation .frame-dimensions-body{grid-template-columns:minmax(240px,2fr) 120px 120px}
+.calculation .frame-dimensions-body>label:first-child{grid-column:auto}
+dialog.frame-profiles-dialog{width:min(940px,95vw);height:auto!important;max-height:90dvh;inset:0;margin:auto;padding:16px;border:1px solid #dce3ed;border-radius:16px;overflow:auto}
+.frame-profiles-dialog>p{font-size:12px}.frame-profile-row{display:grid;grid-template-columns:minmax(220px,2fr) 100px 100px 120px 60px;align-items:end;gap:8px;padding:12px 0;border-top:1px solid #dce3ed}
+.frame-profile-row input:not([type=checkbox]){box-sizing:border-box;width:100%;min-width:0;height:30px;padding:5px 7px;font-size:12px}.frame-profile-wide{grid-column:1/-1}
+.frame-profile-footer{display:flex;justify-content:space-between;position:sticky;bottom:0;background:var(--panel,#fff);padding-top:10px}
+@media(max-width:700px){.frame-profile-row{grid-template-columns:1fr 1fr}.frame-profile-name{grid-column:1/-1}.calculation .frame-dimensions-body{grid-template-columns:1fr 1fr}.calculation .frame-dimensions-body>label:first-child{grid-column:1/-1}}
+
+.frame-dimensions .frame-mode-toggle{flex-direction:row}
+
+dialog.frame-profiles-dialog{padding:16px!important}.frame-profile-row details{font-size:11px;color:var(--muted,#64748b)}.frame-profile-row details label{margin-top:6px}.frame-profile-row summary{cursor:pointer}

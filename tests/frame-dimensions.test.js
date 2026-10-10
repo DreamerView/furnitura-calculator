@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict');
+const fs=require('fs');
+require('../assets/js/frame-dimensions.js');
+const F=globalThis.FuturussFrameDimensions,rows=JSON.parse(fs.readFileSync('assets/data/frame-profiles.json','utf8')),kit={id:'roller11',family:'pvc',openingType:'tilt-turn'};
+const r=F.convert(rows[0],900,1500,kit);
+assert.equal(r.width,800);assert.equal(r.height,1400);assert.equal(r.frameDimensions.width,900);
+assert.equal(F.convert(rows[1],900,1500,kit).width,788);
+assert.equal(F.convert(rows[2],900,1500,kit).height,1392);
+assert.ok(F.convert(rows[5],900,1500,kit).error);
+for(const size of [0,100,-1,NaN,Infinity])assert.ok(F.convert(rows[0],size,1500,kit).error);
+for(const bad of [{...kit,family:'aluminum'},{...kit,openingType:'door'},{...kit,openingType:'stulp-drive'},{...kit,id:'stulp-active',openingType:'tilt-turn'},null])assert.ok(F.convert(rows[0],900,1500,bad).error);
+const custom={...rows[0],widthDeduction:110.5,heightDeduction:120};assert.equal(F.convert(custom,900,1500,kit).width,789.5);
+assert.notEqual(r.frameDimensions.profile,rows[0]);
+assert.equal(F.convert({...rows[0],widthDeduction:null},900,1500,kit).error,F.errors.profile);
+const file=fs.readFileSync('configurator.html','utf8');for(const match of file.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new Function(match[1]);
+console.log('PASS frame conversion, invalid dimensions, unsupported systems, snapshot and constructor syntax');

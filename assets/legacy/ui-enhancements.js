@@ -16,7 +16,7 @@
  const schemeLabel=input.querySelector('label[for=scheme]');schemeLabel?.remove();const config=section(''),familyTabs=$('matrixFamilyTabs'),configTitle=config.querySelector('h3');if(familyTabs&&configTitle){configTitle.classList.add('config-title-with-system');familyTabs.classList.add('config-system-switcher');configTitle.append(familyTabs);}const assembly=document.querySelector('.alu-assembly-select');if(assembly)config.append(assembly);config.append($('scheme'),$('addFreeInvoice'),$('matrixImportedDetails'));
  $('matrixImportedSummary').remove();
  const handleRow=$('handlePos').closest('.row2');if(handleRow)handleRow.hidden=true;const systemProfileSlot=make('div','system-profile-slot');systemProfileSlot.append($('groove-block'),$('aluminumControls'),$('dornmassWrap'));config.append(systemProfileSlot);
- const sizes=section('Размеры и количество');sizes.append($('width').closest('.row2'),$('qtyRight').closest('.row2'),$('matrixDriveChoiceWrap'),$('hingeTypeWrap'));
+ const sizes=section('Размеры и количество');const frameInput=document.querySelector('.frame-dimensions');if(frameInput)sizes.append(frameInput);sizes.append($('width').closest('.row2'),$('qtyRight').closest('.row2'),$('matrixDriveChoiceWrap'),$('hingeTypeWrap'));
  const options=section('Опции');options.append($('futuruss-extra-options'),$('aluminumOptions'));
  const actions=make('div','design-actions');actions.append(input.querySelector('.calc'),input.querySelector('button[onclick="clearOrder()"]'),$('msg'));input.append(actions);
  for(const row of input.querySelectorAll(':scope > .row2'))if(!row.textContent.trim())row.remove();

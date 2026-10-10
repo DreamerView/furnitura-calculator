@@ -43,6 +43,7 @@
     if(typeof renderMasterGroups==='function')renderMasterGroups();
     return count;
   }
+  const frameDimensions=globalThis.FuturussFrameDimensions?.create({width:el('width'),height:el('height'),container:el('width').closest('.card')||el('width').parentElement.parentElement,getCatalog:()=>imported,getKit:()=>currentProfileId==='futuruss'?selectedKit():null});
   const technologyControls=FuturussTechnologyUI.create({container:el('futuruss-extra-options'),preferences:true,onChange:()=>{refreshChoices();camControl?.refresh();},getContext:()=>({db:imported,kit:currentProfileId==='futuruss'?imported?.kits.find(k=>PREFIX+k.id===el('scheme').value):null,params:{width:num('width'),height:num('height'),dornmass:num('dornmass')||15,hingeType:el('hingeType').value||'standard',handle:el('offsetHandle').checked?'offset':'center',strikeProfile:el('grooveType').value||'KBE 13',optionSeries:grooveSeries(el('grooveType').value||'13')}})});
   const camControl=globalThis.FuturussCamSelector?.create(el('matrixFamilyTabs'),()=>({kits:imported?.kits||[],kit:selectedKit()}),kit=>{const d=el('dornmass').value,doorBolt=document.querySelector('[data-tech=doorBolt]')?.checked;activeCam=kit.variant;let base=kit.assemblyGroup==='tilt-d25'?imported.kits.find(k=>k.assemblyGroup==='tilt'&&k.assemblyLevel===kit.assemblyLevel)||kit:kit;if(base.openingType==='door'&&base.id.endsWith('-latch'))base=imported.kits.find(k=>k.openingType==='door'&&k.variant===base.variant&&!k.id.endsWith('-latch'))||base;populate(PREFIX+base.id);if(Array.from(el('dornmass').options).some(o=>o.value===d))el('dornmass').value=d;if(base.openingType==='door'&&typeof doorBolt==='boolean')document.querySelector('[data-tech=doorBolt]').checked=doorBolt;el('dornmass').dataset.confirmedDornmass=el('dornmass').value;camControl.refresh();technologyControls.refresh();refreshChoices();});
   function populate(preferred){
@@ -110,6 +111,7 @@
     const p=document.createElement('p');p.textContent=tr('Полный состав и узлы для проверки доступны в конструкторе.');preliminaryBox.append(p);
   }
   function refreshChoices(){
+    frameDimensions?.refresh();
     const dmKit=selectedKit(),dmMode=dmKit?.turnAssembly||'normal';if(el('dornmass').dataset.turnAssembly!==dmMode){el('dornmass').dataset.turnAssembly=dmMode;FuturussCamSelector.configureDornmass(el('dornmass'),dmKit);}
     const kit=selectedKit(),width=num('width'),height=num('height'),dornmass=num('dornmass')||15;
     const fingerprint=JSON.stringify([kit?.id,width,height,dornmass]);if(fingerprint!==choiceKey){choiceKey=fingerprint;el('matrixDriveChoice').value='';}
@@ -122,7 +124,7 @@
     el('matrixDriveChoiceWrap').hidden=options.length<2;previewPrepared();
   }
   function profileResult(schemeKey,params,side,count){
-    const resolved=globalThis.resolveItems?.(schemeKey,{width:params.width,height:params.height,handle:params.handle,groove:el('grooveType').value||''});
+    const resolved=globalThis.resolveItems?.(schemeKey,{width:params.width,height:params.height,frameDimensions:frameSize?.frameDimensions||null,handle:params.handle,groove:el('grooveType').value||''});
     if(!resolved)return {errors:['Не удалось прочитать комплектацию выбранного бренда.'],warnings:[],items:[]};
     if(resolved.error==='ambiguous')return {errors:['Для этих размеров подходят несколько диапазонов. Исправьте пересекающиеся границы в настройках комплектации.'],warnings:[],items:[]};
     if(resolved.error)return {errors:[resolved.error==='empty'?'В комплектации нет диапазонов, общего состава или правил.':'Для этих размеров в комплектации нет подходящего диапазона.'],warnings:resolved.warnings||[],items:[]};
@@ -131,11 +133,12 @@
     for(const [art] of source)if(!articles[art])articles[art]={name:art,price:globalThis.DEFAULT_PRICE||1,group:'Позиции бренда'};
     const row={id:'profile-row',from:params.height,to:params.height,drives:[]},col={id:'profile-col',from:params.width,to:params.width},cellKey=row.id+'|'+col.id,kit={id:'profile-kit',name:globalThis.SCHEME_TITLES?.[schemeKey]||schemeKey,variant:'roller11',family:'pvc',calculationMode:'generic',profile:'',side,handle:'center',rows:[row],columns:[col],common:[],cells:{}};
     kit.cells[cellKey]={items:source.map(([art,qty])=>MatrixCore.rowItem(art,Number(qty)||1)),reviewed:true,note:''};
-    const data={schemaVersion:2,format:'futuruss-matrix',nomenclatureVersion:'profile-adapter',articles,kits:[kit]},result=MatrixCore.calculate(data,kit,{width:params.width,height:params.height,count,side,dornmass:15,hingeType:'standard'},null);
+    const data={schemaVersion:2,format:'futuruss-matrix',nomenclatureVersion:'profile-adapter',articles,kits:[kit]},result=MatrixCore.calculate(data,kit,{width:params.width,height:params.height,frameDimensions:frameSize?.frameDimensions||null,count,side,dornmass:15,hingeType:'standard'},null);
     result.warnings=[...new Set([...(result.warnings||[]),...(resolved.warnings||[]),...result.items.filter(item=>!DATA.master?.[item.art]).map(item=>item.art+': использована резервная цена.')])];
     result.profileBlock=resolved.block;return result;
   }
   function addImported(){
+    frameDimensions?.refresh();const frameSize=frameDimensions?.read();if(frameSize?.error){setMsg(frameSize.error,'err');return;}
     const kit=selectedKit();if(!kit){setMsg('Загрузите файл конструктора и выберите загруженную комплектацию.','err');return;}
     if(kit.catalogDraft){previewPrepared();setMsg(preliminaryText,'warn');return;}
     const right=num('qtyRight'),left=num('qtyLeft');
@@ -147,7 +150,7 @@
       const results=[['R',right],['L',left]].filter(([,count])=>count>0).map(([side,count])=>profileResult(schemeKey,params,side,count)),errors=[...new Set(results.flatMap(result=>result.errors||[]))],warnings=[...new Set(results.flatMap(result=>result.warnings||[]))];
       if(errors.length){setMsg(errors.join(' '),'err');return;}
       const merged=new Map();for(const result of results)for(const item of result.items){const previous=merged.get(item.art);if(previous)previous.qty+=item.qty;else merged.set(item.art,{...item,isDefaultPrice:!DATA.master?.[item.art]});}
-      const block=results.find(result=>result.profileBlock)?.profileBlock;posCounter++;orderPositions.push({id:posCounter,currency:'KZT',label:el('poslabel').value||'Расчёт '+(orderPositions.length+1),scheme:kit.name,family:'pvc',profileId:currentProfileId,width:params.width,height:params.height,sashQty:right+left,qtyRight:right,qtyLeft:left,groove:el('grooveType').value||'',handle,rows:[...merged.values()],blockRange:block?'ШСФ '+block.w+', ВСФ '+block.h:'По правилам комплектации'});
+      const block=results.find(result=>result.profileBlock)?.profileBlock;posCounter++;orderPositions.push({id:posCounter,currency:'KZT',label:el('poslabel').value||'Расчёт '+(orderPositions.length+1),scheme:kit.name,family:'pvc',profileId:currentProfileId,width:params.width,height:params.height,frameDimensions:frameSize?.frameDimensions||null,sashQty:right+left,qtyRight:right,qtyLeft:left,groove:el('grooveType').value||'',handle,rows:[...merged.values()],blockRange:block?'ШСФ '+block.w+', ВСФ '+block.h:'По правилам комплектации'});
       el('poslabel').value='';renderOrder();setMsg('Позиция добавлена новым расчётным движком MatrixCore.'+(warnings.length?' '+warnings.join(' '):''),warnings.length?'warn':'ok');return;
     }
     const alu=kitFamily(kit)==='aluminum',groove=alu?(kit.profile||'AL V.01 · паз 16 мм'):el('grooveType').value;
@@ -167,7 +170,7 @@
     if(result.needsChoice){setMsg('Для этой высоты подходит несколько приводов. Выберите нужный в поле «Вариант привода» под количеством правых и левых створок.','warn');el('matrixDriveChoice').focus();return;}
     const row=kit.rows.find(r=>r.id===result.chosen.rowId),col=kit.columns.find(c=>c.id===result.chosen.colId);
     posCounter++;
-    orderPositions.push({id:posCounter,currency:imported?.priceCurrency||'KZT',label:el('poslabel').value||'Расчёт '+(orderPositions.length+1),scheme:kit.name,family:kitFamily(kit),width:params.width,height:params.height,dornmass:params.dornmass,aluminumProfile:params.aluminumProfile,sashQty:right+left,qtyRight:right,qtyLeft:left,groove:kit.sizeRecipeMode?params.strikeProfile:(kit.profile||groove),handle,hingeType:params.hingeType,handleColor:params.handleColor,coverColor:params.coverColor,hiddenProfile:params.hiddenProfile,hiddenStrike:params.hiddenStrike,strikeProfile:params.strikeProfile,strikeSuffix:params.strikeSuffix,strikeOverrides:params.strikeOverrides,lowerNode:params.lowerNode,rearChain:params.rearChain,rearCam:params.rearCam,chainReviewed:params.chainReviewed,chainCalculation:result.chainCalculation||null,handleHeightMode:params.handleHeightMode,handleHeight:result.technology?.handleHeight??null,handleTechnology:result.technology||null,
+    orderPositions.push({id:posCounter,currency:imported?.priceCurrency||'KZT',label:el('poslabel').value||'Расчёт '+(orderPositions.length+1),scheme:kit.name,family:kitFamily(kit),width:params.width,height:params.height,frameDimensions:frameSize?.frameDimensions||null,dornmass:params.dornmass,aluminumProfile:params.aluminumProfile,sashQty:right+left,qtyRight:right,qtyLeft:left,groove:kit.sizeRecipeMode?params.strikeProfile:(kit.profile||groove),handle,hingeType:params.hingeType,handleColor:params.handleColor,coverColor:params.coverColor,hiddenProfile:params.hiddenProfile,hiddenStrike:params.hiddenStrike,strikeProfile:params.strikeProfile,strikeSuffix:params.strikeSuffix,strikeOverrides:params.strikeOverrides,lowerNode:params.lowerNode,rearChain:params.rearChain,rearCam:params.rearCam,chainReviewed:params.chainReviewed,chainCalculation:result.chainCalculation||null,handleHeightMode:params.handleHeightMode,handleHeight:result.technology?.handleHeight??null,handleTechnology:result.technology||null,
       plateCalculation:result.plateCalculation?{...result.plateCalculation,connections:results.flatMap((r,index)=>(r.plateCalculation?.connections||[]).map(c=>({...c,scope:index,id:index+':'+c.id}))),quantity:results.reduce((n,r)=>n+(r.plateCalculation?.quantity||0),0)}:null,plateManualAdjustment:0,rows:result.items.map(i=>({...i,isDefaultPrice:false})),blockRange:'Из конструктора: ШСФ '+col.from+'–'+col.to+', ВСФ '+row.from+'–'+row.to+(result.technology?' · '+MatrixCore.technologyText(result.technology):'')});
     el('poslabel').value='';renderOrder();
     setMsg('Позиция добавлена из загруженной комплектации.'+(result.warnings.length?' '+result.warnings.join(' '):''),result.warnings.length?'warn':'ok');
