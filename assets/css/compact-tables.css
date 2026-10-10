@@ -151,3 +151,19 @@ html:root body.workdesk-configurator #sheet .matrix{width:100%;min-width:var(--m
 html:root body.workdesk-configurator #sheet .matrix .axis,html:root body.workdesk-configurator #sheet .matrix tbody th{width:200px!important}
 html:root body.workdesk-configurator .sheettitle,html:root body.workdesk-configurator .legend{max-width:var(--matrix-width,1200px);margin-left:auto!important;margin-right:auto!important;flex-wrap:wrap}
 html:root body.workdesk-configurator .legend{font-size:11px;row-gap:5px!important}
+
+/* Align the constructor command rows and give the kit tree more reading room. */
+html:root body.workdesk-configurator{--kit-sidebar-width:300px}
+html:root body.workdesk-configurator #kitWorkspace{grid-template-columns:var(--kit-sidebar-width) minmax(0,1fr);gap:16px;padding-top:8px}
+html:root body.workdesk-configurator>header{display:grid!important;grid-template-columns:var(--kit-sidebar-width) minmax(0,1fr) auto;gap:8px 16px!important;min-height:0!important;max-width:1920px;margin:0 auto!important;padding:12px 20px 8px!important;box-sizing:border-box}
+html:root body.workdesk-configurator>header .brand{min-width:0}
+html:root body.workdesk-configurator>header .toolbar{display:flex!important;flex-wrap:wrap;align-items:center;gap:6px!important;width:auto;min-width:0}
+html:root body.workdesk-configurator>header .saved{margin:0;font-size:11px;max-width:220px;overflow-wrap:anywhere}
+html:root body.workdesk-configurator #kitWorkspace .families{align-items:center;padding:0!important;margin:0 0 8px!important;gap:8px!important;min-height:36px;overflow:visible}
+html:root body.workdesk-configurator #kitWorkspace main{padding:0 0 16px!important}
+html:root body.workdesk-configurator #kitWorkspace .sheetbar{align-items:center;padding:8px 10px!important;gap:6px!important;border-radius:12px!important}
+html:root body.workdesk-configurator #kitWorkspace .sheetnote{padding:0;align-self:center;font-size:11px}
+html:root body.workdesk-configurator #kitWorkspace .kit-browser{border-radius:14px}
+@media(max-width:1400px){html:root body.workdesk-configurator>header .saved{grid-column:2/-1;max-width:none}}
+@media(max-width:1100px){html:root body.workdesk-configurator{--kit-sidebar-width:270px}}
+@media(max-width:760px){html:root body.workdesk-configurator #kitWorkspace{grid-template-columns:1fr;padding:8px 10px}html:root body.workdesk-configurator>header{grid-template-columns:1fr;padding:10px!important}html:root body.workdesk-configurator>header .saved{grid-column:1}html:root body.workdesk-configurator>header .toolbar button{white-space:normal}html:root body.workdesk-configurator #kitWorkspace .families{flex-wrap:wrap}}
