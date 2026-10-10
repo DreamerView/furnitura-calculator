@@ -12,3 +12,20 @@ html:root body.workdesk-app .free-modal-match{display:flex;gap:12px;width:100%;t
 @media print{.free-invoice-modal{display:none!important}}
 
 .free-modal-body>select{max-width:100%;min-height:34px;font:inherit;color:var(--text);background:var(--surface-alt);border:1px solid var(--border);border-radius:8px;padding:6px 9px}
+
+.free-search-label,.free-name-label{display:grid;gap:4px;font-size:12px;color:var(--secondary)}
+.free-search-label input,.free-name-label input{width:100%;box-sizing:border-box;min-width:0;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--surface-alt);color:var(--text);font:inherit;font-size:14px}
+.free-modal-filters{display:grid;grid-template-columns:minmax(140px,1fr) minmax(140px,1fr) auto;gap:8px;align-items:center}
+.free-modal-filters select{width:100%;min-width:0;height:34px;padding:5px 8px;font:inherit;border:1px solid var(--border);border-radius:8px;background:var(--surface-alt);color:var(--text)}
+.free-modal-result{display:flex;align-items:center;border-bottom:1px solid var(--border)}
+html:root body.workdesk-app .free-modal-result .free-modal-match{flex:1;min-width:0;width:auto;align-items:center}
+.free-match-article{flex:0 0 125px;font-weight:400;overflow-wrap:anywhere}
+.free-modal-match>span:last-child{min-width:0;overflow-wrap:anywhere}
+.free-photo-button{display:inline-flex;align-items:center;justify-content:center;flex:0 0 30px;width:30px;height:30px;padding:4px!important;margin:0 5px}
+.free-photo-button .ui-icon{width:17px;height:17px}
+.free-search-status{color:var(--secondary);font-size:11px}
+@media(max-width:600px){.free-modal-filters{grid-template-columns:1fr 1fr}.free-modal-filters>button{grid-column:1/-1}.free-match-article{flex-basis:92px}}
+
+html:root body.workdesk-app dialog.free-invoice-modal{height:fit-content!important}
+html:root body.workdesk-app .free-modal-result .free-modal-match{color:var(--text)!important;font-weight:400!important;border-radius:0!important}
+html:root body.workdesk-app .free-modal-result .free-modal-match>span:last-child{font-weight:500}

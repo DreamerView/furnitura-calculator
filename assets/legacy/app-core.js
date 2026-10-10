@@ -1019,7 +1019,6 @@ function renderOrder(){
         ${pos.lowerNode&&pos.lowerNode!=='catalog'?'<span class="pill">'+esc(globalThis.FuturussI18n?.translate(pos.lowerNode==='bolt'?'Шпингалет — вертикальная ответная планка':'Взломостойкий зацеп — нижняя горизонталь')||pos.lowerNode)+'</span>':''}
         <span class="pill">ШСФ×ВСФ: ${pos.width}×${pos.height} мм</span>
         <span class="pill">${pos.sashQty} ств. (П: ${pos.qtyRight} / Л: ${pos.qtyLeft})</span>
-        <span class="pill invoice-range">${esc(pos.blockRange)}</span>
         ${pos.groove ? `<span class="pill">Паз: ${esc(pos.groove)}</span>` : ""}
         ${positionPressureNote(pos)}
       </div>`}

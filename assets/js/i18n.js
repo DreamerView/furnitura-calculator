@@ -1,6 +1,22 @@
 (function(){
 'use strict';
 const dict={
+"Все группы":["All groups","Tüm gruplar"],
+"Ножницы и приводы ножниц":["Stays and stay drives", "Makaslar ve makas tahrikleri"],
+"Ответные планки и зацепы":["Strikers and catches", "Karşılıklar ve kancalar"],
+"Петли и прижимы":["Hinges and pressure devices", "Menteşeler ve baskılar"],
+"Соединения и крепёж":["Connections and fasteners", "Bağlantılar ve bağlantı elemanları"],
+"Дополнительные элементы":["Additional components", "Ek parçalar"],
+"Найдено товаров":["Items found", "Bulunan ürünler"],
+"Сбросить фильтры":["Reset filters", "Filtreleri sıfırla"],
+"Найти товар":["Find an item", "Ürün bul"],
+"Группа товаров":["Product group", "Ürün grubu"],
+"Все типы цапф":["All cam types", "Tüm pim türleri"],
+"Без цапфы / тип не указан":["No cam / type unspecified", "Pimsiz / tür belirtilmemiş"],
+"Фильтр по обозначению цапфы в каталоге. Совместимость деталей проверяется при подборе комплекта.":["Filter by catalogue cam designation. Component compatibility is checked when selecting an assembly.", "Katalogdaki pim tanımına göre filtre. Parça uyumluluğu takım seçiminde kontrol edilir."],
+"Название заявки (необязательно)":["Order name (optional)", "Sipariş adı (isteğe bağlı)"],
+"Например: дополнительные товары":["For example: additional items", "Örneğin: ek ürünler"],
+
 "Смещённая ручка располагается ниже центра створки. Подбор привода и верхних удлинителей зависит от её высоты.":["An offset handle sits below the sash centre. Drive and upper extensions depend on its height.", "Ofset kol kanat merkezinin altındadır. İspanyolet ve üst uzatmalar kol yüksekliğine göre seçilir."],
 "Микровентиляция оставляет небольшую щель для притока воздуха. Это режим проветривания, а не закрытое окно.":["Microventilation leaves a small gap for fresh air. This is a ventilation position, not a closed window.", "Mikro havalandırma hava için küçük bir aralık bırakır. Bu, kapalı pencere değil havalandırma konumudur."],
 "Приподниматель помогает створке занять правильное положение при закрывании и снижает нагрузку на петли. Не заменяет регулировку провисшей створки.":["The sash lifter guides the sash when closing and reduces hinge load. It does not replace adjustment of a sagging sash.", "Kanat kaldırıcı kapanırken kanadı yönlendirir ve menteşe yükünü azaltır. Sarkmış kanadın ayarının yerini tutmaz."],

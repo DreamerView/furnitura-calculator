@@ -237,3 +237,17 @@ html:root body.workdesk-configurator dialog.frame-profiles-dialog{padding:14px!i
 
 .frame-rule-editor>label{margin-top:8px}
 .invoice-undo:disabled{opacity:.45;cursor:default}
+
+html:root body.workdesk-app .bom-photo-button .ui-icon{width:16px;height:16px}
+html:root body.workdesk-app .bom-photo-dialog{width:640px;max-width:94vw;height:auto!important;max-height:90dvh!important;inset:0!important;margin:auto!important;padding:14px!important;border-radius:16px!important}
+html:root body.workdesk-app .bom-photo-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+html:root body.workdesk-app .bom-photo-header h2{font-size:16px;line-height:1.4;margin:0;flex:1;overflow-wrap:anywhere}
+html:root body.workdesk-app .bom-photo-content{display:grid;place-items:center;min-height:180px;overflow:auto}
+html:root body.workdesk-app .bom-photo-content img{max-width:100%;max-height:60dvh;object-fit:contain}
+html:root body.workdesk-app .bom-photo-thumbs{display:flex;justify-content:center;gap:6px;margin-top:10px}
+html:root body.workdesk-app .bom-photo-thumbs button[aria-pressed=true]{background:var(--accent,#007aff)!important;color:#fff!important}
+html:root body.workdesk-app .bom-photo-dialog [hidden]{display:none!important}
+html:root body.workdesk-app #combined-card table tr.row-item td.article,html:root body.workdesk-app #positions-container .pos-block table tbody tr.row-item td.article{font-weight:400!important}
+html:root body.workdesk-app #combined-card table tr.row-item.drive-row>td:nth-child(3),html:root body.workdesk-app #positions-container .pos-block table tbody tr.row-item.drive-row>td:nth-child(3){font-weight:600!important;color:var(--text,#1d1d1f)!important}
+
+html:root body.workdesk-app dialog.bom-photo-dialog{height:fit-content!important}

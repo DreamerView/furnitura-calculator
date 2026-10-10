@@ -18,7 +18,7 @@ ok(boot.includes("FuturussI18n?.setLanguage?.(globalThis.FUTURUSS_LANGUAGE||'ru'
 globalThis.FUTURUSS_LANGUAGE='ru';
 vm.runInThisContext(i18nSrc,{filename:'i18n.js'});
 const runtimeFiles=[
-  'index.php','assets/js/bootstrap.js','assets/js/spa.js','assets/js/frame-dimensions.js','assets/js/option-help.js','assets/js/invoice-undo.js',
+  'index.php','assets/js/bootstrap.js','assets/js/spa.js','assets/js/frame-dimensions.js','assets/js/option-help.js','assets/js/invoice-undo.js','assets/js/free-invoice-modal.js',
   ...fs.readdirSync(path.join(root,'assets/legacy')).filter(x=>x.endsWith('.js')).map(x=>'assets/legacy/'+x),
   ...fs.readdirSync(path.join(root,'api')).filter(x=>x.endsWith('.php')).map(x=>'api/'+x)
 ];
