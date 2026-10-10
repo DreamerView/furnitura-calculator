@@ -91,3 +91,22 @@ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap
 html:root body.workdesk-app :is(#combined-card,#positions-container) tr.hinge-kit td{background:#f3f6fa!important;print-color-adjust:exact}
 html:root body.workdesk-app :is(#combined-card,#positions-container) .invoice-pack-cell{color:#777!important;font-size:7pt!important;font-weight:400!important}
 }
+
+@media screen{
+ html:root body.workdesk-app .invoice-sticky-actions .print-options{display:flex;flex-wrap:wrap;align-items:end;gap:6px 12px}
+ html:root body.workdesk-app .invoice-sticky-actions .print-options label{display:flex;align-items:center;gap:5px;font-size:11px;margin:0}
+ html:root body.workdesk-app .invoice-sticky-actions .print-options select{width:auto!important;min-width:0!important;min-height:28px!important;height:28px!important;padding:3px 7px!important;font-size:11px!important}
+}
+@media print{
+ /* Names need clearance on both sides of the vertical rules. */
+ html:root body.workdesk-app :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr:not(.invoice-side-heading)>:nth-child(3){padding-left:3mm!important;padding-right:2.5mm!important}
+ html:root body.workdesk-app.print-positions-only #combined-card{display:none!important}
+ html:root body.workdesk-app.print-positions-only #positions-container .pos-block:first-child{break-before:auto!important;page-break-before:auto!important}
+ html:root body.workdesk-app.print-without-prices :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr:not(.invoice-side-heading)>:is(:nth-child(5),:nth-child(6)){display:none!important}
+ html:root body.workdesk-app.print-without-prices :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr:not(.invoice-side-heading)>:nth-child(3),
+ html:root body.workdesk-app.price-hidden :is(#combined-card,#positions-container) .table-wrap table :is(thead,tbody) tr:not(.invoice-side-heading)>:nth-child(3){width:68%!important}
+ html:root body.workdesk-app.print-without-prices :is(#combined-card,#positions-container) tfoot,
+ html:root body.workdesk-app.print-without-prices #combined-card>table{display:none!important}
+ html:root body.workdesk-app #positions-container .pos-block tbody tr.invoice-side-heading>td.invoice-row-actions{display:none!important}
+ html:root body.workdesk-app #positions-container .pos-block tbody tr.invoice-side-heading>td:first-child{width:auto!important;text-align:left!important;padding-left:2mm!important}
+}

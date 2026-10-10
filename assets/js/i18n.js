@@ -1,6 +1,14 @@
 (function(){
 'use strict';
 const dict={
+"Печатать":["Print", "Yazdır"],
+"Состав печати":["Print contents", "Yazdırılacak içerik"],
+"Общий свод":["Summary", "Genel özet"],
+"Только позиции":["Positions only", "Yalnızca pozisyonlar"],
+"Свод и позиции":["Summary and positions", "Özet ve pozisyonlar"],
+"Цены в печати":["Print prices", "Yazdırmada fiyatlar"],
+"С ценами":["With prices", "Fiyatlarla"],
+"Без цен — для склада":["Without prices — warehouse", "Fiyatsız — depo için"],
 "Сторона ручки":["Handle side", "Kol tarafı"],
 "Сторона петель":["Hinge side", "Menteşe tarafı"],
 "Верх":["Top", "Üst"],

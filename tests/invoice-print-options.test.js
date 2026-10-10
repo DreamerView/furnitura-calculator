@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict'),fs=require('fs'),vm=require('vm');
+const source=fs.readFileSync('assets/js/invoice-print-options.js','utf8');
+const classes=new Set(),events={},elements={invoicePrintScope:{value:'summary'},invoicePrintPrices:{value:'with'}},cells=[{colSpan:7},{colSpan:7}];
+for(const el of Object.values(elements))el.addEventListener=(type,fn)=>el[type]=fn;
+const context={document:{body:{classList:{toggle(c,on){if(on)classes.add(c);else classes.delete(c);},contains:c=>classes.has(c)}},getElementById:id=>elements[id],querySelectorAll:()=>cells},addEventListener:(type,fn)=>events[type]=fn};context.globalThis=context;vm.createContext(context);vm.runInContext(source,context);
+assert.equal(classes.size,0);
+elements.invoicePrintScope.value='positions';elements.invoicePrintPrices.value='without';elements.invoicePrintScope.change();elements.invoicePrintPrices.change();
+assert.ok(classes.has('print-positions-only'));assert.ok(classes.has('print-positions'));assert.ok(classes.has('print-without-prices'));
+events.beforeprint();assert.equal(cells[0].colSpan,5);events.beforeprint();events.afterprint();assert.equal(cells[0].colSpan,7);
+elements.invoicePrintScope.value='both';elements.invoicePrintPrices.value='with';events.beforeprint();assert.ok(classes.has('print-positions'));assert.ok(!classes.has('print-positions-only'));assert.ok(!classes.has('print-without-prices'));assert.equal(cells[0].colSpan,7);
+classes.add('price-hidden');events.beforeprint();assert.equal(cells[0].colSpan,5);events.afterprint();assert.ok(classes.has('price-hidden'));
+elements.invoicePrintScope.value='summary';elements.invoicePrintScope.change();assert.ok(!classes.has('print-positions'));
+console.log('PASS print scopes, warehouse option, repeated preview/cancel lifecycle, preserved price permissions');

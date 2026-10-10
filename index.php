@@ -334,9 +334,9 @@ header('Expires: 0');
 <style>#subtabbtn-komplekt,#subtabbtn-rules,#subtab-komplekt,#subtab-rules{display:none!important}#subtabbtn-layout,#subtab-layout{display:none!important}.matrix-family-tabs{display:flex;gap:6px;margin-top:10px}.matrix-family{flex:1;padding:8px 10px;}.matrix-family.active{}.aluminum-controls{display:grid;gap:8px;margin-top:10px;padding:10px;}.aluminum-controls[hidden],.aluminum-options[hidden]{display:none!important}.aluminum-options{display:grid;gap:7px}.aluminum-options label{display:flex!important;align-items:center;gap:7px;margin:0!important}.aluminum-options input[type=checkbox]{width:auto!important}</style>
 <!-- MATRIX_IMPORT_STYLE_END -->
 
-<meta name="futuruss-version" content="2026.10.11.5">
-<link rel="stylesheet" href="assets/css/icons.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/spa.css?v=2026.10.11.5">
+<meta name="futuruss-version" content="2026.10.11.6">
+<link rel="stylesheet" href="assets/css/icons.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/spa.css?v=2026.10.11.6">
 </head>
 <body class="workdesk-app">
 <div id="appPreloader" role="status" aria-live="polite">
@@ -525,10 +525,10 @@ header('Expires: 0');
     </tfoot></table>
 
     <div id="combined-position-notes"></div>
-    <label class="print-options" style="display:flex; align-items:center; gap:7px; margin-top:10px; cursor:pointer; font-size:11.5px; color:var(--muted);">
-      <input type="checkbox" id="printPositionsChk" style="width:auto;" onchange="document.body.classList.toggle('print-positions', this.checked)">
-      Печатать также позиции накладной (по одной странице на позицию)
-    </label>
+    <div class="print-options">
+      <label>Печатать<select id="invoicePrintScope" aria-label="Состав печати"><option value="summary">Общий свод</option><option value="positions">Только позиции</option><option value="both">Свод и позиции</option></select></label>
+      <label>Цены в печати<select id="invoicePrintPrices" aria-label="Цены в печати"><option value="with">С ценами</option><option value="without">Без цен — для склада</option></select></label>
+    </div>
     <div class="btn-row" style="margin-top:8px;">
       <button class="ghost" onclick="window.print()"><span class="ui-icon i-printer" aria-hidden="true"></span>Печать / PDF</button>
       <button class="ghost accent" onclick="exportToExcel()"><span class="ui-icon i-table" aria-hidden="true"></span>Экспорт в Excel</button>
@@ -1241,31 +1241,31 @@ html[data-interface-theme] #positions-container .pos-block tbody td>button.small
 
 
 
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.11.5">
-<script src="assets/vendor/vue.global.prod.js?v=2026.10.11.5"></script>
-<script src="assets/vendor/vue-router-lite.js?v=2026.10.11.5"></script>
-<script src="assets/js/idb-store.js?v=2026.10.11.5"></script>
-<script src="assets/js/preview-gallery.js?v=2026.10.11.5"></script>
-<script src="assets/js/media-ui.js?v=2026.10.11.5"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.11.5"></script>
-<script src="assets/js/bootstrap.js?v=2026.10.11.5"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.11.5">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.11.5"></script>
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.11.6">
+<script src="assets/vendor/vue.global.prod.js?v=2026.10.11.6"></script>
+<script src="assets/vendor/vue-router-lite.js?v=2026.10.11.6"></script>
+<script src="assets/js/idb-store.js?v=2026.10.11.6"></script>
+<script src="assets/js/preview-gallery.js?v=2026.10.11.6"></script>
+<script src="assets/js/media-ui.js?v=2026.10.11.6"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.11.6"></script>
+<script src="assets/js/bootstrap.js?v=2026.10.11.6"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.11.6">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.11.6"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.11.5"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/calculator-options.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/calculator-header.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/invoice-tables.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/calculator-actions.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.11.5">
-<link rel="stylesheet" href="assets/css/price-categories.css?v=2026.10.11.5">
-<script src="assets/js/invoice-strike-editor.js?v=2026.10.11.5"></script>
-<link rel="stylesheet" href="assets/css/invoice-print.css?v=2026.10.11.5">
-<script src="assets/js/free-invoice-modal.js?v=2026.10.11.5"></script>
-<link rel="stylesheet" href="assets/css/free-invoice-modal.css?v=2026.10.11.5">
+<script src="assets/js/modal-layout.js?v=2026.10.11.6"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/calculator-options.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/calculator-header.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/invoice-tables.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/calculator-actions.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.11.6">
+<link rel="stylesheet" href="assets/css/price-categories.css?v=2026.10.11.6">
+<script src="assets/js/invoice-strike-editor.js?v=2026.10.11.6"></script>
+<link rel="stylesheet" href="assets/css/invoice-print.css?v=2026.10.11.6">
+<script src="assets/js/free-invoice-modal.js?v=2026.10.11.6"></script>
+<link rel="stylesheet" href="assets/css/free-invoice-modal.css?v=2026.10.11.6">
 </body>
 </html>
 
