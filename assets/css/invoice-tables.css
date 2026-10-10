@@ -96,3 +96,14 @@ html:root body.workdesk-app #positions-container .add-row .art-dd-item:hover{bac
 .free-invoice-button{margin-top:8px}
 html:root body.workdesk-app #positions-container table input.free-price-input{max-width:96px!important;width:100%}
 @media print{.free-price-input{border:0!important;background:transparent!important;appearance:textfield}.free-price-input::-webkit-inner-spin-button{display:none}}
+
+/* Compact free-form invoice and upward catalogue suggestions. */
+html:root body.workdesk-app .free-invoice-button{display:flex!important;align-items:center;justify-content:center;gap:8px;width:100%!important;min-height:36px!important;margin:8px 0 0!important;padding:8px 12px!important;border:1px solid var(--border)!important;border-radius:10px!important;background:var(--accent-soft)!important;color:var(--accent)!important;font-size:13px!important;font-weight:600!important;line-height:1.3;box-shadow:none!important}
+html:root body.workdesk-app .free-invoice-button:hover{filter:brightness(.97)}
+html:root body.workdesk-app .free-invoice-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+html:root body.workdesk-app #positions-container .free-invoice .pos-title-row{margin:0 0 4px!important;min-height:28px!important;gap:8px}
+html:root body.workdesk-app #positions-container .free-invoice-subtitle{font-size:12px;font-weight:400;color:var(--secondary)}
+html:root body.workdesk-app #positions-container .free-invoice .table-wrap{margin:0!important}
+html:root body.workdesk-app #positions-container .free-invoice .add-row{margin-top:4px!important}
+html:root body.workdesk-app #positions-container .free-invoice .add-row input,html:root body.workdesk-app #positions-container .free-invoice .add-row>button{height:32px!important;min-height:32px!important;padding-block:5px!important}
+html:root body.workdesk-app #positions-container .add-row .art-dd{top:auto!important;bottom:calc(100% + 4px)!important;max-height:min(260px,40vh)!important;z-index:120!important;overscroll-behavior:contain}

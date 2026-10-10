@@ -962,7 +962,7 @@ function renderOrder(){
   orderPositions.forEach(pos => {
     let posSubtotal = 0;
     const posDiv = document.createElement("div");
-    posDiv.className = "pos-block";
+    posDiv.className = "pos-block"+(pos.freeInvoice?" free-invoice":"");
     const displayOrder = groupRowsForDisplay(pos.rows.map((r, i) => i), i => pos.rows[i].art);
     let rowsHtml = displayOrder.map((idx, displayIdx) => {
       const r = pos.rows[idx];
@@ -984,10 +984,10 @@ function renderOrder(){
 
     posDiv.innerHTML = `
       <div class="pos-title-row">
-        <b>${esc(pos.label)}</b>
+        <b>${esc(pos.label)}${pos.freeInvoice?' <small class="free-invoice-subtitle">('+esc(globalThis.FuturussI18n?.translate('Дополнительные товары')||'Дополнительные товары')+')</small>':''}</b>
         <button class="small danger" onclick="removePosition(${pos.id})"><span class="ui-icon i-trash" aria-hidden="true"></span>Удалить позицию</button>
       </div>
-      <div style="font-size:11px; color:var(--muted);">${esc(pos.scheme)}</div>
+      ${pos.freeInvoice?'':`<div style="font-size:11px; color:var(--muted);">${esc(pos.scheme)}</div>`}
       ${pos.plateCalculation?.rule==='unverified'?'<p class="hint">'+esc(globalThis.FuturussI18n?.translate('PLS: схема соединений не проверена. Сохранено количество из комплектации; проверьте его вручную.')||'PLS: схема соединений не проверена. Сохранено количество из комплектации; проверьте его вручную.')+'</p>':''}
       ${pos.freeInvoice?'':`<div class="swatch-row">
         ${pos.lowerNode&&pos.lowerNode!=='catalog'?'<span class="pill">'+esc(globalThis.FuturussI18n?.translate(pos.lowerNode==='bolt'?'Шпингалет — вертикальная ответная планка':'Взломостойкий зацеп — нижняя горизонталь')||pos.lowerNode)+'</span>':''}
