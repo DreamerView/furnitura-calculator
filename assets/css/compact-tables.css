@@ -144,3 +144,10 @@ html:root body.workdesk-configurator .constructor-technology>[data-tech=chainWra
 html:root body.workdesk-configurator .constructor-note{margin:4px 2px!important}
 @media(max-width:1100px){html:root body.workdesk-configurator .calculation{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){html:root body.workdesk-configurator .constructor-options{padding:10px!important}html:root body.workdesk-configurator .constructor-technology>[data-tech=chainWrap]{grid-template-columns:1fr}html:root body.workdesk-configurator .calculation{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Keep narrow configuration matrices compact instead of stretching their cells. */
+html:root body.workdesk-configurator #sheet{width:100%;max-width:var(--matrix-width,1200px);min-height:0!important;margin:0 auto;box-sizing:border-box}
+html:root body.workdesk-configurator #sheet .matrix{width:100%;min-width:var(--matrix-min-width,500px)!important;table-layout:fixed}
+html:root body.workdesk-configurator #sheet .matrix .axis,html:root body.workdesk-configurator #sheet .matrix tbody th{width:200px!important}
+html:root body.workdesk-configurator .sheettitle,html:root body.workdesk-configurator .legend{max-width:var(--matrix-width,1200px);margin-left:auto!important;margin-right:auto!important;flex-wrap:wrap}
+html:root body.workdesk-configurator .legend{font-size:11px;row-gap:5px!important}
