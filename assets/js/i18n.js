@@ -1,6 +1,8 @@
 (function(){
 'use strict';
 const dict={
+"Свободная заявка":["Free-form order","Serbest sipariş"],
+"Дополнительные товары":["Additional items","Ek ürünler"],
 "со стороны петель":["hinge side", "menteşe tarafında"],
 "снизу":["bottom", "altta"],
 "спереди, смещение ручки":["front, offset handle", "önde, ofset kol"],

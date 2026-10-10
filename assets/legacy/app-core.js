@@ -885,6 +885,34 @@ function updateRowQty(posId, rowIdx, newVal){
 }
 function clearOrder(){ orderPositions = []; renderOrder(); setMsg("Накладная очищена.", "ok"); }
 
+function addFreePosition(){
+  const label=document.getElementById('poslabel').value.trim();
+  const pos={id:++posCounter,freeInvoice:true,label:label||'Свободная заявка',scheme:'Дополнительные товары',rows:[],width:'',height:'',sashQty:'',qtyRight:0,qtyLeft:0,blockRange:''};
+  orderPositions.push(pos);document.getElementById('poslabel').value='';renderOrder();
+  document.getElementById('add-art-search-'+pos.id)?.focus();
+}
+function freePriceOwner(){
+  const auth=globalThis.FUTURUSS_SPA?.state?.auth||globalThis.FUTURUSS_AUTH||{};
+  return JSON.stringify([auth.role||'public',auth.nodeId??null]);
+}
+function updateFreeRowPrice(posId,index,value){
+  const pos=orderPositions.find(p=>p.id===posId),row=pos?.rows[index];
+  const canPrice=globalThis.FUTURUSS_SPA?.state?.catalog?.canViewPrices??globalThis.FUTURUSS_CAN_VIEW_PRICES??false;
+  if(!pos?.freeInvoice||!row||!canPrice||!DATA.master[row.art])return;
+  const price=Number(String(value).replace(',','.'));
+  if(!String(value).trim()||!Number.isFinite(price)||price<0){renderOrder();return;}
+  row.price=price;row.manualPrice=true;row.manualPriceOwner=freePriceOwner();row.isDefaultPrice=false;renderOrder();
+}
+function invoiceCombinedRows(positions){
+  const combined={};
+  for(const pos of positions)for(const row of pos.rows){
+    const key=JSON.stringify([row.art,row.price]);
+    combined[key]??={art:row.art,name:row.name,qty:0,price:row.price,isDefaultPrice:row.isDefaultPrice};
+    combined[key].qty+=row.qty;
+  }
+  return combined;
+}
+
 function positionEngineeringNote(row){
   const M=globalThis.MatrixCore;if(!M)return '';
   const stayDrive=/^(?:X?PNB|PNF)\./.test(row.art||'');
@@ -909,7 +937,8 @@ function renderOrder(){
   if(policy)for(const pos of orderPositions)for(const row of pos.rows||[]){
     const record=DATA.master[row.art];row.pricingUnavailable=!record;
     if(!record)unavailable=true;
-    row.price=record&&canPrice?Number(record.price)||0:0;row.isDefaultPrice=false;
+    if(!(pos.freeInvoice&&row.manualPrice&&row.manualPriceOwner===freePriceOwner()&&record&&canPrice))row.price=record&&canPrice?Number(record.price)||0:0;
+    if(!record||!canPrice||row.manualPriceOwner!==freePriceOwner()){delete row.manualPrice;delete row.manualPriceOwner;}row.isDefaultPrice=false;
   }
   document.body.classList.toggle('pricing-invoice-invalid',unavailable);
   let warning=document.getElementById('pricingInvoiceWarning');
@@ -928,7 +957,7 @@ function renderOrder(){
   }
 
   let grandTotal = 0;
-  const combined = {};
+  const combined = invoiceCombinedRows(orderPositions);
 
   orderPositions.forEach(pos => {
     let posSubtotal = 0;
@@ -939,15 +968,14 @@ function renderOrder(){
       const r = pos.rows[idx];
       const sum = r.qty * r.price;
       posSubtotal += sum;
-      combined[r.art] = combined[r.art] || {name: r.name, qty: 0, price: r.price, isDefaultPrice: r.isDefaultPrice};
-      combined[r.art].qty += r.qty;
+
       return `
       <tr data-position-id="${pos.id}" data-row-index="${idx}" class="row-item${r.pricingUnavailable?' pricing-unavailable':''}${isHingeKitArt(r.art) ? ' hinge-kit' : ''}${isDriveArt(r.art) ? ' drive-row' : ''}" ondblclick="showPhoto(${inlineJsArg(r.art)}, ${inlineJsArg(r.name)}, 'invoice')">
         <td>${displayIdx+1}</td>
         <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}</td>
-        <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}${positionEngineeringNote(r)}</td>
+        <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}${pos.freeInvoice?'':positionEngineeringNote(r)}</td>
         <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value)"></td>
-        <td class="num${r.isDefaultPrice?' price-default':''}">${r.price.toFixed(2)}${r.isDefaultPrice?'*':''}</td>
+        <td class="num${r.isDefaultPrice?' price-default':''}">${pos.freeInvoice&&canPrice?`<input class="qty-input free-price-input" type="number" min="0" step="0.01" aria-label="Цена" value="${r.price.toFixed(2)}" onclick="event.stopPropagation()" onchange="updateFreeRowPrice(${pos.id},${idx},this.value)">`:r.price.toFixed(2)+(r.isDefaultPrice?'*':'')}</td>
         <td class="num">${sum.toFixed(2)}</td>
         <td>${globalThis.MatrixCore?.strikeRole(r.art)||r.strikeRole?` <button class="small strike-replace" type="button" title="Заменить ответную планку" aria-label="Заменить ответную планку" onclick="event.stopPropagation(); openStrikeReplacement(${pos.id},${idx})"><span class="ui-icon i-pencil" aria-hidden="true"></span></button>`:''}<button class="small danger" onclick="event.stopPropagation(); removeRow(${pos.id},${idx})"><span class="ui-icon i-xmark" aria-hidden="true"></span></button></td>
       </tr>`;
@@ -961,14 +989,14 @@ function renderOrder(){
       </div>
       <div style="font-size:11px; color:var(--muted);">${esc(pos.scheme)}</div>
       ${pos.plateCalculation?.rule==='unverified'?'<p class="hint">'+esc(globalThis.FuturussI18n?.translate('PLS: схема соединений не проверена. Сохранено количество из комплектации; проверьте его вручную.')||'PLS: схема соединений не проверена. Сохранено количество из комплектации; проверьте его вручную.')+'</p>':''}
-      <div class="swatch-row">
+      ${pos.freeInvoice?'':`<div class="swatch-row">
         ${pos.lowerNode&&pos.lowerNode!=='catalog'?'<span class="pill">'+esc(globalThis.FuturussI18n?.translate(pos.lowerNode==='bolt'?'Шпингалет — вертикальная ответная планка':'Взломостойкий зацеп — нижняя горизонталь')||pos.lowerNode)+'</span>':''}
         <span class="pill">ШСФ ${pos.width}×ВСФ ${pos.height} мм</span>
         <span class="pill">${pos.sashQty} ств. (П: ${pos.qtyRight} / Л: ${pos.qtyLeft})</span>
         <span class="pill">${esc(pos.blockRange)}</span>
         ${pos.groove ? `<span class="pill">Паз: ${esc(pos.groove)}</span>` : ""}
         ${positionPressureNote(pos)}
-      </div>
+      </div>`}
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:20px;">№</th><th>Артикул</th><th>Наименование</th><th class="num">Кол-во</th><th class="num">Цена</th><th class="num">Сумма</th><th></th></tr></thead>
@@ -990,9 +1018,9 @@ function renderOrder(){
 
   const combinedTbody = document.getElementById("combined-tbody");
   combinedTbody.innerHTML = "";
-  const combinedOrder = groupRowsForDisplay(Object.keys(combined).sort(), a => a);
-  combinedOrder.forEach((art, i) => {
-    const c = combined[art];
+  const combinedOrder = groupRowsForDisplay(Object.keys(combined).sort(), key => combined[key].art);
+  combinedOrder.forEach((key, i) => {
+    const c = combined[key],art=c.art;
     const sum = c.qty * c.price;
     const tr = document.createElement("tr");
     tr.className = "row-item" + (isHingeKitArt(art) ? " hinge-kit" : "") + (isDriveArt(art) ? " drive-row" : "");
@@ -1069,14 +1097,10 @@ async function exportToExcel(){
   const ws1 = XLSX.utils.json_to_sheet(flatRows);
   XLSX.utils.book_append_sheet(wb, ws1, "Накладная");
 
-  const combined = {};
-  orderPositions.forEach(pos => pos.rows.forEach(r => {
-    combined[r.art] = combined[r.art] || {name:r.name, qty:0, price:r.price, isDefaultPrice:r.isDefaultPrice};
-    combined[r.art].qty += r.qty;
-  }));
-  const combinedRows = Object.keys(combined).sort().map(art => ({
-    "Артикул": excelSafe(art), "Наименование": excelSafe(combined[art].name), "Кол-во": combined[art].qty,
-    "Цена": combined[art].price, "Сумма": +(combined[art].qty*combined[art].price).toFixed(2)
+  const combined = invoiceCombinedRows(orderPositions);
+  const combinedRows = Object.keys(combined).sort().map(key => ({
+    "Артикул": excelSafe(combined[key].art), "Наименование": excelSafe(combined[key].name), "Кол-во": combined[key].qty,
+    "Цена": combined[key].price, "Сумма": +(combined[key].qty*combined[key].price).toFixed(2)
   }));
   const ws2 = XLSX.utils.json_to_sheet(combinedRows);
   XLSX.utils.book_append_sheet(wb, ws2, "Сводная");
@@ -1137,7 +1161,8 @@ function addManualRow(posId){
   if (!pos) return;
   const art = posAddArtSelected[posId];
   if (!art){ setMsg("Выберите деталь из списка (начните вводить артикул или название и кликните по нужному варианту).", "err"); return; }
-  const qty = parseFloat(document.getElementById("add-qty-" + posId).value) || 1;
+  const qty = Number(document.getElementById("add-qty-" + posId).value);
+  if(!Number.isFinite(qty)||qty<=0)return;
   const info = DATA.master[art];
   if(!info){setMsg(globalThis.FuturussPricingText?.('unavailable')+art,'err');return;}
   pos.rows.push({art, name: info.name, qty, price: info.price, isDefaultPrice: false});
@@ -2602,7 +2627,8 @@ globalThis.FuturussLegacyApp = {
       const visible=!!canViewPrices;
       for(const pos of orderPositions||[])for(const row of pos.rows||[]){
         const master=DATA?.master?.[row.art];
-        row.price=visible&&master&&Number.isFinite(Number(master.price))?Number(master.price):0;
+        const keep=pos.freeInvoice&&row.manualPrice&&row.manualPriceOwner===freePriceOwner()&&visible&&master;
+        if(!keep){row.price=visible&&master&&Number.isFinite(Number(master.price))?Number(master.price):0;delete row.manualPrice;delete row.manualPriceOwner;}
         row.isDefaultPrice=false;
       }
       if(typeof renderOrder==='function')renderOrder();

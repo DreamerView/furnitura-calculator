@@ -92,3 +92,7 @@ html:root body.workdesk-app #positions-container .add-row .art-dd-item:hover{bac
 
 /* The standalone totals table must not inherit the scrollable BOM minimum width. */
 @media screen and (max-width:767px){html:root body.workdesk-app #combined-card > table{min-width:0!important;width:100%!important}}
+
+.free-invoice-button{margin-top:8px}
+html:root body.workdesk-app #positions-container table input.free-price-input{max-width:96px!important;width:100%}
+@media print{.free-price-input{border:0!important;background:transparent!important;appearance:textfield}.free-price-input::-webkit-inner-spin-button{display:none}}
