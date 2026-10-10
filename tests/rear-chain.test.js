@@ -8,7 +8,8 @@ for(const variant of ['roller11','roller8','mushroom'])for(const mode of ['short
  if(plan.reviewReasons.length){assert(run(k,p).errors.length);p.chainReviewed=plan.reviewKey;}
  const r=run(k,p);assert.deepEqual(r.errors,[],variant+mode+height);assert.equal(r.total,r.items.reduce((n,i)=>n+i.qty*i.price,0));
  const strikeRole=variant==='mushroom'?'security':'perimeter',expected=plan.items.filter(i=>i.role==='chain'&&i.camCount).reduce((n,i)=>n+i.camCount,0)*2;
- assert.equal(r.items.filter(i=>i.strikeRole===strikeRole).reduce((n,i)=>n+i.qty,0),expected);
+ const base=r.items.filter(i=>/^(?:X?PO(?:M|K|Z)?|X?NO)\./.test(i.art)).reduce((n,i)=>n+Number(i.art.match(/-(\d)/)?.[1]||0)*i.qty,0)+(variant==='roller11'||variant==='mushroom'?2:0);
+ assert.equal(r.items.filter(i=>i.strikeRole===strikeRole).reduce((n,i)=>n+i.qty,0),expected+base,variant+' '+mode+' '+height+' '+r.items.filter(i=>!i.strikeRole).map(i=>i.art).join(','));
  assert.equal(r.items.filter(i=>i.strikeRole==='tiltSecurity').reduce((n,i)=>n+i.qty,0),2);
  assert(!r.items.some(i=>i.art==='XUSP'));assert.deepEqual(plan.rear.at(-1),plan.items.filter(i=>i.chainZone==='rear'&&i.role==='chain').at(-1).art);count++;
 }

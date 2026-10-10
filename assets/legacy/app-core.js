@@ -885,6 +885,21 @@ function updateRowQty(posId, rowIdx, newVal){
 }
 function clearOrder(){ orderPositions = []; renderOrder(); setMsg("Накладная очищена.", "ok"); }
 
+function positionEngineeringNote(row){
+  const M=globalThis.MatrixCore;if(!M?.camSpec(row.art)?.extension)return '';
+  const zones=[...new Set((row.placements||[{zone:M.extensionZone(row)}]).map(p=>p.zone))];
+  const labels={rear:'со стороны петель',bottom:'снизу',lower:'снизу',front:'спереди, смещение ручки',unknown:'место не задано'};
+  const tr=v=>globalThis.FuturussI18n?.translate(v)||v;
+  return ' <small class="engineering-note">('+zones.map(z=>esc(tr(labels[z]||labels.unknown))).join(', ')+')</small>';
+}
+function positionPressureNote(pos){
+  const M=globalThis.MatrixCore;if(!M)return '';
+  const summary=M.pressureSummary(pos.rows,pos.family),tr=v=>globalThis.FuturussI18n?.translate(v)||v;
+  const label=summary.complete?'Точки прижима по цапфам':'Подтверждённые точки прижима';
+  const title=summary.complete?'Всего по позиции. Петли и пассивные прижимы не включены.':'Подсчёт неполный. Проверьте детали без подтверждённого числа цапф.';
+  return '<span class="pill pressure-summary" title="'+esc(tr(title)+(summary.unknown.length?' '+summary.unknown.join(', '):''))+'">'+esc(tr(label))+': '+summary.points+(summary.complete?'':' · '+esc(tr('требует проверки')))+'</span>';
+}
+
 function renderOrder(){
   const policy=globalThis.FUTURUSS_SPA?.state?.catalog?.data?.pricingApplied;
   const canPrice=globalThis.FUTURUSS_SPA?.state?.catalog?.canViewPrices!==false;
@@ -928,7 +943,7 @@ function renderOrder(){
       <tr data-position-id="${pos.id}" data-row-index="${idx}" class="row-item${r.pricingUnavailable?' pricing-unavailable':''}${isHingeKitArt(r.art) ? ' hinge-kit' : ''}${isDriveArt(r.art) ? ' drive-row' : ''}" ondblclick="showPhoto(${inlineJsArg(r.art)}, ${inlineJsArg(r.name)}, 'invoice')">
         <td>${displayIdx+1}</td>
         <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}</td>
-        <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}</td>
+        <td class="${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.name)}${positionEngineeringNote(r)}</td>
         <td class="num"><input class="qty-input" type="number" value="${r.qty}" min="0" onclick="event.stopPropagation()" onchange="updateRowQty(${pos.id},${idx},this.value)"></td>
         <td class="num${r.isDefaultPrice?' price-default':''}">${r.price.toFixed(2)}${r.isDefaultPrice?'*':''}</td>
         <td class="num">${sum.toFixed(2)}</td>
@@ -950,6 +965,7 @@ function renderOrder(){
         <span class="pill">${pos.sashQty} ств. (П: ${pos.qtyRight} / Л: ${pos.qtyLeft})</span>
         <span class="pill">${esc(pos.blockRange)}</span>
         ${pos.groove ? `<span class="pill">Паз: ${esc(pos.groove)}</span>` : ""}
+        ${positionPressureNote(pos)}
       </div>
       <div class="table-wrap">
         <table>
@@ -1729,11 +1745,11 @@ const DRIVE_GROUPS_DISPLAY = new Set([
   "привода поворотно-откидные с грибовидной цапфой", "привод ножниц противовзломные",
   "ножницы пов-отк", "ножницы тилт-фёст", "ножницы поворотно-откидные противовзломные"
 ]);
-function isDriveArt(art){ return DRIVE_GROUPS_DISPLAY.has(DATA.groups[art]); }
+function isDriveArt(art){ const name=DATA.master[art]?.name||'';return !/^удлинитель/i.test(name)&&(DRIVE_GROUPS_DISPLAY.has(DATA.groups[art]) || /^(?:привод|ножницы|штульповый привод)/i.test(name)); }
 // PN.R/PN.S (средний прижим накладной) и их накладки формально в группе "поворотные петли",
 // но это не петли — подсвечивать как петли их не нужно.
 const HINGE_KIT_EXCLUDE = new Set(["PN.R", "PN.S", "N.PN.R.B", "N.PN.S.B", "N.PN.R.K", "N.PN.S.K"]);
-function isHingeKitArt(art){ return HINGE_KIT_GROUPS.has(DATA.groups[art]) && !HINGE_KIT_EXCLUDE.has(art); }
+function isHingeKitArt(art){ return !HINGE_KIT_EXCLUDE.has(art) && (HINGE_KIT_GROUPS.has(DATA.groups[art]) || /^(?:N\.(?:RV|RN|SV|SN|3DS)|RV(?:\.|$)|RN(?:\.|$)|SV\.|SN(?:\.|$)|3DS\.|SF\.|SPK-|SPN-)/.test(art)); }
 
 // PN.R/PN.S (средний прижим накладной) и их накладки — тоже идут комплектом, но это не петли:
 // подсвечиваться как петли не должны, а их блок в списке должен идти после блока петель, не перед ним.

@@ -9,3 +9,14 @@
 @media(max-width:600px){#calculationTechnologyOptions [data-tech="chainWrap"]{grid-template-columns:minmax(0,1fr)}}
 
 #calculationTechnologyOptions [data-tech="chainPreview"]{width:100%!important;justify-self:stretch}
+
+/* Position BOM only: restrained grouping, no hardware-colour paint. */
+html:root body #positions-container .row-item.hinge-kit,
+html:root body #positions-container .row-item.hinge-kit td {
+  background:color-mix(in srgb,var(--accent,#007aff) 5%,var(--surface,#fff))!important;
+}
+html:root body.workdesk-app #positions-container .pos-block table tbody tr.row-item.drive-row > td:nth-child(2),
+html:root body.workdesk-app #positions-container .pos-block table tbody tr.row-item.drive-row > td:nth-child(3) {font-weight:600!important;color:var(--text,#1d1d1f)!important}
+#positions-container .engineering-note {font-size:11px;font-weight:400;color:var(--muted,#6b7280);white-space:normal}
+#positions-container .pressure-summary {font-variant-numeric:tabular-nums}
+html:root body #positions-container .row-item.hinge-kit:hover td {background:var(--accent-soft)!important}

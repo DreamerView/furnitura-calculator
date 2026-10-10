@@ -155,7 +155,7 @@
     params.optionSeries=alu?'13':groove?grooveSeries(groove):(kit.optionSeries||'9');
     const results=[['R',right],['L',left]].filter(([,count])=>count>0).map(([side,count])=>MatrixCore.calculate(data,data.kits.find(k=>k.id===kit.id),{...params,side,count},selection));
     const result={...results[0],errors:[...new Set(results.flatMap(r=>r.errors))],warnings:[...new Set(results.flatMap(r=>r.warnings))]};
-    const merged=new Map();for(const r of results)for(const item of r.items){const prev=merged.get(item.art);if(prev)prev.qty+=item.qty;else merged.set(item.art,{...item});}result.items=[...merged.values()];
+    result.items=MatrixCore.mergeCalculatedItems(results.flatMap(r=>r.items));
     const unavailable=result.items.filter(item=>!DATA.master[item.art]);
     if(imported?.pricingApplied&&unavailable.length){setMsg((globalThis.FuturussPricingText?.('unavailable')||'Товары недоступны у поставщика: ')+unavailable.map(item=>item.art).join(', '),'err');return;}
     if(result.errors.length){setMsg(result.errors.join(' '),'err');return;}

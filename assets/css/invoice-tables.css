@@ -89,3 +89,6 @@ html:root body.workdesk-app #positions-container .add-row .art-dd-item{border-ra
 html:root body.workdesk-app #positions-container .add-row .art-dd-item:hover{background:var(--accent-soft)!important;color:var(--accent)!important}
 @media(max-width:575px){html:root body.workdesk-app #positions-container .add-row{grid-template-columns:64px minmax(0,1fr)!important}html:root body.workdesk-app #positions-container .add-row .art-autocomplete{grid-column:1/-1!important}html:root body.workdesk-app #positions-container .add-row>button{width:100%!important}}
 }
+
+/* The standalone totals table must not inherit the scrollable BOM minimum width. */
+@media screen and (max-width:767px){html:root body.workdesk-app #combined-card > table{min-width:0!important;width:100%!important}}

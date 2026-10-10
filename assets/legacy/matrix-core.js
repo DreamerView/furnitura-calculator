@@ -282,6 +282,99 @@
     return [...old.filter((_,n)=>!remove.has(n)),...copy(plan.items)];
   }
 
+  // Catalogue PVC 2026-07, pp.154–209, 232–241. Counts apply only to these
+  // documented article families; an arbitrary numeric article suffix is NOT a cam count.
+  function camSpec(art,record={}){
+    const a=String(art||'').replace(/\.BLACK$/,'');
+    const m=a.match(/^(?:X?PO(?:M|K|Z)?|PP|X?NO|X?PNB|PNF)(?:\.[A-Z]+)*\.\d+-([1-4])(?:\.[A-Z\d]+)*$/);
+    if(m)return {points:+m[1],role:/(?:^|\.)V(?:\.|$)/.test(a)?'security':'perimeter',lifter:/^POM\./.test(a)};
+    if(/^(?:X?UF|UB|XUK|UK3|XU|U)\.(?:200|400|600)-1(?:\.?[A-Z]+)*$/.test(a))return {points:1,role:/^UK3\./.test(a)?'threshold':(/\.V(?:\.|$)/.test(a)&&!a.endsWith('.V.R')?'security':'perimeter'),extension:true};
+    if(['PO.740','PO.740.D25','POK.790.D25','NO.600','NO.700','NO.800','NO.600.TF','US.200'].includes(a))return {points:0,role:'perimeter'};
+    if(/^(?:XU|U1|U2|XUU|UU)$/.test(a))return {points:1,role:a==='U2'?'security':'perimeter'};
+    if(/^(?:XU|XU1|U1|U2)\.[RL]$/.test(a))return {points:1,role:a.startsWith('U2.')?'security':'perimeter',step:true};
+    if(['XU.2','U1.2','U2.2'].includes(a))return {points:2,role:a==='U2.2'?'security':'perimeter',tilt:true};
+    if(a==='XUSP')return {points:1,role:'perimeter',bolt:true};
+    if(a==='U3')return {points:1,role:'threshold'};
+    return null;
+  }
+  function pressureSummary(rows,family='pvc'){
+    let points=0;const unknown=[];
+    for(const r of rows){if(!(r.qty>0))continue;const spec=family==='aluminum'?null:camSpec(r.art,r);
+      if(spec)points+=spec.points*r.qty;
+      else if(/цапф|привод|удлинител|угловая передача|ножницы/i.test(r.name||'')&&!strikeRole(r.art)&&!/без.*цапф|накладк|зацеп|ответн|ограничител/i.test(r.name||''))unknown.push(r.art);
+    }
+    return {points,unknown:[...new Set(unknown)],complete:unknown.length===0&&family!=='aluminum'};
+  }
+  function extensionZone(item){
+    if(item.chainZone)return item.chainZone;
+    if(item.installationZone)return item.installationZone;
+    const a=item.art.replace(/\.BLACK$/,'');
+    // Cuttable front extension and extensions dedicated to the rear stay drive.
+    if(/^(?:XU|UF)\.400-1\.?U(?:\.V)?$/.test(a))return 'front';
+    if(/^(?:XU|UB)\.(?:400|600)-1(?:\.V)?$/.test(a))return 'rear';
+    return 'unknown';
+  }
+  function completeStrikes(db,kit,params,items,selection,errors,warnings){
+    if(kit.family==='aluminum')return items;
+    const requirements=new Map();
+    const special=['stulp','stulp-drive','stulp-bolts','sliding','arched','trapezoid'].includes(kit.openingType);
+    const request=(parent,role,n)=>{
+      if(!n)return;
+      // Shared/mating sashes need their installation scheme, not ordinary frame strikes.
+      if(special&&['perimeter','security'].includes(role))return;
+      let choice=selection?.roles[role];
+      if(role==='threshold')choice={art:'ZVO.P13/'+String(params.strikeSuffix||kit.strikeSuffix||'40')};
+      if(role==='lifterZinc'){
+        const current=items.find(i=>['lifterPlastic','lifterZinc'].includes(strikeRole(i.art)));
+        if(current)choice={art:current.art};
+      }
+      if(role==='tiltSecurity'){
+        const current=items.find(i=>/^(?:ZUO\.|ZVO\.|ZTF\.)/.test(i.art));
+        if(current)choice={art:current.art};
+      }
+      if(!choice?.art)return;
+      if(!db.articles[choice.art]||db.articles[choice.art].available===false){errors.push('Ответная планка отсутствует или недоступна: '+choice.art);return;}
+      const req=requirements.get(choice.art)||{qty:0,dependencies:[],manual:!!choice.manual};
+      req.qty+=parent.qty*n;
+      const dep=req.dependencies.find(d=>d.parent===parent.art);
+      // Several installations of one article share the same per-unit dependency.
+      if(!dep)req.dependencies.push({parent:parent.art,ratio:n});
+      else if(dep.ratio!==n){warnings.push('Ответные части требуют проверки по схеме: '+parent.art);}
+      requirements.set(choice.art,req);
+    };
+    for(const item of items){const spec=camSpec(item.art,db.articles[item.art]);
+      if(spec){
+        if(spec.tilt){request(item,spec.role,1);request(item,'tiltSecurity',1);}
+        else {request(item,spec.role,spec.points);if(spec.bolt)request(item,'tiltBolt',1);}
+        if(spec.step)request(item,'step',1);
+        if(spec.lifter)request(item,'lifterZinc',1);
+      }
+      if(item.art==='MBU')request(item,'lifterZinc',1);
+      if(item.art==='PS.S')request(item,'hiddenClamp',1);
+    }
+    // Reconcile with existing recipe quantities, rather than adding a second copy.
+    // Preserve manually supplied excess; only the confirmed obligation is linked.
+    for(const [art,req] of requirements){
+      const existing=items.filter(i=>i.art===art),quantity=existing.reduce((n,i)=>n+i.qty,0);
+      if(quantity>req.qty)warnings.push('Сохранены дополнительные ответные планки из комплектации: '+art);
+      const source=existing[0]||{art,role:'strike'};
+      items=items.filter(i=>i.art!==art);
+      const merged={...source,qty:Math.max(quantity,req.qty),dependencies:req.dependencies,...(req.manual?{manualStrike:true,compatibilityApproved:true}:{})};delete merged.dependency;
+      items.push(merged);
+    }
+    if(special)warnings.push('Ответные части требуют проверки по схеме: '+kit.name);
+    if(!selection)warnings.push('Для полного подбора ответных планок выберите профильную систему.');
+    return items;
+  }
+  function mergeCalculatedItems(rows){
+    const out=new Map();
+    for(const row of rows){const old=out.get(row.art);if(!old){out.set(row.art,copy(row));continue;}old.qty+=row.qty;
+      for(const d of row.dependencies||[]){old.dependencies??=[];if(!old.dependencies.some(x=>x.parent===d.parent&&x.ratio===d.ratio))old.dependencies.push(copy(d));}
+      for(const p of row.placements||[]){old.placements??=[];const existing=old.placements.find(x=>x.zone===p.zone);if(existing)existing.qty+=p.qty;else old.placements.push(copy(p));}
+    }
+    return [...out.values()];
+  }
+
   function lowerNodeSupported(kit){return kit.family!=='aluminum'&&kit.calculationMode!=='generic'&&kit.variant==='roller11'&&!['turn','fanlight','door','stulp','stulp-drive','stulp-bolts','tilt-first'].includes(kit.openingType);}
 
   function strikeRole(art){
@@ -530,13 +623,14 @@
     if(technology?.ok){if(drive)drive.art=technology.drive;if(items.some(i=>/^(?:XU\.400-1U|UF\.400-1U|X?UF\.)/.test(i.art)))errors.push('Удлинитель в ячейке конфликтует с прямым соединением привода.');warnings.push(technologyText(technology));}
     if(!generic&&!items.some(i=>i.role==='drive'&&i.art))errors.push('Не выбран поворотно-откидной привод.');
     if(!generic&&!pvcTurn&&(kit.family!=='aluminum'||(kit.openingType!=='turn'&&kit.openingType!=='stulp'))&&!items.some(i=>i.role==='scissors'&&i.art))errors.push('Не выбраны ножницы.');
+    items=completeStrikes(db,kit,params,items,strikeSelection,errors,warnings);
     if((params.hardwareFinish||kit.hardwareFinish)==='black'){
       const unchanged=[];let replaced=0;
       for(const it of items){if(it.manualStrike)continue;const a=db.articles[it.art],target=a?.blackVariant;if(target&&db.articles[target]){it.art=target;replaced++;}else if(a?.finish!=='black'&&!it.art.includes('.BLACK'))unchanged.push(it.art);}
       if(!replaced&&!items.some(it=>it.art.includes('.BLACK')))errors.push('Для выбранного состава чёрные исполнения не подтверждены каталогом.');
       if(unchanged.length)warnings.push('Стандартное исполнение без подтверждённой чёрной замены: '+[...new Set(unchanged)].join(', '));
     }
-    if((params.hardwareFinish||kit.hardwareFinish)==='black')for(const it of items)if(it.chainZone&&it.dependency){const target=db.articles[it.dependency.parent]?.blackVariant;if(target&&items.some(i=>i.art===target))it.dependency.parent=target;}
+    if((params.hardwareFinish||kit.hardwareFinish)==='black')for(const it of items)for(const dep of [...(it.dependencies||[]),...(it.dependency?[it.dependency]:[])]){const target=db.articles[dep.parent]?.blackVariant;if(target&&items.some(i=>i.art===target))dep.parent=target;}
     const autoPlates=kit.family==='aluminum'?opts?.aluPlate===true:opts?.plsEnabled===true;
     let plateCalculation;
     if(autoPlates){
@@ -562,9 +656,15 @@
       if(a.variants?.length&&!a.variants.includes(kit.variant)&&it.art!=='NO.600'&&!it.compatibilityApproved)errors.push(it.art+': не соответствует виду цапфы.');
       for(const axis of ['width','height']){const value=kit.driveAxis==='width'&&it.role==='drive'?(axis==='height'?params.width:params.height):params[axis];if(a[axis]&&(value<a[axis].min||value>a[axis].max))errors.push(it.art+': размер вне каталожного диапазона.');}
       if(a.price==null)errors.push(it.art+': не задана цена.');
-      const old=totals.get(it.art);if(old){old.qty+=it.qty*params.count;if(it.chainZone&&it.dependency){old.dependencies??=[];if(!old.dependencies.some(d=>d.parent===it.dependency.parent&&d.ratio===it.dependency.ratio))old.dependencies.push({...it.dependency});}}else totals.set(it.art,{art:it.art,name:a.name,price:a.price,qty:it.qty*params.count,...(it.dependency?(it.chainZone?{dependencies:[{...it.dependency}]}:{dependency:it.dependency}):{}),...(it.chainZone?{chainZone:it.chainZone}:{}),...(strikeRole(it.art)?{strikeRole:strikeRole(it.art)}:{})});
+      const spec=camSpec(it.art,a),entry={art:it.art,name:a.name,price:a.price,qty:it.qty*params.count,
+        ...(it.dependencies?{dependencies:copy(it.dependencies)}:it.dependency?{dependencies:[copy(it.dependency)]}:{}),
+        ...(it.chainZone?{chainZone:it.chainZone}:{}),...(spec?.extension?{placements:[{zone:extensionZone(it),qty:it.qty*params.count}]}:{}),
+        ...(strikeRole(it.art)?{strikeRole:strikeRole(it.art)}:{})};
+      totals.set(it.art,totals.has(it.art)?mergeCalculatedItems([totals.get(it.art),entry])[0]:entry);
     }
-    const result=[...totals.values()];return {errors:[...new Set(errors)],warnings,items:result,choices,chosen,technology,...(chain?{chainCalculation:chain}:{}),...(plateCalculation?{plateCalculation}:{}),total:errors.length?null:result.reduce((s,i)=>s+i.price*i.qty,0)};
+    const result=[...totals.values()],pressureCalculation=pressureSummary(result,kit.family);
+    if(!pressureCalculation.complete)warnings.push('Не все точки прижима подтверждены каталогом: '+pressureCalculation.unknown.join(', '));
+    return {pressureCalculation,errors:[...new Set(errors)],warnings,items:result,choices,chosen,technology,...(chain?{chainCalculation:chain}:{}),...(plateCalculation?{plateCalculation}:{}),total:errors.length?null:result.reduce((s,i)=>s+i.price*i.qty,0)};
   }
   function importOld(old){
     if(old.schemaVersion===2)return copy(old);
@@ -582,6 +682,6 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
 })(typeof globalThis!=='undefined'?globalThis:this);

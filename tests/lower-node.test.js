@@ -5,7 +5,7 @@ let checks=0;
 for(const profile of Object.keys(M.strikeDefaults.profiles))for(const side of ['R','L'])for(const count of [1,3]){
  const p={width:500,height:1200,count,side,dornmass:15,strikeProfile:profile,optionSeries:profile==='KBE 09'?'9':'13',lowerNode:'security'};
  const c=M.candidates(kit,p.width,p.height)[0],r=M.calculate(db,kit,p,c);assert.deepEqual(r.errors,[]);assert(r.items.some(i=>i.art==='XU.2'&&i.qty===count));assert(!r.items.some(i=>i.art==='XUSP'||M.strikeRole(i.art)==='tiltBolt'));
- const strike=r.items.find(i=>M.strikeRole(i.art)==='tiltSecurity');assert.equal(strike.qty,count);assert.equal(strike.dependency.parent,'XU.2');
+ const strike=r.items.find(i=>M.strikeRole(i.art)==='tiltSecurity');assert.equal(strike.qty,count);assert.equal(strike.dependencies[0].parent,'XU.2');
  const bolt=M.calculate(db,kit,{...p,lowerNode:'bolt'},c);assert.deepEqual(bolt.errors,[]);assert(bolt.items.some(i=>i.art==='XUSP'));assert(bolt.items.some(i=>i.art==='XZSP.'+(profile==='KBE 09'?'9':'13')+'.'+side));
  checks++;
 }

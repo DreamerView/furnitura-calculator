@@ -1,6 +1,19 @@
 (function(){
 'use strict';
 const dict={
+"со стороны петель":["hinge side", "menteşe tarafında"],
+"снизу":["bottom", "altta"],
+"спереди, смещение ручки":["front, offset handle", "önde, ofset kol"],
+"место не задано":["location not assigned", "konum belirtilmedi"],
+"Точки прижима по цапфам":["Cam locking points", "Pim kilitleme noktaları"],
+"Подтверждённые точки прижима":["Confirmed locking points", "Doğrulanmış kilitleme noktaları"],
+"Всего по позиции. Петли и пассивные прижимы не включены.":["Total for this position. Hinges and passive clamps are excluded.", "Bu pozisyonun toplamı. Menteşeler ve pasif baskılar dahil değildir."],
+"Подсчёт неполный. Проверьте детали без подтверждённого числа цапф.":["Incomplete count. Check parts without confirmed cam counts.", "Sayım eksik. Pim sayısı doğrulanmamış parçaları kontrol edin."],
+"требует проверки":["needs review", "kontrol gerekli"],
+"Ответные части требуют проверки по схеме: ":["Check mating parts against the assembly drawing: ", "Karşılıkları montaj şemasına göre kontrol edin: "],
+"Сохранены дополнительные ответные планки из комплектации: ":["Additional recipe strikes preserved: ", "Setteki ek karşılıklar korundu: "],
+"Для полного подбора ответных планок выберите профильную систему.":["Select a profile system to complete strike selection.", "Karşılık seçimini tamamlamak için profil sistemini seçin."],
+"Не все точки прижима подтверждены каталогом: ":["Not all locking points are confirmed by the catalogue: ", "Tüm kilitleme noktaları katalogda doğrulanmamış: "],
 "Нижняя цепочка для цапфы 8 мм или грибовидной требует сверки соединений и каталожных обозначений.":["Check joints and catalogue references for the bottom chain with 8 mm or mushroom cams.","8 mm veya mantar pimli alt zincirin bağlantılarını ve katalog kodlarını kontrol edin."],
 "Выберите нижний узел":["Select the lower assembly", "Alt grubu seçin"],
 "Угловая передача — горизонтальный откидной зацеп":["Corner drive — horizontal tilt strike", "Köşe hareketi — yatay vasistas karşılığı"],
