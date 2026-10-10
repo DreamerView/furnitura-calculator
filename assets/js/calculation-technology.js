@@ -14,7 +14,10 @@ function create({container,getContext,onChange,isConstructor=false,preferences=f
   container.classList.add('constructor-options');
   const toggles=document.createElement('div'),fields=document.createElement('div');toggles.className='constructor-toggles';fields.className='constructor-fields';
   const children=Array.from(container.children);for(const child of children){if(child.matches('label.checkbox'))toggles.append(child);else if(child.matches('label, .handle-color-wrap'))fields.append(child);else child.classList.add('constructor-note');}
-  container.prepend(toggles,fields);box.classList.add('constructor-technology');
+  const heading=document.createElement('h2');heading.className='constructor-options-title';heading.textContent='Настройки комплектации';
+  const group=(content,title)=>{const section=document.createElement('section');section.className='constructor-option-group';const h=document.createElement('h3');h.textContent=title;section.append(h,content);return section;};
+  container.prepend(heading,group(toggles,'Дополнительные опции'),group(fields,'Ручка и оформление'));box.classList.add('constructor-technology');
+  const nodeHeading=document.createElement('h3');nodeHeading.className='constructor-node-title';nodeHeading.textContent='Узлы и соединения';box.prepend(nodeHeading);
  }
  container.append(box);const el=n=>box.querySelector('[data-tech="'+n+'"]');
  const roleLabels={perimeter:'Периметральная планка',security:'Взломостойкая периметральная планка',tiltSecurity:'Взломостойкий откидной зацеп',tiltFirst:'Зацеп Tilt First',microvent:'Зацеп микровентиляции',step:'Зацеп пошагового проветривания',lifterPlastic:'Зацеп приподнимателя — капрон',lifterZinc:'Зацеп приподнимателя — цинк',tiltBolt:'Ответная планка шпингалета',hiddenClamp:'Зацеп скрытого прижима'};

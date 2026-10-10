@@ -129,3 +129,18 @@ html:root body.workdesk-configurator .constructor-technology p{margin:0;font-siz
 html:root body.workdesk-configurator .constructor-options [hidden]{display:none!important}
 @media(max-width:1100px){html:root body.workdesk-configurator .calculation{grid-template-columns:repeat(3,minmax(0,1fr))}html:root body.workdesk-configurator .constructor-fields,html:root body.workdesk-configurator .constructor-technology,html:root body.workdesk-configurator .constructor-toggles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){html:root body.workdesk-configurator .calculation{grid-template-columns:repeat(2,minmax(0,1fr))}html:root body.workdesk-configurator .constructor-fields,html:root body.workdesk-configurator .constructor-technology,html:root body.workdesk-configurator .constructor-toggles{grid-template-columns:1fr}}
+
+/* Bounded settings card with clear internal sections. */
+html:root body.workdesk-configurator .calculation,html:root body.workdesk-configurator .constructor-options{max-width:1120px;margin-left:auto!important;margin-right:auto!important;width:100%;box-sizing:border-box}
+html:root body.workdesk-configurator .constructor-options{border:1px solid rgba(0,122,255,.3)!important;box-shadow:0 2px 8px rgba(0,0,0,.04);padding:16px!important;background:var(--modal-bg,#fff)!important}
+html:root body.workdesk-configurator .constructor-options-title{font-size:17px!important;margin:0 0 12px!important;padding-bottom:10px;border-bottom:1px solid var(--separator,#d9dce3)}
+html:root body.workdesk-configurator .constructor-option-group{padding:10px 12px;margin:0 0 10px;border:1px solid var(--separator,#d9dce3);border-radius:10px;background:rgba(127,127,127,.035)}
+html:root body.workdesk-configurator .constructor-option-group h3,html:root body.workdesk-configurator .constructor-node-title{font-size:13px!important;font-weight:600;margin:0 0 8px!important;color:var(--text)}
+html:root body.workdesk-configurator .constructor-toggles{margin-bottom:0}
+html:root body.workdesk-configurator .constructor-technology{border:1px solid var(--separator,#d9dce3)!important;border-radius:10px;padding:10px 12px!important;margin-top:10px!important;background:rgba(127,127,127,.035)}
+html:root body.workdesk-configurator .constructor-node-title{grid-column:1/-1}
+html:root body.workdesk-configurator .constructor-technology>[data-tech=chainWrap]{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+html:root body.workdesk-configurator .constructor-technology>[data-tech=chainWrap] label{margin-bottom:6px}
+html:root body.workdesk-configurator .constructor-note{margin:4px 2px!important}
+@media(max-width:1100px){html:root body.workdesk-configurator .calculation{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){html:root body.workdesk-configurator .constructor-options{padding:10px!important}html:root body.workdesk-configurator .constructor-technology>[data-tech=chainWrap]{grid-template-columns:1fr}html:root body.workdesk-configurator .calculation{grid-template-columns:repeat(2,minmax(0,1fr))}}
