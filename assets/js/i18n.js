@@ -1,6 +1,22 @@
 (function(){
 'use strict';
 const dict={
+"Смещённая ручка располагается ниже центра створки. Подбор привода и верхних удлинителей зависит от её высоты.":["An offset handle sits below the sash centre. Drive and upper extensions depend on its height.", "Ofset kol kanat merkezinin altındadır. İspanyolet ve üst uzatmalar kol yüksekliğine göre seçilir."],
+"Микровентиляция оставляет небольшую щель для притока воздуха. Это режим проветривания, а не закрытое окно.":["Microventilation leaves a small gap for fresh air. This is a ventilation position, not a closed window.", "Mikro havalandırma hava için küçük bir aralık bırakır. Bu, kapalı pencere değil havalandırma konumudur."],
+"Приподниматель помогает створке занять правильное положение при закрывании и снижает нагрузку на петли. Не заменяет регулировку провисшей створки.":["The sash lifter guides the sash when closing and reduces hinge load. It does not replace adjustment of a sagging sash.", "Kanat kaldırıcı kapanırken kanadı yönlendirir ve menteşe yükünü azaltır. Sarkmış kanadın ayarının yerini tutmaz."],
+"Пластины PLS соединяют элементы фурнитуры в предусмотренных схемой стыках. Количество считается по соединениям, а не по всем деталям створки; необходимость зависит от способа сборки.":["PLS plates connect hardware at joints specified by the assembly diagram. Quantity follows joints, not all sash parts; the need depends on the assembly method.", "PLS plakaları donanımı montaj şemasındaki birleşimlerde bağlar. Adet tüm parçalara değil birleşimlere göre hesaplanır; gereklilik montaj yöntemine bağlıdır."],
+"BPR блокирует поворот ручки до нажатия кнопки. Помогает избежать случайного переключения; это не замок с ключом.":["BPR blocks handle rotation until its button is pressed. It helps prevent accidental operation; it is not a keyed lock.", "BPR düğmeye basılana kadar kol dönüşünü engeller. Yanlışlıkla kullanımı önlemeye yardımcı olur; anahtarlı kilit değildir."],
+"Специальное исполнение меняет состав для электропривода или доступного управления МГН. Выбирайте его для соответствующего проекта; совместимость деталей проверяется отдельно.":["Special execution changes the assembly for a motor or accessible operation. Use it for the relevant project; component compatibility must be checked separately.", "Özel uygulama motor veya erişilebilir kullanım için bileşimi değiştirir. İlgili projede seçin; parça uyumluluğu ayrıca kontrol edilir."],
+"Покрытие относится к металлическим механизмам. Цвет ручки и декоративных накладок выбирается отдельно; чёрный вариант доступен только для подтверждённых артикулов.":["Finish applies to metal mechanisms. Handle and cover colours are separate; black finish is available only for verified articles.", "Kaplama metal mekanizmalara aittir. Kol ve kapak renkleri ayrıdır; siyah yalnızca doğrulanmış ürünlerde kullanılabilir."],
+"Скрытые петли не видны при закрытом окне. Для них нужны совместимые ножницы, нижняя петля, подкладки и откидной зацеп; действуют ограничения каталога.":["Concealed hinges are hidden when the window is closed. They require compatible stays, lower hinge, packers and tilt striker; catalogue limits apply.", "Gizli menteşeler pencere kapalıyken görünmez. Uyumlu makas, alt menteşe, altlık ve devirme karşılığı gerekir; katalog sınırları geçerlidir."],
+"Выберите короткий привод-ножницы 200 с удлинителями или длинный 400/600/800. Программа подбирает соединяемые детали по высоте и расположению точек прижима.":["Choose a short 200 stay drive with extensions or a long 400/600/800 drive. Parts are selected by height and locking point positions.", "Uzatmalı kısa 200 makas tahriki veya uzun 400/600/800 seçin. Parçalar yüksekliğe ve kilitleme noktalarına göre seçilir."],
+"Дополнительные прижимы удерживают створку со стороны петель. Применяются к поворотным окнам и дверям; основную петлевую группу не заменяют.":["Additional pressure devices hold the sash on the hinge side. Used for turn-only windows and doors; they do not replace the main hinges.", "Ek baskılar kanadı menteşe tarafında tutar. Açılır pencere ve kapılarda kullanılır; ana menteşelerin yerini tutmaz."],
+"Редактировать профили":["Edit profiles", "Profilleri düzenle"],
+"Примечание к группе (необязательно)":["Group note (optional)", "Grup notu (isteğe bağlı)"],
+"Источник группы (необязательно)":["Group source (optional)", "Grup kaynağı (isteğe bağlı)"],
+"Скрытые петли: горизонтальный узел по схеме 7.17. Вертикальный вариант не подтверждён.":["Concealed hinges: horizontal node per diagram 7.17. The vertical variant is not verified.", "Gizli menteşeler: 7.17 şemasına göre yatay düzen. Dikey seçenek doğrulanmadı."],
+"Отменить последнее добавление":["Undo last addition", "Son eklemeyi geri al"],
+
 "Отключено":["Disabled", "Devre dışı"],
 "Вычет Ш / В, мм":["W / H deduction, mm", "G / Y düşümü, mm"],
 "Одинаковые вычеты — одна группа. Изменение вычетов применяется ко всем профилям группы.":["Identical deductions share one group. Changes apply to every profile in the group.", "Aynı düşümler tek gruptadır. Değişiklikler gruptaki tüm profillere uygulanır."],
@@ -834,7 +850,7 @@ let lang=langs.includes(globalThis.FUTURUSS_LANGUAGE)?globalThis.FUTURUSS_LANGUA
 const localeState=globalThis.Vue?.reactive?globalThis.Vue.reactive({language:lang}):{language:lang};
 let observer=null;
 let applying=false;
-const attrNames=['placeholder','title','aria-label','alt','content'];
+const attrNames=['placeholder','title','aria-label','aria-description','alt','content'];
 const reverse={ru:new Map(),en:new Map(),tr:new Map()};
 const textSource=new WeakMap();
 const textRendered=new WeakMap();

@@ -2,7 +2,7 @@
 declare(strict_types=1);
 final class FrameProfiles {
  public static function withDefaults(array $catalog): array {
-  $revision=2026101107;
+  $revision=2026101108;
   $defaults=json_decode(file_get_contents(dirname(__DIR__,2).'/assets/data/frame-profiles.json'),true,512,JSON_THROW_ON_ERROR);
   if(!array_key_exists('frameProfiles',$catalog))$catalog['frameProfiles']=$defaults;
   elseif(is_array($catalog['frameProfiles'])&&$catalog['frameProfiles']!==[]&&($catalog['frameProfilesRevision']??0)<$revision){
@@ -21,6 +21,8 @@ final class FrameProfiles {
    $ids[$r['id']]=true;
    foreach(['widthDeduction','heightDeduction'] as $key){$v=$r[$key]??null;if($v===null&&!$r['enabled'])continue;if(!is_int($v)&&!is_float($v)||!is_finite((float)$v)||$v<0||$v>1000)throw new InvalidArgumentException('Invalid frame deduction');}
    foreach(['source','note'] as $key)if(!is_string($r[$key]??null)||strlen($r[$key])>5000)throw new InvalidArgumentException('Invalid frame source');
+   foreach(['groupNote','groupSource'] as $key)if(isset($r[$key])&&(!is_string($r[$key])||strlen($r[$key])>5000))throw new InvalidArgumentException('Invalid frame group annotation');
+   if(!empty($r['groupSource'])&&!preg_match('~^https?://~i',$r['groupSource']))throw new InvalidArgumentException('Invalid frame group source URL');
    if($r['source']!==''&&!preg_match('~^https?://~i',$r['source']))throw new InvalidArgumentException('Invalid frame source URL');
   }
  }

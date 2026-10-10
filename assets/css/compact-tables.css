@@ -234,3 +234,6 @@ dialog.frame-profiles-dialog{width:min(880px,95vw)}
 
 html:root body.workdesk-configurator dialog.frame-profiles-dialog{padding:14px!important;box-sizing:border-box}
 .frame-rule-pending{margin:0 0 8px;color:#946200;font-size:12px;font-weight:600}
+
+.frame-rule-editor>label{margin-top:8px}
+.invoice-undo:disabled{opacity:.45;cursor:default}

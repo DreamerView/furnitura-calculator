@@ -226,5 +226,145 @@
     "source": "https://www.ortex.org/cooperate/docs.php",
     "note": "Нужны конкретные артикулы рамы/створки и подтверждённые вычеты. Можно перенести в проверенную группу после проверки чертежа.",
     "introducedRevision": 2026101107
+  },
+  {
+    "id": "grain-lider-552",
+    "name": "GRAIN / Грайн Lider 58 · S-552.01 / S-552.03.13",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://grain-prof.ru/upload/iblock/bcc/vv24ml8t01fyf2fcsi5s68z95npg34h1.pdf#page=59",
+    "note": "Каталог 2024, стр. 51, 55, 59. Вычет рассчитан по сечению: 2 × (63 − 20 + 12) = 110 мм; одинаковая оконная рама по четырём сторонам.",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "grain-prestige-570",
+    "name": "GRAIN / Грайн Prestige 70 · S-570.01 / S-570.03",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://grain-prof.ru/upload/iblock/bcc/vv24ml8t01fyf2fcsi5s68z95npg34h1.pdf#page=28",
+    "note": "Каталог 2024, стр. 21, 24, 28. Вычет по сечению: 2 × (63 − 20 + 12) = 110 мм; одинаковая оконная рама по четырём сторонам.",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "melke-lite60-3442",
+    "name": "MELKE / Мелке Lite’60 · 3442 / 3443",
+    "widthDeduction": 102,
+    "heightDeduction": 102,
+    "enabled": true,
+    "source": "https://partnership.melke.ru/uploads/z9Nl03slWG19pTYR5ZThRVOQteSAnKFRad02aM4Z.pdf#page=7",
+    "note": "Техкарта 2023, стр. 2, 4, 7. Вычет по сборочному сечению: 2 × (59 − 20 + 12) = 102 мм. Подставочный профиль 30 мм не включён; одинаковая рама по четырём сторонам.",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "melke-lite70-3456",
+    "name": "MELKE / Мелке Lite’70 · 3456 / 3457",
+    "widthDeduction": 110,
+    "heightDeduction": 110,
+    "enabled": true,
+    "source": "https://partnership.melke.ru/uploads/eWgG4cUy4Jq78jpv7tuTvVbnyNSSwDABQtpMp2Ud.pdf#page=7",
+    "note": "Техкарта 2023, стр. 2, 4, 7. Вычет по сборочному сечению: 2 × (63 − 20 + 12) = 110 мм. Подставочный профиль 30 мм не включён; одинаковая рама по четырём сторонам.",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "galwin-review",
+    "name": "GALWIN / Галвин · уточнить раму и створку",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://galwin.co/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "smart-pro-review",
+    "name": "SMART / Смарт PRO · уточнить раму и створку",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://smartprof.kz/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "smart-thermo-review",
+    "name": "SMART / Смарт THERMO · уточнить раму и створку",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://smartprof.kz/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "artec-review",
+    "name": "ARtec / Артек · уточнить серию, раму и створку",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://www.arteconline.com/production/sistemy-pvkh-profiley/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "novoline-comfort58",
+    "name": "NOVOLINE Comfort 58",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://novolinesystem.ru/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "novoline-comfort70",
+    "name": "NOVOLINE Comfort 70",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://novolinesystem.ru/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "novoline-green60",
+    "name": "NOVOLINE Green System 60",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://novolinesystem.ru/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "novoline-red58",
+    "name": "NOVOLINE Red Max 58",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://novolinesystem.ru/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "novoline-red70",
+    "name": "NOVOLINE Red Max 70",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://novolinesystem.ru/",
+    "note": "",
+    "introducedRevision": 2026101108
+  },
+  {
+    "id": "novoline-classa70",
+    "name": "NOVOLINE CLASS A 70",
+    "widthDeduction": null,
+    "heightDeduction": null,
+    "enabled": false,
+    "source": "https://novolinesystem.ru/",
+    "note": "",
+    "introducedRevision": 2026101108
   }
 ]

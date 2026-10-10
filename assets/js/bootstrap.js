@@ -1,6 +1,6 @@
 (async function(){
 'use strict';
-const APP_VERSION=document.querySelector('meta[name="futuruss-version"]')?.content||'2026.10.11.7';
+const APP_VERSION=document.querySelector('meta[name="futuruss-version"]')?.content||'2026.10.11.8';
 const versioned=src=>src+(src.includes('?')?'&':'?')+'v='+encodeURIComponent(APP_VERSION);
 const loadScript=src=>new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=versioned(src);s.async=false;s.onload=resolve;s.onerror=()=>reject(new Error('Не удалось загрузить '+src));document.body.appendChild(s);});
 const api=async action=>{const r=await fetch('api/index.php?action='+encodeURIComponent(action),{credentials:'same-origin',cache:'no-store',headers:{Accept:'application/json'}});const data=await r.json().catch(()=>({}));if(!r.ok&&r.status!==428)throw new Error(data.error||'Ошибка API');return data;};
@@ -32,8 +32,10 @@ try{
   await loadScript('assets/js/invoice-sides.js');
   const legacy=['assets/legacy/app-core.js','assets/legacy/matrix-core.js','assets/legacy/matrix-adapter.js','assets/legacy/ui-enhancements.js','assets/legacy/theme-ui.js'];
   for(const src of legacy)await loadScript(src);
+  await loadScript('assets/js/option-help.js');
   await loadScript('assets/js/calculator-options.js');
   await loadScript('assets/js/invoice-ui.js');
+  await loadScript('assets/js/invoice-undo.js');
   await loadScript('assets/js/invoice-print-options.js');
   
   await loadScript('assets/js/wholesale.js');
