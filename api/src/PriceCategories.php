@@ -7,9 +7,10 @@ final class PriceCategories {
   return $actor['role']==='central'?'central':(string)$actor['nodeId'];
  }
  public static function book(array $s,string $owner): array {
-  if(isset($s['priceBooks'][$owner]))return $s['priceBooks'][$owner];
+  $enabled=[];foreach($s['nodes']??[] as $n)if((string)$n['id']===$owner)foreach($n['pricing']['articles']??[] as $art=>$rule)if(isset($rule['enabled']))$enabled[$art]=(bool)$rule['enabled'];
+  if(isset($s['priceBooks'][$owner]))return [...$s['priceBooks'][$owner],'enabled'=>array_replace($enabled,$s['priceBooks'][$owner]['enabled']??[])];
   $prices=[];foreach($s['nodes']??[] as $n)if((string)$n['id']===$owner)foreach($n['pricing']['articles']??[] as $art=>$rule)if(isset($rule['price']))foreach(['A','B','C','D','E'] as $c)$prices[$art][$c]=$rule['price'];
-  return ['categories'=>['A','B','C','D','E'],'prices'=>$prices,'revision'=>0];
+  return ['categories'=>['A','B','C','D','E'],'prices'=>$prices,'enabled'=>$enabled,'revision'=>0];
  }
  /** Incoming supplier prices only. A dealer's own outgoing prices never change its purchases. */
  public static function source(array $s,AccessService $access,?int $id): ?array {
@@ -20,7 +21,7 @@ final class PriceCategories {
    $book=self::book($s,$owner);$assigned=$s['priceAssignments'][(string)$node['id']]??null;
    foreach($cat['articles'] as $art=>&$r){
     $legacy=$parent['pricing']['articles'][$art]??[];
-    $r['available']=$r['available']&&($legacy['enabled']??true);
+    $r['available']=$r['available']&&($book['enabled'][$art]??$legacy['enabled']??true);
     $price=$assigned!==null?($book['prices'][$art][$assigned]??null):($legacy['price']??null);
     if($price!==null)$r['price']=$price;
     if(!$r['available'])$r['price']=0;
@@ -31,7 +32,7 @@ final class PriceCategories {
  }
  public static function editor(array $s,AccessService $access,array $actor): array {
   $owner=self::owner($actor);$book=self::book($s,$owner);$source=self::source($s,$access,$owner==='central'?null:(int)$owner);$rows=[];
-  foreach($source['articles']??[] as $art=>$r)$rows[]=['art'=>(string)$art,'name'=>$r['name'],'group'=>$r['group']??'','sourcePrice'=>$r['price']??null,'sourceAvailable'=>$r['available']??true,'prices'=>$book['prices'][$art]??[]];
+  foreach($source['articles']??[] as $art=>$r)$rows[]=['art'=>(string)$art,'name'=>$r['name'],'group'=>$r['group']??'','sourcePrice'=>$r['price']??null,'sourceAvailable'=>$r['available']??true,'enabled'=>$book['enabled'][$art]??true,'prices'=>$book['prices'][$art]??[]];
   return ['ok'=>true,'categories'=>$book['categories'],'revision'=>$book['revision'],'sourceRevision'=>hash('sha256',json_encode($source)),'rows'=>$rows];
  }
  public static function save(array &$s,AccessService $access,array $actor,array $p): array {
@@ -44,7 +45,9 @@ final class PriceCategories {
   foreach($s['nodes'] as $node){$parent=$node['parent_id']===null?'central':(string)$node['parent_id'];if($parent===$owner&&isset($s['priceAssignments'][(string)$node['id']])&&!in_array($s['priceAssignments'][(string)$node['id']],$cats,true))throw new InvalidArgumentException('PL_ASSIGNED');}
   $clean=[];
   foreach($prices as $art=>$values){if(!isset($s['catalog']['articles'][$art])||!is_array($values))throw new InvalidArgumentException('PL_INPUT');foreach($values as $c=>$price){if(!in_array((string)$c,$cats,true)||($price!==null&&(!is_int($price)&&!is_float($price)||!is_finite((float)$price)||$price<0||$price>1000000000)))throw new InvalidArgumentException('PL_INPUT');if($price!==null)$clean[$art][$c]=round($price,2);}}
-  $s['priceBooks'][$owner]=['categories'=>$cats,'prices'=>$clean,'revision'=>$e['revision']+1,'updatedAt'=>gmdate('c')];return self::editor($s,$access,$actor);
+  $enabled=self::book($s,$owner)['enabled']??[];
+  if(array_key_exists('enabled',$p)){if(!is_array($p['enabled']))throw new InvalidArgumentException('PL_INPUT');foreach($p['enabled'] as $art=>$value){if(!isset($s['catalog']['articles'][$art])||!is_bool($value))throw new InvalidArgumentException('PL_INPUT');$enabled[$art]=$value;}}
+  $s['priceBooks'][$owner]=['enabled'=>$enabled,'categories'=>$cats,'prices'=>$clean,'revision'=>$e['revision']+1,'updatedAt'=>gmdate('c')];return self::editor($s,$access,$actor);
  }
  public static function change(array &$s,AccessService $access,array $actor,array $p): array {
   $owner=self::owner($actor);$e=self::editor($s,$access,$actor);

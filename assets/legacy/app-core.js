@@ -934,7 +934,7 @@ function positionEngineeringNote(row){
   const stayDrive=/^(?:X?PNB|PNF)\./.test(row.art||'');
   if(!M.camSpec(row.art)?.extension&&!stayDrive)return '';
   const zones=[...new Set((row.placements||[{zone:M.extensionZone(row)}]).map(p=>p.zone))];
-  const labels={rear:'со стороны петель',bottom:'снизу',lower:'снизу',front:'спереди, смещение ручки',unknown:'место не задано'};
+  const labels={upper:'сверху',rear:'со стороны петель',bottom:'снизу',lower:'снизу',front:'спереди, смещение ручки',unknown:'место не задано'};
   const tr=v=>globalThis.FuturussI18n?.translate(v)||v;
   return ' <small class="engineering-note">('+zones.map(z=>esc(tr(labels[z]||labels.unknown))).join(', ')+')</small>';
 }
@@ -955,8 +955,8 @@ function renderOrder(){
   if(policy)for(const pos of orderPositions)for(const row of pos.rows||[]){
     const record=DATA.master[row.art];row.pricingUnavailable=!record;
     if(!record)unavailable=true;
-    if(!(pos.freeInvoice&&row.manualPrice&&row.manualPriceOwner===freePriceOwner()&&record&&canPrice))row.price=record&&canPrice?Number(record.price)||0:0;
-    if(!record||!canPrice||row.manualPriceOwner!==freePriceOwner()){delete row.manualPrice;delete row.manualPriceOwner;}row.isDefaultPrice=false;
+    if(!((pos.freeInvoice&&row.manualPrice&&row.manualPriceOwner===freePriceOwner()||row.priceFrozen&&row.frozenPriceOwner===freePriceOwner()&&Number.isFinite(row.price)&&row.price>=0)&&record&&canPrice))row.price=record&&canPrice?Number(record.price)||0:0;
+    if(!record||!canPrice||row.frozenPriceOwner!==freePriceOwner()){delete row.priceFrozen;delete row.frozenPriceOwner;}if(!record||!canPrice||row.manualPriceOwner!==freePriceOwner()){delete row.manualPrice;delete row.manualPriceOwner;}row.isDefaultPrice=false;
   }
   document.body.classList.toggle('pricing-invoice-invalid',unavailable);
   let warning=document.getElementById('pricingInvoiceWarning');
@@ -2655,8 +2655,8 @@ globalThis.FuturussLegacyApp = {
       const visible=!!canViewPrices;
       for(const pos of orderPositions||[])for(const row of pos.rows||[]){
         const master=DATA?.master?.[row.art];
-        const keep=pos.freeInvoice&&row.manualPrice&&row.manualPriceOwner===freePriceOwner()&&visible&&master;
-        if(!keep){row.price=visible&&master&&Number.isFinite(Number(master.price))?Number(master.price):0;delete row.manualPrice;delete row.manualPriceOwner;}
+        const keep=(pos.freeInvoice&&row.manualPrice&&row.manualPriceOwner===freePriceOwner()||row.priceFrozen&&row.frozenPriceOwner===freePriceOwner()&&Number.isFinite(row.price)&&row.price>=0)&&visible&&master;
+        if(!keep){row.price=visible&&master&&Number.isFinite(Number(master.price))?Number(master.price):0;delete row.manualPrice;delete row.manualPriceOwner;delete row.priceFrozen;delete row.frozenPriceOwner;}
         row.isDefaultPrice=false;
       }
       if(typeof renderOrder==='function')renderOrder();

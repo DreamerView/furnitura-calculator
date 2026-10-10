@@ -452,7 +452,13 @@
     for(const art of arts){if(!db.articles[art]||db.articles[art].available===false)errors.push('Прижим недоступен в ассортименте: '+art);else kept.push({...rowItem(art,count),installationZone:'rear',...(type==='fanlight'?{dependencyGroup:'rear-fpr'}:{}),...(art===arts[0]?{}:{dependency:{parent:arts[0],ratio:1}})});}
     return kept;
   }
+  function turnAssemblyKit(kits,kit,mode){
+    if(kit?._derivedTurnAssembly||mode!=='improved'||kit?.family==='aluminum'||kit?.openingType!=='turn'||kit.catalogDraft)return kit;
+    const source=kits.find(k=>k.id===kit.variant);if(!source)return kit;
+    return {...kit,_derivedTurnAssembly:true,turnAssembly:'improved',name:kit.name+' · Улучшенная поворотная',rows:copy(source.rows),cells:{},dornmassChoices:[7.5,15,25],common:copy(kit.common)};
+  }
   function calculate(db,kit,params={},selection){
+    kit=turnAssemblyKit(db.kits,kit,params.turnAssembly);
     if(kit?.openingType==='door'&&typeof params.doorBolt==='boolean'){const next=db.kits.find(k=>k.openingType==='door'&&k.variant===kit.variant&&k.id.endsWith('-latch')===!params.doorBolt);if(next&&next.id!==kit.id){kit=next;selection=null;}}
     if(params.specialMode&&params.specialMode!=='none'){
       const next=kit?.family!=='aluminum'&&kit?.variant==='roller11'&&(!kit.openingType||kit.openingType==='tilt-turn')&&db.kits.find(k=>k.id==='catalog-pvc-7-'+({motor:'53',mgn:'54'}[params.specialMode]||''));
@@ -466,7 +472,7 @@
       if(params.optionSeries==null&&entry)params={...params,optionSeries:entry.series};
       if(!has(tiltFirstWorkbookProfiles,profile)||!entry)
         return {errors:['Для этой комплектации выберите профиль из каталога и стандартные петли.'],warnings,items:[],choices:[],total:null};
-      if((params.hingeType||kit.hingeType||'standard')!=='standard')
+      if(!['standard','reinforced130','reinforcedLower'].includes(params.hingeType||kit.hingeType||'standard'))
         return {errors:["Для выбранной петлевой группы Tilt First полный состав ещё не подтверждён. Выберите стандартные петли или настройте отдельную комплектацию в конструкторе."],warnings,items:[],choices:[],total:null};
     }
     if(errors.length)return {errors,warnings,items:[],choices:[]};
@@ -526,6 +532,18 @@
       if(seriesEnabled&&series==='13'&&/^ZM9\.[ZP]$/.test(it.art))target=it.art.replace(/^ZM9\./,'ZM13.');
       if(target){if(has(db.articles,target))it.art=target;else errors.push(it.art+': в базе нет совместимой детали для выбранного паза.');}
     }
+    if(kit.turnAssembly==='improved'){
+      const corner={roller11:'XU',roller8:'U1',mushroom:'U2'}[kit.variant];
+      items=items.filter(i=>i.role!=='scissors'&&!/^(?:X?NO|X?PNB|PNF)\./.test(i.art));
+      items.push(rowItem(corner,2));
+      const rule=chainRules.bottomCorner.find(r=>params.width>=r[0]&&params.width<=r[1]);
+      if(rule)for(const zone of ['upper','bottom']){
+        for(const length of rule[2])items.push({...rowItem(chainArticle(kit.variant,'connector',length)),installationZone:zone});
+        items.push({...rowItem(chainArticle(kit.variant,'terminal',rule[3])),installationZone:zone});
+      }
+      if(params.width>1400)errors.push('Для этой ширины улучшенная поворотная сборка не настроена.');
+      warnings.push('Предварительный подбор горизонталей улучшенной поворотной сборки: длины и соединения проверьте по монтажной схеме.');
+    }
     items=applyRearClamps(db,kit,params,items,errors);
     const hingeType=params.hingeType||kit.hingeType||'standard';
     if(!['standard','reinforced130','reinforcedLower','hidden','rebated'].includes(hingeType))errors.push('Выберите вариант петель.');
@@ -572,8 +590,7 @@
       }
     }
     if(['reinforced130','reinforcedLower'].includes(hingeType)){
-      if(params.width<=650)errors.push('Усиленные петли 130 кг доступны при ширине створки больше 650 мм.');
-      else for(const it of items){
+      for(const it of items){
         const target={...(hingeType==='reinforced130'?{RV:'RV.U'}:{}),RN:'RN.U',SN:'SN.U'}[it.art];
         if(target){if(has(db.articles,target))it.art=target;else errors.push('В базе нет усиленной петли '+target+'.');}
       }
@@ -710,6 +727,6 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={applyRearClamps,articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={turnAssemblyKit,applyRearClamps,articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
 })(typeof globalThis!=='undefined'?globalThis:this);

@@ -20,8 +20,8 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.20">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.20"><script src="assets/js/hardware-colors.js?v=2026.10.10.20"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.20"></script><script src="assets/js/cam-selector.js?v=2026.10.10.20"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.20"><script src="assets/js/calculation-technology.js?v=2026.10.10.20"></script>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.21">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.21"><script src="assets/js/hardware-colors.js?v=2026.10.10.21"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.21"></script><script src="assets/js/cam-selector.js?v=2026.10.10.21"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.21"><script src="assets/js/calculation-technology.js?v=2026.10.10.21"></script>
 <style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
@@ -499,7 +499,13 @@
     for(const art of arts){if(!db.articles[art]||db.articles[art].available===false)errors.push('Прижим недоступен в ассортименте: '+art);else kept.push({...rowItem(art,count),installationZone:'rear',...(type==='fanlight'?{dependencyGroup:'rear-fpr'}:{}),...(art===arts[0]?{}:{dependency:{parent:arts[0],ratio:1}})});}
     return kept;
   }
+  function turnAssemblyKit(kits,kit,mode){
+    if(kit?._derivedTurnAssembly||mode!=='improved'||kit?.family==='aluminum'||kit?.openingType!=='turn'||kit.catalogDraft)return kit;
+    const source=kits.find(k=>k.id===kit.variant);if(!source)return kit;
+    return {...kit,_derivedTurnAssembly:true,turnAssembly:'improved',name:kit.name+' · Улучшенная поворотная',rows:copy(source.rows),cells:{},dornmassChoices:[7.5,15,25],common:copy(kit.common)};
+  }
   function calculate(db,kit,params={},selection){
+    kit=turnAssemblyKit(db.kits,kit,params.turnAssembly);
     if(kit?.openingType==='door'&&typeof params.doorBolt==='boolean'){const next=db.kits.find(k=>k.openingType==='door'&&k.variant===kit.variant&&k.id.endsWith('-latch')===!params.doorBolt);if(next&&next.id!==kit.id){kit=next;selection=null;}}
     if(params.specialMode&&params.specialMode!=='none'){
       const next=kit?.family!=='aluminum'&&kit?.variant==='roller11'&&(!kit.openingType||kit.openingType==='tilt-turn')&&db.kits.find(k=>k.id==='catalog-pvc-7-'+({motor:'53',mgn:'54'}[params.specialMode]||''));
@@ -513,7 +519,7 @@
       if(params.optionSeries==null&&entry)params={...params,optionSeries:entry.series};
       if(!has(tiltFirstWorkbookProfiles,profile)||!entry)
         return {errors:['Для этой комплектации выберите профиль из каталога и стандартные петли.'],warnings,items:[],choices:[],total:null};
-      if((params.hingeType||kit.hingeType||'standard')!=='standard')
+      if(!['standard','reinforced130','reinforcedLower'].includes(params.hingeType||kit.hingeType||'standard'))
         return {errors:["Для выбранной петлевой группы Tilt First полный состав ещё не подтверждён. Выберите стандартные петли или настройте отдельную комплектацию в конструкторе."],warnings,items:[],choices:[],total:null};
     }
     if(errors.length)return {errors,warnings,items:[],choices:[]};
@@ -573,6 +579,18 @@
       if(seriesEnabled&&series==='13'&&/^ZM9\.[ZP]$/.test(it.art))target=it.art.replace(/^ZM9\./,'ZM13.');
       if(target){if(has(db.articles,target))it.art=target;else errors.push(it.art+': в базе нет совместимой детали для выбранного паза.');}
     }
+    if(kit.turnAssembly==='improved'){
+      const corner={roller11:'XU',roller8:'U1',mushroom:'U2'}[kit.variant];
+      items=items.filter(i=>i.role!=='scissors'&&!/^(?:X?NO|X?PNB|PNF)\./.test(i.art));
+      items.push(rowItem(corner,2));
+      const rule=chainRules.bottomCorner.find(r=>params.width>=r[0]&&params.width<=r[1]);
+      if(rule)for(const zone of ['upper','bottom']){
+        for(const length of rule[2])items.push({...rowItem(chainArticle(kit.variant,'connector',length)),installationZone:zone});
+        items.push({...rowItem(chainArticle(kit.variant,'terminal',rule[3])),installationZone:zone});
+      }
+      if(params.width>1400)errors.push('Для этой ширины улучшенная поворотная сборка не настроена.');
+      warnings.push('Предварительный подбор горизонталей улучшенной поворотной сборки: длины и соединения проверьте по монтажной схеме.');
+    }
     items=applyRearClamps(db,kit,params,items,errors);
     const hingeType=params.hingeType||kit.hingeType||'standard';
     if(!['standard','reinforced130','reinforcedLower','hidden','rebated'].includes(hingeType))errors.push('Выберите вариант петель.');
@@ -619,8 +637,7 @@
       }
     }
     if(['reinforced130','reinforcedLower'].includes(hingeType)){
-      if(params.width<=650)errors.push('Усиленные петли 130 кг доступны при ширине створки больше 650 мм.');
-      else for(const it of items){
+      for(const it of items){
         const target={...(hingeType==='reinforced130'?{RV:'RV.U'}:{}),RN:'RN.U',SN:'SN.U'}[it.art];
         if(target){if(has(db.articles,target))it.art=target;else errors.push('В базе нет усиленной петли '+target+'.');}
       }
@@ -757,9 +774,10 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={applyRearClamps,articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={turnAssemblyKit,applyRearClamps,articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
-})(typeof globalThis!=='undefined'?globalThis:this);</script><script>'use strict';
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>'use strict';
 const M=MatrixCore,$=id=>document.getElementById(id),e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const storage='futuruss-table-app-v2';let seeded=null,library=null,active='',variant='roller11',family='pvc',draft=null,pickTarget=null,rangeDraft=null,currentResult=null,invoice=[],editingArticle=null,csrfToken='',saveTimer=null,saveBusy=false,saveQueued=false,savePromise=Promise.resolve(true);
 const kitFamily=k=>k?.family==='aluminum'?'aluminum':'pvc';
@@ -792,13 +810,13 @@ function upgradeNomenclature(db){
 function legacyCatalog(){try{const saved=localStorage.getItem(storage);if(saved){const candidate=M.importOld(JSON.parse(saved));if(!M.validate(candidate).length)return candidate;}}catch{}return null;}
 function initializeCatalog(data){if(!data||M.validate(data).length)throw Error('Сервер вернул каталог в неподдерживаемом формате.');seeded=M.copy(data);library=M.copy(data);upgradeNomenclature(library);for(const savedKit of library.kits)delete savedKit.maxWeight;if(!library.kits.length)throw Error('В каталоге нет комплектаций.');active=library.kits.find(k=>k.variant===variant&&kitFamily(k)==='pvc')?.id||library.kits[0].id;variant=library.kits.find(k=>k.id===active).variant;family=kitFamily(library.kits.find(k=>k.id===active));}
 const kit=()=>library.kits.find(k=>k.id===active);
-const technologyControls=FuturussTechnologyUI.create({container:$('offsetHandleWrap').parentElement,isConstructor:true,getContext:()=>({db:library,kit:kit(),params:{width:Number($('width').value),height:Number($('height').value),dornmass:Number($('dornmass').value),hingeType:$('hingeType').value||'standard',handle:$('offsetHandle').checked?'offset':'center',optionSeries:$('optionSeries').value}}),onChange:values=>{Object.assign(kit(),values,{hingeType:values.hingeType||$('hingeType').value});persist();resetResult();}});
+const technologyControls=FuturussTechnologyUI.create({container:$('offsetHandleWrap').parentElement,isConstructor:true,getContext:()=>({db:library,kit:kit(),params:{width:Number($('width').value),height:Number($('height').value),dornmass:Number($('dornmass').value),hingeType:$('hingeType').value||'standard',handle:$('offsetHandle').checked?'offset':'center',optionSeries:$('optionSeries').value}}),onChange:values=>{const previousTurnAssembly=kit().turnAssembly||'normal';Object.assign(kit(),values,{hingeType:values.hingeType||$('hingeType').value});if(values.turnAssembly&&values.turnAssembly!==previousTurnAssembly)FuturussCamSelector.configureDornmass($('dornmass'),M.turnAssemblyKit(library.kits,kit(),values.turnAssembly));persist();resetResult();}});
 const money=v=>v==null?'—':Number(v).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2});
 const range=r=>`${r.from}–${r.to}`;
 const handleChoices=()=>M.handleBases(library);
 function paintCoverSelect(){const select=$('coverColor');FuturussHardwareColors.paint(select,select.value);}
 function paintHandleColors(){const color=kit().handleColor||'white';FuturussHardwareColors.paint($('handleArticle'),color);$('handleColorWrap').querySelectorAll('[data-handle-color]').forEach(button=>{const active=button.dataset.handleColor===color;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});}
-function toggleHingeChoice(){const pvc=kitFamily(kit())==='pvc',wide=pvc&&!['turn','fanlight','door'].includes(kit().openingType)&&Number($('width').value)>650;$('hingeTypeWrap').hidden=!wide;if(!wide)$('hingeType').value='standard';}
+function toggleHingeChoice(){const pvc=kitFamily(kit())==='pvc',wide=pvc&&!['turn','fanlight','door'].includes(kit().openingType);$('hingeTypeWrap').hidden=!wide;if(!wide)$('hingeType').value='standard';}
 function updateFamilyControls(){const k=kit(),alu=kitFamily(k)==='aluminum',turn=k.openingType==='turn';$('aluminumProfileWrap').hidden=!alu;for(const id of ['aluLifterWrap','aluPlateWrap','aluSupportWrap','aluLimiterWrap','aluFixingPlateWrap','aluClipWrap'])$(id).hidden=!alu;$('aluTravelLimiterWrap').hidden=!alu||!turn;$('aluDriveEndWrap').hidden=!alu||!turn;$('aluSecurityPlateWrap').hidden=!alu||k.variant!=='mushroom';for(const id of ['offsetHandleWrap','microventWrap','lifterWrap','plsEnabledWrap','bprEnabledWrap','coverColorWrap','optionSeriesWrap'])$(id).hidden=alu;for(const id of ['offsetHandle','microvent','lifter','plsEnabled','bprEnabled']){$(id).disabled=alu;if(alu)$(id).checked=false;}if(!alu&&['turn','fanlight','door','stulp-bolts','stulp-drive'].includes(k.openingType))for(const id of ['offsetHandle','microvent','lifter','bprEnabled']){$(id).disabled=true;$(id).checked=false;}$('handleEnabled').disabled=['stulp-bolts','door'].includes(k.openingType);if(['stulp-bolts','door'].includes(k.openingType)){$('handleEnabled').checked=false;$('handleArticleWrap').hidden=true;$('handleColorWrap').hidden=true;}toggleHingeChoice();}
 function toast(text){$('toast').textContent=text;$('toast').hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').hidden=true,5500);}
 async function rawApi(action,body=null){const headers={Accept:'application/json'};const options={method:body===null?'GET':'POST',credentials:'same-origin',cache:'no-store',headers};if(body!==null){headers['Content-Type']='application/json';headers['X-CSRF-Token']=csrfToken;options.body=JSON.stringify(body);}const response=await fetch('api/index.php?action='+encodeURIComponent(action),options);const data=await response.json().catch(()=>({error:'Некорректный ответ API.'}));if(!response.ok)throw Error(data.error||'Ошибка API '+response.status);return data;}
@@ -831,7 +849,7 @@ function render(){
   if(family==='pvc')for(const [kind,name]of Object.entries(FuturussCamSelector.openings)){if(library.kits.some(x=>(!x.catalogDraft||x.catalogPrepared)&&kitFamily(x)==='pvc'&&x.variant===k.variant&&FuturussCamSelector.opening(x)===kind))continue;const button=document.createElement('button');button.className='variant';button.disabled=true;button.textContent=name;button.title='Нет комплектации';$('kitTabs').append(button);}
   $('kitTabs').querySelectorAll('[data-kit]').forEach(b=>b.onclick=()=>{const next=library.kits.find(x=>x.id===b.dataset.kit);if(!next)return;active=next.id;variant=next.variant;resetResult();render();});
   $('sheet').hidden=!!k.catalogDraft&&!k.rows.length;$('catalogRecipeReference').hidden=!k.catalogScheme&&!library.catalogSchemes?.some(s=>s.kitId===k.id);$('kitTitle').textContent=k.name;$('kitNote').textContent=k.note;$('tableCount').textContent=`${k.columns.length} ширин × ${k.rows.length} высот${k.profile?' · '+k.profile:''} · ${k.side==='L'?'левая':'правая'}`;
-  $('opening').value=k.side||'R';FuturussCamSelector.configureDornmass($('dornmass'),k);$('optionSeries').value=k.optionSeries||'13';
+  $('opening').value=k.side||'R';FuturussCamSelector.configureDornmass($('dornmass'),M.turnAssemblyKit(library.kits,k,k.turnAssembly));$('optionSeries').value=k.optionSeries||'13';
   const optionMatchers={microvent:/^XZMV\./,lifter:/^MBU$/,plsEnabled:/^PLS$/,bprEnabled:/^BPR$/,aluLifter:/^(?:MBU|AL(?:02)?\.ZM9)$/,aluPlate:/^PLS$/,aluTravelLimiter:/^OZ1?$/,aluSupport:/^(?:RSP|AL(?:02)?\.OR-)/,aluLimiter:/^AL(?:02)?\.OUS$/,aluFixingPlate:/^PLD$/,aluClip:/^KF$/,aluDriveEnd:/^OP$/,aluSecurityPlate:/^PLV$/};for(const [id,matcher] of Object.entries(optionMatchers))$(id).checked=k.options?.[id]??k.common.some(i=>matcher.test(i.art));
   const handles=handleChoices(),selectedBase=M.handleBaseArt(k.handleArticle||'',library.articles[k.handleArticle]||{}),fallback=handles.some(([art])=>art==='RP')?'RP':handles[0]?.[0]||'';$('handleEnabled').checked=k.options?.handleEnabled??k.common.some(i=>M.isWindowHandle(i.art,library.articles[i.art]));$('handleArticle').innerHTML=handles.map(([art,a])=>`<option value="${e(art)}">${e(a.name)}</option>`).join('');$('handleArticle').value=handles.some(([art])=>art===selectedBase)?selectedBase:fallback;$('handleArticleWrap').hidden=!$('handleEnabled').checked;$('handleColorWrap').hidden=!$('handleEnabled').checked;k.handleColor=k.handleColor||'white';paintHandleColors();
   $('offsetHandle').checked=k.handle==='offset';$('coverColor').value=k.coverColor||'white';$('aluminumProfile').value=String(k.aluminumProfile||'14');paintCoverSelect();updateFamilyControls();technologyControls.load(k);
@@ -899,8 +917,8 @@ function saveRanges(){const temp=M.copy(library),k=temp.kits.find(x=>x.id===acti
   const old=kit();for(const [cellkey,saved] of Object.entries(k.cells)){const [rid,cid]=cellkey.split('|'),r=k.rows.find(x=>x.id===rid),c=k.columns.find(x=>x.id===cid);if(!r||!c){delete k.cells[cellkey];continue;}const or=old.rows.find(x=>x.id===rid),oc=old.columns.find(x=>x.id===cid);if(JSON.stringify(or)!==JSON.stringify(r)||JSON.stringify(oc)!==JSON.stringify(c)){const generated=M.cell(temp,{...k,cells:{}},r,c);for(const role of ['drive','scissors']){const target=saved.items.find(i=>i.role===role),auto=generated.items.find(i=>i.role===role);if(target&&auto)target.art=auto.art;}saved.reviewed=false;saved.driveChosen=r.drives.length===1;}}
   library=temp;persist();resetResult();render();$('rangeDialog').close();toast('Сетка обновлена. Общие границы сдвинуты на +1 мм.');
 }
-function params(){const alu=kitFamily(kit())==='aluminum',optionIds=['microvent','lifter','plsEnabled','bprEnabled','handleEnabled','aluLifter','aluPlate','aluTravelLimiter','aluSupport','aluLimiter','aluFixingPlate','aluClip','aluDriveEnd','aluSecurityPlate'];return {width:Number($('width').value),height:Number($('height').value),dornmass:Number($('dornmass').value),side:$('opening').value,hingeType:!alu&&Number($('width').value)>650?$('hingeType').value:'standard',handle:$('offsetHandle').checked?'offset':'center',handleArticle:$('handleArticle').value,handleColor:kit().handleColor||'white',coverColor:alu?'white':$('coverColor').value,optionSeries:alu?'13':$('optionSeries').value,aluminumProfile:$('aluminumProfile').value,options:Object.fromEntries(optionIds.map(id=>[id,!$(id).disabled&&(alu?!['microvent','lifter','plsEnabled','bprEnabled'].includes(id)&&$(id).checked:!/^alu/.test(id)&&$(id).checked)])),count:Number($('count').value),...technologyControls.read()};}
-function calculate(selection=null){const p=params(),k=kit(),r=M.calculate(library,k,p,selection);currentResult={...r,params:p,kitId:k.id};$('calculated').hidden=false;
+function params(){const alu=kitFamily(kit())==='aluminum',optionIds=['microvent','lifter','plsEnabled','bprEnabled','handleEnabled','aluLifter','aluPlate','aluTravelLimiter','aluSupport','aluLimiter','aluFixingPlate','aluClip','aluDriveEnd','aluSecurityPlate'];return {width:Number($('width').value),height:Number($('height').value),dornmass:Number($('dornmass').value),side:$('opening').value,hingeType:!alu?$('hingeType').value:'standard',handle:$('offsetHandle').checked?'offset':'center',handleArticle:$('handleArticle').value,handleColor:kit().handleColor||'white',coverColor:alu?'white':$('coverColor').value,optionSeries:alu?'13':$('optionSeries').value,aluminumProfile:$('aluminumProfile').value,options:Object.fromEntries(optionIds.map(id=>[id,!$(id).disabled&&(alu?!['microvent','lifter','plsEnabled','bprEnabled'].includes(id)&&$(id).checked:!/^alu/.test(id)&&$(id).checked)])),count:Number($('count').value),...technologyControls.read()};}
+function calculate(selection=null){const p=params(),k=M.turnAssemblyKit(library.kits,kit(),p.turnAssembly),r=M.calculate(library,k,p,selection);currentResult={...r,params:p,kitId:k.id};$('calculated').hidden=false;
   $('sheet').querySelectorAll('td').forEach(td=>td.classList.remove('match'));$('sheet').querySelectorAll('[data-row]').forEach(b=>{if(M.fits(p.width,k.columns[+b.dataset.col])&&M.fits(p.height,k.rows[+b.dataset.row]))b.parentElement.classList.add('match');});
   const errors=r.errors.map(x=>`<p class="error">${e(x)}</p>`).join('');
   if(r.needsChoice){$('calculated').innerHTML=`<h2>Подходят несколько приводов</h2><p class="hint">Выберите нужную позицию для ${p.width} × ${p.height} мм. Остальной состав берётся из выбранной ячейки.</p>${errors}<div class="choicebuttons">${r.choices.map((c,i)=>{const row=k.rows.find(x=>x.id===c.rowId),art=M.dornAlternative(library,c.drive,p.dornmass)||c.drive;return `<button data-choice="${i}"><b>${e(art||'Привод не выбран')}</b>${e(library.articles[art]?.name||'')}<br>ВСФ ${range(row)} · дорнмасс ${p.dornmass} мм</button>`;}).join('')}</div>`;$('calculated').querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>calculate(r.choices[+b.dataset.choice]));return;}
@@ -1007,15 +1025,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.20"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.20"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.20"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.20">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.20"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.21"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.21"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.21"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.21">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.21"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.20"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.20">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.20">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.20">
+<script src="assets/js/modal-layout.js?v=2026.10.10.21"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.21">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.21">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.21">
 </body></html>
 

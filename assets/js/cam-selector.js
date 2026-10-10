@@ -19,6 +19,7 @@ const optionSections=new Set([2,3,4,5,7,8,10,17,18,19,20,21,23,24,28,34,35,37,38
 function calculatorVisible(k,current){const section=String(k.id).match(/^catalog-pvc-7-(\d+)$/);return visible(k,current)&&!(section&&optionSections.has(Number(section[1])))&&k.assemblyGroup!=='tilt-d25'&&!(k.openingType==='door'&&k.id.endsWith('-latch'));}
 function calculatorLabel(kit){return kit.openingType==='door'?'Дверная система':label(kit);}
 function calculatorKit(kits,kit,dornmass,settings={}){
+ if(settings.turnAssembly==='improved')kit=root.MatrixCore.turnAssemblyKit(kits,kit,'improved');
  if(kit?.family!=='aluminum'&&kit?.openingType==='door'&&settings.doorBolt===false)return kits.find(k=>k.openingType==='door'&&k.variant===kit.variant&&k.id.endsWith('-latch'))||kit;
  if(kit?.family!=='aluminum'&&opening(kit)==='tilt-turn'&&kit.variant==='roller11'&&['motor','mgn'].includes(settings.specialMode))return kits.find(k=>k.id==='catalog-pvc-7-'+(settings.specialMode==='motor'?'53':'54'))||kit;if(kit?.family==='aluminum'&&kit.assemblyGroup==='tilt'&&Number(dornmass)===25)return kits.find(k=>k.assemblyGroup==='tilt-d25'&&k.assemblyLevel===kit.assemblyLevel)||kit;return kit;}
 function create(container,getContext,onSelect){

@@ -158,3 +158,17 @@ html:root body .wholesale-meta-modal input{height:36px!important;min-height:36px
 html:root body .wholesale-meta-modal .spa-modal-foot{display:flex;justify-content:flex-end;gap:8px;padding:12px 20px}
 html:root body .wholesale-meta-modal .spa-modal-foot .spa-btn{width:auto;flex:0 0 auto;min-height:36px;height:36px}
 @media(max-width:767px){html:root body .wholesale-view .management-content{padding:12px}.wholesale-detail-bottom,.wholesale-shipment-fields{grid-template-columns:minmax(0,1fr);gap:8px}.wholesale-reply{flex-wrap:wrap}.wholesale-reply textarea{flex-basis:100%}html:root body .wholesale-view .pricing-toolbar :is(input,select){max-width:100%}}
+
+html:root body .node-row{display:grid!important;grid-template-columns:minmax(150px,1fr)!important;gap:8px!important;padding:12px!important;border-bottom:1px solid var(--border);align-items:center!important}
+html:root body .node-main{min-width:0;width:100%}
+html:root body .node-title-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+html:root body .node-actions{display:flex!important;align-items:center!important;gap:10px!important;flex-wrap:wrap!important;width:100%!important}
+html:root body .node-price-category{margin:0!important;min-width:90px}
+html:root body .node-actions .more-menu{margin-left:auto}
+html:root body .node-actions .switch-label{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+html:root body .node .children{margin-left:14px!important;padding-left:12px!important;border-left:1px solid var(--border)}
+html:root body .management-nav-btn{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;text-align:left!important}
+html:root body .management-nav-btn>.ui-icon{flex:0 0 18px;width:18px;height:18px}
+html:root body .category-table .assortment-col{width:70px!important;text-align:center!important;white-space:normal}
+html:root body .category-table .assortment-col input{width:16px!important;height:16px!important;min-height:0!important}
+@media(max-width:600px){html:root body .node .children{margin-left:5px!important;padding-left:5px!important}}

@@ -1,6 +1,14 @@
 (function(){
 'use strict';
 const dict={
+"Улучшенная поворотная":["Enhanced turn", "Geliştirilmiş açılım"],
+"сверху":["at the top", "üstte"],
+"Поворотная сборка":["Turn assembly", "Açılır kanat donanımı"],
+"Обычная":["Normal", "Normal"],
+"Улучшенная — ПО-привод без ножниц":["Enhanced — tilt/turn drive without scissors", "Geliştirilmiş — makassız açılım mekanizması"],
+"Для этой ширины улучшенная поворотная сборка не настроена.":["Enhanced turn assembly is not configured for this width.", "Bu genişlik için geliştirilmiş açılır donanım yapılandırılmadı."],
+"Предварительный подбор горизонталей улучшенной поворотной сборки: длины и соединения проверьте по монтажной схеме.":["Enhanced turn: check horizontal lengths and connections against the installation diagram.", "Geliştirilmiş açılım: yatay uzunlukları ve bağlantıları montaj şemasına göre kontrol edin."],
+
 "Усиленные верх и низ":["Reinforced upper and lower hinges", "Güçlendirilmiş üst ve alt menteşeler"],
 "Усиленные верх и низ — кронштейн PK":["Reinforced upper/lower — PK bracket", "Güçlendirilmiş üst/alt — PK konsol"],
 "Усиленная нижняя / стандартная верхняя":["Reinforced lower / standard upper hinge", "Güçlendirilmiş alt / standart üst menteşe"],
