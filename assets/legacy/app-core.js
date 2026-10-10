@@ -886,7 +886,9 @@ function updateRowQty(posId, rowIdx, newVal){
 function clearOrder(){ orderPositions = []; renderOrder(); setMsg("Накладная очищена.", "ok"); }
 
 function positionEngineeringNote(row){
-  const M=globalThis.MatrixCore;if(!M?.camSpec(row.art)?.extension)return '';
+  const M=globalThis.MatrixCore;if(!M)return '';
+  const stayDrive=/^(?:X?PNB|PNF)\./.test(row.art||'');
+  if(!M.camSpec(row.art)?.extension&&!stayDrive)return '';
   const zones=[...new Set((row.placements||[{zone:M.extensionZone(row)}]).map(p=>p.zone))];
   const labels={rear:'со стороны петель',bottom:'снизу',lower:'снизу',front:'спереди, смещение ручки',unknown:'место не задано'};
   const tr=v=>globalThis.FuturussI18n?.translate(v)||v;

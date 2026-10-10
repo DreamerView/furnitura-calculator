@@ -658,7 +658,7 @@
       if(a.price==null)errors.push(it.art+': не задана цена.');
       const spec=camSpec(it.art,a),entry={art:it.art,name:a.name,price:a.price,qty:it.qty*params.count,
         ...(it.dependencies?{dependencies:copy(it.dependencies)}:it.dependency?{dependencies:[copy(it.dependency)]}:{}),
-        ...(it.chainZone?{chainZone:it.chainZone}:{}),...(spec?.extension?{placements:[{zone:extensionZone(it),qty:it.qty*params.count}]}:{}),
+        ...(it.chainZone?{chainZone:it.chainZone}:{}),...((spec?.extension||/^(?:X?PNB|PNF)\./.test(it.art))?{placements:[{zone:extensionZone(it),qty:it.qty*params.count}]}:{}),
         ...(strikeRole(it.art)?{strikeRole:strikeRole(it.art)}:{})};
       totals.set(it.art,totals.has(it.art)?mergeCalculatedItems([totals.get(it.art),entry])[0]:entry);
     }
