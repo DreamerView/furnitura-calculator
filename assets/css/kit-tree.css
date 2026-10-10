@@ -1,0 +1,25 @@
+html:root body #kitWorkspace{display:grid;grid-template-columns:240px minmax(0,1fr);gap:16px;max-width:1920px;margin:0 auto;padding:12px 20px;align-items:start}
+html:root body #kitWorkspace .kit-browser{position:sticky;top:12px;min-width:0;background:var(--surface,#fff);border:1px solid var(--border,#e0e2e8);border-radius:18px;padding:12px}
+html:root body #kitWorkspace .kit-browser h2{font-size:14px;margin:0 0 10px}
+html:root body #kitWorkspace .kit-tree-search{width:100%;min-width:0;min-height:34px;height:34px;font:inherit;font-size:12px;padding:6px 8px;margin-bottom:10px}
+html:root body #kitWorkspace .kit-tree{max-height:calc(100dvh - 170px);overflow:auto;scrollbar-width:thin;scrollbar-gutter:stable}
+html:root body #kitWorkspace .kit-folder{border:0;padding:0;margin:0 0 4px;background:transparent}
+html:root body #kitWorkspace .kit-folder>.kit-folder{margin-left:9px}
+html:root body #kitWorkspace summary{cursor:pointer;font-size:12px;font-weight:600;padding:8px 2px;line-height:1.35;white-space:normal}
+html:root body #kitWorkspace .kit-tree-item{display:block;width:100%;height:auto;min-height:34px;white-space:normal;overflow-wrap:anywhere;text-align:left;font:inherit;font-size:12px;line-height:1.4;padding:8px;border:0;border-radius:8px;margin:2px 0;background:transparent;color:inherit}
+html:root body #kitWorkspace .kit-tree-item:hover{background:rgba(0,122,255,.06)}
+html:root body #kitWorkspace .kit-tree-item.active{background:rgba(0,122,255,.12);color:var(--accent,#007aff);font-weight:600;box-shadow:inset 3px 0 var(--accent,#007aff)}
+html:root body #kitWorkspace .kit-tree-draft{display:block;font-size:10px;opacity:.65;font-weight:400}
+html:root body #kitWorkspace .kit-workspace-main{min-width:0}
+html:root body #kitWorkspace main{width:100%;max-width:none;margin:0;padding:12px 0}
+html:root body #kitWorkspace .families{padding:0;flex-wrap:wrap}
+html:root body #kitWorkspace .kit-legacy-navigation{padding:4px 0;justify-content:flex-end}
+html:root body #kitWorkspace #kitTabs{display:none}
+html:root body #kitWorkspace .copy-tab{position:static;margin:0;padding:6px 12px}
+@media(max-width:760px){html:root body #kitWorkspace{grid-template-columns:1fr;padding:10px;gap:10px}html:root body #kitWorkspace .kit-browser{position:static}html:root body #kitWorkspace .kit-tree{max-height:210px}}
+@media print{html:root body #kitWorkspace{display:block;padding:0}html:root body #kitWorkspace .kit-browser{display:none!important}}
+
+html:root body #kitWorkspace .kit-tree-item{background:transparent!important;color:inherit!important}
+html:root body #kitWorkspace .kit-tree-item:hover{background:rgba(0,122,255,.06)!important}
+html:root body #kitWorkspace .kit-tree-item.active{background:rgba(0,122,255,.12)!important;color:var(--accent,#007aff)!important}
+html:root body #kitWorkspace .families .copy-tab{margin-left:auto!important}

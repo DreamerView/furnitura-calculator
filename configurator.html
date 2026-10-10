@@ -20,9 +20,9 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.22">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.22"><script src="assets/js/hardware-colors.js?v=2026.10.10.22"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.22"></script><script src="assets/js/cam-selector.js?v=2026.10.10.22"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.22"><script src="assets/js/calculation-technology.js?v=2026.10.10.22"></script>
-<style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style></head>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.23">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.23"><script src="assets/js/hardware-colors.js?v=2026.10.10.23"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.23"></script><script src="assets/js/cam-selector.js?v=2026.10.10.23"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.23"><script src="assets/js/calculation-technology.js?v=2026.10.10.23"></script>
+<style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style><link rel="stylesheet" href="assets/css/kit-tree.css?v=2026.10.10.23"><script src="assets/js/kit-tree.js?v=2026.10.10.23"></script></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
 <nav class="families" id="familyTabs" aria-label="Раздел фурнитуры"><button type="button" class="family active" data-family="pvc">FUTURUSS для ПВХ окон</button><button type="button" class="family" data-family="aluminum">FUTURUSS для ALU</button></nav>
@@ -839,6 +839,7 @@ function bind(id,action){$(id).addEventListener('click',action);}
 function kitTabLabel(k){return FuturussCamSelector.label(k);}
 const catalogSchemesUI=FuturussCatalogSchemes.create({getLibrary:()=>library,select:id=>{active=id;variant=kit().variant;resetResult();render();},onChange:()=>{persist();render();},button:$('catalogSchemes'),reference:$('catalogRecipeReference')});
 const camControl=FuturussCamSelector.create($('familyTabs'),()=>({kits:library?.kits||[],kit:library?kit():null}),next=>{active=next.id;variant=next.variant;resetResult();render();});
+const kitTree=FuturussKitTree.create({main:document.querySelector('main'),families:$('familyTabs'),variants:$('kitTabs').parentElement,onSelect:id=>{const next=library.kits.find(k=>k.id===id);if(!next)return;active=next.id;variant=next.variant;resetResult();render();}});
 function compatibilityMismatch(art){const a=library.articles[art];return art!=='NO.600'&&!!(a?.variants?.length&&!a.variants.includes(kit().variant));}
 function approveCompatibility(art){
   const a=library.articles[art],current=M.variants[kit().variant],assigned=(a.variants||[]).map(v=>M.variants[v]||v).join(', ');
@@ -847,7 +848,7 @@ function approveCompatibility(art){
   return confirm(`Повторное подтверждение: добавить ${art} в состав этой ячейки, несмотря на несовпадение группы?`);
 }
 function render(){
-  const k=kit();catalogSchemesUI.refresh(k);family=kitFamily(k);camControl.refresh();
+  const k=kit();catalogSchemesUI.refresh(k);family=kitFamily(k);camControl.refresh();kitTree.render(library.kits,active);
   
   $('familyTabs').querySelectorAll('[data-family]').forEach(button=>{const current=button.dataset.family===family;button.classList.toggle('active',current);button.setAttribute('aria-pressed',String(current));button.onclick=()=>{const next=library.kits.find(x=>kitFamily(x)===button.dataset.family);if(!next)return;family=button.dataset.family;active=next.id;variant=next.variant;resetResult();render();};});
   $('kitTabs').innerHTML=library.kits.filter(x=>(!x.catalogDraft||x.catalogPrepared||x.id===active)&&kitFamily(x)===family&&FuturussCamSelector.visible(x,k)&&(family!=='pvc'||!FuturussCamSelector.types.includes(x.variant)||x.variant===k.variant)).map(x=>`<button class="variant ${x.id===active?'active':''}" data-kit="${e(x.id)}" title="${e(x.name)}" ${x.id===active?'aria-current="page"':''}>${e(kitTabLabel(x))}</button>`).join('');
@@ -1030,15 +1031,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.22"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.22"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.22"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.22">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.22"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.23"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.23"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.23"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.23">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.23"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.22"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.22">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.22">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.22">
+<script src="assets/js/modal-layout.js?v=2026.10.10.23"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.23">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.23">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.23">
 </body></html>
 

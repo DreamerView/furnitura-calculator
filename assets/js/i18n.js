@@ -1,6 +1,13 @@
 (function(){
 'use strict';
 const dict={
+"Арочная":["Arched","Kemerli"],
+"Трапециевидная":["Trapezoidal","Trapez"],
+"Другие комплектации":["Other assemblies","Diğer donanımlar"],
+"Дерево комплектаций":["Assembly tree","Donanım ağacı"],
+"Поиск комплектации":["Search assemblies","Donanım ara"],
+"Требует проверки":["Needs review","Kontrol gerekli"],
+"Алюминий":["Aluminium","Alüminyum"],
 "Для дорнмасса 7,5 мм выберите улучшенную сборку.":["For 7.5 mm backset, select enhanced assembly.","7,5 mm eksen mesafesi için geliştirilmiş donanımı seçin."],
 "Блокиратор Tilt First (BTF / XBTF)":["Tilt First blocker (BTF / XBTF)","Tilt First kilidi (BTF / XBTF)"],
 "Блокиратор Tilt First недоступен в ассортименте.":["Tilt First blocker is unavailable in the assortment.","Tilt First kilidi ürün yelpazesinde mevcut değil."],
