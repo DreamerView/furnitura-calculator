@@ -110,7 +110,7 @@
     const kit=selectedKit(),width=num('width'),height=num('height'),dornmass=num('dornmass')||15;
     const fingerprint=JSON.stringify([kit?.id,width,height,dornmass]);if(fingerprint!==choiceKey){choiceKey=fingerprint;el('matrixDriveChoice').value='';}
     const previous=el('matrixDriveChoice').value;if(currentProfileId!=='futuruss'){options=[];el('matrixDriveChoice').replaceChildren();el('matrixDriveChoiceWrap').hidden=true;previewPrepared();return;}
-    options=kit?MatrixCore.candidates(kit,width,height).filter(c=>!c.drive||MatrixCore.dornAlternative(imported,c.drive,dornmass)):[];
+    options=kit?MatrixCore.candidates(kit,width,height,imported,dornmass).filter(c=>!c.drive||MatrixCore.dornAlternative(imported,c.drive,dornmass)):[];
     const select=el('matrixDriveChoice');select.replaceChildren();
     const first=document.createElement('option');first.value='';first.textContent='Выберите привод для этих размеров';select.appendChild(first);
     options.forEach((c,i)=>{const row=kit.rows.find(r=>r.id===c.rowId),col=kit.columns.find(w=>w.id===c.colId),art=MatrixCore.dornAlternative(imported,c.drive,dornmass)||c.drive;const opt=document.createElement('option');opt.value=String(i);opt.textContent=(art||'Привод не выбран')+' · дорнмасс '+dornmass+' мм · ВСФ '+row.from+'–'+row.to+' · ШСФ '+col.from+'–'+col.to;select.appendChild(opt);});

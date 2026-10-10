@@ -90,11 +90,11 @@
     if(kit.family==='aluminum'&&kit.catalogMixedArticles)for(const it of items)if(kit.catalogMixedArticles.includes(it.art)){it.compatibilityApproved=true;it.catalogCompatibilitySource=kit.catalogSection;}
     return {items,reviewed:false,driveChosen:row.drives.length===1,note:''};
   }
-  function candidates(kit,width,height){
-    const out=[];for(const row of kit.rows)for(const col of kit.columns)if(fits(width,col)&&fits(height,row)){
+  function candidates(kit,width,height,db=null,dornmass=15){
+    const out=[];for(const row of kit.rows)for(const col of kit.columns)if(fits(width,col)&&(fits(height,row)||(db&&kit._derivedTurnAssembly&&Number(dornmass)!==15))){
       const base=kit.cells[key(row,col)],stored=kit.sizeRecipeMode?sizeRecipe(base,width,height):base;if(kit.sizeRecipeMode&&!stored)continue;const manual=stored?.items.find(i=>i.role==='drive')?.art;
       const drives=stored&&manual?[manual]:(row.drives.length?row.drives:['']);
-      for(const drive of drives)out.push({rowId:row.id,colId:col.id,drive});
+      for(const drive of drives){const alt=db&&kit._derivedTurnAssembly&&Number(dornmass)!==15?db.articles[dornAlternative(db,drive,dornmass)]:null;if(alt?.height?(height>=alt.height.min&&height<=alt.height.max):fits(height,row))out.push({rowId:row.id,colId:col.id,drive});}
     }return out;
   }
   function articleDornmass(art,record={}){const n=Number(record.dornmass||((art.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15);return n===7&&/дорнмасс\s*7[,.]5/i.test(record.name||'')?7.5:n;}
@@ -236,7 +236,8 @@
     if(bottom){
       if(q.lowerNode==='bolt')add('bottom',k.variant,'drive',bottom[2],bottom[3]);
       else {for(const n of bottom[2])add('bottom',k.variant,'connector',n);add('bottom',k.variant,'terminal',bottom[3]);}
-    }else if(p.width>=370&&p.width<700&&q.lowerNode==='security')plan.warnings.push('Для нижней горизонтали менее 700 мм удлинитель автоматически не добавлен; проверьте точки прижима.');
+    }else if(p.width>=370&&p.width<600&&q.lowerNode==='bolt')plan.warnings.push('Нижний шпингалет без дополнительного привода-ножниц: ширина менее 600 мм.');
+    else if(p.width>=370&&p.width<700&&q.lowerNode==='security')plan.warnings.push('Для нижней горизонтали менее 700 мм удлинитель автоматически не добавлен; проверьте точки прижима.');
     else plan.errors.push('Для ширины нет подтверждённого диапазона нижней цепочки.');
     if(q.lowerNode==='security'&&k.variant!=='roller11')plan.reviewReasons.push('Нижняя цепочка для цапфы 8 мм или грибовидной требует сверки соединений и каталожных обозначений.');
     if(q.lowerNode==='bolt'&&k.variant!=='roller11')plan.reviewReasons.push('Соединение нижнего шпингалета с выбранной цапфой требует проверки.');
@@ -487,7 +488,7 @@
     if(kit.openingType==='fanlight'&&(params.hingeType||kit.hingeType||'standard')!=='standard')errors.push('Для фрамужной комплектации доступна только заданная петлевая группа.');
     if(kit.openingType==='door'&&((params.hingeType||kit.hingeType||'standard')!=='standard'||!kit.dornmassChoices?.includes(dornmass)))errors.push('Для этой дверной комплектации выберите стандартные петли и дорнмасс 25 или 35 мм.');
     if(pvcTurn&&kit.note)warnings.push(kit.note);
-    const dimensionChoices=candidates(kit,params.width,params.height),choices=dimensionChoices.filter(c=>!c.drive||dornAlternative(db,c.drive,dornmass));
+    const dimensionChoices=candidates(kit,params.width,params.height,db,dornmass),choices=dimensionChoices.filter(c=>!c.drive||dornAlternative(db,c.drive,dornmass));
     let chosen=selection&&choices.find(c=>c.rowId===selection.rowId&&c.colId===selection.colId&&c.drive===selection.drive);
     if(!chosen&&choices.length===1)chosen=choices[0];
     if(!dimensionChoices.length){errors.push('Для этих размеров нет диапазона.');errors.push('Допустимая ширина: '+kit.columns.map(c=>c.from+'–'+c.to).join(', ')+' мм.');errors.push('Допустимая высота: '+kit.rows.map(r=>r.from+'–'+r.to).join(', ')+' мм.');}
@@ -543,6 +544,10 @@
       }
       if(params.width>1400)errors.push('Для этой ширины улучшенная поворотная сборка не настроена.');
       warnings.push('Предварительный подбор горизонталей улучшенной поворотной сборки: длины и соединения проверьте по монтажной схеме.');
+    }
+    if(kit.openingType==='tilt-first'&&kit.family!=='aluminum'){
+      items=items.filter(i=>!['BTF','XBTF'].includes(i.art));
+      if(params.tiltFirstBlocker!==false){const art=kit.variant==='roller11'?'XBTF':'BTF';if(db.articles[art]?.available===false)errors.push('Блокиратор Tilt First недоступен в ассортименте.');items.push(rowItem(art));}
     }
     items=applyRearClamps(db,kit,params,items,errors);
     const hingeType=params.hingeType||kit.hingeType||'standard';

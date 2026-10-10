@@ -21,7 +21,7 @@ for(const c of Object.values(k.cells))for(const r of c.sizeRecipes)for(const wid
 }
 for(const [profile,e] of Object.entries(profiles)){
  const p={width:550,height:1200,side:'R',count:1,strikeProfile:profile};
- const next=M.calculate(db,k,p);assert.deepEqual(next.errors,[]);assert.equal(next.total,200);assert(next.items.some(i=>i.art===e.insert));assert(next.items.some(i=>i.art===e.hinge));assert.equal(p.optionSeries,undefined,'Do not mutate caller parameters');
+ const next=M.calculate(db,k,p);assert.deepEqual(next.errors,[]);assert.equal(next.total,210);assert(next.items.some(i=>i.art===e.insert));assert(next.items.some(i=>i.art===e.hinge));assert.equal(p.optionSeries,undefined,'Do not mutate caller parameters');
  assert(M.calculate(db,k,{...p,optionSeries:e.series==='9'?'13':'9'}).errors.length,'Reject mismatched groove');
  for(const unavailable of [false,true]){const broken=structuredClone(db);if(unavailable)broken.articles[e.insert].available=false;else delete broken.articles[e.insert];assert(M.calculate(broken,broken.kits.find(k=>k.sizeRecipeMode),p).errors.length);}
  assert.deepEqual(M.strikeAlternatives(db,{strikeProfile:profile},e.insert).map(a=>a.art),[e.insert],'Insert editor must not suggest a ZTF strike');

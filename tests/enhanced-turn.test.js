@@ -4,7 +4,7 @@ for(const cam of ['11','8','mushroom'])for(const width of [450,650,700,900,1000,
  const base=db.kits.find(k=>k.id==='pvc-turn-'+cam),k=M.turnAssemblyKit(db.kits,base,'improved');
  assert.equal(M.turnAssemblyKit(db.kits,k,'improved'),k,'idempotent derivation');
  const p={width,height,dornmass,side,count:1,turnAssembly:'improved',strikeProfile:'KBE 13',optionSeries:'13',options:{}};
- const choices=M.candidates(k,width,height).filter(c=>M.dornAlternative(db,c.drive,dornmass));
+ const choices=M.candidates(k,width,height,db,dornmass).filter(c=>M.dornAlternative(db,c.drive,dornmass));
  if(!choices.length){const r=M.calculate(db,base,p);assert(r.errors.includes('Для выбранного дорнмасса нет подходящего привода в базе номенклатуры.'));continue;}
  const r=M.calculate(db,base,p,choices[0]);assert.deepEqual(r.errors,[],JSON.stringify(p));
  assert(!r.items.some(i=>/^(X?NO|X?PNB|PNF)\./.test(i.art)),'no scissors');

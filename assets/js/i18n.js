@@ -1,6 +1,10 @@
 (function(){
 'use strict';
 const dict={
+"Для дорнмасса 7,5 мм выберите улучшенную сборку.":["For 7.5 mm backset, select enhanced assembly.","7,5 mm eksen mesafesi için geliştirilmiş donanımı seçin."],
+"Блокиратор Tilt First (BTF / XBTF)":["Tilt First blocker (BTF / XBTF)","Tilt First kilidi (BTF / XBTF)"],
+"Блокиратор Tilt First недоступен в ассортименте.":["Tilt First blocker is unavailable in the assortment.","Tilt First kilidi ürün yelpazesinde mevcut değil."],
+"Нижний шпингалет без дополнительного привода-ножниц: ширина менее 600 мм.":["Lower bolt without an additional stay drive: width below 600 mm.","Ek makas tahriki olmadan alt sürgü: genişlik 600 mm altında."],
 "Улучшенная поворотная":["Enhanced turn", "Geliştirilmiş açılım"],
 "сверху":["at the top", "üstte"],
 "Поворотная сборка":["Turn assembly", "Açılır kanat donanımı"],
