@@ -9439,7 +9439,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 517",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPDR.18.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 с ригелем 1800",
@@ -9456,7 +9468,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 518",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPDR.20.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 с ригелем 2000",
@@ -9473,7 +9497,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 519",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPDR.16.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 с ригелем 1600",
@@ -9490,7 +9526,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 520",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPDR.18.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 с ригелем 1800",
@@ -9507,7 +9555,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 521",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPDR.20.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 с ригелем 2000",
@@ -9524,7 +9584,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 522",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPD.16.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 без ригеля 1600",
@@ -9541,7 +9613,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 523",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPD.18.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 без ригеля 1800",
@@ -9558,7 +9642,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 524",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPD.20.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 без ригеля 2000",
@@ -9575,7 +9671,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 525",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPD.16.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 без ригеля 1600",
@@ -9592,7 +9700,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 526",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPD.18.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 без ригеля 1800",
@@ -9609,7 +9729,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 527",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "XPD.20.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 без ригеля 2000",
@@ -9626,7 +9758,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 528",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 253",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller11"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.16.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 с ригелем 1600",
@@ -9643,7 +9787,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 529",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.18.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 с ригелем 1800",
@@ -9660,7 +9816,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 530",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.20.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 с ригелем 2000",
@@ -9677,7 +9845,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 531",
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.16.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 с ригелем 1600",
@@ -9694,7 +9874,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 532",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.18.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 с ригелем 1800",
@@ -9711,7 +9903,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 533",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.20.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 с ригелем 2000",
@@ -9728,7 +9932,19 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 534",
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 251",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.16.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 без ригеля 1600",
@@ -9743,7 +9959,19 @@
         535
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 535",
-      "dornmass": 25
+      "dornmass": 25,
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.18.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 без ригеля 1800",
@@ -9758,7 +9986,19 @@
         536
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 536",
-      "dornmass": 25
+      "dornmass": 25,
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.20.D25": {
       "name": "Привод многозапорный дорнмасс 25-92 без ригеля 2000",
@@ -9773,7 +10013,19 @@
         537
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 537",
-      "dornmass": 25
+      "dornmass": 25,
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.16.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 без ригеля 1600",
@@ -9788,7 +10040,19 @@
         538
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 538",
-      "dornmass": 35
+      "dornmass": 35,
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.18.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 без ригеля 1800",
@@ -9803,7 +10067,19 @@
         539
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 539",
-      "dornmass": 35
+      "dornmass": 35,
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.20.D35": {
       "name": "Привод многозапорный дорнмасс 35-92 без ригеля 2000",
@@ -9818,7 +10094,19 @@
         540
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 540",
-      "dornmass": 35
+      "dornmass": 35,
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "variants": [
+        "roller8"
+      ],
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.16.D25.V": {
       "name": "Привод многозапорный взломоустойчивый 25-92 с ригелем 1600",
@@ -9838,7 +10126,16 @@
       ],
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.18.D25.V": {
       "name": "Привод многозапорный взломоустойчивый 25-92 с ригелем 1800",
@@ -9858,7 +10155,16 @@
       ],
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.20.D25.V": {
       "name": "Привод многозапорный взломоустойчивый 25-92 с ригелем 2000",
@@ -9878,7 +10184,16 @@
       ],
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.16.D35.V": {
       "name": "Привод многозапорный взломоустойчивый 35-92 с ригелем 1600",
@@ -9898,7 +10213,16 @@
       ],
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.18.D35.V": {
       "name": "Привод многозапорный взломоустойчивый 35-92 с ригелем 1800",
@@ -9918,7 +10242,16 @@
       ],
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PDR.20.D35.V": {
       "name": "Привод многозапорный взломоустойчивый 35-92 с ригелем 2000",
@@ -9938,7 +10271,16 @@
       ],
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 252",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.16.D25.V": {
       "name": "Привод многозапорный взломоустойчивый 25-92 без ригеля 1600",
@@ -9958,7 +10300,16 @@
       ],
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.18.D25.V": {
       "name": "Привод многозапорный взломоустойчивый 25-92 без ригеля 1800",
@@ -9978,7 +10329,16 @@
       ],
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.20.D25.V": {
       "name": "Привод многозапорный взломоустойчивый 25-92 без ригеля 2000",
@@ -9998,7 +10358,16 @@
       ],
       "dornmass": 25,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.16.D35.V": {
       "name": "Привод многозапорный взломоустойчивый 35-92 без ригеля 1600",
@@ -10018,7 +10387,16 @@
       ],
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255",
+      "height": {
+        "min": 1600,
+        "max": 1800,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.18.D35.V": {
       "name": "Привод многозапорный взломоустойчивый 35-92 без ригеля 1800",
@@ -10038,7 +10416,16 @@
       ],
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255",
+      "height": {
+        "min": 1800,
+        "max": 2000,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "PD.20.D35.V": {
       "name": "Привод многозапорный взломоустойчивый 35-92 без ригеля 2000",
@@ -10058,7 +10445,16 @@
       ],
       "dornmass": 35,
       "packQty": 20,
-      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255"
+      "logisticsSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 255",
+      "height": {
+        "min": 2000,
+        "max": 2200,
+        "includeMin": true,
+        "includeMax": true
+      },
+      "camCount": 4,
+      "doorLock": true,
+      "rangeSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 250–255; без рубки"
     },
     "ODRZ": {
       "name": "Ответная часть дверная универсальная ригель-защёлка 9/13",
@@ -10075,7 +10471,7 @@
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 553"
     },
     "ODZ": {
-      "name": "Ответная часть дверная универсальная засов 9/13",
+      "name": "Ответная часть дверная универсальная малая (защёлка) 9/13",
       "price": 10,
       "section": "Элементы дверной фурнитуры",
       "group": "Ответные части дверные",
@@ -20700,7 +21096,11 @@
         "TP.09",
         "XU1.R",
         "XU1.L",
-        "XU.400-1U"
+        "XU.400-1U",
+        "XPO.1450-1",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "profile": "",
       "side": "R",
@@ -20712,7 +21112,86 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "XPO.2400-4",
+            "XU",
+            "XUSP",
+            "XNO.800-1",
+            "XNO.1000-1",
+            "XNO.1200-1",
+            "XNO.1400-1",
+            "XPNB.400-1",
+            "XPNB.400-2",
+            "XPNB.600-1",
+            "XPNB.600-2",
+            "XPNB.800-2",
+            "XPNB.S.200-1",
+            "XUK.600-1",
+            "XUF.400-1",
+            "XUF.600-1",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "XZSP.13.L",
+            "XZSP.13.R",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "XZMV.9",
+            "XZMV.13",
+            "MBU",
+            "BPR",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "ON",
+            "TP.13",
+            "TP.09",
+            "XU1.R",
+            "XU1.L",
+            "XU.400-1U",
+            "XPO.1450-1",
+            "NO.600",
+            "NO.700",
+            "NO.800"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        48,
+        49
+      ]
     },
     {
       "id": "catalog-pvc-7-3",
@@ -20799,7 +21278,82 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "XPO.2400-4",
+            "XU",
+            "U2",
+            "XUU",
+            "NO.600",
+            "NO.700",
+            "NO.800",
+            "XNO.800-1",
+            "XNO.1000-1",
+            "XNO.1200-1",
+            "XNO.1400-1",
+            "XPNB.400-1",
+            "XPNB.400-2",
+            "XPNB.600-2",
+            "XPNB.800-2",
+            "XU.400-1",
+            "XU.600-1",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "XZMV.9",
+            "XZMV.13",
+            "MBU",
+            "BPR",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "ON",
+            "TP.13",
+            "TP.09",
+            "XU1.R",
+            "XU1.L",
+            "XU.400-1U"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        50,
+        51
+      ]
     },
     {
       "id": "catalog-pvc-7-4",
@@ -20869,7 +21423,11 @@
         "TP.09",
         "XU1.R",
         "XU1.L",
-        "XU.400-1U"
+        "XU.400-1U",
+        "XPO.1450-1",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "profile": "",
       "side": "R",
@@ -20881,7 +21439,81 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "XPO.2400-4",
+            "XU",
+            "U2",
+            "XUU",
+            "XNO.800-1",
+            "XNO.1000-1",
+            "XNO.1200-1",
+            "XNO.1400-1",
+            "XPNB.S.200-1",
+            "XUK.600-1",
+            "XUF.400-1",
+            "XUF.600-1",
+            "RV",
+            "RV.U",
+            "N.RV.B",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "XZMV.9",
+            "XZMV.13",
+            "MBU",
+            "BPR",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "ON",
+            "TP.13",
+            "TP.09",
+            "XU1.R",
+            "XU1.L",
+            "XU.400-1U",
+            "XPO.1450-1",
+            "NO.600",
+            "NO.700",
+            "NO.800"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        52,
+        53
+      ]
     },
     {
       "id": "catalog-pvc-7-5",
@@ -20968,7 +21600,82 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "POK.500",
+            "XPOK.600-1",
+            "XPOK.800-1",
+            "XPOK.1000-1",
+            "XPOK.1200-2",
+            "XPOK.1400-2",
+            "XPOK.1600-2",
+            "XPOK.1800-2",
+            "XPOK.2000-3",
+            "XU",
+            "U2",
+            "XUU",
+            "NO.600",
+            "NO.700",
+            "NO.800",
+            "XNO.800-1",
+            "XNO.1000-1",
+            "XNO.1200-1",
+            "XNO.1400-1",
+            "XPNB.400-1",
+            "XPNB.400-2",
+            "XPNB.600-2",
+            "XPNB.800-2",
+            "XU.400-1",
+            "XU.600-1",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "ZMV.9",
+            "ZMV.13",
+            "MBU",
+            "BPR",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "ON",
+            "TP.13",
+            "TP.09",
+            "XU1.R",
+            "XU1.L",
+            "XU.400-1U"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        54,
+        55
+      ]
     },
     {
       "id": "catalog-pvc-7-6",
@@ -38684,7 +39391,52 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740.D7",
+            "PO.800.D7",
+            "XU",
+            "U2",
+            "XUU",
+            "NO.600",
+            "NO.700",
+            "NO.800",
+            "NO.800-1",
+            "NO.800-1.K",
+            "NO.1000-1",
+            "NO.1200-1",
+            "NO.1400-1",
+            "XUK.600-1",
+            "XUF.200-1",
+            "XUF.400-1",
+            "XUF.600-1",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "TP.13",
+            "TP.09"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        58,
+        59
+      ]
     },
     {
       "id": "catalog-pvc-7-8",
@@ -38774,7 +39526,85 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740.D25",
+            "POK.790.D25",
+            "XPO.800-1.D25",
+            "XPO.1200-1.D25",
+            "XPO.1300-1.D25",
+            "XU",
+            "U2",
+            "XUU",
+            "XUSP",
+            "NO.600",
+            "NO.700",
+            "NO.800",
+            "NO.800-1",
+            "NO.800-1.K",
+            "NO.1000-1",
+            "NO.1200-1",
+            "NO.1400-1",
+            "XPNB.400-1",
+            "XPNB.400-2",
+            "XPNB.600-1",
+            "XPNB.600-2",
+            "XPNB.800-2",
+            "XU.400-1",
+            "XU.600-1",
+            "XUK.600-1",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "XZSP.13.L",
+            "XZSP.13.R",
+            "XZSP.9.L",
+            "XZSP.9.R",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "ZMV.9",
+            "ZMV.13",
+            "MBU",
+            "BPR",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "TP.13",
+            "TP.09",
+            "XU1.R",
+            "XU1.L",
+            "XU.400-1U"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        60,
+        61
+      ]
     },
     {
       "id": "catalog-pvc-7-10",
@@ -38847,7 +39677,68 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "XPO.2400-4",
+            "XU",
+            "XUU",
+            "XUSP",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "PK",
+            "PN.R",
+            "PN.S",
+            "PS.S",
+            "PS.R9",
+            "PS.R13",
+            "FPR.9",
+            "FPR.10",
+            "FPR.13",
+            "FPR.14",
+            "BZ",
+            "BZ.M",
+            "PLS",
+            "OZ",
+            "OZ1",
+            "OP",
+            "TP.13",
+            "TP.09",
+            "XU.400-1U"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        64,
+        65
+      ]
     },
     {
       "id": "catalog-pvc-7-12",
@@ -38936,7 +39827,9 @@
         "BZ.SP",
         "PLS",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "U2",
+        "NO.800"
       ],
       "profile": "",
       "side": "R",
@@ -39474,7 +40367,18 @@
             "TP.13",
             "TP.09"
           ]
+        },
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "U2",
+            "NO.800"
+          ]
         }
+      ],
+      "catalogReviewPages": [
+        68,
+        69
       ]
     },
     {
@@ -39746,6 +40650,10 @@
             "TP.09"
           ]
         }
+      ],
+      "catalogReviewPages": [
+        70,
+        71
       ]
     },
     {
@@ -40011,77 +40919,375 @@
             "TP.09"
           ]
         }
+      ],
+      "catalogReviewPages": [
+        72,
+        73
       ]
     },
     {
-      "id": "catalog-pvc-7-16",
-      "name": "Дверная: многозапорный привод · цапфа 11 мм",
-      "variant": "roller11",
       "family": "pvc",
-      "openingType": "door",
-      "catalogDraft": true,
-      "calculationMode": "catalogue",
-      "catalogScheme": "7.16",
-      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
-      "catalogPages": [
-        76,
-        77
-      ],
-      "catalogParts": [
-        "XU",
-        "RV",
-        "RV.U",
-        "ST",
-        "RN",
-        "RN.U",
-        "SV.10",
-        "SV.13",
-        "SV.14",
-        "SN",
-        "SN.U",
-        "SF.9.L",
-        "SF.9.R",
-        "SF.13.L",
-        "SF.13.R",
-        "PK",
-        "PN.R",
-        "PN.S",
-        "PS.S",
-        "PS.R9",
-        "PS.R13",
-        "FPR.9",
-        "FPR.10",
-        "FPR.13",
-        "FPR.14",
-        "TP.13",
-        "TP.09",
-        "XPDR.16.D25",
-        "XPDR.18.D25",
-        "XPDR.20.D25",
-        "XPDR.16.D35",
-        "XPDR.18.D35",
-        "XPDR.20.D35",
-        "XPD.16.D25",
-        "XPD.18.D25",
-        "XPD.20.D25",
-        "XPD.16.D35",
-        "XPD.18.D35",
-        "XPD.20.D35",
-        "ODRZ",
-        "ODZ",
-        "XU.400-1U"
-      ],
+      "variant": "roller11",
       "profile": "",
       "side": "R",
       "handle": "center",
       "handleColor": "white",
       "coverColor": "white",
+      "optionSeries": "13",
       "dornmass": 25,
-      "rows": [],
-      "columns": [],
-      "common": [],
-      "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "handleArticle": "RP",
+      "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения.",
+      "id": "catalog-pvc-7-16",
+      "name": "Дверная: с ригелем · цапфа 11 мм",
+      "openingType": "door",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 1600,
+          "to": 1800,
+          "drives": [
+            "XPDR.16.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 1801,
+          "to": 2000,
+          "drives": [
+            "XPDR.18.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 2001,
+          "to": 2200,
+          "drives": [
+            "XPDR.20.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "RV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SV.13",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PK",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN1.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN2.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SN.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ODRZ",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZK.40",
+          "qty": 4,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "XPDR.16.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h1|w0": {
+          "items": [
+            {
+              "art": "XPDR.18.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h2|w0": {
+          "items": [
+            {
+              "art": "XPDR.20.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        }
+      },
+      "options": {
+        "handleEnabled": false,
+        "microvent": false,
+        "lifter": false,
+        "plsEnabled": false,
+        "bprEnabled": false
+      },
+      "catalogDraft": false,
+      "catalogPrepared": true,
+      "calculationMode": "catalogue",
+      "doorLockMode": "bolt",
+      "doorNoCut": true,
+      "dornmassChoices": [
+        25,
+        35
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+      "catalogPages": [
+        116,
+        117,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "catalogScheme": "7.16",
+      "derivedFrom": "pvc-turn-11",
+      "hingeType": "standard",
+      "verificationRequired": [
+        "Проверить массу створки, крепление петлевой группы, гарнитур и цилиндр.",
+        "Применяется прямой привод без рубки; угловые передачи и удлинители требуют отдельной схемы."
+      ]
     },
     {
       "id": "catalog-pvc-7-17",
@@ -40141,7 +41347,19 @@
         "OUS.R",
         "XU1.R",
         "XU1.L",
-        "XU.400-1U"
+        "XU.400-1U",
+        "SNO.600",
+        "SNO.800-1",
+        "SNO.1000-1",
+        "SNO.1200-1",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "profile": "",
       "side": "R",
@@ -40153,7 +41371,79 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "XPO.2400-4",
+            "POK.790",
+            "XU",
+            "U2",
+            "XPNB.S.200-1",
+            "PNF.S.V.200-1",
+            "XUK.600-1",
+            "XUF.400-1",
+            "XUF.600-1",
+            "XSNO.800-1",
+            "XSNO.1000-1",
+            "XSNO.1200-1",
+            "N.SP-L",
+            "N.SP-R",
+            "RSP",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "XZMV.9",
+            "XZMV.13",
+            "MBU",
+            "BPR",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "TP.13",
+            "TP.09",
+            "OUS.K",
+            "OUS.R",
+            "XU1.R",
+            "XU1.L",
+            "XU.400-1U",
+            "SNO.600",
+            "SNO.800-1",
+            "SNO.1000-1",
+            "SNO.1200-1",
+            "SNP-09.L",
+            "SNP-09.R",
+            "SNP-13.L",
+            "SNP-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        78,
+        79
+      ]
     },
     {
       "id": "catalog-pvc-7-18",
@@ -40200,7 +41490,19 @@
         "OUS.K",
         "OUS.R",
         "XU.400-1U",
-        "U.400-1VR"
+        "U.400-1VR",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "profile": "",
       "side": "R",
@@ -40212,7 +41514,66 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "XPO.2400-4",
+            "XU",
+            "XUSP",
+            "XPNB.400-1",
+            "XPNB.600-2",
+            "XPNB.800-2",
+            "N.SP-L",
+            "N.SP-R",
+            "RSP",
+            "XZSP.13.R",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "OZ1",
+            "OP",
+            "TP.13",
+            "TP.09",
+            "OUS.K",
+            "OUS.R",
+            "XU.400-1U",
+            "U.400-1VR",
+            "SPK-09.L",
+            "SPK-09.R",
+            "SPK-13.L",
+            "SPK-13.R",
+            "SNP-09.L",
+            "SNP-09.R",
+            "SNP-13.L",
+            "SNP-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        80,
+        81
+      ]
     },
     {
       "id": "catalog-pvc-7-19",
@@ -40307,7 +41668,11 @@
         "MBU",
         "BPR",
         "XZMV.9",
-        "XZMV.13"
+        "XZMV.13",
+        "SNO.600",
+        "SNO.800-1",
+        "SNO.1000-1",
+        "SNO.1200-1"
       ],
       "profile": "",
       "side": "R",
@@ -41489,12 +42854,25 @@
             "XZMV.9",
             "XZMV.13"
           ]
+        },
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "SNO.600",
+            "SNO.800-1",
+            "SNO.1000-1",
+            "SNO.1200-1"
+          ]
         }
       ],
       "catalogArticleNotes": {
         "U / UI2 / U22 / UUV": "Обозначения таблицы сопоставлены с артикулами базы U1 / U1.2 / U2.2 / UU.V; проверить при заказе.",
         "XSNO.600 / SNO.600.V": "Добавлены отдельными артикулами из предоставленного каталога; цена временная 10 рублей."
-      }
+      },
+      "catalogReviewPages": [
+        82,
+        83
+      ]
     },
     {
       "id": "catalog-pvc-7-20",
@@ -41525,7 +42903,15 @@
         "FO1",
         "FO2",
         "PLS",
-        "U.400-1VR"
+        "U.400-1VR",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "profile": "",
       "side": "R",
@@ -41537,7 +42923,46 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "XPO.2400-4",
+            "XU",
+            "XUU",
+            "FO1",
+            "FO2",
+            "PLS",
+            "U.400-1VR",
+            "SPK-09.L",
+            "SPK-09.R",
+            "SPK-13.L",
+            "SPK-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        84,
+        85
+      ]
     },
     {
       "id": "catalog-pvc-7-21",
@@ -41744,6 +43169,10 @@
             "TP.09"
           ]
         }
+      ],
+      "catalogReviewPages": [
+        86,
+        87
       ]
     },
     {
@@ -41812,7 +43241,11 @@
         "PLS",
         "ON",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.1450-1",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "profile": "",
       "side": "R",
@@ -41824,7 +43257,79 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1",
+            "POM.1200-1",
+            "POM.1300-1",
+            "POM.1450-2",
+            "POM.1600-2",
+            "POM.2000-2",
+            "POM.2400-4",
+            "U2",
+            "U1.L",
+            "U1.R",
+            "UU",
+            "NO.800-1",
+            "NO.1000-1",
+            "NO.1200-1",
+            "NO.1400-1",
+            "PNF.200-1",
+            "PNF.S.200-1",
+            "U.400-1",
+            "U.600-1",
+            "UF.400-1",
+            "UF.600-1",
+            "RV",
+            "RV.U",
+            "N.RV.B",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "ZMV.9",
+            "ZMV.13",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "ON",
+            "TP.13",
+            "TP.09",
+            "POM.1450-1",
+            "NO.600",
+            "NO.700",
+            "NO.800"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        90,
+        91
+      ]
     },
     {
       "id": "catalog-pvc-7-24",
@@ -41893,7 +43398,10 @@
         "PLS",
         "ON",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "profile": "",
       "side": "R",
@@ -41905,7 +43413,79 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "POK.500",
+            "POK.600-1",
+            "POK.800-1",
+            "POK.1000-1",
+            "POK.1200-2",
+            "POK.1400-2",
+            "POK.1600-2",
+            "POK.1800-2",
+            "POK.2000-3",
+            "U2",
+            "U1.L",
+            "U1.R",
+            "UU",
+            "NO.800-1",
+            "NO.1000-1",
+            "NO.1200-1",
+            "NO.1400-1",
+            "PNB.400-1",
+            "PNB.400-2",
+            "PNB.600-2",
+            "PNB.800-2",
+            "UB.400-1",
+            "UB.600-1",
+            "U.400-1",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "ZMV.9",
+            "ZMV.13",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "ON",
+            "TP.13",
+            "TP.09",
+            "NO.600",
+            "NO.700",
+            "NO.800"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        92,
+        93
+      ]
     },
     {
       "id": "catalog-pvc-7-25",
@@ -59694,7 +61274,8 @@
         "ZVO.V/3D.40L",
         "ZVO.V/3D.40R",
         "ZVO.V/3D.45L",
-        "ZVO.V/3D.45R"
+        "ZVO.V/3D.45R",
+        "NO.800"
       ],
       "profile": "",
       "side": "R",
@@ -60324,7 +61905,17 @@
             "ZVO.V/3D.45L",
             "ZVO.V/3D.45R"
           ]
+        },
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "NO.800"
+          ]
         }
+      ],
+      "catalogReviewPages": [
+        96,
+        97
       ]
     },
     {
@@ -60384,7 +61975,9 @@
         "OZ1",
         "OP",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.1200-1",
+        "POM.1450-1"
       ],
       "profile": "",
       "side": "R",
@@ -60396,7 +61989,68 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1",
+            "POM.1300-1",
+            "POM.1450-2",
+            "POM.1600-2",
+            "POM.2000-2",
+            "POM.2400-4",
+            "UU",
+            "U.400-1",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "SF.9.L",
+            "SF.9.R",
+            "SF.13.L",
+            "SF.13.R",
+            "PK",
+            "PN.R",
+            "PN.S",
+            "PS.S",
+            "PS.R9",
+            "PS.R13",
+            "FPR.9",
+            "FPR.10",
+            "FPR.13",
+            "FPR.14",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "OZ",
+            "OZ1",
+            "OP",
+            "TP.13",
+            "TP.09",
+            "POM.1200-1",
+            "POM.1450-1"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        100,
+        101
+      ]
     },
     {
       "id": "catalog-pvc-7-30",
@@ -60486,7 +62140,8 @@
         "BZ.SP",
         "PLS",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "U2"
       ],
       "profile": "",
       "side": "R",
@@ -61118,7 +62773,17 @@
             "TP.13",
             "TP.09"
           ]
+        },
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "U2"
+          ]
         }
+      ],
+      "catalogReviewPages": [
+        104,
+        105
       ]
     },
     {
@@ -61386,6 +63051,10 @@
             "TP.09"
           ]
         }
+      ],
+      "catalogReviewPages": [
+        106,
+        107
       ]
     },
     {
@@ -61649,6 +63318,10 @@
             "TP.09"
           ]
         }
+      ],
+      "catalogReviewPages": [
+        108,
+        109
       ]
     },
     {
@@ -61668,7 +63341,8 @@
       "catalogParts": [
         "POK.790.D25",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POK.790.D25.V"
       ],
       "profile": "",
       "side": "R",
@@ -61680,7 +63354,27 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "POK.790.D25",
+            "TP.13",
+            "TP.09",
+            "POK.790.D25.V"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        112,
+        113
+      ]
     },
     {
       "id": "catalog-pvc-7-35",
@@ -61726,7 +63420,13 @@
         "SN",
         "SN.U",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.1200-1.D7",
+        "POM.1600-2.D7",
+        "POM.2000-2.D7",
+        "POM.1200-1.D7.V",
+        "POM.1600-2.D7.V",
+        "POM.2000-2.D7.V"
       ],
       "profile": "",
       "side": "R",
@@ -61738,87 +63438,423 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740.D7",
+            "PO.800.D7",
+            "U2",
+            "U1.L",
+            "U1.R",
+            "UU",
+            "NO.600",
+            "NO.700",
+            "NO.800",
+            "NO.800-1",
+            "NO.1000-1",
+            "NO.1200-1",
+            "NO.1400-1",
+            "PNF.200-1",
+            "PNF.S.200-1",
+            "U.400-1",
+            "U.600-1",
+            "UF.400-1",
+            "UF.600-1",
+            "RV",
+            "RV.U",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "TP.13",
+            "TP.09",
+            "POM.1200-1.D7",
+            "POM.1600-2.D7",
+            "POM.2000-2.D7",
+            "POM.1200-1.D7.V",
+            "POM.1600-2.D7.V",
+            "POM.2000-2.D7.V"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        114,
+        115
+      ]
     },
     {
-      "id": "catalog-pvc-7-36",
-      "name": "Дверная: многозапорный привод · цапфа 8 мм",
-      "variant": "roller8",
       "family": "pvc",
-      "openingType": "door",
-      "catalogDraft": true,
-      "calculationMode": "catalogue",
-      "catalogScheme": "7.36",
-      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
-      "catalogPages": [
-        116,
-        117
-      ],
-      "catalogParts": [
-        "RV",
-        "RV.U",
-        "ST",
-        "RN",
-        "RN.U",
-        "SV.10",
-        "SV.13",
-        "SV.14",
-        "SN",
-        "SN.U",
-        "SF.9.L",
-        "SF.9.R",
-        "SF.13.L",
-        "SF.13.R",
-        "PK",
-        "PN.R",
-        "PN.S",
-        "PS.S",
-        "PS.R9",
-        "PS.R13",
-        "FPR.9",
-        "FPR.10",
-        "FPR.13",
-        "FPR.14",
-        "TP.13",
-        "TP.09",
-        "PDR.16.D25",
-        "PDR.18.D25",
-        "PDR.20.D25",
-        "PDR.16.D35",
-        "PDR.18.D35",
-        "PDR.20.D35",
-        "PD.16.D25",
-        "PD.18.D25",
-        "PD.20.D25",
-        "PD.16.D35",
-        "PD.18.D35",
-        "PD.20.D35",
-        "PDR.16.D25.V",
-        "PDR.18.D25.V",
-        "PDR.20.D25.V",
-        "PDR.16.D35.V",
-        "PDR.18.D35.V",
-        "PDR.20.D35.V",
-        "PD.16.D25.V",
-        "PD.18.D25.V",
-        "PD.20.D25.V",
-        "PD.16.D35.V",
-        "PD.18.D35.V",
-        "PD.20.D35.V",
-        "ODRZ",
-        "ODZ"
-      ],
+      "variant": "roller8",
       "profile": "",
       "side": "R",
       "handle": "center",
       "handleColor": "white",
       "coverColor": "white",
+      "optionSeries": "13",
       "dornmass": 25,
-      "rows": [],
-      "columns": [],
-      "common": [],
-      "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "handleArticle": "RP",
+      "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения.",
+      "id": "catalog-pvc-7-36",
+      "name": "Дверная: с ригелем · цапфа 8 мм",
+      "openingType": "door",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 1600,
+          "to": 1800,
+          "drives": [
+            "PDR.16.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 1801,
+          "to": 2000,
+          "drives": [
+            "PDR.18.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 2001,
+          "to": 2200,
+          "drives": [
+            "PDR.20.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "RV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SV.13",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PK",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN1.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN2.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SN.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ODRZ",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZK.40",
+          "qty": 4,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "PDR.16.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h1|w0": {
+          "items": [
+            {
+              "art": "PDR.18.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h2|w0": {
+          "items": [
+            {
+              "art": "PDR.20.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        }
+      },
+      "options": {
+        "handleEnabled": false,
+        "microvent": false,
+        "lifter": false,
+        "plsEnabled": false,
+        "bprEnabled": false
+      },
+      "catalogDraft": false,
+      "catalogPrepared": true,
+      "calculationMode": "catalogue",
+      "doorLockMode": "bolt",
+      "doorNoCut": true,
+      "dornmassChoices": [
+        25,
+        35
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+      "catalogPages": [
+        116,
+        117,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "catalogScheme": "7.36",
+      "derivedFrom": "pvc-turn-8",
+      "hingeType": "standard",
+      "verificationRequired": [
+        "Проверить массу створки, крепление петлевой группы, гарнитур и цилиндр.",
+        "Применяется прямой привод без рубки; угловые передачи и удлинители требуют отдельной схемы."
+      ]
     },
     {
       "id": "catalog-pvc-7-37",
@@ -61876,7 +63912,15 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "profile": "",
       "side": "R",
@@ -61888,7 +63932,73 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1",
+            "POM.1200-1",
+            "POM.1300-1",
+            "POM.1450-1",
+            "POM.1450-2",
+            "POM.1600-2",
+            "POM.2000-2",
+            "POM.2400-4",
+            "POK.790",
+            "U2",
+            "U1.L",
+            "U1.R",
+            "PNF.S.200-1",
+            "PNF.S.V.200-1",
+            "U.400-1",
+            "U.600-1",
+            "UF.400-1",
+            "UF.600-1",
+            "SNO.600",
+            "SNO.800-1",
+            "SNO.1000-1",
+            "SNO.1200-1",
+            "N.SP-L",
+            "N.SP-R",
+            "RSP",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "ZPP",
+            "ZMV.9",
+            "ZMV.13",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "TP.13",
+            "TP.09",
+            "OUS.K",
+            "OUS.R",
+            "SNP-09.L",
+            "SNP-09.R",
+            "SNP-13.L",
+            "SNP-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        118,
+        119
+      ]
     },
     {
       "id": "catalog-pvc-7-38",
@@ -61929,7 +64039,19 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "profile": "",
       "side": "R",
@@ -61941,7 +64063,60 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1",
+            "POM.1200-1",
+            "POM.1300-1",
+            "POM.1450-1",
+            "POM.1450-2",
+            "POM.1600-2",
+            "POM.2000-2",
+            "POM.2400-4",
+            "U.400-1",
+            "PS.S",
+            "N.SP-L",
+            "N.SP-R",
+            "RSP",
+            "BZ",
+            "BZ.M",
+            "PBZ.9",
+            "PBZ.13",
+            "PLS",
+            "OZ1",
+            "OP",
+            "TP.13",
+            "TP.09",
+            "OUS.K",
+            "OUS.R",
+            "SPK-09.L",
+            "SPK-09.R",
+            "SPK-13.L",
+            "SPK-13.R",
+            "SNP-09.L",
+            "SNP-09.R",
+            "SNP-13.L",
+            "SNP-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        120,
+        121
+      ]
     },
     {
       "id": "catalog-pvc-7-39",
@@ -63219,7 +65394,11 @@
       "catalogArticleNotes": {
         "U / UI2 / U22 / UUV": "Обозначения таблицы сопоставлены с артикулами базы U1 / U1.2 / U2.2 / UU.V; проверить при заказе.",
         "XSNO.600 / SNO.600.V": "Добавлены отдельными артикулами из предоставленного каталога; цена временная 10 рублей."
-      }
+      },
+      "catalogReviewPages": [
+        122,
+        123
+      ]
     },
     {
       "id": "catalog-pvc-7-40",
@@ -63257,7 +65436,15 @@
         "U.400-1",
         "FO1",
         "FO2",
-        "PLS"
+        "PLS",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "profile": "",
       "side": "R",
@@ -63269,7 +65456,53 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1",
+            "POM.1200-1",
+            "POM.1300-1",
+            "POM.1450-1",
+            "POM.1450-2",
+            "POM.1600-2",
+            "POM.2000-2",
+            "POM.2400-4",
+            "PP.400-2",
+            "PP.600-2",
+            "PP.800-2",
+            "PP.1000-3",
+            "PP.1200-3",
+            "PP.1600-3",
+            "PP.1800-4",
+            "PP.2000-4",
+            "UU",
+            "U.400-1",
+            "FO1",
+            "FO2",
+            "PLS",
+            "SPK-09.L",
+            "SPK-09.R",
+            "SPK-13.L",
+            "SPK-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        124,
+        125
+      ]
     },
     {
       "id": "catalog-pvc-7-42",
@@ -63319,7 +65552,8 @@
         "FPR.14",
         "PLV",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.2000-2.V"
       ],
       "profile": "",
       "side": "R",
@@ -63331,7 +65565,58 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1.V",
+            "POM.1200-1.V",
+            "POM.1450-2.V",
+            "POM.1600-2.V",
+            "POK.790",
+            "U2",
+            "U.400-1.V",
+            "U.600-1.V",
+            "S.400",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.09",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "PK",
+            "PN.R",
+            "PN.S",
+            "PS.S",
+            "PS.R9",
+            "PS.R13",
+            "FPR.9",
+            "FPR.10",
+            "FPR.13",
+            "FPR.14",
+            "PLV",
+            "TP.13",
+            "TP.09",
+            "POM.2000-2.V"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        128,
+        129
+      ]
     },
     {
       "id": "catalog-pvc-7-43",
@@ -63423,7 +65708,8 @@
         "TP.13",
         "PLV",
         "XZMV.9",
-        "XZMV.13"
+        "XZMV.13",
+        "NO.800"
       ],
       "profile": "",
       "side": "R",
@@ -64433,12 +66719,22 @@
             "XZMV.9",
             "XZMV.13"
           ]
+        },
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "NO.800"
+          ]
         }
       ],
       "catalogArticleNotes": {
         "U / UI2 / U22 / UUV": "Обозначения таблицы сопоставлены с артикулами базы U1 / U1.2 / U2.2 / UU.V; проверить при заказе.",
         "XSNO.600 / SNO.600.V": "Добавлены отдельными артикулами из предоставленного каталога; цена временная 10 рублей."
-      }
+      },
+      "catalogReviewPages": [
+        130,
+        131
+      ]
     },
     {
       "id": "catalog-pvc-7-44",
@@ -64482,7 +66778,17 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "POM.2000-2.V",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R",
+        "SNO.600.V"
       ],
       "profile": "",
       "side": "R",
@@ -64494,7 +66800,61 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1.V",
+            "POM.1200-1.V",
+            "POM.1450-2.V",
+            "POM.1600-2.V",
+            "POK.790",
+            "U2",
+            "U2.L",
+            "U2.R",
+            "PNF.S.V.200-1",
+            "U.400-1.V",
+            "U.600-1.V",
+            "UF.400-1.V",
+            "UF.600-1.V",
+            "SNO.800-1.V",
+            "SNO.1000-1.V",
+            "SNO.1200-1.V",
+            "N.SP-L",
+            "N.SP-R",
+            "RSP",
+            "XZMV.9",
+            "XZMV.13",
+            "PLS",
+            "PLV",
+            "TP.13",
+            "TP.09",
+            "OUS.K",
+            "OUS.R",
+            "POM.2000-2.V",
+            "SNP-09.L",
+            "SNP-09.R",
+            "SNP-13.L",
+            "SNP-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R",
+            "SNO.600.V"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        132,
+        133
+      ]
     },
     {
       "id": "catalog-pvc-7-45",
@@ -64529,7 +66889,20 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "POM.2000-2.V",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "profile": "",
       "side": "R",
@@ -64541,7 +66914,55 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1.V",
+            "POM.1200-1.V",
+            "POM.1450-2.V",
+            "POM.1600-2.V",
+            "POK.790",
+            "U2",
+            "U.400-1.V",
+            "U.600-1.V",
+            "N.SP-L",
+            "N.SP-R",
+            "RSP",
+            "XZMV.9",
+            "XZMV.13",
+            "PLV",
+            "TP.13",
+            "TP.09",
+            "OUS.K",
+            "OUS.R",
+            "POM.2000-2.V",
+            "SPK-09.L",
+            "SPK-09.R",
+            "SPK-13.L",
+            "SPK-13.R",
+            "SNP-09.L",
+            "SNP-09.R",
+            "SNP-13.L",
+            "SNP-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        134,
+        135
+      ]
     },
     {
       "id": "catalog-pvc-7-46",
@@ -65648,7 +68069,11 @@
       "catalogArticleNotes": {
         "U / UI2 / U22 / UUV": "Обозначения таблицы сопоставлены с артикулами базы U1 / U1.2 / U2.2 / UU.V; проверить при заказе.",
         "XSNO.600 / SNO.600.V": "Добавлены отдельными артикулами из предоставленного каталога; цена временная 10 рублей."
-      }
+      },
+      "catalogReviewPages": [
+        136,
+        137
+      ]
     },
     {
       "id": "catalog-pvc-7-47",
@@ -65673,7 +68098,28 @@
         "FO1",
         "FO2",
         "PLS",
-        "PLV"
+        "PLV",
+        "POM.1200-1.V",
+        "POM.1450-2.V",
+        "POM.1600-2.V",
+        "POM.2000-2.V",
+        "PP.250-2.V",
+        "PP.600-2.V",
+        "PP.800-2.V",
+        "PP.1000-3.V",
+        "PP.1200-3.V",
+        "PP.1400-3.V",
+        "PP.1600-4.V",
+        "PP.1800-4.V",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R",
+        "PP.2000-4.V"
       ],
       "profile": "",
       "side": "R",
@@ -65685,7 +68131,53 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Уточнить схему соединений, количества, размерные интервалы и профильные ответные детали. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "POM.800-1.V",
+            "PP.400-2.V",
+            "U2",
+            "U.400-1.V",
+            "FO1",
+            "FO2",
+            "PLS",
+            "PLV",
+            "POM.1200-1.V",
+            "POM.1450-2.V",
+            "POM.1600-2.V",
+            "POM.2000-2.V",
+            "PP.250-2.V",
+            "PP.600-2.V",
+            "PP.800-2.V",
+            "PP.1000-3.V",
+            "PP.1200-3.V",
+            "PP.1400-3.V",
+            "PP.1600-4.V",
+            "PP.1800-4.V",
+            "SPK-09.L",
+            "SPK-09.R",
+            "SPK-13.L",
+            "SPK-13.R",
+            "P.SPK-L",
+            "P.SPK-R",
+            "P.SPR-L",
+            "P.SPR-R",
+            "PP.2000-4.V"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        138,
+        139
+      ]
     },
     {
       "id": "catalog-pvc-7-48",
@@ -65898,6 +68390,10 @@
             "TP.09"
           ]
         }
+      ],
+      "catalogReviewPages": [
+        140,
+        141
       ]
     },
     {
@@ -65956,7 +68452,53 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Нужны геометрия дуги или угол скоса, длины сторон и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Нужны геометрия дуги или угол скоса, длины сторон и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "U2",
+            "NA.670",
+            "XUF.200-1",
+            "XUF.400-1",
+            "XUF.600-1",
+            "S.400",
+            "RV",
+            "RV.U",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "MBU",
+            "TP.13",
+            "TP.09",
+            "XU.400-1U"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        142,
+        143
+      ]
     },
     {
       "id": "catalog-pvc-7-50",
@@ -66016,7 +68558,55 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Нужны геометрия дуги или угол скоса, длины сторон и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Нужны геометрия дуги или угол скоса, длины сторон и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "XPO.800-1",
+            "XPO.1200-1",
+            "XPO.1300-1",
+            "XPO.1450-1",
+            "XPO.1450-2",
+            "XPO.1600-2",
+            "XPO.2000-2",
+            "U2",
+            "XUU",
+            "NA.670",
+            "XUK.600-1",
+            "XUF.200-1",
+            "XUF.400-1",
+            "XUF.600-1",
+            "S.400",
+            "RV",
+            "RV.U",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "ZM9.P",
+            "ZM13.P",
+            "ZM9.Z",
+            "ZM13.Z",
+            "MBU",
+            "TP.13",
+            "TP.09",
+            "XU.400-1U"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        144,
+        145
+      ]
     },
     {
       "id": "catalog-pvc-7-51",
@@ -66177,7 +68767,12 @@
         "ZVO.V/3D.40R",
         "ZVO.V/3D.45L",
         "ZVO.V/3D.45R",
-        "ZUO.K/40"
+        "ZUO.K/40",
+        "VP.800-1",
+        "VP.1200-1",
+        "VP.1600-2",
+        "VP.2000-2",
+        "VP.2400-4"
       ],
       "profile": "",
       "side": "R",
@@ -66794,7 +69389,21 @@
             "ZVO.V/3D.45R",
             "ZUO.K/40"
           ]
+        },
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "VP.800-1",
+            "VP.1200-1",
+            "VP.1600-2",
+            "VP.2000-2",
+            "VP.2400-4"
+          ]
         }
+      ],
+      "catalogReviewPages": [
+        146,
+        147
       ]
     },
     {
@@ -66954,7 +69563,12 @@
         "ZVO.V/3D.40L",
         "ZVO.V/3D.40R",
         "ZVO.V/3D.45L",
-        "ZVO.V/3D.45R"
+        "ZVO.V/3D.45R",
+        "VP.800-1",
+        "VP.1200-1",
+        "VP.1600-2",
+        "VP.2000-2",
+        "VP.2400-4"
       ],
       "profile": "",
       "side": "R",
@@ -67569,7 +70183,21 @@
             "ZVO.V/3D.45L",
             "ZVO.V/3D.45R"
           ]
+        },
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "VP.800-1",
+            "VP.1200-1",
+            "VP.1600-2",
+            "VP.2000-2",
+            "VP.2400-4"
+          ]
         }
+      ],
+      "catalogReviewPages": [
+        148,
+        149
       ]
     },
     {
@@ -67599,7 +70227,9 @@
         "XSNO.1200-1",
         "EAS.L",
         "EAS.R",
-        "XU.400-1U"
+        "XU.400-1U",
+        "SNP-13.L",
+        "SNP-13.R"
       ],
       "profile": "",
       "side": "R",
@@ -67611,7 +70241,38 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Нужны модель управления, положение ручки, электропривод и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Нужны модель управления, положение ручки, электропривод и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "XU",
+            "XPNB.S.200-1",
+            "XUK.600-1",
+            "XUF.200-1",
+            "XUF.400-1",
+            "XUF.600-1",
+            "SNO.600",
+            "XSNO.800-1",
+            "XSNO.1000-1",
+            "XSNO.1200-1",
+            "EAS.L",
+            "EAS.R",
+            "XU.400-1U",
+            "SNP-13.L",
+            "SNP-13.R"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        150,
+        151
+      ]
     },
     {
       "id": "catalog-pvc-7-54",
@@ -67654,7 +70315,10 @@
         "BZ.M",
         "TP.13",
         "TP.09",
-        "XU.400-1U"
+        "XU.400-1U",
+        "VP.800-1",
+        "VP.1200-1",
+        "VP.1600-2"
       ],
       "profile": "",
       "side": "R",
@@ -67666,7 +70330,53 @@
       "columns": [],
       "common": [],
       "cells": {},
-      "note": "Нужны модель управления, положение ручки, электропривод и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной."
+      "note": "Нужны модель управления, положение ручки, электропривод и монтажная карта. Перечень каталожных деталей содержит альтернативы и не является готовой накладной.",
+      "catalogGroups": [
+        {
+          "title": "Детали схемы",
+          "articles": [
+            "PO.740",
+            "XPO.800-1",
+            "POK.790",
+            "XVP.800-1",
+            "XVP.1200-1",
+            "XVP.1600-2",
+            "XU",
+            "U2",
+            "NPZ.660.L",
+            "NPZ.660.R",
+            "XPNB.S.200-1",
+            "XUF.400-1",
+            "S.400",
+            "RV",
+            "RV.U",
+            "ST",
+            "RN",
+            "RN.U",
+            "SV.10",
+            "SV.13",
+            "SV.14",
+            "SN",
+            "SN.U",
+            "BZ.M",
+            "TP.13",
+            "TP.09",
+            "XU.400-1U",
+            "VP.800-1",
+            "VP.1200-1",
+            "VP.1600-2"
+          ]
+        }
+      ],
+      "catalogPrepared": true,
+      "verificationRequired": [
+        "Сверить количества и альтернативные узлы по монтажной схеме.",
+        "Подтвердить диапазоны створки, нагрузку, профильные детали и соединения."
+      ],
+      "catalogReviewPages": [
+        152,
+        153
+      ]
     },
     {
       "family": "pvc",
@@ -68508,6 +71218,1770 @@
       "catalogPages": [
         174
       ]
+    },
+    {
+      "id": "pvc-fanlight-mushroom",
+      "name": "Фрамужное открывание · грибовидная цапфа",
+      "family": "pvc",
+      "variant": "mushroom",
+      "openingType": "fanlight",
+      "driveAxis": "width",
+      "profile": "",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 15,
+      "handleArticle": "RP",
+      "options": {
+        "microvent": false,
+        "lifter": false,
+        "plsEnabled": false,
+        "bprEnabled": false,
+        "handleEnabled": true
+      },
+      "catalogScheme": "",
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+      "catalogPages": [
+        66,
+        67,
+        138,
+        139,
+        174
+      ],
+      "note": "Фрамуга с поворотным приводом PP.V по ширине: две петли RV + FPR, два ограничителя FO2; ответные планки ZUP по числу цапф и профилю. Базовая схема без угловых передач. ШСФ 250–1200, ВСФ 350–1200 мм. Проверить массу створки и монтаж по каталогу.",
+      "rows": [
+        {
+          "id": "h0",
+          "from": 350,
+          "to": 1200,
+          "drives": []
+        }
+      ],
+      "columns": [
+        {
+          "id": "w0",
+          "from": 250,
+          "to": 400
+        },
+        {
+          "id": "w1",
+          "from": 401,
+          "to": 600
+        },
+        {
+          "id": "w2",
+          "from": 601,
+          "to": 800
+        },
+        {
+          "id": "w3",
+          "from": 801,
+          "to": 1000
+        },
+        {
+          "id": "w4",
+          "from": 1001,
+          "to": 1200
+        }
+      ],
+      "common": [
+        {
+          "art": "RV",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "FPR.13",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "N.RV.B",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "N.SV.B",
+          "qty": 2,
+          "role": "manual"
+        },
+        {
+          "art": "FO2",
+          "qty": 2,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "PP.250-2.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FPR.13",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FO2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Фрамуга с поворотным приводом PP.V по ширине: две петли RV + FPR, два ограничителя FO2; ответные планки ZUP по числу цапф и профилю. Базовая схема без угловых передач. ШСФ 250–1200, ВСФ 350–1200 мм. Проверить массу створки и монтаж по каталогу."
+        },
+        "h0|w1": {
+          "items": [
+            {
+              "art": "PP.400-2.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FPR.13",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FO2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Фрамуга с поворотным приводом PP.V по ширине: две петли RV + FPR, два ограничителя FO2; ответные планки ZUP по числу цапф и профилю. Базовая схема без угловых передач. ШСФ 250–1200, ВСФ 350–1200 мм. Проверить массу створки и монтаж по каталогу."
+        },
+        "h0|w2": {
+          "items": [
+            {
+              "art": "PP.600-2.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FPR.13",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FO2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Фрамуга с поворотным приводом PP.V по ширине: две петли RV + FPR, два ограничителя FO2; ответные планки ZUP по числу цапф и профилю. Базовая схема без угловых передач. ШСФ 250–1200, ВСФ 350–1200 мм. Проверить массу створки и монтаж по каталогу."
+        },
+        "h0|w3": {
+          "items": [
+            {
+              "art": "PP.800-2.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FPR.13",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FO2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 2,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Фрамуга с поворотным приводом PP.V по ширине: две петли RV + FPR, два ограничителя FO2; ответные планки ZUP по числу цапф и профилю. Базовая схема без угловых передач. ШСФ 250–1200, ВСФ 350–1200 мм. Проверить массу створки и монтаж по каталогу."
+        },
+        "h0|w4": {
+          "items": [
+            {
+              "art": "PP.1000-3.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FPR.13",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "FO2",
+              "qty": 2,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 3,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Фрамуга с поворотным приводом PP.V по ширине: две петли RV + FPR, два ограничителя FO2; ответные планки ZUP по числу цапф и профилю. Базовая схема без угловых передач. ШСФ 250–1200, ВСФ 350–1200 мм. Проверить массу створки и монтаж по каталогу."
+        }
+      },
+      "derivedFrom": "pvc-fanlight-8"
+    },
+    {
+      "family": "pvc",
+      "variant": "roller11",
+      "profile": "",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "handleArticle": "RP",
+      "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения.",
+      "id": "pvc-door-11-latch",
+      "name": "Дверная: без ригеля · цапфа 11 мм",
+      "openingType": "door",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 1600,
+          "to": 1800,
+          "drives": [
+            "XPD.16.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 1801,
+          "to": 2000,
+          "drives": [
+            "XPD.18.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 2001,
+          "to": 2200,
+          "drives": [
+            "XPD.20.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "RV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SV.13",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PK",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN1.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN2.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SN.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ODZ",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZK.40",
+          "qty": 4,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "XPD.16.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h1|w0": {
+          "items": [
+            {
+              "art": "XPD.18.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h2|w0": {
+          "items": [
+            {
+              "art": "XPD.20.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        }
+      },
+      "options": {
+        "handleEnabled": false,
+        "microvent": false,
+        "lifter": false,
+        "plsEnabled": false,
+        "bprEnabled": false
+      },
+      "catalogDraft": false,
+      "catalogPrepared": true,
+      "calculationMode": "catalogue",
+      "doorLockMode": "latch",
+      "doorNoCut": true,
+      "dornmassChoices": [
+        25,
+        35
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+      "catalogPages": [
+        116,
+        117,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "catalogScheme": "",
+      "derivedFrom": "pvc-turn-11",
+      "hingeType": "standard",
+      "verificationRequired": [
+        "Проверить массу створки, крепление петлевой группы, гарнитур и цилиндр.",
+        "Применяется прямой привод без рубки; угловые передачи и удлинители требуют отдельной схемы."
+      ]
+    },
+    {
+      "family": "pvc",
+      "variant": "roller8",
+      "profile": "",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "handleArticle": "RP",
+      "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения.",
+      "id": "pvc-door-8-latch",
+      "name": "Дверная: без ригеля · цапфа 8 мм",
+      "openingType": "door",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 1600,
+          "to": 1800,
+          "drives": [
+            "PD.16.D25"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 1801,
+          "to": 2000,
+          "drives": [
+            "PD.18.D25"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 2001,
+          "to": 2200,
+          "drives": [
+            "PD.20.D25"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "RV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SV.13",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PK",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN1.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN2.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SN.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ODZ",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZK.40",
+          "qty": 4,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "PD.16.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h1|w0": {
+          "items": [
+            {
+              "art": "PD.18.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h2|w0": {
+          "items": [
+            {
+              "art": "PD.20.D25",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZK.40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        }
+      },
+      "options": {
+        "handleEnabled": false,
+        "microvent": false,
+        "lifter": false,
+        "plsEnabled": false,
+        "bprEnabled": false
+      },
+      "catalogDraft": false,
+      "catalogPrepared": true,
+      "calculationMode": "catalogue",
+      "doorLockMode": "latch",
+      "doorNoCut": true,
+      "dornmassChoices": [
+        25,
+        35
+      ],
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+      "catalogPages": [
+        116,
+        117,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "catalogScheme": "",
+      "derivedFrom": "pvc-turn-8",
+      "hingeType": "standard",
+      "verificationRequired": [
+        "Проверить массу створки, крепление петлевой группы, гарнитур и цилиндр.",
+        "Применяется прямой привод без рубки; угловые передачи и удлинители требуют отдельной схемы."
+      ]
+    },
+    {
+      "family": "pvc",
+      "variant": "mushroom",
+      "profile": "",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "handleArticle": "RP",
+      "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения.",
+      "id": "pvc-door-mushroom-bolt",
+      "name": "Дверная: с ригелем · грибовидная цапфа",
+      "openingType": "door",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 1600,
+          "to": 1800,
+          "drives": [
+            "PDR.16.D25.V"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 1801,
+          "to": 2000,
+          "drives": [
+            "PDR.18.D25.V"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 2001,
+          "to": 2200,
+          "drives": [
+            "PDR.20.D25.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "RV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SV.13",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PK",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN1.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN2.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SN.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ODRZ",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZUP.K/40",
+          "qty": 4,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "PDR.16.D25.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h1|w0": {
+          "items": [
+            {
+              "art": "PDR.18.D25.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h2|w0": {
+          "items": [
+            {
+              "art": "PDR.20.D25.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODRZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        }
+      },
+      "options": {
+        "handleEnabled": false,
+        "microvent": false,
+        "lifter": false,
+        "plsEnabled": false,
+        "bprEnabled": false
+      },
+      "derivedFrom": "pvc-turn-mushroom",
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+      "catalogPages": [
+        116,
+        117,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "catalogDraft": false,
+      "catalogPrepared": true,
+      "calculationMode": "catalogue",
+      "doorLockMode": "bolt",
+      "doorNoCut": true,
+      "dornmassChoices": [
+        25,
+        35
+      ],
+      "catalogScheme": "",
+      "hingeType": "standard",
+      "verificationRequired": [
+        "Проверить массу створки, крепление петлевой группы, гарнитур и цилиндр.",
+        "Применяется прямой привод без рубки; угловые передачи и удлинители требуют отдельной схемы."
+      ]
+    },
+    {
+      "family": "pvc",
+      "variant": "mushroom",
+      "profile": "",
+      "side": "R",
+      "handle": "center",
+      "handleColor": "white",
+      "coverColor": "white",
+      "optionSeries": "13",
+      "dornmass": 25,
+      "handleArticle": "RP",
+      "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения.",
+      "id": "pvc-door-mushroom-latch",
+      "name": "Дверная: без ригеля · грибовидная цапфа",
+      "openingType": "door",
+      "columns": [
+        {
+          "id": "w0",
+          "from": 370,
+          "to": 1200
+        }
+      ],
+      "rows": [
+        {
+          "id": "h0",
+          "from": 1600,
+          "to": 1800,
+          "drives": [
+            "PD.16.D25.V"
+          ]
+        },
+        {
+          "id": "h1",
+          "from": 1801,
+          "to": 2000,
+          "drives": [
+            "PD.18.D25.V"
+          ]
+        },
+        {
+          "id": "h2",
+          "from": 2001,
+          "to": 2200,
+          "drives": [
+            "PD.20.D25.V"
+          ]
+        }
+      ],
+      "common": [
+        {
+          "art": "RV",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "RN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SV.13",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "SN",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "PK",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN1.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.RN2.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SV.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "N.SN.B",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ODZ",
+          "qty": 1,
+          "role": "manual"
+        },
+        {
+          "art": "ZUP.K/40",
+          "qty": 4,
+          "role": "manual"
+        }
+      ],
+      "cells": {
+        "h0|w0": {
+          "items": [
+            {
+              "art": "PD.16.D25.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h1|w0": {
+          "items": [
+            {
+              "art": "PD.18.D25.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        },
+        "h2|w0": {
+          "items": [
+            {
+              "art": "PD.20.D25.V",
+              "qty": 1,
+              "role": "drive"
+            },
+            {
+              "art": "RV",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "RN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SV.13",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "SN",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "PK",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN1.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.RN2.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SV.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "N.SN.B",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ODZ",
+              "qty": 1,
+              "role": "manual"
+            },
+            {
+              "art": "ZUP.K/40",
+              "qty": 4,
+              "role": "manual"
+            }
+          ],
+          "reviewed": false,
+          "driveChosen": true,
+          "note": "Дверная базовая комплектация без рубки и продления обвязки: привод, четыре профильных зацепа, ответная часть замка и стандартная петлевая группа. Ручной гарнитур 8×8 мм и цилиндр подбираются отдельно. Ширина 370–1200 мм — рабочее ограничение базовой поворотной схемы; проверить массу створки и крепление по диаграмме применения."
+        }
+      },
+      "options": {
+        "handleEnabled": false,
+        "microvent": false,
+        "lifter": false,
+        "plsEnabled": false,
+        "bprEnabled": false
+      },
+      "derivedFrom": "pvc-turn-mushroom",
+      "catalogSource": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf",
+      "catalogPages": [
+        116,
+        117,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "catalogDraft": false,
+      "catalogPrepared": true,
+      "calculationMode": "catalogue",
+      "doorLockMode": "latch",
+      "doorNoCut": true,
+      "dornmassChoices": [
+        25,
+        35
+      ],
+      "catalogScheme": "",
+      "hingeType": "standard",
+      "verificationRequired": [
+        "Проверить массу створки, крепление петлевой группы, гарнитур и цилиндр.",
+        "Применяется прямой привод без рубки; угловые передачи и удлинители требуют отдельной схемы."
+      ]
     }
   ],
   "strikeSelection": {
@@ -68815,7 +73289,11 @@
         "TP.09",
         "XU1.R",
         "XU1.L",
-        "XU.400-1U"
+        "XU.400-1U",
+        "XPO.1450-1",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "kitId": "catalog-pvc-7-2"
     },
@@ -68958,7 +73436,11 @@
         "TP.09",
         "XU1.R",
         "XU1.L",
-        "XU.400-1U"
+        "XU.400-1U",
+        "XPO.1450-1",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "kitId": "catalog-pvc-7-4"
     },
@@ -69513,7 +73995,9 @@
         "BZ.SP",
         "PLS",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "U2",
+        "NO.800"
       ],
       "kitId": "catalog-pvc-7-12",
       "sourceFile": "Штульповая пвх.pdf"
@@ -69794,7 +74278,18 @@
         "XPD.20.D35",
         "ODRZ",
         "ODZ",
-        "XU.400-1U"
+        "XU.400-1U",
+        "PDR.16.D25",
+        "PDR.18.D25",
+        "PDR.20.D25",
+        "PDR.16.D35",
+        "PDR.18.D35",
+        "PDR.20.D35",
+        "PD.16.D25",
+        "PD.18.D25",
+        "PD.20.D25",
+        "PD.16.D35",
+        "PD.18.D35"
       ],
       "kitId": "catalog-pvc-7-16"
     },
@@ -69853,7 +74348,19 @@
         "OUS.R",
         "XU1.R",
         "XU1.L",
-        "XU.400-1U"
+        "XU.400-1U",
+        "SNO.600",
+        "SNO.800-1",
+        "SNO.1000-1",
+        "SNO.1200-1",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "kitId": "catalog-pvc-7-17"
     },
@@ -69899,7 +74406,19 @@
         "OUS.K",
         "OUS.R",
         "XU.400-1U",
-        "U.400-1VR"
+        "U.400-1VR",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "kitId": "catalog-pvc-7-18"
     },
@@ -69993,7 +74512,11 @@
         "MBU",
         "BPR",
         "XZMV.9",
-        "XZMV.13"
+        "XZMV.13",
+        "SNO.600",
+        "SNO.800-1",
+        "SNO.1000-1",
+        "SNO.1200-1"
       ],
       "kitId": "catalog-pvc-7-19",
       "sourceFile": "Откид-пов пвх.pdf",
@@ -70025,7 +74548,15 @@
         "FO1",
         "FO2",
         "PLS",
-        "U.400-1VR"
+        "U.400-1VR",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "kitId": "catalog-pvc-7-20"
     },
@@ -70218,7 +74749,11 @@
         "PLS",
         "ON",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.1450-1",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "kitId": "catalog-pvc-7-23"
     },
@@ -70286,7 +74821,10 @@
         "PLS",
         "ON",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "NO.600",
+        "NO.700",
+        "NO.800"
       ],
       "kitId": "catalog-pvc-7-24"
     },
@@ -70522,7 +75060,8 @@
         "ZVO.V/3D.40L",
         "ZVO.V/3D.40R",
         "ZVO.V/3D.45L",
-        "ZVO.V/3D.45R"
+        "ZVO.V/3D.45R",
+        "NO.800"
       ],
       "kitId": "catalog-pvc-7-26",
       "sourceFile": "3D пвх.pdf"
@@ -70635,7 +75174,9 @@
         "OZ1",
         "OP",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.1200-1",
+        "POM.1450-1"
       ],
       "kitId": "catalog-pvc-7-28"
     },
@@ -70780,7 +75321,8 @@
         "BZ.SP",
         "PLS",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "U2"
       ],
       "kitId": "catalog-pvc-7-30",
       "sourceFile": "Штульповая пвх.pdf"
@@ -71019,7 +75561,8 @@
       "articles": [
         "POK.790.D25",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POK.790.D25.V"
       ],
       "kitId": "catalog-pvc-7-34"
     },
@@ -71064,7 +75607,13 @@
         "SN",
         "SN.U",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.1200-1.D7",
+        "POM.1600-2.D7",
+        "POM.2000-2.D7",
+        "POM.1200-1.D7.V",
+        "POM.1600-2.D7.V",
+        "POM.2000-2.D7.V"
       ],
       "kitId": "catalog-pvc-7-35"
     },
@@ -71131,7 +75680,19 @@
         "PD.18.D35.V",
         "PD.20.D35.V",
         "ODRZ",
-        "ODZ"
+        "ODZ",
+        "XPDR.16.D25",
+        "XPDR.18.D25",
+        "XPDR.20.D25",
+        "XPDR.16.D35",
+        "XPDR.18.D35",
+        "XPDR.20.D35",
+        "XPD.16.D25",
+        "XPD.18.D25",
+        "XPD.20.D25",
+        "XPD.16.D35",
+        "XPD.18.D35",
+        "XPD.20.D35"
       ],
       "kitId": "catalog-pvc-7-36"
     },
@@ -71188,7 +75749,15 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "kitId": "catalog-pvc-7-37"
     },
@@ -71228,7 +75797,19 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "kitId": "catalog-pvc-7-38"
     },
@@ -71359,7 +75940,15 @@
         "U.400-1",
         "FO1",
         "FO2",
-        "PLS"
+        "PLS",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "kitId": "catalog-pvc-7-40"
     },
@@ -71463,7 +76052,8 @@
         "FPR.14",
         "PLV",
         "TP.13",
-        "TP.09"
+        "TP.09",
+        "POM.2000-2.V"
       ],
       "kitId": "catalog-pvc-7-42"
     },
@@ -71554,7 +76144,8 @@
         "TP.13",
         "PLV",
         "XZMV.9",
-        "XZMV.13"
+        "XZMV.13",
+        "NO.800"
       ],
       "kitId": "catalog-pvc-7-43",
       "sourceFile": "Откид-пов пвх.pdf",
@@ -71599,7 +76190,17 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "POM.2000-2.V",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R",
+        "SNO.600.V"
       ],
       "kitId": "catalog-pvc-7-44"
     },
@@ -71633,7 +76234,20 @@
         "TP.13",
         "TP.09",
         "OUS.K",
-        "OUS.R"
+        "OUS.R",
+        "POM.2000-2.V",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "SNP-09.L",
+        "SNP-09.R",
+        "SNP-13.L",
+        "SNP-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R"
       ],
       "kitId": "catalog-pvc-7-45"
     },
@@ -71745,7 +76359,28 @@
         "FO1",
         "FO2",
         "PLS",
-        "PLV"
+        "PLV",
+        "POM.1200-1.V",
+        "POM.1450-2.V",
+        "POM.1600-2.V",
+        "POM.2000-2.V",
+        "PP.250-2.V",
+        "PP.600-2.V",
+        "PP.800-2.V",
+        "PP.1000-3.V",
+        "PP.1200-3.V",
+        "PP.1400-3.V",
+        "PP.1600-4.V",
+        "PP.1800-4.V",
+        "SPK-09.L",
+        "SPK-09.R",
+        "SPK-13.L",
+        "SPK-13.R",
+        "P.SPK-L",
+        "P.SPK-R",
+        "P.SPR-L",
+        "P.SPR-R",
+        "PP.2000-4.V"
       ],
       "kitId": "catalog-pvc-7-47"
     },
@@ -72058,7 +76693,12 @@
         "ZVO.V/3D.40R",
         "ZVO.V/3D.45L",
         "ZVO.V/3D.45R",
-        "ZUO.K/40"
+        "ZUO.K/40",
+        "VP.800-1",
+        "VP.1200-1",
+        "VP.1600-2",
+        "VP.2000-2",
+        "VP.2400-4"
       ],
       "kitId": "catalog-pvc-7-51",
       "sourceFile": "3D пвх.pdf"
@@ -72217,7 +76857,12 @@
         "ZVO.V/3D.40L",
         "ZVO.V/3D.40R",
         "ZVO.V/3D.45L",
-        "ZVO.V/3D.45R"
+        "ZVO.V/3D.45R",
+        "VP.800-1",
+        "VP.1200-1",
+        "VP.1600-2",
+        "VP.2000-2",
+        "VP.2400-4"
       ],
       "kitId": "catalog-pvc-7-52",
       "sourceFile": "3D пвх.pdf"
@@ -72246,7 +76891,9 @@
         "XSNO.1200-1",
         "EAS.L",
         "EAS.R",
-        "XU.400-1U"
+        "XU.400-1U",
+        "SNP-13.L",
+        "SNP-13.R"
       ],
       "kitId": "catalog-pvc-7-53"
     },
@@ -72288,7 +76935,10 @@
         "BZ.M",
         "TP.13",
         "TP.09",
-        "XU.400-1U"
+        "XU.400-1U",
+        "VP.800-1",
+        "VP.1200-1",
+        "VP.1600-2"
       ],
       "kitId": "catalog-pvc-7-54"
     }
@@ -72297,5 +76947,6 @@
   "currency": "RUB",
   "tiltFirstWorkbookVersion": 1,
   "priceCurrency": "RUB",
-  "commonCompositionVersion": 1
+  "commonCompositionVersion": 1,
+  "catalogExpansionVersion": 1
 }

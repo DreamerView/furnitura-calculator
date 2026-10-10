@@ -54,7 +54,7 @@
     return {schemaVersion:2,format:'futuruss-matrix',nomenclatureVersion:seed.nomenclatureVersion||'',articles,kits:[...kits,...extraKits]};
   }
   function scissors(db,kit,col){
-    if(['turn','fanlight','stulp','stulp-bolts','stulp-drive'].includes(kit.openingType))return '';
+    if(['turn','fanlight','door','stulp','stulp-bolts','stulp-drive'].includes(kit.openingType))return '';
     if(kit.family==='aluminum'){
       const preferred=col.to<=600?'SNO.600':(kit.variant==='mushroom'?'SNO.':'XSNO.')+col.to+'-1'+(kit.variant==='mushroom'?'.V':'');
       if(has(db.articles,preferred))return preferred;
@@ -181,7 +181,7 @@
     }
     return result;
   }
-  function lowerNodeSupported(kit){return kit.family!=='aluminum'&&kit.calculationMode!=='generic'&&kit.variant==='roller11'&&!['turn','fanlight','stulp','stulp-drive','stulp-bolts','tilt-first'].includes(kit.openingType);}
+  function lowerNodeSupported(kit){return kit.family!=='aluminum'&&kit.calculationMode!=='generic'&&kit.variant==='roller11'&&!['turn','fanlight','door','stulp','stulp-drive','stulp-bolts','tilt-first'].includes(kit.openingType);}
 
   function strikeRole(art){
     if(/^Z(?:K9|K|Q|D)\.\d+$/.test(art))return 'perimeter';
@@ -225,7 +225,7 @@
     const mode=params.handleHeightMode||kit.handleHeightMode||'catalog',height=Number(params.height),requested=Number(params.handleHeight??kit.handleHeight??0);
     const plan={ok:false,mode,height,handleHeight:mode==='manual'&&Number.isFinite(requested)&&requested>0?requested:null,drive:'',extensions:[],chain:[],message:'Для этой высоты ручки нужна проверенная схема соединений и подрезки.'};
     if(!['catalog','manual'].includes(mode)||!Number.isInteger(height)||height<1||(mode==='manual'&&(!Number.isInteger(requested)||requested<=0||requested>=height)))return plan;
-    if(kit.family==='aluminum'||kit.calculationMode==='generic'||['turn','fanlight','stulp-bolts','stulp-drive'].includes(kit.openingType)||kit.variant!=='roller11'||Number(params.dornmass||kit.dornmass||15)!==15)return plan;
+    if(kit.family==='aluminum'||kit.calculationMode==='generic'||['turn','fanlight','door','stulp-bolts','stulp-drive'].includes(kit.openingType)||kit.variant!=='roller11'||Number(params.dornmass||kit.dornmass||15)!==15)return plan;
     const row=[[600,800,'XPOK.600-1',300],[801,1000,'XPOK.800-1',400],[1001,1200,'XPOK.1000-1',500],[1201,1400,'XPOK.1200-2',600],[1401,1600,'XPOK.1400-2',700],[1601,1800,'XPOK.1600-2',700],[1801,2000,'XPOK.1800-2',1000],[2001,2200,'XPOK.2000-3',1000]].find(r=>height>=r[0]&&height<=r[1]);
     if(!row)return plan;
     plan.catalogHeight=row[3];plan.suggestedDrive=row[2];
@@ -252,12 +252,13 @@
     if(!kit||!db.kits.some(k=>k.id===kit.id)){errors.push('Комплектация не найдена в загруженном файле.');return {errors,warnings,items:[],choices:[]};}
     if(!Number.isInteger(params.width)||!Number.isInteger(params.height)||params.width<1||params.height<1)errors.push('Ширина и высота должны быть целыми положительными числами.');
     if(!Number.isInteger(params.count)||params.count<1)errors.push('Количество створок должно быть целым и больше нуля.');
-    const dornmass=Number(params.dornmass||15);
+    const dornmass=Number(params.dornmass||(kit.openingType==='door'?kit.dornmass:15)||15);
     if(!Number.isInteger(dornmass)||dornmass<1)errors.push('Выберите дорнмасс.');
     const technology=handleTechnology(db,kit,params);
     if(technology&&!technology.ok)return {errors:[...errors,technology.message],warnings,items:[],choices:[],technology};
-    const pvcTurn=kit.family!=='aluminum'&&['turn','fanlight','stulp-bolts','stulp-drive'].includes(kit.openingType);
+    const pvcTurn=kit.family!=='aluminum'&&['turn','fanlight','door','stulp-bolts','stulp-drive'].includes(kit.openingType);
     if(kit.openingType==='fanlight'&&(params.hingeType||kit.hingeType||'standard')!=='standard')errors.push('Для фрамужной комплектации доступна только заданная петлевая группа.');
+    if(kit.openingType==='door'&&((params.hingeType||kit.hingeType||'standard')!=='standard'||!kit.dornmassChoices?.includes(dornmass)))errors.push('Для этой дверной комплектации выберите стандартные петли и дорнмасс 25 или 35 мм.');
     if(pvcTurn&&kit.note)warnings.push(kit.note);
     const dimensionChoices=candidates(kit,params.width,params.height),choices=dimensionChoices.filter(c=>!c.drive||dornAlternative(db,c.drive,dornmass));
     let chosen=selection&&choices.find(c=>c.rowId===selection.rowId&&c.colId===selection.colId&&c.drive===selection.drive);
@@ -274,6 +275,7 @@
     if(!['R','L'].includes(side))errors.push('Выберите правое или левое открывание.');
     if(opts){
       if(pvcTurn&&(opts.microvent||opts.lifter||opts.bprEnabled))errors.push('Эти опции доступны только для поворотно-откидного открывания.');
+      if(kit.openingType==='door'&&opts.handleEnabled)errors.push('Для дверной системы гарнитур и цилиндр подбираются отдельно.');
       if(kit.openingType==='stulp-bolts'&&opts.handleEnabled)errors.push('Пассивная штульповая створка со шпингалетами не имеет ручки.');
       const handleArticles=Object.entries(db.articles).filter(([art,a])=>isWindowHandle(art,a)).map(([art])=>art);
       const groups={microvent:['XZMV.9','XZMV.13','ZMV.9','ZMV.13'],lifter:['MBU','ZM9.Z','ZM13.Z','ZM9.P','ZM13.P'],plsEnabled:['PLS'],bprEnabled:['BPR'],handleEnabled:handleArticles};

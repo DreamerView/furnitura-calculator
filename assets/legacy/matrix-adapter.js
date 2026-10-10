@@ -11,7 +11,7 @@
   const retiredAluminumKits=new Set(['alu-tilt-d25-security','alu-tilt-d25-high']);
   function paintHandleColors(){const selected=el('handleColor').value||'white';globalThis.FuturussHardwareColors?.paint(el('handleArticle'),selected);for(const [color,id] of Object.entries(handleColorButtons))el(id).setAttribute?.('aria-pressed',String(color===selected));}
   function chooseGroove(kit){const select=el('grooveType');if(!select||kitFamily(kit)==='aluminum')return;if(kit?.sizeRecipeMode&&Object.prototype.hasOwnProperty.call(MatrixCore.tiltFirstWorkbookProfiles,select.value))return;const wanted=kit?.strikeProfile||kit?.profile||(!grooveTouched?'13':'');if(!wanted)return;const choices=Array.from(select.options||select.children||[]),needle=String(wanted).toLowerCase();const match=choices.find(option=>String(option.value||'').toLowerCase()===needle||String(option.textContent||'').toLowerCase().includes(needle));if(match)select.value=match.value;}
-  function toggleHingeChoice(){const pvc=currentProfileId==='futuruss'&&kitFamily(selectedKit())==='pvc',wide=pvc&&!['turn','fanlight'].includes(selectedKit()?.openingType)&&num('width')>650;el('hingeTypeWrap').hidden=!wide;if(!wide)el('hingeType').value='standard';}
+  function toggleHingeChoice(){const pvc=currentProfileId==='futuruss'&&kitFamily(selectedKit())==='pvc',wide=pvc&&!['turn','fanlight','door'].includes(selectedKit()?.openingType)&&num('width')>650;el('hingeTypeWrap').hidden=!wide;if(!wide)el('hingeType').value='standard';}
   function selectedKit(){const value=el('scheme').value;if(value.startsWith(PREFIX))return imported?.kits.find(k=>k.id===value.slice(PREFIX.length));if(currentProfileId!=='futuruss'&&value&&(DATA.schemes?.[value]||DATA.rules?.[value]))return {id:'profile::'+value,name:globalThis.SCHEME_TITLES?.[value]||value,variant:'roller11',family:'pvc',profile:'',side:'R',handle:'center',common:[],options:{}};return null;}
   globalThis.getMatrixFamily=()=>activeFamily;
   globalThis.getMatrixAdvertisingMedia=()=>{if(Array.isArray(imported?.advertisingMedia))return imported.advertisingMedia;const old=imported?.advertisingImages||[imported?.advertisingImage];return(Array.isArray(old)?old:[old]).filter(Boolean).map(src=>({type:'image',src,name:''}));};
@@ -77,12 +77,12 @@
     el('offsetHandle').disabled=!kit;el('offsetHandle').checked=kit?.handle==='offset';
     for(const id of ['offsetHandle','microvent','lifter','plsEnabled','bprEnabled']){const control=el(id),wrapper=control?.closest?.('label')||control?.parentElement;if(wrapper)wrapper.hidden=!kit||alu||generic;if(control){control.disabled=!kit||alu||generic;if((alu||generic)&&control.type==='checkbox')control.checked=false;}}
     el('handlePos').value=el('offsetHandle').checked?'offset':'center';
-    el('dornmass').disabled=!kit||generic;el('dornmass').value=String(kit?.dornmass||15);el('coverColor').disabled=!kit||alu||generic;el('coverColor').value=alu?'white':kit?.coverColor||'white';el('handleColor').value=kit?.handleColor||'white';paintCoverSelect();paintHandleColors();renderHandleChoices(generic?null:kit);chooseGroove(kit);toggleHingeChoice();
+    el('dornmass').disabled=!kit||generic;FuturussCamSelector.configureDornmass(el('dornmass'),kit);el('coverColor').disabled=!kit||alu||generic;el('coverColor').value=alu?'white':kit?.coverColor||'white';el('handleColor').value=kit?.handleColor||'white';paintCoverSelect();paintHandleColors();renderHandleChoices(generic?null:kit);chooseGroove(kit);toggleHingeChoice();
     const summary=el('matrixImportedSummary');
     if(kit&&summary){summary.textContent=generic?kit.name+' · расчёт по данным выбранного бренда через новый движок MatrixCore.':kit.name+' · '+(MatrixCore.variants[kit.variant]||kit.variant)+' · '+(kit.side==='L'?'левая':'правая')+' · '+((kit.sizeRecipeMode?el('grooveType').value:kit.profile)||'профиль не указан')+'. Правое и левое открывание подбираются по парным артикулам из файла. Дополнительные позиции — по флажкам ниже.';}
-    const simple=kit&&kitFamily(kit)==='pvc'&&['turn','fanlight','stulp-bolts','stulp-drive'].includes(kit.openingType);
+    const simple=kit&&kitFamily(kit)==='pvc'&&['turn','fanlight','door','stulp-bolts','stulp-drive'].includes(kit.openingType);
     if(simple)for(const id of ['offsetHandle','microvent','lifter','bprEnabled']){el(id).disabled=true;el(id).checked=false;}
-    if(kit?.openingType==='stulp-bolts'){el('handleEnabled').disabled=true;el('handleEnabled').checked=false;el('handleArticleWrap').hidden=true;el('handleColorWrap').hidden=true;}
+    if(['stulp-bolts','door'].includes(kit?.openingType)){el('handleEnabled').disabled=true;el('handleEnabled').checked=false;el('handleArticleWrap').hidden=true;el('handleColorWrap').hidden=true;}
     technologyControls.load(kit);camControl?.refresh();refreshChoices();
   }
   function availableHandles(){return imported?MatrixCore.handleBases(imported):[];}
