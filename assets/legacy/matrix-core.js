@@ -75,7 +75,7 @@
     // keeping size-dependent extras, manual rows and automatic parts intact.
     const previous=kit.common||[];
     const signature=it=>JSON.stringify(Object.fromEntries(Object.entries(it).filter(([k])=>k!=='qty'&&k!=='editPrice').sort(([a],[b])=>a.localeCompare(b))));
-    for(const saved of Object.values(kit.cells||{}).flatMap(c=>c.sizeRecipes?.length?[c,...c.sizeRecipes]:[c])){
+    for(const saved of [...Object.values(kit.cells||{}).flatMap(c=>c.sizeRecipes?.length?[c,...c.sizeRecipes]:[c]),...Object.values(kit.heightRecipes||{})]){
       for(const old of previous){let remaining=old.qty;for(const it of saved.items){if(signature(it)===signature(old)){const take=Math.min(it.qty,remaining);it.qty-=take;remaining-=take;}}}
       saved.items=saved.items.filter(i=>i.qty>0);saved.items.push(...copy(items));saved.reviewed=false;
     }
@@ -85,6 +85,7 @@
     const stored=kit.cells[key(row,col)];
     if(params&&kit.sizeRecipeMode){const recipe=sizeRecipe(stored,params.width,params.height);return recipe?copy(recipe):{items:[],reviewed:false,sizeUnavailable:true};}
     if(stored)return copy(stored);
+    if(kit.heightRecipes?.[row.id])return copy(kit.heightRecipes[row.id]);
     const items=[...(row.drives[0]?[rowItem(row.drives[0],1,'drive')]:[]),...copy(kit.common)],sc= scissors(db,kit,col);if(sc)items.push(rowItem(sc,1,'scissors'));
     if(kit.aluminumScissorLever&&sc)items.push(rowItem('AL.RSNO.'+(col.to<=800?'313':'413')+'-09R'+(kit.openingType==='tilt-first'?'.TF':'')));
     if(kit.family==='aluminum'&&kit.catalogMixedArticles)for(const it of items)if(kit.catalogMixedArticles.includes(it.art)){it.compatibilityApproved=true;it.catalogCompatibilitySource=kit.catalogSection;}
@@ -134,6 +135,7 @@
         const rs=new Set();for(const r of k[f]){if(!r||!r.id||rs.has(r.id)||!Number.isInteger(r.from)||!Number.isInteger(r.to)||r.from<1||r.from>r.to)errors.push(k.name+': неверный диапазон');else rs.add(r.id);if(f==='rows'&&(!Array.isArray(r?.drives)||r.drives.some(a=>typeof a!=='string'||(a&&!has(db.articles,a)))))errors.push(k.name+': неверный список приводов');}
       }
       items(k.common,k.name);
+      if(k.heightRecipes!=null){if(typeof k.heightRecipes!=='object'||Array.isArray(k.heightRecipes))errors.push(k.name+': неверный состав по высоте');else for(const [id,recipe] of Object.entries(k.heightRecipes)){if(!k.rows.some(r=>r.id===id))errors.push(k.name+': неверный диапазон');items(recipe?.items,k.name);}}
       if(!k.cells||typeof k.cells!=='object'){errors.push(k.name+': нет ячеек');continue;}
       for(const [cellKey,c] of Object.entries(k.cells)){
         items(c?.items,k.name);

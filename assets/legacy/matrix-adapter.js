@@ -98,9 +98,13 @@
     const tr=s=>globalThis.FuturussI18n?.translate?.(s)||s;
     const title=document.createElement('strong');title.textContent=tr(preliminaryText);preliminaryBox.append(title);
     const note=document.createElement('p');note.textContent=tr('Показаны основные узлы одной створки из шаблона. Сторона, цвет и остальные опции ещё не применены.');preliminaryBox.append(note);
-    const selected=el('matrixDriveChoice').value,choices=selected!==''&&options[Number(selected)]?[options[Number(selected)]]:options;
+    const selected=el('matrixDriveChoice').value;let choices=selected!==''&&options[Number(selected)]?[options[Number(selected)]]:options;
+    if(!kit.columns.length&&kit.heightRecipes){
+      choices=kit.rows.filter(r=>MatrixCore.fits(num('height'),r)).map(r=>({rowId:r.id,drive:r.drives[0]}));
+      const hint=document.createElement('p');hint.textContent=tr('Состав по высоте привода. Ширина и удлинители требуют проверки.');preliminaryBox.append(hint);
+    }
     if(!choices.length){const p=document.createElement('p');p.textContent=tr('Для этих размеров нет диапазона.');preliminaryBox.append(p);}
-    for(const choice of choices){const cell=kit.cells[choice.rowId+'|'+choice.colId];if(!cell)continue;const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('ul');summary.textContent=choice.drive;details.append(summary,list);
+    for(const choice of choices){const cell=kit.cells[choice.rowId+'|'+choice.colId]||kit.heightRecipes?.[choice.rowId];if(!cell)continue;const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('ul');summary.textContent=choice.drive;details.append(summary,list);
       for(const item of cell.items){const li=document.createElement('li');li.textContent=item.art+' — '+(imported.articles[item.art]?.name||item.art)+' × '+item.qty;list.append(li);}preliminaryBox.append(details);}
     if(!kit.columns.length){for(const group of kit.catalogGroups||[]){const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('ul');summary.textContent=group.title;details.append(summary,list);for(const art of group.articles){const li=document.createElement('li');li.textContent=art+' — '+(imported.articles[art]?.name||art);list.append(li);}preliminaryBox.append(details);}}
     const p=document.createElement('p');p.textContent=tr('Полный состав и узлы для проверки доступны в конструкторе.');preliminaryBox.append(p);

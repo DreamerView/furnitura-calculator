@@ -1,6 +1,29 @@
 (function(){
 'use strict';
 const dict={
+"Привод по высоте":["Drive selected by height", "Yüksekliğe göre ispanyolet"],
+"Варианты привода:":["Drive options:", "İspanyolet seçenekleri:"],
+"Подтверждены привод по высоте, угловые передачи и состав базовых узлов. Полный комплект требует подбора удлинителей, ответных деталей и проверки монтажа по профилю. Диапазоны совместной работы приводов взяты из таблицы на стр. 231.":["Drive height, corner transmissions and basic parts are verified. A full kit requires extensions, keeps and profile installation review. Paired drive ranges follow the table on page 231.", "İspanyolet yüksekliği, köşe iletimleri ve temel parçalar doğrulandı. Tam takım için uzatmalar, karşılıklar ve profil montajı kontrol edilmelidir. Eşli ispanyolet aralıkları sayfa 231 tablosuna göredir."],
+"Скрытые петли выбираются по стороне и профилю; альтернативы не суммируются.":["Hidden hinges are selected by handing and profile; alternatives are not added together.", "Gizli menteşeler yöne ve profile göre seçilir; alternatifler birlikte eklenmez."],
+"Проверить монтаж привода под штульпом и обработку профиля.":["Check drive installation beneath the false mullion and profile machining.", "İspanyoletin yalancı orta kayıt altındaki montajını ve profil işlemesini kontrol edin."],
+"Подобрать удлинители сверху и снизу по монтажным размерам и схеме рубки.":["Select top and bottom extensions using mounting dimensions and cutting instructions.", "Üst ve alt uzatmaları montaj ölçülerine ve kesim şemasına göre seçin."],
+"Подобрать ответные детали по цапфам активной створки; количество не определяется длиной привода PS.":["Select keeps for the active sash cams; quantity is not determined by PS drive length.", "Karşılıkları aktif kanat pimlerine göre seçin; adet PS ispanyolet uzunluğuna göre belirlenmez."],
+"Выбрать петли, сторону открывания и допустимую нагрузку.":["Select hinges, handing and permitted load.", "Menteşeleri, açılma yönünü ve izin verilen yükü seçin."],
+"Зацеп ZMS.L/R выбирается по направлению активной створки; при монтаже в паз нужна пластина PLM.":["Select ZMS.L/R by active sash handing; groove installation requires a PLM plate.", "ZMS.L/R aktif kanat yönüne göre seçilir; kanala montaj için PLM plakası gerekir."],
+
+"Состав по высоте привода. Ширина и удлинители требуют проверки.":["Composition by drive height. Width and extensions need review.", "İspanyolet yüksekliğine göre içerik. Genişlik ve uzatmalar kontrol edilmelidir."],
+"Высота ВСФ, мм":["Sash rebate height, mm", "Kanat kanal yüksekliği, mm"],
+"Открыть состав":["Open composition", "İçeriği aç"],
+"Штульп: совместимость приводов":["French casement: drive compatibility", "Çift kanat: ispanyolet uyumluluğu"],
+"Пассивная створка":["Passive sash", "Pasif kanat"],
+"Активная створка":["Active sash", "Aktif kanat"],
+"Таблица совместимости пары створок. Привод активной створки не добавляется к пассивной.":["Sash pair compatibility. The active sash drive is not added to the passive sash.", "Kanat çifti uyumluluğu. Aktif kanat ispanyoleti pasif kanada eklenmez."],
+"PS.800: собственный диапазон 690–890 мм; совместная работа по таблице — 690–800 мм.":["PS.800: individual range 690–890 mm; paired operation per table: 690–800 mm.", "PS.800: kendi aralığı 690–890 mm; tabloya göre eşli çalışma: 690–800 mm."],
+"Зацеп ZMS.L/R выбирается по стороне активной створки. При установке в паз требуется PLM.":["Select ZMS.L/R by the active sash handing. Groove installation requires PLM.", "ZMS.L/R aktif kanadın yönüne göre seçilir. Kanala montaj için PLM gerekir."],
+"На привод":["On the drive", "İspanyolet üzerinde"],
+"В фурнитурный паз":["In the hardware groove", "Donanım kanalında"],
+"Скрытые прижимы — выбрать по профилю":["Hidden clamps — select by profile", "Gizli baskılar — profile göre seçin"],
+
 "Общий состав":["Common composition","Ortak içerik"],
 "Переменные детали":["Variable parts","Değişken parçalar"],
 "Арочная":["Arched","Kemerli"],

@@ -25,3 +25,5 @@
 *.tmp
 .DS_Store
 Thumbs.db
+
+!/storage/stulp-details-previous.json

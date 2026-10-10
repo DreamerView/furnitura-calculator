@@ -22,6 +22,14 @@ function create({getLibrary,select,onChange,button,reference}){
   const db=getLibrary(),source=(db?.catalogSchemes||[]).find(s=>s.kitId===k.id);reference.replaceChildren();reference.hidden=!source;if(!source)return;
   reference.append(node('h3',source.section+' · '+source.title));
   const a=node('a','Схема в каталоге');a.href='https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf#page='+source.pdfPage;a.target='_blank';a.rel='noopener noreferrer';reference.append(a);
+  if(k.openingType?.startsWith('stulp')&&db.stulpCompatibility){
+   const detail=node('details'),summary=node('summary','Штульп: совместимость приводов'),table=node('table',null,'picktable'),head=node('tr');
+   for(const label of ['Высота ВСФ, мм','Пассивная створка','Активная створка'])head.append(node('th',label));table.append(head);
+   for(const r of db.stulpCompatibility.rows){const row=node('tr');row.append(node('td',r.from+'–'+r.to),node('td',r.passive),node('td',r.active[k.variant]||'—'));table.append(row);}
+   detail.append(summary,table,node('p','Таблица совместимости пары створок. Привод активной створки не добавляется к пассивной.','hint'),node('p','PS.800: собственный диапазон 690–890 мм; совместная работа по таблице — 690–800 мм.','hint'),node('p','Зацеп ZMS.L/R выбирается по стороне активной створки. При установке в паз требуется PLM.','hint'));
+   const strike=db.stulpCompatibility.strikes[k.variant];if(strike){const row=node('p');row.textContent=t('На привод')+': '+strike.drive+' · '+t('В фурнитурный паз')+': '+strike.groove;detail.append(row);}
+   reference.append(detail);
+  }
   if(!k.catalogDraft){reference.append(node('p','Реализован один вариант схемы. Другие варианты требуют отдельной настройки.','hint'));return;}
   reference.append(node('p','Схема каталога ещё не настроена для автоматического расчёта.','warn'),node('p',k.note,'hint'));
   if(k.catalogPrepared){
