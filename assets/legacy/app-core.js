@@ -987,11 +987,13 @@ function renderOrder(){
     let rowsHtml = displayOrder.map((entry, displayIdx) => {
       const {index:idx,row:r,zone,editZone}=entry;
       const boundary=displayIdx>0&&zone!==displayOrder[displayIdx-1].zone;
+      const sideLabel={front:'Сторона ручки',rear:'Сторона петель',upper:'Верх',bottom:'Низ'}[zone];
+      const sideHeading=sideLabel&&(displayIdx===0||boundary)?'<tr class="invoice-side-heading"><td colspan="7">'+esc(globalThis.FuturussI18n?.translate(sideLabel)||sideLabel)+'</td><td class="invoice-row-actions"></td></tr>':'';
       const zoneArg=editZone?', '+inlineJsArg(editZone):'';
       const sum = r.qty * r.price;
       posSubtotal += sum;
 
-      return `
+      return `${sideHeading}
       <tr data-position-id="${pos.id}" data-row-index="${idx}" class="row-item${boundary?' invoice-side-start':''}${r.pricingUnavailable?' pricing-unavailable':''}${isHingeKitArt(r.art) ? ' hinge-kit' : ''}${isDriveArt(r.art) ? ' drive-row' : ''}" ondblclick="showPhoto(${inlineJsArg(r.art)}, ${inlineJsArg(r.name)}, 'invoice')">
         <td>${displayIdx+1}</td>
         <td class="article ${globalThis.FuturussHardwareColors?.cellClass(r.art,DATA.master[r.art]||r)||''}">${esc(r.art)}</td>

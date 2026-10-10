@@ -1,6 +1,10 @@
 (function(){
 'use strict';
 const dict={
+"Сторона ручки":["Handle side", "Kol tarafı"],
+"Сторона петель":["Hinge side", "Menteşe tarafı"],
+"Верх":["Top", "Üst"],
+"Низ":["Bottom", "Alt"],
 "Источник и примечание":["Source and notes","Kaynak ve notlar"],
 "Размер по раме":["Outside frame dimensions", "Dış kasa ölçüleri"],
 "Размеры по раме":["Frame dimension profiles", "Kasa ölçüsü profilleri"],

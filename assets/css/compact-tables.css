@@ -202,6 +202,16 @@ dialog.frame-profiles-dialog{width:min(940px,95vw);height:auto!important;max-hei
 
 dialog.frame-profiles-dialog{padding:16px!important}.frame-profile-row details{font-size:11px;color:var(--muted,#64748b)}.frame-profile-row details label{margin-top:6px}.frame-profile-row summary{cursor:pointer}
 
-/* Only positional calculations: one continuous rule between installation sides. */
-html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item.invoice-side-start>td{border-top:1px solid #8e9caf!important}
-@media print{html:root body.workdesk-app #positions-container .pos-block tbody tr.row-item.invoice-side-start>td{border-top:1px solid #666!important}}
+
+/* Quiet side captions and visible rules, retained in print. */
+html:root body.workdesk-app #positions-container .pos-block tbody tr.invoice-side-heading>td{border-top:2px solid #8396ac!important;border-bottom:0!important;padding:5px 4px 3px!important;background:var(--surface-alt,#f1f4f8)!important;color:var(--secondary,#526479)!important;font-size:10px!important;font-weight:600!important;text-align:left!important;line-height:1.2!important}
+html:root body.workdesk-app #positions-container .pos-block tbody tr.invoice-side-heading{break-after:avoid;page-break-after:avoid}
+@media print{html:root body.workdesk-app #positions-container .pos-block tbody tr.invoice-side-heading>td{border-top:1pt solid #666!important;font-size:8pt!important;padding:1mm!important;background:#fff!important;color:#555!important}}
+@media screen{
+html:root body.workdesk-app #positions-container .invoice-action-buttons{display:inline-grid!important;grid-template-columns:repeat(3,24px);gap:2px;align-items:center;vertical-align:middle}
+html:root body.workdesk-app #positions-container .invoice-action-buttons>button{display:grid!important;place-items:center!important;width:24px!important;min-width:24px!important;height:24px!important;min-height:24px!important;padding:2px!important;margin:0!important;grid-row:1}
+html:root body.workdesk-app #positions-container .invoice-action-buttons>.strike-replace{grid-column:1}
+html:root body.workdesk-app #positions-container .invoice-action-buttons>.invoice-row-button{grid-column:2}
+html:root body.workdesk-app #positions-container .invoice-action-buttons>.danger{grid-column:3}
+html:root body.workdesk-app #positions-container .invoice-action-buttons .ui-icon{width:16px!important;height:16px!important;margin:0!important}
+}
