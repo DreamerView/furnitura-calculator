@@ -97,15 +97,16 @@
       for(const drive of drives)out.push({rowId:row.id,colId:col.id,drive});
     }return out;
   }
+  function articleDornmass(art,record={}){const n=Number(record.dornmass||((art.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15);return n===7&&/дорнмасс\s*7[,.]5/i.test(record.name||'')?7.5:n;}
   function dornAlternative(db,art,dornmass=15){
     if(!art||!db?.articles?.[art])return '';
-    const wanted=Number(dornmass)||15,record=db.articles[art],current=Number(record.dornmass||((art.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15);
+    const wanted=Number(dornmass)||15,record=db.articles[art],current=articleDornmass(art,record);
     if(current===wanted)return art;
     const base=art.replace(/\.D\d+(?=\.|$)/,'');
-    const found=Object.entries(db.articles).find(([candidate,a])=>candidate.replace(/\.D\d+(?=\.|$)/,'')===base&&Number(a.dornmass||((candidate.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15)===wanted);
+    const found=Object.entries(db.articles).find(([candidate,a])=>candidate.replace(/\.D\d+(?=\.|$)/,'')===base&&articleDornmass(candidate,a)===wanted);
     if(found)return found[0];
     const size=(art.match(/\d{3,4}(?:-\d+)?/)||[])[0],variants=record.variants||[],mushroom=/\.V(?:\.|$)/.test(art);
-    const compatible=Object.entries(db.articles).find(([candidate,a])=>size&&(candidate.match(/\d{3,4}(?:-\d+)?/)||[])[0]===size&&Number(a.dornmass||((candidate.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15)===wanted&&/\.V(?:\.|$)/.test(candidate)===mushroom&&a.section===record.section&&a.handlePosition===record.handlePosition&&(!variants.length||a.variants?.some(v=>variants.includes(v))));
+    const compatible=Object.entries(db.articles).find(([candidate,a])=>size&&(candidate.match(/\d{3,4}(?:-\d+)?/)||[])[0]===size&&articleDornmass(candidate,a)===wanted&&/\.V(?:\.|$)/.test(candidate)===mushroom&&a.section===record.section&&a.handlePosition===record.handlePosition&&(!variants.length||a.variants?.some(v=>variants.includes(v))));
     return compatible?.[0]||'';
   }
   function validate(db){
@@ -449,7 +450,7 @@
     if(!Number.isInteger(params.width)||!Number.isInteger(params.height)||params.width<1||params.height<1)errors.push('Ширина и высота должны быть целыми положительными числами.');
     if(!Number.isInteger(params.count)||params.count<1)errors.push('Количество створок должно быть целым и больше нуля.');
     const dornmass=Number(params.dornmass||(kit.openingType==='door'?kit.dornmass:15)||15);
-    if(!Number.isInteger(dornmass)||dornmass<1)errors.push('Выберите дорнмасс.');
+    if(!Number.isFinite(dornmass)||dornmass<1)errors.push('Выберите дорнмасс.');
     const technology=handleTechnology(db,kit,params);
     if(technology&&!technology.ok)return {errors:[...errors,technology.message],warnings,items:[],choices:[],technology};
     const pvcTurn=kit.family!=='aluminum'&&['turn','fanlight','door','stulp-bolts','stulp-drive'].includes(kit.openingType);
@@ -684,6 +685,6 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
 })(typeof globalThis!=='undefined'?globalThis:this);

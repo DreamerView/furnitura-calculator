@@ -2278,7 +2278,7 @@
         100
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 100",
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 530,
@@ -2302,7 +2302,7 @@
         101
       ],
       "source": "FUTURUSS_nomenklatura_PVC_2026_s16-22.xlsx · Номенклатура · строка 101",
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 620,
@@ -2329,7 +2329,7 @@
       "variants": [
         "roller11"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 800,
@@ -2354,7 +2354,7 @@
       "variants": [
         "roller11"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 1200,
@@ -2379,7 +2379,7 @@
       "variants": [
         "roller11"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 1600,
@@ -2404,7 +2404,7 @@
       "variants": [
         "roller11"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 2000,
@@ -2429,7 +2429,7 @@
       "variants": [
         "roller8"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 800,
@@ -2456,7 +2456,7 @@
       "variants": [
         "roller8"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 1200,
@@ -2483,7 +2483,7 @@
       "variants": [
         "roller8"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 1600,
@@ -2510,7 +2510,7 @@
       "variants": [
         "roller8"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "handlePosition": "center",
       "height": {
         "min": 2000,
@@ -2537,7 +2537,7 @@
       "variants": [
         "mushroom"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "height": {
         "min": 800,
         "max": 1200,
@@ -2563,7 +2563,7 @@
       "variants": [
         "mushroom"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "height": {
         "min": 1200,
         "max": 1600,
@@ -2589,7 +2589,7 @@
       "variants": [
         "mushroom"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "height": {
         "min": 1600,
         "max": 2000,
@@ -2615,7 +2615,7 @@
       "variants": [
         "mushroom"
       ],
-      "dornmass": 7,
+      "dornmass": 7.5,
       "height": {
         "min": 2000,
         "max": 2400,
@@ -16003,6 +16003,70 @@
       ],
       "packQty": 100,
       "source": "https://futuruss.ru/docs/futuruss-catalog-aluminum-2026-07.pdf · стр. 83"
+    },
+    "XPO.1200-1.D7": {
+      "name": "Привод поворотно-откидной 800-1200, дорнмасс 7,5 мм, цапфа 11 мм",
+      "price": 10,
+      "section": "Поворотно-откидные приводы",
+      "group": "Поворотно-откидные приводы, дорнмасс 7,5 мм",
+      "dornmass": 7.5,
+      "handlePosition": "center",
+      "variants": [
+        "roller11"
+      ],
+      "height": {
+        "min": 800,
+        "max": 1200
+      },
+      "source": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 58–59"
+    },
+    "XPO.1600-2.D7": {
+      "name": "Привод поворотно-откидной 1200-1600, дорнмасс 7,5 мм, цапфа 11 мм",
+      "price": 10,
+      "section": "Поворотно-откидные приводы",
+      "group": "Поворотно-откидные приводы, дорнмасс 7,5 мм",
+      "dornmass": 7.5,
+      "handlePosition": "center",
+      "variants": [
+        "roller11"
+      ],
+      "height": {
+        "min": 1200,
+        "max": 1600
+      },
+      "source": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 58–59"
+    },
+    "XPO.2000-2.D7": {
+      "name": "Привод поворотно-откидной 1600-2000, дорнмасс 7,5 мм, цапфа 11 мм",
+      "price": 10,
+      "section": "Поворотно-откидные приводы",
+      "group": "Поворотно-откидные приводы, дорнмасс 7,5 мм",
+      "dornmass": 7.5,
+      "handlePosition": "center",
+      "variants": [
+        "roller11"
+      ],
+      "height": {
+        "min": 1600,
+        "max": 2000
+      },
+      "source": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 58–59"
+    },
+    "XPO.2400-4.D7": {
+      "name": "Привод поворотно-откидной 2000-2400, дорнмасс 7,5 мм, цапфа 11 мм",
+      "price": 10,
+      "section": "Поворотно-откидные приводы",
+      "group": "Поворотно-откидные приводы, дорнмасс 7,5 мм",
+      "dornmass": 7.5,
+      "handlePosition": "center",
+      "variants": [
+        "roller11"
+      ],
+      "height": {
+        "min": 2000,
+        "max": 2400
+      },
+      "source": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 58–59"
     }
   },
   "kits": [

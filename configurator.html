@@ -20,8 +20,8 @@
 .kit-tabs .variant{flex:0 0 245px;width:245px;max-width:245px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:11px 8px}
 .copy-tab{flex:0 0 auto}
 @media(max-width:950px){.kit-tabs .variant{flex-basis:210px;width:210px;max-width:210px;padding:10px 7px}}
-</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.16">
-<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.16"><script src="assets/js/hardware-colors.js?v=2026.10.10.16"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.16"></script><script src="assets/js/cam-selector.js?v=2026.10.10.16"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.16"><script src="assets/js/calculation-technology.js?v=2026.10.10.16"></script>
+</style><link rel="stylesheet" href="assets/css/icons.css?v=2026.10.10.17">
+<link rel="stylesheet" href="assets/css/themes.css?v=2026.10.10.17"><script src="assets/js/hardware-colors.js?v=2026.10.10.17"></script><script src="assets/js/catalog-schemes.js?v=2026.10.10.17"></script><script src="assets/js/cam-selector.js?v=2026.10.10.17"></script><link rel="stylesheet" href="assets/css/cam-selector.css?v=2026.10.10.17"><script src="assets/js/calculation-technology.js?v=2026.10.10.17"></script>
 <style>.pack-norm{display:block;font-size:10px;color:var(--muted);white-space:nowrap}.bom td:nth-child(n+3),.bom th:nth-child(n+3),.bom input[type=number]{text-align:center}</style></head>
 <body class="workdesk-configurator">
 <header><div class="brand"><span class="brandmark">F</span><div><b>FUTURUSS</b><small>Комплектации фурнитуры</small></div></div><div class="toolbar"><button id="returnManagement" type="button">↩ Вернуться в управление</button><button id="load">Открыть комплектации</button><button id="export">Скачать резервную копию</button><button id="saveNow" class="primary" type="button">Сохранить сейчас</button><button id="prices">База артикулов</button><button id="articlePhotosButton">Фото товаров</button></div><span id="saved" class="saved" role="status">Загружаем каталог с сервера…</span></header>
@@ -144,15 +144,16 @@
       for(const drive of drives)out.push({rowId:row.id,colId:col.id,drive});
     }return out;
   }
+  function articleDornmass(art,record={}){const n=Number(record.dornmass||((art.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15);return n===7&&/дорнмасс\s*7[,.]5/i.test(record.name||'')?7.5:n;}
   function dornAlternative(db,art,dornmass=15){
     if(!art||!db?.articles?.[art])return '';
-    const wanted=Number(dornmass)||15,record=db.articles[art],current=Number(record.dornmass||((art.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15);
+    const wanted=Number(dornmass)||15,record=db.articles[art],current=articleDornmass(art,record);
     if(current===wanted)return art;
     const base=art.replace(/\.D\d+(?=\.|$)/,'');
-    const found=Object.entries(db.articles).find(([candidate,a])=>candidate.replace(/\.D\d+(?=\.|$)/,'')===base&&Number(a.dornmass||((candidate.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15)===wanted);
+    const found=Object.entries(db.articles).find(([candidate,a])=>candidate.replace(/\.D\d+(?=\.|$)/,'')===base&&articleDornmass(candidate,a)===wanted);
     if(found)return found[0];
     const size=(art.match(/\d{3,4}(?:-\d+)?/)||[])[0],variants=record.variants||[],mushroom=/\.V(?:\.|$)/.test(art);
-    const compatible=Object.entries(db.articles).find(([candidate,a])=>size&&(candidate.match(/\d{3,4}(?:-\d+)?/)||[])[0]===size&&Number(a.dornmass||((candidate.match(/\.D(\d+)(?=\.|$)/)||[])[1])||15)===wanted&&/\.V(?:\.|$)/.test(candidate)===mushroom&&a.section===record.section&&a.handlePosition===record.handlePosition&&(!variants.length||a.variants?.some(v=>variants.includes(v))));
+    const compatible=Object.entries(db.articles).find(([candidate,a])=>size&&(candidate.match(/\d{3,4}(?:-\d+)?/)||[])[0]===size&&articleDornmass(candidate,a)===wanted&&/\.V(?:\.|$)/.test(candidate)===mushroom&&a.section===record.section&&a.handlePosition===record.handlePosition&&(!variants.length||a.variants?.some(v=>variants.includes(v))));
     return compatible?.[0]||'';
   }
   function validate(db){
@@ -496,7 +497,7 @@
     if(!Number.isInteger(params.width)||!Number.isInteger(params.height)||params.width<1||params.height<1)errors.push('Ширина и высота должны быть целыми положительными числами.');
     if(!Number.isInteger(params.count)||params.count<1)errors.push('Количество створок должно быть целым и больше нуля.');
     const dornmass=Number(params.dornmass||(kit.openingType==='door'?kit.dornmass:15)||15);
-    if(!Number.isInteger(dornmass)||dornmass<1)errors.push('Выберите дорнмасс.');
+    if(!Number.isFinite(dornmass)||dornmass<1)errors.push('Выберите дорнмасс.');
     const technology=handleTechnology(db,kit,params);
     if(technology&&!technology.ok)return {errors:[...errors,technology.message],warnings,items:[],choices:[],technology};
     const pvcTurn=kit.family!=='aluminum'&&['turn','fanlight','door','stulp-bolts','stulp-drive'].includes(kit.openingType);
@@ -731,10 +732,9 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
-})(typeof globalThis!=='undefined'?globalThis:this);
-</script><script>'use strict';
+})(typeof globalThis!=='undefined'?globalThis:this);</script><script>'use strict';
 const M=MatrixCore,$=id=>document.getElementById(id),e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const storage='futuruss-table-app-v2';let seeded=null,library=null,active='',variant='roller11',family='pvc',draft=null,pickTarget=null,rangeDraft=null,currentResult=null,invoice=[],editingArticle=null,csrfToken='',saveTimer=null,saveBusy=false,saveQueued=false,savePromise=Promise.resolve(true);
 const kitFamily=k=>k?.family==='aluminum'?'aluminum':'pvc';
@@ -982,15 +982,15 @@ startConfigurator();
 
 
 
-<script src="assets/js/idb-store.js?v=2026.10.10.16"></script>
-<script src="assets/js/media-ui.js?v=2026.10.10.16"></script>
-<script src="assets/js/destructive-confirm.js?v=2026.10.10.16"></script>
-<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.16">
-<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.16"></script>
+<script src="assets/js/idb-store.js?v=2026.10.10.17"></script>
+<script src="assets/js/media-ui.js?v=2026.10.10.17"></script>
+<script src="assets/js/destructive-confirm.js?v=2026.10.10.17"></script>
+<link rel="stylesheet" href="assets/css/compact-tables.css?v=2026.10.10.17">
+<script src="assets/js/modal-pointer-guard.js?v=2026.10.10.17"></script>
 
-<script src="assets/js/modal-layout.js?v=2026.10.10.16"></script>
-<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.16">
-<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.16">
-<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.16">
+<script src="assets/js/modal-layout.js?v=2026.10.10.17"></script>
+<link rel="stylesheet" href="assets/css/modal-layout.css?v=2026.10.10.17">
+<link rel="stylesheet" href="assets/css/hardware-colors.css?v=2026.10.10.17">
+<link rel="stylesheet" href="assets/css/chain-options.css?v=2026.10.10.17">
 </body></html>
 

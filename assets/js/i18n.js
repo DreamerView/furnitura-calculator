@@ -1,6 +1,9 @@
 (function(){
 'use strict';
 const dict={
+"Ассортимент":["Assortment", "Ürün yelpazesi"],
+"Показать ещё":["Show more", "Daha fazla göster"],
+"7,5 мм":["7.5 mm", "7,5 mm"],
 "Стандартная сборка":["Standard assembly","Standart montaj"],
 "Базовая взломостойкость":["Basic burglary resistance","Temel hırsızlık direnci"],
 "Повышенная взломостойкость":["Enhanced burglary resistance","Artırılmış hırsızlık direnci"],
