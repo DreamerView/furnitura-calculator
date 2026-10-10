@@ -1,7 +1,9 @@
 /* Constructor navigation only: never modifies catalogue or BOM data. */
 (function(root){
 'use strict';
-function groups(kits){const result=[];for(const family of ['pvc','aluminum']){const branches=new Map();for(const kit of kits){if((kit.family==='aluminum'?'aluminum':'pvc')!==family)continue;const kind=kit.openingType||'tilt-turn';if(!branches.has(kind))branches.set(kind,[]);branches.get(kind).push(kit);}result.push({family,branches:[...branches].map(([kind,kits])=>({kind,kits}))});}return result;}
+// These catalogue recipes are selected through the main kit options, not navigation.
+const optionRecipes=new Set([2,3,4,5,8,17,23,24].map(n=>'catalog-pvc-7-'+n));
+function groups(kits){const result=[];for(const family of ['pvc','aluminum']){const branches=new Map();for(const kit of kits){if(optionRecipes.has(kit.id))continue;if((kit.family==='aluminum'?'aluminum':'pvc')!==family)continue;const kind=kit.openingType||'tilt-turn';if(!branches.has(kind))branches.set(kind,[]);branches.get(kind).push(kit);}result.push({family,branches:[...branches].map(([kind,kits])=>({kind,kits}))});}return result;}
 function create({main,families,variants,onSelect}){
  const make=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text)n.textContent=text;return n;};
  const shell=make('div','kit-workspace'),aside=make('aside','kit-browser'),right=make('div','kit-workspace-main');shell.id='kitWorkspace';
