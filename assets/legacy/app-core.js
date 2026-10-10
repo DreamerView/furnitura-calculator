@@ -164,8 +164,8 @@ function populateGrooveSelect(){
   if (!sel) return;
   const prev = sel.value;
   const opts = currentGrooveOptions();
-  sel.innerHTML = `<option value="">— не указан —</option>` + opts.map(g => `<option value="${esc(g)}">${esc(g)}</option>`).join("");
-  if (opts.includes(prev)) sel.value = prev;
+  sel.innerHTML = opts.map(g => `<option value="${esc(g)}">${esc(g.replace(/\s*\/\s*VHS/g,""))}</option>`).join("");
+  sel.value = opts.includes(prev) ? prev : opts.includes("KBE 13") ? "KBE 13" : (opts[0]||"");
   const block = document.getElementById("groove-block");
   if (block) block.style.display = opts.length ? "" : "none";
 }

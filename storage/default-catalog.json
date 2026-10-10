@@ -16067,6 +16067,98 @@
         "max": 2400
       },
       "source": "https://futuruss.ru/docs/futuruss-catalog-pvc-2026-07.pdf · стр. 58–59"
+    },
+    "N1.PN.S.B": {
+      "name": "Накладка створочной части среднего прижима, белая",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "white",
+      "packQty": 600,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "N1.PN.S.K": {
+      "name": "Накладка створочной части среднего прижима, коричневая",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "brown",
+      "packQty": 600,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "N1.PN.S.A": {
+      "name": "Накладка створочной части среднего прижима, антрацит",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "anthracite",
+      "packQty": 600,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "N1.PN.S.BLACK": {
+      "name": "Накладка створочной части среднего прижима, чёрная",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "black",
+      "packQty": 600,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "N1.PN.R.B": {
+      "name": "Накладка рамной части среднего прижима, белая",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "white",
+      "packQty": 1200,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "N1.PN.R.K": {
+      "name": "Накладка рамной части среднего прижима, коричневая",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "brown",
+      "packQty": 1200,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "N1.PN.R.A": {
+      "name": "Накладка рамной части среднего прижима, антрацит",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "anthracite",
+      "packQty": 1200,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "N1.PN.R.BLACK": {
+      "name": "Накладка рамной части среднего прижима, чёрная",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "coverColor": "black",
+      "packQty": 1200,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 218"
+    },
+    "PS1.S": {
+      "name": "Скрытый прижим для скрытых петель, створочная часть",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "packQty": 400,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 229"
+    },
+    "PS1.R13K": {
+      "name": "Скрытый прижим, рамная часть, KBE / VEKA 13",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "packQty": 400,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 229"
+    },
+    "PS1.R13R": {
+      "name": "Скрытый прижим, рамная часть, REHAU 13",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "packQty": 400,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 229"
+    },
+    "PS1.R13D": {
+      "name": "Скрытый прижим, рамная часть, Gealan/Ivaper 13",
+      "price": 10,
+      "group": "Дополнительные прижимы",
+      "packQty": 400,
+      "source": "Каталог FUTURUSS PVC 2026-07 · стр. 229"
     }
   },
   "kits": [

@@ -10,3 +10,5 @@ html:root body :is(#matrixFamilyTabs,#familyTabs){display:flex;flex-wrap:wrap;al
 [data-cam="roller8"] .cam-photo{background-position:center -74px}
 
 .alu-assembly-select{display:block;margin:8px 0}.alu-assembly-select[hidden]{display:none!important}.alu-assembly-select select{box-sizing:border-box;width:100%;max-width:360px;min-height:34px;font:inherit;border:1px solid var(--border,#ddd);border-radius:9px;padding:6px 9px;background:var(--surface,#fff);color:var(--text,#222)}
+
+html:root body dialog.dornmass-confirm{width:min(420px,92vw)!important;max-width:92vw!important;height:auto!important;min-height:0!important;padding:20px!important;border:1px solid var(--border,#ddd);border-radius:16px;background:var(--surface,#fff);color:var(--text,#222)}.dornmass-confirm::backdrop{background:#10182766}.dornmass-confirm p{margin:0 0 18px}.dornmass-confirm>div{display:flex;justify-content:flex-end;gap:10px}.dornmass-confirm button{padding:9px 14px;border-radius:9px;border:0;cursor:pointer}

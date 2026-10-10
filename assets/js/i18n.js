@@ -1,6 +1,25 @@
 (function(){
 'use strict';
 const dict={
+"Обычно используется дорнмасс 15 мм. Подтвердите выбранный размер:":["The usual backset is 15 mm. Confirm the selected size:", "Genellikle 15 mm kullanılır. Seçilen ölçüyü onaylayın:"],
+"Дополнительные прижимы со стороны петель":["Additional hinge-side clamps", "Menteşe tarafındaki ek baskılar"],
+"Без дополнительных прижимов":["No additional clamps", "Ek baskı yok"],
+"Накладной PN":["Surface-mounted PN", "Yüzeye monte PN"],
+"Скрытый PS для обычных петель":["Concealed PS for standard hinges", "Standart menteşeler için gizli PS"],
+"PS1 для скрытых петель":["PS1 for concealed hinges", "Gizli menteşeler için PS1"],
+"Количество прижимов на створку":["Clamps per sash", "Kanat başına baskı sayısı"],
+"Дверной привод с ригелем":["Door drive with deadbolt", "Sürgülü kapı mekanizması"],
+"Специальное исполнение":["Special configuration", "Özel yapılandırma"],
+"Обычное":["Normal", "Normal"],
+"Скрытый электропривод":["Concealed electric drive", "Gizli elektrikli tahrik"],
+"Для пользователей МГН":["Accessible operation", "Erişilebilir kullanım"],
+"Полный состав специального исполнения требует проверки в конструкторе.":["The complete special configuration requires verification in the configurator.", "Özel yapılandırmanın tam içeriği yapılandırıcıda doğrulanmalıdır."],
+"Дополнительные прижимы доступны только для поворотных створок и дверей.":["Additional clamps are available only for turn-only sashes and doors.", "Ek baskılar yalnızca yana açılan kanatlar ve kapılar için kullanılabilir."],
+"Укажите количество прижимов от 1 до 20 на створку.":["Enter 1 to 20 clamps per sash.", "Kanat başına 1 ile 20 arasında baskı girin."],
+"Выбранный прижим несовместим с петлями или профилем.":["The selected clamp is incompatible with the hinges or profile.", "Seçilen baskı menteşelerle veya profille uyumlu değil."],
+"Прижим недоступен в ассортименте: ":["Clamp unavailable in the assortment: ", "Baskı ürün yelpazesinde yok: "],
+"Для выбранной системы специальное исполнение не подтверждено.":["The special configuration is not confirmed for this system.", "Bu sistem için özel yapılandırma doğrulanmadı."],
+
 "Ассортимент":["Assortment", "Ürün yelpazesi"],
 "Показать ещё":["Show more", "Daha fazla göster"],
 "7,5 мм":["7.5 mm", "7,5 mm"],

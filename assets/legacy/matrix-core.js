@@ -302,7 +302,7 @@
   }
   function pressureSummary(rows,family='pvc'){
     let points=0;const unknown=[];
-    for(const r of rows){if(!(r.qty>0))continue;const spec=family==='aluminum'?null:camSpec(r.art,r);
+    for(const r of rows){if(!(r.qty>0))continue;if(['PN.S','PS.S','PS1.S'].includes(r.art)){points+=r.qty;continue;}const spec=family==='aluminum'?null:camSpec(r.art,r);
       if(spec)points+=spec.points*r.qty;
       else if(/цапф|привод|удлинител|угловая передача|ножницы/i.test(r.name||'')&&!strikeRole(r.art)&&!/без.*цапф|накладк|зацеп|ответн|ограничител/i.test(r.name||''))unknown.push(r.art);
     }
@@ -433,7 +433,31 @@
   }
   function technologyText(plan){return plan?[plan.drive,plan.handleHeight==null?'':'Высота ручки: '+plan.handleHeight+' мм',plan.chain.join(' → '),plan.message].filter(Boolean).join(' · '):'';}
 
+  function applyRearClamps(db,kit,params,items,errors){
+    if(params.rearClampType===undefined)return items;
+    const type=params.rearClampType;
+    if(kit.family==='aluminum'||!['turn','door'].includes(kit.openingType)){errors.push('Дополнительные прижимы доступны только для поворотных створок и дверей.');return items;}
+    const managed=a=>/^(?:PN\.[RS]|N1?\.PN\.[RS]\.(?:B|K|A|BLACK)|PS\.(?:S|R9|R13)|PS1\.(?:S|R13[KRD]))$/.test(a);
+    const kept=items.filter(i=>!managed(i.art));if(type==='none')return kept;
+    const count=params.rearClampQty,hidden=(params.hingeType||kit.hingeType)==='hidden',series=String(params.optionSeries||kit.optionSeries||'13');
+    if(!Number.isInteger(count)||count<1||count>20){errors.push('Укажите количество прижимов от 1 до 20 на створку.');return kept;}
+    let arts=[];
+    if(type==='exposed'&&!hidden){const suffix={white:'B',brown:'K',anthracite:'A',black:'BLACK'}[params.coverColor||kit.coverColor||'white'];arts=['PN.S','PN.R','N1.PN.S.'+suffix,'N1.PN.R.'+suffix];}
+    else if(type==='regular'&&!hidden&&['9','13'].includes(series))arts=['PS.S','PS.R'+series];
+    else if(type==='concealed'&&hidden&&series==='13'){
+      const profile=params.strikeProfile||kit.strikeProfile||'KBE 13',suffix={'KBE 13':'K','VEKA 13 / VHS':'K','VEKA 13':'K','REHAU':'R','Gealan/Ivaper':'D'}[profile];
+      if(suffix)arts=['PS1.S','PS1.R13'+suffix];
+    }
+    if(!arts.length){errors.push('Выбранный прижим несовместим с петлями или профилем.');return kept;}
+    for(const art of arts){if(!db.articles[art]||db.articles[art].available===false)errors.push('Прижим недоступен в ассортименте: '+art);else kept.push({...rowItem(art,count),installationZone:'rear',...(art===arts[0]?{}:{dependency:{parent:arts[0],ratio:1}})});}
+    return kept;
+  }
   function calculate(db,kit,params={},selection){
+    if(kit?.openingType==='door'&&typeof params.doorBolt==='boolean'){const next=db.kits.find(k=>k.openingType==='door'&&k.variant===kit.variant&&k.id.endsWith('-latch')===!params.doorBolt);if(next&&next.id!==kit.id){kit=next;selection=null;}}
+    if(params.specialMode&&params.specialMode!=='none'){
+      const next=kit?.family!=='aluminum'&&kit?.variant==='roller11'&&(!kit.openingType||kit.openingType==='tilt-turn')&&db.kits.find(k=>k.id==='catalog-pvc-7-'+({motor:'53',mgn:'54'}[params.specialMode]||''));
+      if(!next)return {errors:['Для выбранной системы специальное исполнение не подтверждено.'],warnings:[],items:[],choices:[],total:null};kit=next;
+    }
     if(kit.catalogDraft)return {errors:['Схема каталога ещё не настроена для автоматического расчёта.'],warnings:[],items:[],choices:[],total:null};
     const errors=validate(db),warnings=[];
     if(kit.sizeRecipeMode){
@@ -502,6 +526,7 @@
       if(seriesEnabled&&series==='13'&&/^ZM9\.[ZP]$/.test(it.art))target=it.art.replace(/^ZM9\./,'ZM13.');
       if(target){if(has(db.articles,target))it.art=target;else errors.push(it.art+': в базе нет совместимой детали для выбранного паза.');}
     }
+    items=applyRearClamps(db,kit,params,items,errors);
     const hingeType=params.hingeType||kit.hingeType||'standard';
     if(!['standard','reinforced130','hidden','rebated'].includes(hingeType))errors.push('Выберите вариант петель.');
 
@@ -685,6 +710,6 @@
     }
     if(!out.kits.length)throw Error('В файле нет размерных таблиц. Исходные данные не изменены.');return out;
   }
-  root.MatrixCore={articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
+  root.MatrixCore={applyRearClamps,articleDornmass,camSpec,pressureSummary,extensionZone,completeStrikes,mergeCalculatedItems,chainRules,chainSupported,inferredLowerNode,chainReviewKey,chainPlan,replaceCommon,tiltFirstWorkbookProfiles,plateUnits,plateTotal,resolvePlateConnections,strikeAlternatives,lowerNodeSupported,strikeDefaults,strikeRole,strikePlan,hiddenStrikeFits,handleTechnology,technologyText,variants,handleColors,copy,uid,key,fits,normalize,initial,cell,candidates,dornAlternative,validate,calculate,importOld,rowItem,isWindowHandle,handleBaseArt,handleBases,handleArticleForColor,ensureHandleColors};
   if(typeof module!=='undefined')module.exports=root.MatrixCore;
 })(typeof globalThis!=='undefined'?globalThis:this);
